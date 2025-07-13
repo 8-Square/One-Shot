@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=4 uid="uid://b42r2c2v0gsmy"]
+
+[ext_resource type="Script" uid="uid://jr1ttokgcx12" path="res://player.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bqu7eqx5e2ana" path="res://icon.svg" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://Tileset.png" id="3_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(99, 129)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
+texture = ExtResource("3_lquwl")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_5vw27"]
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_272bh")
+
+[node name="Node" type="Node"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(260, 230)
+script = ExtResource("1_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-207, -160)
+scale = Vector2(0.765625, 1.00781)
+texture = ExtResource("2_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-207, -160)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-206, -159)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-110, -458)
+scale = Vector2(3.5, 3.5)
+tile_map_data = PackedByteArray("AAAAAA0AAgABAAEAAAAAABoAAgABAAEAAAAAABkAAgABAAEAAAAAABgAAgABAAEAAAAAABcAAgABAAEAAAAAABYAAgABAAEAAAAAABUAAgABAAEAAAAAABQAAgABAAEAAAAAABMAAgABAAEAAAAAABIAAgABAAEAAAAAABEAAgABAAEAAAAAABAAAgABAAEAAAAAAA8AAgABAAEAAAAAAA4AAgABAAEAAAABAA0AAgABAAEAAAACAA0AAgABAAEAAAADAA0AAgABAAEAAAAEAA0AAgABAAEAAAAFAA0AAgABAAEAAAAGAA0AAgABAAEAAAAHAA0AAgABAAEAAAAIAA0AAgABAAEAAAAJAA0AAgABAAEAAAAKAA0AAgABAAEAAAAKAA4AAgABAAEAAAALABIAAgABAAEAAAAMABIAAgABAAEAAAANABIAAgABAAEAAAANABEAAgABAAEAAAAOABEAAgABAAEAAAAPABAAAgABAAEAAAAPAA8AAgABAAEAAAAPAA4AAgABAAEAAAAPAA0AAgABAAEAAAAQAA0AAgABAAEAAAAQAAwAAgABAAEAAAARAAwAAgABAAEAAAASAAwAAgABAAEAAAATAAwAAgABAAEAAAAUAAwAAgABAAEAAAAVAAwAAgABAAEAAAAWAAwAAgABAAEAAAAXAAwAAgABAAEAAAAYAAwAAgABAAEAAAAKABYAAgABAAEAAAAJABYAAgABAAEAAAAIABYAAgABAAEAAAAIABUAAgABAAEAAAAHABUAAgABAAEAAAAGABUAAgABAAEAAAAGABYAAgABAAEAAAAFABYAAgABAAEAAAAFABcAAgABAAEAAAAEABcAAgABAAEAAAADABcAAgABAAEAAAAAABsAAgABAAEAAAAAABwAAgABAAEAAAAAAB0AAgABAAEAAAAOABgAAgABAAEAAAAPABgAAgABAAEAAAAQABgAAgABAAEAAAARABgAAgABAAEAAAASABgAAgABAAEAAAATABgAAgABAAEAAAAUABgAAgABAAEAAAAVABgAAgABAAEAAAAWABgAAgABAAEAAAANABgAAgABAAEAAAADAB0AAgABAAEAAAAEAB0AAgABAAEAAAAFAB0AAgABAAEAAAAGAB0AAgABAAEAAAAHAB0AAgABAAEAAAAIAB0AAgABAAEAAAAJAB0AAgABAAEAAAAKAB0AAgABAAEAAAALAB0AAgABAAEAAAAMAB0AAgABAAEAAAANAB0AAgABAAEAAAAOAB0AAgABAAEAAAAPAB0AAgABAAEAAAAQAB0AAgABAAEAAAARAB0AAgABAAEAAAASAB0AAgABAAEAAAATAB0AAgABAAEAAAAUAB0AAgABAAEAAAAVAB0AAgABAAEAAAAWAB0AAgABAAEAAAAVABYAAgABAAEAAAAVABUAAgABAAEAAAAWABUAAgABAAEAAAAXABUAAgABAAEAAAAOAA8AAgABAAEAAAAOABAAAgABAAEAAAA=")
+tile_set = SubResource("TileSet_5vw27")
