@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 500.0
+var SPEED = 500.0
 const JUMP_VELOCITY = -700.0
 
 
@@ -21,5 +21,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, 0)
-
+		
+	if is_on_wall():
+		velocity.x *= -1
+		velocity.x = SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, 0)
 	move_and_slide()
