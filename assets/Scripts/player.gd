@@ -19,12 +19,13 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+	elif is_on_wall(): 
+		velocity.x *= -1
+		velocity.x = SPEED
+	elif not is_on_wall():
+		velocity.x = move_toward(velocity.x, 0, 0)
 	else:
 		velocity.x = move_toward(velocity.x, 0, 0)
 		
-	if is_on_wall():
-		velocity.x *= -1
-		velocity.x = SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, 0)
+
 	move_and_slide()
