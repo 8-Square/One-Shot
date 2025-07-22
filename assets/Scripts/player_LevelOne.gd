@@ -1,47 +1,51 @@
 extends CharacterBody2D
 
-var SPEED = 400.0
-const JUMP_VELOCITY = -700.0
-var right_count = 0
+
+var SPEED = 500.0
+const JUMP_VELOCITY = -600.0
 var left_count = 0
 var jump_count = 0
+var right_count = 0
+
 
 func _physics_process(delta: float) -> void:
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+
+	if Input.is_action_just_pressed("jump") and is_on_floor() and jump_count < 200:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
-		print("jump is equal to " + str(jump_count))
+		print("JUMPED HAS BEEN USED " + str(jump_count))
+	elif Input.is_action_just_pressed("jump") and jump_count >= 200:
+		print("JUMP HAS BEEN USED, RESTART OR TRY WITHOUT")
 		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+		
 	var direction := Input.get_axis("left", "right")
-	if direction:
+	if direction and Input.is_action_just_pressed("left") and left_count < 200:
 		velocity.x = direction * SPEED
-		if Input.is_action_just_pressed("left"): 
-			left_count += 1
-			print("Left Count is " + str(left_count))
-		elif Input.is_action_just_pressed("right"):
-			right_count += 1
-			print("Right Count is " + str(right_count))
-		if is_on_wall():
-			velocity.x *= -1
-			velocity.x = SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, 0)
+		left_count += 1
+		print("left HAS BEEN CLICKED " + str(left_count))
+
+	elif direction and Input.is_action_just_pressed("right") and right_count < 200:
+		velocity.x = direction * SPEED
+		right_count += 1
+		print("RIGHT HAS BEEN CLICKED " + str(right_count))
+	# IMPLEMENT THE LEFT RIGHT COUNTS 
+	elif is_on_wall(): 
+		velocity.x *= -1
+		velocity.x = SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, 0)
-	
-	var collision_info = move_and_collide(velocity * delta, false, 0.3, true)
+		
+	var collision_info = move_and_collide(velocity * delta, false, 0.3, false)
 
 	if collision_info:
 		var direction2 = velocity.bounce(collision_info.get_normal())
 		if is_on_floor() or is_on_wall():
 			velocity = direction2
 		
+	#if (Input.is_action_just_pressed("left") and left_count < 5) || (Input.is_action_just_pressed("left") and left_count < 5):
+		#left_count += 1
+	
+		
 	move_and_slide()
-
- 
