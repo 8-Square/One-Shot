@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://68yveik7dd00"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udfde"]
+bg_color = Color(0.727871, 0.573445, 0.29065, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frbox"]
+bg_color = Color(0.84498, 0.505565, 0.206015, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng7ja"]
+bg_color = Color(0.403708, 0.601579, 0.911177, 1)
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 612.0
+offset_top = 59.0
+offset_right = 1041.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 85
+text = "ONE SHOT"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.218
+anchor_top = 0.404
+anchor_right = 0.218
+anchor_bottom = 0.404
+offset_left = -201.136
+offset_top = -38.792
+offset_right = 201.864
+offset_bottom = 38.208
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_udfde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_frbox")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
+text = "Play"
+
+[node name="Quit" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.775
+anchor_right = 0.391
+anchor_bottom = 0.87
+offset_left = -0.384003
+offset_top = -15.2
+offset_right = 0.567963
+offset_bottom = 0.239929
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_udfde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_frbox")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
+text = "Quit"
+
+[node name="Settings" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.548
+anchor_right = 0.393
+anchor_bottom = 0.667
+offset_left = 0.463997
+offset_top = -0.104034
+offset_right = 0.263977
+offset_bottom = -0.216034
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_udfde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_frbox")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
+text = "Settings"

@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="One Shot"
+config/version="0.1.0"
 run/main_scene="uid://b42r2c2v0gsmy"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -50,4 +55,5 @@ jump={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
