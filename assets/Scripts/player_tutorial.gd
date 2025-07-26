@@ -1,12 +1,10 @@
 extends CharacterBody2D
 
-
 var SPEED = 500.0
 const JUMP_VELOCITY = -600.0
 var left_count = 0
 var jump_count = 0
 var right_count = 0
-
 
 func _physics_process(delta: float) -> void:
 
@@ -47,5 +45,4 @@ func _physics_process(delta: float) -> void:
 	#if (Input.is_action_just_pressed("left") and left_count < 5) || (Input.is_action_just_pressed("left") and left_count < 5):
 		#left_count += 1
 	
-		
 	move_and_slide()
