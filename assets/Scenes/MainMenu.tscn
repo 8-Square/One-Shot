@@ -3,10 +3,20 @@
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/main_menu.gd" id="1_frbox"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udfde"]
-bg_color = Color(0.727871, 0.573445, 0.29065, 1)
+bg_color = Color(0.843137, 0.505882, 0.207843, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.590098, 0.836652, 0.987892, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frbox"]
 bg_color = Color(0.84498, 0.505565, 0.206015, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.588235, 0.835294, 0.988235, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng7ja"]
 bg_color = Color(0.403708, 0.601579, 0.911177, 1)
