@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_button_pressed() -> void:
+func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://assets/Scenes/Levels/Tutorial.tscn")
 
 func _on_settings_pressed() -> void:
