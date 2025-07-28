@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://b4mg4h3swfkwf"]
 
-[ext_resource type="Script" uid="uid://jr1ttokgcx12" path="res://assets/Scripts/player_LevelOne.gd" id="1_5ul2i"]
+[ext_resource type="Script" uid="uid://jr1ttokgcx12" path="res://assets/Scripts/player_level_one.gd" id="1_5ul2i"]
 [ext_resource type="Texture2D" uid="uid://halgrh4knk36" path="res://assets/Sprites/icon.svg" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://assets/Sprites/Tileset.png" id="3_lquwl"]
 
@@ -32,7 +32,7 @@ texture = ExtResource("3_lquwl")
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_272bh")
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(260, 230)

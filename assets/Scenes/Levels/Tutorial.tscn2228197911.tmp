@@ -35,7 +35,6 @@ sources/2 = SubResource("TileSetAtlasSource_272bh")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_pd383")
-level_id = 1
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(260, 230)

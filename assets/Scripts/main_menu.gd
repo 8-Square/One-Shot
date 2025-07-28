@@ -12,10 +12,12 @@ func _process(_delta: float) -> void:
 
 
 func _on_play_pressed() -> void:
+	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://assets/Scenes/Levels/Tutorial.tscn")
 
 func _on_settings_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_quit_pressed() -> void:
+	await get_tree().create_timer(0.3).timeout
 	get_tree().quit()
