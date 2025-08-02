@@ -1,19 +1,18 @@
-extends Node2D
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CanvasLayer/Play.grab_focus()
-
+	$MarginContainer/VBoxContainer/Play.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
-
 func _on_play_pressed() -> void:
-	await get_tree().create_timer(0.3).timeout
-	get_tree().change_scene_to_file("res://assets/Scenes/Levels/Tutorial.tscn")
+	$Label.hide()
+	$MarginContainer.hide()
+	to_tutorial_transition.change_scene(to_tutorial_transition.levelselect)
 
 func _on_settings_pressed() -> void:
 	pass # Replace with function body.

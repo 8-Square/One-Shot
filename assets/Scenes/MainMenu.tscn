@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://68yveik7dd00"]
+[gd_scene load_steps=7 format=3 uid="uid://68yveik7dd00"]
 
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/main_menu.gd" id="1_frbox"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_ng7ja"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udfde"]
 bg_color = Color(0.843137, 0.505882, 0.207843, 1)
@@ -24,30 +25,36 @@ bg_color = Color(0.562635, 0.361722, 0.129884, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng7ja"]
 bg_color = Color(0.403708, 0.601579, 0.911177, 1)
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_frbox")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 321.0
-offset_top = 24.0
-offset_right = 573.0
-offset_bottom = 93.0
+layout_mode = 2
+offset_left = 338.0
+offset_top = 37.0
+offset_right = 592.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("2_ng7ja")
 theme_override_font_sizes/font_size = 50
 text = "ONE SHOT"
 metadata/_edit_use_anchors_ = true
 
-[node name="Play" type="Button" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.036
-anchor_top = 0.325
-anchor_right = 0.405
-anchor_bottom = 0.478
-offset_left = -0.0400009
-offset_right = -0.200012
-offset_bottom = -0.0800018
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 136.0
+offset_right = 245.0
+offset_bottom = 330.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Quit")
@@ -62,16 +69,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
 text = "Play"
 metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="Button" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.036
-anchor_top = 0.325
-anchor_right = 0.405
-anchor_bottom = 0.478
-offset_left = -0.0400009
-offset_top = 77.0
-offset_right = -0.200012
-offset_bottom = 76.92
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Play")
@@ -85,16 +84,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
 text = "Settings"
 metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="Button" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.036
-anchor_top = 0.325
-anchor_right = 0.405
-anchor_bottom = 0.478
-offset_left = -0.0400009
-offset_top = 154.0
-offset_right = -0.200012
-offset_bottom = 153.92
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Settings")
@@ -108,7 +99,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

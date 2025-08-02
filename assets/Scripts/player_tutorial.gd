@@ -7,9 +7,10 @@ var jump_count = 0
 var right_count = 0
 var can_control : bool = true
 
+var play_count : int = 0 
+
 func _physics_process(delta: float) -> void:
 	if not can_control: return
-	
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://b42r2c2v0gsmy"]
+[gd_scene load_steps=9 format=4 uid="uid://b42r2c2v0gsmy"]
 
 [ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_pd383"]
-[ext_resource type="Script" uid="uid://4iox103xbmt6" path="res://assets/Scripts/player_tutorial.gd" id="1_s0en5"]
+[ext_resource type="Script" uid="uid://4iox103xbmt6" path="res://assets/Scripts/player_Tutorial.gd" id="1_s0en5"]
 [ext_resource type="Texture2D" uid="uid://halgrh4knk36" path="res://assets/Sprites/icon.svg" id="2_s0en5"]
 [ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://assets/Sprites/Tileset.png" id="3_8cnc2"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="5_8cnc2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(88.5, 111)
@@ -33,7 +34,7 @@ texture = ExtResource("3_8cnc2")
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_272bh")
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node"]
 script = ExtResource("1_pd383")
 level_id = 1
 
@@ -66,3 +67,62 @@ tile_set = SubResource("TileSet_5vw27")
 
 [node name="PlayerStart" type="Node2D" parent="."]
 position = Vector2(129, -20)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -197.0
+offset_top = -274.0
+offset_right = 548.0
+offset_bottom = 11.0
+theme_override_fonts/normal_font = ExtResource("5_8cnc2")
+theme_override_font_sizes/normal_font_size = 42
+text = "Press
+◄ ►/A D 
+keys To Move Around
+and ▲ / W to jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 531.0
+offset_top = -242.0
+offset_right = 1276.0
+offset_bottom = -4.0
+theme_override_fonts/normal_font = ExtResource("5_8cnc2")
+theme_override_font_sizes/normal_font_size = 42
+text = "Your Character will continuously 
+bounce between walls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 1561.0
+offset_top = -342.0
+offset_right = 2306.0
+offset_bottom = -104.0
+theme_override_fonts/normal_font = ExtResource("5_8cnc2")
+theme_override_font_sizes/normal_font_size = 42
+text = "Try to avoid falling down"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = 2768.0
+offset_top = -552.0
+offset_right = 3513.0
+offset_bottom = -314.0
+theme_override_fonts/normal_font = ExtResource("5_8cnc2")
+theme_override_font_sizes/normal_font_size = 42
+text = "There might be some  secrets "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+offset_left = 9352.0
+offset_top = 81.0
+offset_right = 10097.0
+offset_bottom = 319.0
+theme_override_fonts/normal_font = ExtResource("5_8cnc2")
+theme_override_font_sizes/normal_font_size = 42
+text = "Secret 2/3"
+horizontal_alignment = 1
+vertical_alignment = 1

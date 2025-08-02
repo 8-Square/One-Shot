@@ -1,3 +1,238 @@
-[gd_scene format=3 uid="uid://bvx4t5ypgmt6i"]
+[gd_scene load_steps=7 format=3 uid="uid://bvx4t5ypgmt6i"]
 
-[node name="LevelSelect" type="Node2D"]
+[ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/level_select.gd" id="1_meym1"]
+[ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_vgp2n"]
+[ext_resource type="Texture2D" uid="uid://dy5clo7x35ncu" path="res://assets/Sprites/Button/blue_pressed.png" id="3_6jfvh"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_227te"]
+[ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="5_6jfvh"]
+[ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="6_227te"]
+
+[node name="LevelSelect" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_meym1")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.396078, 0.603922, 1, 1)
+
+[node name="Tutorial" type="TextureButton" parent="CanvasLayer/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.073
+anchor_top = 0.433
+anchor_right = 0.223
+anchor_bottom = 0.7
+offset_left = 3.27999
+offset_top = 0.119995
+offset_right = -44.72
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+focus_neighbor_left = NodePath("../LevelThree")
+focus_neighbor_top = NodePath("../EscapeButton")
+focus_neighbor_right = NodePath("../LevelOne")
+focus_next = NodePath("../LevelOne")
+focus_previous = NodePath("../LevelThree")
+texture_normal = ExtResource("2_vgp2n")
+texture_pressed = ExtResource("3_6jfvh")
+texture_focused = ExtResource("3_6jfvh")
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/Tutorial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104
+anchor_top = 0.354
+anchor_right = 0.927
+anchor_bottom = 0.604
+offset_left = 0.0079999
+offset_top = 0.00799942
+offset_right = 39.504
+offset_bottom = 12.008
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_227te")
+theme_override_font_sizes/normal_font_size = 15
+text = "Tutorial"
+
+[node name="LevelOne" type="TextureButton" parent="CanvasLayer/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.433
+anchor_right = 0.462
+anchor_bottom = 0.7
+offset_left = 0.319992
+offset_top = 0.119995
+offset_right = -47.68
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+focus_neighbor_left = NodePath("../Tutorial")
+focus_neighbor_top = NodePath("../EscapeButton")
+focus_neighbor_right = NodePath("../LevelTwo")
+focus_next = NodePath("../LevelTwo")
+focus_previous = NodePath("../Tutorial")
+texture_normal = ExtResource("2_vgp2n")
+texture_pressed = ExtResource("3_6jfvh")
+texture_hover = ExtResource("3_6jfvh")
+texture_focused = ExtResource("3_6jfvh")
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelOne"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.104
+anchor_right = 0.937
+anchor_bottom = 0.885
+offset_left = 0.0239999
+offset_top = 0.0079999
+offset_right = 42.024
+offset_bottom = 37.52
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_227te")
+text = "Level
+One"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelTwo" type="TextureButton" parent="CanvasLayer/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.547
+anchor_top = 0.433
+anchor_right = 0.697
+anchor_bottom = 0.7
+offset_left = -0.0800171
+offset_top = 0.119995
+offset_right = -48.08
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+focus_neighbor_left = NodePath("../LevelOne")
+focus_neighbor_top = NodePath("../EscapeButton")
+focus_neighbor_right = NodePath("../LevelThree")
+focus_next = NodePath("../LevelThree")
+focus_previous = NodePath("../LevelOne")
+texture_normal = ExtResource("2_vgp2n")
+texture_pressed = ExtResource("3_6jfvh")
+texture_hover = ExtResource("3_6jfvh")
+texture_focused = ExtResource("3_6jfvh")
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelTwo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.094
+anchor_right = 0.875
+anchor_bottom = 0.875
+offset_top = -0.0119963
+offset_right = 36.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_227te")
+text = "Level
+Two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThree" type="TextureButton" parent="CanvasLayer/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.781
+anchor_top = 0.433
+anchor_right = 0.931
+anchor_bottom = 0.7
+offset_left = 0.159973
+offset_top = 0.119995
+offset_right = -47.84
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+focus_neighbor_left = NodePath("../LevelTwo")
+focus_neighbor_top = NodePath("../EscapeButton")
+focus_neighbor_right = NodePath("../Tutorial")
+focus_next = NodePath("../Tutorial")
+focus_previous = NodePath("../LevelTwo")
+texture_normal = ExtResource("2_vgp2n")
+texture_pressed = ExtResource("3_6jfvh")
+texture_hover = ExtResource("3_6jfvh")
+texture_focused = ExtResource("3_6jfvh")
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelThree"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.094
+anchor_right = 0.875
+anchor_bottom = 0.875
+offset_top = -0.0119963
+offset_right = 36.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_227te")
+text = "Level
+Three"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EscapeButton" type="TextureButton" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 0.133
+offset_right = 0.319992
+offset_bottom = 0.119999
+focus_neighbor_left = NodePath("../Tutorial")
+focus_neighbor_right = NodePath("../Tutorial")
+focus_neighbor_bottom = NodePath("../Tutorial")
+focus_next = NodePath("../Tutorial")
+focus_previous = NodePath("../Tutorial")
+texture_normal = ExtResource("5_6jfvh")
+texture_pressed = ExtResource("6_227te")
+texture_hover = ExtResource("6_227te")
+texture_focused = ExtResource("6_227te")
+
+[node name="Back" type="RichTextLabel" parent="CanvasLayer/ColorRect/EscapeButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 117.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_227te")
+theme_override_font_sizes/normal_font_size = 25
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/Tutorial" to="CanvasLayer" method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/LevelOne" to="CanvasLayer" method="_on_level_one_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/LevelTwo" to="CanvasLayer" method="_on_level_two_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/LevelThree" to="CanvasLayer" method="_on_level_three_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/EscapeButton" to="CanvasLayer" method="_on_escape_button_pressed"]
