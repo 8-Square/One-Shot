@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bl706iulfl48t"]
 
-[ext_resource type="Script" uid="uid://ddic66spf5113" path="res://assets/Scenes/Transition/play_to_tutorial_transition.gd" id="1_nt8j3"]
+[ext_resource type="Script" uid="uid://ddic66spf5113" path="res://assets/Scripts/Screens/level_transitions.gd" id="1_nt8j3"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_b43cl"]
 
 [sub_resource type="Animation" id="Animation_nt8j3"]
@@ -27,7 +27,7 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 1),
+"times": PackedFloat32Array(0, 0.266667, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
@@ -73,93 +73,81 @@ libraries = {
 &"": SubResource("AnimationLibrary_b43cl")
 }
 
-[node name="TutorialLable" type="RichTextLabel" parent="."]
-unique_name_in_owner = true
-visible = false
-anchors_preset = -1
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 1.002
-offset_right = -349.0
-offset_bottom = -196.72
+anchor_bottom = 1.0
 grow_horizontal = 2
-scale = Vector2(2.2, 2.2)
-theme_override_fonts/normal_font = ExtResource("2_b43cl")
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[center] Tutorial [/center]"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
-[node name="MainMenuLabel" type="RichTextLabel" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MainMenuLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.002
-offset_right = -349.0
-offset_bottom = -196.72
-grow_horizontal = 2
-scale = Vector2(2.2, 2.2)
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_b43cl")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center] Main Menu [/center]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelOneLabel" type="RichTextLabel" parent="."]
+[node name="LevelOneLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.002
-offset_right = -349.0
-offset_bottom = -196.72
-grow_horizontal = 2
-scale = Vector2(2.2, 2.2)
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_b43cl")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center] Level One [/center]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelTwoLabel" type="RichTextLabel" parent="."]
+[node name="LevelTwoLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.002
-offset_right = -349.0
-offset_bottom = -196.72
-grow_horizontal = 2
-scale = Vector2(2.2, 2.2)
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_b43cl")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center] Level Two [/center]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelSelect" type="RichTextLabel" parent="."]
+[node name="LevelSelect" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -349.0
-offset_bottom = -196.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2.2, 2.2)
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_b43cl")
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "Level Select"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialLable" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_b43cl")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center] Tutorial [/center]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1

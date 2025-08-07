@@ -1,0 +1,58 @@
+class_name TutPlayer
+extends BasePlayer
+
+
+#func _physics_process(delta: float) -> void:
+	#if not can_control: return
+	#
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
+		#jump_count += 1
+		#print("JUMPED HAS BEEN USED " + str(jump_count))
+	#elif Input.is_action_just_pressed("jump"):
+		#print("JUMP HAS BEEN USED, RESTART OR TRY WITHOUT")
+		#
+	#if not is_on_floor():
+		#velocity += get_gravity() * delta
+		#
+	#var direction := Input.get_axis("left", "right")
+	#if direction and Input.is_action_just_pressed("left"):
+		#velocity.x = direction * SPEED
+		#left_count += 1
+		#print("left HAS BEEN CLICKED " + str(left_count))
+	#elif direction and Input.is_action_just_pressed("right"):
+		#velocity.x = direction * SPEED
+		#right_count += 1
+		#####print("RIGHT HAS BEEN CLICKED " + str(right_count))
+	### IMPLEMENT THE LEFT RIGHT COUNTS 
+	#elif is_on_wall(): 
+		#velocity.x *= -1
+		#velocity.x = SPEED
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, 0)
+		#
+	#var collision_info = move_and_collide(velocity * delta, false, 0.3, false)
+#
+	#if collision_info:
+		#var direction2 = velocity.bounce(collision_info.get_normal())
+		#if is_on_floor() or is_on_wall():
+			#velocity = direction2
+		#
+	##if (Input.is_action_just_pressed("left") and left_count < 5) || (Input.is_action_just_pressed("left") and left_count < 5):
+		##left_count += 1
+	#
+	#move_and_slide()
+	#
+#
+#func handle_danger() -> void:
+	#print("Player Died!")
+	#visible = false
+	#can_control = false
+	#
+	#await get_tree().create_timer(1).timeout
+	#reset_player()
+	#
+#func reset_player() -> void:
+	#global_position = level_manager.loaded_level.level_start_pos.global_position
+	#visible = true
+	#can_control = true

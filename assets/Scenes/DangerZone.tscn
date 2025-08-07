@@ -3,4 +3,9 @@
 [ext_resource type="Script" uid="uid://c3m11w2tigdye" path="res://assets/Scripts/danger_zone.gd" id="1_pay12"]
 
 [node name="DangerZone" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+monitorable = false
 script = ExtResource("1_pay12")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

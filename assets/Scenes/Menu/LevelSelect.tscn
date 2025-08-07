@@ -1,16 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvx4t5ypgmt6i"]
+[gd_scene load_steps=9 format=3 uid="uid://bvx4t5ypgmt6i"]
 
-[ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/level_select.gd" id="1_meym1"]
-[ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_vgp2n"]
-[ext_resource type="Texture2D" uid="uid://dy5clo7x35ncu" path="res://assets/Sprites/Button/blue_pressed.png" id="3_6jfvh"]
-[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_227te"]
-[ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="5_6jfvh"]
-[ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="6_227te"]
+[ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/Menu/level_select.gd" id="1_4juup"]
+[ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_pq36x"]
+[ext_resource type="Texture2D" uid="uid://dy5clo7x35ncu" path="res://assets/Sprites/Button/blue_pressed.png" id="3_b8dml"]
+[ext_resource type="Texture2D" uid="uid://d4j70uffu0gxu" path="res://assets/Sprites/Button/green_pressed.png" id="4_hyy3w"]
+[ext_resource type="Texture2D" uid="uid://x1ihqgxq21f1" path="res://assets/Sprites/Button/green.png" id="5_tgpxl"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="6_46d1u"]
+[ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="7_01bmn"]
+[ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="8_fn61j"]
 
 [node name="LevelSelect" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("1_meym1")
+script = ExtResource("1_4juup")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -22,7 +24,7 @@ offset_right = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.396078, 0.603922, 1, 1)
+color = Color(0.372017, 0.587277, 0.999999, 1)
 
 [node name="Tutorial" type="TextureButton" parent="CanvasLayer/ColorRect"]
 unique_name_in_owner = true
@@ -44,9 +46,10 @@ focus_neighbor_top = NodePath("../EscapeButton")
 focus_neighbor_right = NodePath("../LevelOne")
 focus_next = NodePath("../LevelOne")
 focus_previous = NodePath("../LevelThree")
-texture_normal = ExtResource("2_vgp2n")
-texture_pressed = ExtResource("3_6jfvh")
-texture_focused = ExtResource("3_6jfvh")
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_focused = ExtResource("5_tgpxl")
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/Tutorial"]
 layout_mode = 1
@@ -63,7 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_227te")
+theme_override_fonts/normal_font = ExtResource("6_46d1u")
 theme_override_font_sizes/normal_font_size = 15
 text = "Tutorial"
 
@@ -87,10 +90,10 @@ focus_neighbor_top = NodePath("../EscapeButton")
 focus_neighbor_right = NodePath("../LevelTwo")
 focus_next = NodePath("../LevelTwo")
 focus_previous = NodePath("../Tutorial")
-texture_normal = ExtResource("2_vgp2n")
-texture_pressed = ExtResource("3_6jfvh")
-texture_hover = ExtResource("3_6jfvh")
-texture_focused = ExtResource("3_6jfvh")
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_focused = ExtResource("5_tgpxl")
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelOne"]
 layout_mode = 1
@@ -105,7 +108,7 @@ offset_right = 42.024
 offset_bottom = 37.52
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_227te")
+theme_override_fonts/normal_font = ExtResource("6_46d1u")
 text = "Level
 One"
 horizontal_alignment = 1
@@ -131,10 +134,10 @@ focus_neighbor_top = NodePath("../EscapeButton")
 focus_neighbor_right = NodePath("../LevelThree")
 focus_next = NodePath("../LevelThree")
 focus_previous = NodePath("../LevelOne")
-texture_normal = ExtResource("2_vgp2n")
-texture_pressed = ExtResource("3_6jfvh")
-texture_hover = ExtResource("3_6jfvh")
-texture_focused = ExtResource("3_6jfvh")
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_focused = ExtResource("5_tgpxl")
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelTwo"]
 layout_mode = 1
@@ -150,7 +153,7 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_227te")
+theme_override_fonts/normal_font = ExtResource("6_46d1u")
 text = "Level
 Two"
 horizontal_alignment = 1
@@ -176,10 +179,10 @@ focus_neighbor_top = NodePath("../EscapeButton")
 focus_neighbor_right = NodePath("../Tutorial")
 focus_next = NodePath("../Tutorial")
 focus_previous = NodePath("../LevelTwo")
-texture_normal = ExtResource("2_vgp2n")
-texture_pressed = ExtResource("3_6jfvh")
-texture_hover = ExtResource("3_6jfvh")
-texture_focused = ExtResource("3_6jfvh")
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("4_hyy3w")
+texture_hover = ExtResource("5_tgpxl")
+texture_focused = ExtResource("5_tgpxl")
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelThree"]
 layout_mode = 1
@@ -195,7 +198,7 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_227te")
+theme_override_fonts/normal_font = ExtResource("6_46d1u")
 text = "Level
 Three"
 horizontal_alignment = 1
@@ -213,10 +216,10 @@ focus_neighbor_right = NodePath("../Tutorial")
 focus_neighbor_bottom = NodePath("../Tutorial")
 focus_next = NodePath("../Tutorial")
 focus_previous = NodePath("../Tutorial")
-texture_normal = ExtResource("5_6jfvh")
-texture_pressed = ExtResource("6_227te")
-texture_hover = ExtResource("6_227te")
-texture_focused = ExtResource("6_227te")
+texture_normal = ExtResource("7_01bmn")
+texture_pressed = ExtResource("8_fn61j")
+texture_hover = ExtResource("8_fn61j")
+texture_focused = ExtResource("8_fn61j")
 
 [node name="Back" type="RichTextLabel" parent="CanvasLayer/ColorRect/EscapeButton"]
 layout_mode = 0
@@ -225,7 +228,7 @@ offset_top = 3.0
 offset_right = 117.0
 offset_bottom = 43.0
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_227te")
+theme_override_fonts/normal_font = ExtResource("6_46d1u")
 theme_override_font_sizes/normal_font_size = 25
 text = "Back"
 horizontal_alignment = 1
@@ -234,5 +237,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="CanvasLayer/ColorRect/Tutorial" to="CanvasLayer" method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/LevelOne" to="CanvasLayer" method="_on_level_one_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/LevelTwo" to="CanvasLayer" method="_on_level_two_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/ColorRect/LevelThree" to="CanvasLayer" method="_on_level_three_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/ColorRect/LevelThree" to="CanvasLayer" method="_on_level_three_focus_exited"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/LevelThree" to="CanvasLayer" method="_on_level_three_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/EscapeButton" to="CanvasLayer" method="_on_escape_button_pressed"]

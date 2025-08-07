@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-const back = ("res://assets/Scenes/MainMenu.tscn")
-const levelselect = ("res://assets/Scenes/LevelSelect.tscn")
+const back = ("res://assets/Scenes/Menu/MainMenu.tscn")
+const levelselect = ("res://assets/Scenes/Menu/LevelSelect.tscn")
 const tutorial = ("res://assets/Scenes/Levels/Tutorial.tscn")
 const levelone = ("res://assets/Scenes/Levels/LevelOne.tscn")
 
@@ -11,24 +11,24 @@ func change_scene(scene_path):
 			%AnimationPlayer.play("fade_in")
 			%MainMenuLabel.show()
 			await %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file("res://assets/Scenes/MainMenu.tscn")
+			get_tree().change_scene_to_file(back)
 			%AnimationPlayer.play("fade_out")
 			await %AnimationPlayer.animation_finished 
-			%LevelSelect.hide()
+			%MainMenuLabel.hide()
 		levelselect:
-			%AnimationPlayer.play("fade_in")
+			%AnimationPlayer.play("fade_in", -1, 1.4)
 			%LevelSelect.show()
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file(levelselect)
-			%AnimationPlayer.play("fade_out")
+			%AnimationPlayer.play("fade_out", -1, 1)
 			await %AnimationPlayer.animation_finished 
 			%LevelSelect.hide()
 		tutorial:
-			%AnimationPlayer.play("fade_in")
+			%AnimationPlayer.play("fade_in", -1, 1)
 			%TutorialLable.show()
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file(tutorial)
-			%AnimationPlayer.play("fade_out")
+			%AnimationPlayer.play("fade_out", -1, 1.2)
 			await %AnimationPlayer.animation_finished 
 			%TutorialLable.hide()
 		levelone:
@@ -36,6 +36,6 @@ func change_scene(scene_path):
 			%LevelOneLabel.show()
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file(levelone)
-			%AnimationPlayer.play("fade_out")
+			%AnimationPlayer.play("fade_out", -1, 1.2)
 			await %AnimationPlayer.animation_finished 
 			%LevelOneLabel.hide()
