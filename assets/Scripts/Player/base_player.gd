@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var max_right_count = 100
 @export var max_left_count = 100
 
+@onready var animated_sprite = %AnimatedSprite2D
 var left_count = 0
 var jump_count = 0
 var right_count = 0

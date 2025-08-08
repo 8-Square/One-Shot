@@ -8,6 +8,7 @@ var leveltwo = ("res://assets/Scenes/Levels/LevelTwo.tscn")
 
 func _init() -> void:
 	level_start_pos
+	animated_sprite
 
 func _physics_process(delta: float) -> void:
 	if not can_control:
@@ -25,15 +26,31 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	# DIRECTIONAL MOVEMENT
+# ANIMATION FOR MOVEMENT
+	if velocity.x != 0:
+		animated_sprite.play("moving")
+		# MAKE THE MOVEMENT ANIMATION HERE
+	else:
+		animated_sprite.play("default")
+
+# DIRECTIONAL MOVEMENT & ANIMATION LEFT RIGHT
 	var direction := Input.get_axis("left", "right")
 	if direction and Input.is_action_just_pressed("left") and left_count < max_left_count:
 		velocity.x = direction * SPEED
+# ANIMATION FLIP
+		if direction < 0:
+			animated_sprite.flip_h = true
+		else:
+			animated_sprite.flip_h = false
 		left_count += 1
 		print("left HAS BEEN CLICKED " + str(left_count))
-
+# RIGHT MOVEMENT
 	elif direction and Input.is_action_just_pressed("right") and right_count < max_right_count:
 		velocity.x = direction * SPEED
+		if direction > 0:
+			animated_sprite.flip_h = false
+		else:
+			animated_sprite.flip_h = true
 		right_count += 1
 		print("RIGHT HAS BEEN CLICKED " + str(right_count))
 	# IMPLEMENT THE LEFT RIGHT COUNTS 
