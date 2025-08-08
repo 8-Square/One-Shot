@@ -14,6 +14,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
+	# JUMP
 	if Input.is_action_just_pressed("jump") and is_on_floor() and jump_count < max_jump_count:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
@@ -23,6 +24,8 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	# DIRECTIONAL MOVEMENT
 	var direction := Input.get_axis("left", "right")
 	if direction and Input.is_action_just_pressed("left") and left_count < max_left_count:
 		velocity.x = direction * SPEED
@@ -45,8 +48,9 @@ func _physics_process(delta: float) -> void:
 		var direction2 = velocity.bounce(collision_info.get_normal())
 		if is_on_floor() or is_on_wall():
 			velocity = direction2
-			
-	#if (Input.is_action_just_pressed("left") and left_count < 5) || (Input.is_action_just_pressed("left") and left_count < 5):
-		#left_count += 1
+	
+	if Input.is_action_just_pressed("down") and is_on_floor():
+		position.y += 1
+	
 	move_and_slide()
 	

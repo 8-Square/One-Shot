@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_pressed("jump"):
 		print("JUMP HAS BEEN USED, RESTART OR TRY WITHOUT")
 		
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
@@ -60,6 +61,11 @@ func _physics_process(delta: float) -> void:
 		
 	#if (Input.is_action_just_pressed("left") and left_count < 5) || (Input.is_action_just_pressed("left") and left_count < 5):
 		#left_count += 1
+	if Input.is_action_just_pressed("down") and is_on_floor():
+		set_collision_mask_value(5, false)
+		await get_tree().create_timer(0.2)
+		set_collision_layer_value(5, true)
+	
 	
 	move_and_slide()
 

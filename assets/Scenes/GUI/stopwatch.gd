@@ -17,7 +17,6 @@ func _input(event):
 
 func reset():
 	time = 0.0
-	stopped = false
 	game_started = false
 
 func start():
