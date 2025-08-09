@@ -1,29 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://68yveik7dd00"]
+[gd_scene load_steps=5 format=3 uid="uid://68yveik7dd00"]
 
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/main_menu.gd" id="1_u3vdq"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_5q0rw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udfde"]
-bg_color = Color(0.843137, 0.505882, 0.207843, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.590098, 0.836652, 0.987892, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frbox"]
-bg_color = Color(0.84498, 0.505565, 0.206015, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.588235, 0.835294, 0.988235, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6pbl"]
-bg_color = Color(0.562635, 0.361722, 0.129884, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng7ja"]
-bg_color = Color(0.403708, 0.601579, 0.911177, 1)
+[ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_sndc1"]
+[ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_hlo52"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -47,61 +27,87 @@ color = Color(0.372549, 0.588235, 1, 1)
 layout_mode = 0
 offset_left = 99.0
 offset_top = 291.0
-offset_right = 312.0
+offset_right = 280.0
 offset_bottom = 485.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Play" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Settings")
 focus_next = NodePath("../Settings")
 focus_previous = NodePath("../Quit")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/focus = SubResource("StyleBoxFlat_udfde")
-theme_override_styles/hover = SubResource("StyleBoxFlat_frbox")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_t6pbl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
-text = "Play"
-metadata/_edit_use_anchors_ = true
+texture_normal = ExtResource("2_sndc1")
+texture_focused = ExtResource("3_hlo52")
+stretch_mode = 0
 
-[node name="Settings" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="PlayText" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_5q0rw")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Play")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/focus = SubResource("StyleBoxFlat_udfde")
-theme_override_styles/hover = SubResource("StyleBoxFlat_frbox")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
-text = "Settings"
-metadata/_edit_use_anchors_ = true
+texture_normal = ExtResource("2_sndc1")
+texture_focused = ExtResource("3_hlo52")
+stretch_mode = 0
 
-[node name="Quit" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="SettingsText" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_5q0rw")
+theme_override_font_sizes/normal_font_size = 25
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Settings")
 focus_neighbor_bottom = NodePath("../Play")
 focus_next = NodePath("../Play")
 focus_previous = NodePath("../Settings")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/focus = SubResource("StyleBoxFlat_udfde")
-theme_override_styles/hover = SubResource("StyleBoxFlat_frbox")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ng7ja")
+texture_normal = ExtResource("2_sndc1")
+texture_focused = ExtResource("3_hlo52")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_5q0rw")
+theme_override_font_sizes/normal_font_size = 25
 text = "Quit"
-metadata/_edit_use_anchors_ = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="ColorRect"]
-modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 layout_mode = 2
 offset_left = 383.0

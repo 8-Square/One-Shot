@@ -24,11 +24,12 @@ func change_scene(scene_path):
 			await %AnimationPlayer.animation_finished 
 			%LevelSelect.hide()
 		tutorial:
-			%AnimationPlayer.play("fade_in", -1, 1)
+			%AnimationPlayer.play("fade_in")
 			%TutorialLable.show()
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file(tutorial)
-			%AnimationPlayer.play("fade_out", -1, 1.2)
+			Stopwatch.reset()
+			%AnimationPlayer.play("fade_out")
 			await %AnimationPlayer.animation_finished 
 			%TutorialLable.hide()
 		levelone:
@@ -36,6 +37,7 @@ func change_scene(scene_path):
 			%LevelOneLabel.show()
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file(levelone)
-			%AnimationPlayer.play("fade_out", -1, 1.2)
+			Stopwatch.reset()
+			%AnimationPlayer.play("fade_out")
 			await %AnimationPlayer.animation_finished 
 			%LevelOneLabel.hide()

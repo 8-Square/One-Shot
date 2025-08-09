@@ -66,7 +66,16 @@ func _physics_process(delta: float) -> void:
 		set_collision_mask_value(5, false)
 		await get_tree().create_timer(0.2)
 		set_collision_layer_value(5, true)
-	
+## VELOCITY FRR 
+	if velocity.x != 0:
+		animated_sprite.play("moving")
+		if direction < 0:
+			animated_sprite.flip_h = true
+		elif direction > 0:
+			animated_sprite.flip_h = false
+	else:
+		await get_tree().create_timer(0.5)
+		animated_sprite.play("default")
 	
 	move_and_slide()
 
@@ -85,3 +94,4 @@ func reset_player() -> void:
 	visible = true
 	can_control = true
 	Stopwatch.reset()
+	animated_sprite.play("default")

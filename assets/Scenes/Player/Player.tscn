@@ -166,7 +166,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"bounce",
-"speed": 15.0
+"speed": 22.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -239,7 +239,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i6m0l")
 }],
-"loop": false,
+"loop": true,
 "name": &"moving",
 "speed": 14.0
 }]
@@ -259,7 +259,7 @@ unique_name_in_owner = true
 position = Vector2(-49, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wnwb4")
-animation = &"bounce"
+autoplay = "default"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

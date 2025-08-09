@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvx4t5ypgmt6i"]
+[gd_scene load_steps=10 format=3 uid="uid://bvx4t5ypgmt6i"]
 
 [ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/Menu/level_select.gd" id="1_4juup"]
 [ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_pq36x"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="6_46d1u"]
 [ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="7_01bmn"]
 [ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="8_fn61j"]
+[ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_jwpom"]
 
 [node name="LevelSelect" type="Node"]
 
@@ -219,7 +220,7 @@ focus_previous = NodePath("../Tutorial")
 texture_normal = ExtResource("7_01bmn")
 texture_pressed = ExtResource("8_fn61j")
 texture_hover = ExtResource("8_fn61j")
-texture_focused = ExtResource("8_fn61j")
+texture_focused = ExtResource("9_jwpom")
 
 [node name="Back" type="RichTextLabel" parent="CanvasLayer/ColorRect/EscapeButton"]
 layout_mode = 0
