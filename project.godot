@@ -20,7 +20,7 @@ run/layer_3="Danger"
 
 to_tutorial_transition="*res://assets/Scenes/Screens/PlayToTutorialTransition.tscn"
 Stopwatch="*res://assets/Scenes/GUI/stopwatch.gd"
-LevelComplete="*res://assets/Scripts/Menu/level_complete.gd"
+LevelComplete="*res://assets/Scenes/Menu/LevelComplete.tscn"
 
 [display]
 

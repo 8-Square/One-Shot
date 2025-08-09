@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhbbeq4o8cx4c"]
 
-[ext_resource type="Script" uid="uid://c3m2hpfx0bo5o" path="res://assets/Scripts/Menu/level_complete.gd" id="1_m3srs"]
-[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="1_wmn80"]
+[ext_resource type="Script" uid="uid://c3m2hpfx0bo5o" path="res://assets/Scripts/Menu/level_complete.gd" id="1_0w1l2"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_8fffl"]
 
 [sub_resource type="Animation" id="Animation_m3srs"]
 length = 0.001
@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="LevelComplete" type="CanvasLayer"]
-script = ExtResource("1_m3srs")
+script = ExtResource("1_0w1l2")
 
 [node name="FinalTime" type="Label" parent="."]
 visible = false
@@ -56,13 +56,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_ip6mi")
 }
-autoplay = "finish_level"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -111,7 +110,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource("1_wmn80")
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
 theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "Level One Complete"
@@ -130,7 +129,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource("1_wmn80")
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "Level Two Complete"
@@ -149,7 +148,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource("1_wmn80")
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "Level Three Complete"

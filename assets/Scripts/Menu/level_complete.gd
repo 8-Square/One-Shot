@@ -3,12 +3,9 @@ extends CanvasLayer
 
 const tutorial = ("res://assets/Scenes/Levels/Tutorial.tscn")
 const levelone = ("res://assets/Scenes/Levels/LevelOne.tscn")
-@onready var finaltime = ("FinalTime")
-@onready var anim = ("AnimationPlayer")
-
-func _ready() -> void:
-	anim
-	finaltime
+@onready var finaltime : Label = $FinalTime
+func _ready():
+	pass
 
 func display_final_time():
 	var time_string = Stopwatch.time_to_string()
@@ -16,15 +13,26 @@ func display_final_time():
 
 func level_complete(level_no):
 	match level_no:
+		"res://assets/Scenes/Levels/Tutorial.tscn":
+			print("WORIJIFJOMNG")
+			$AnimationPlayer.play("finish_level")
+			
 		"res://assets/Scenes/Levels/LevelOne.tscn":
-			show()
-			anim.play("finish_level")
-		"res://assets/Scenes/Levels/Tutorial.tscn": 
-			show()
-			anim.play("finish_level")
-			await anim.animation_finished
-			get_tree().create_timer(0.5)
+			print("WORKING") 
+			$AnimationPlayer.play("finish_level")
+			await $AnimationPlayer.animation_finished
+			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
+			$AnimationPlayer.pause()
 			%LOneComplete.show()
+			finaltime.show()
+			
+		"res://assets/Scenes/Levels/LevelOne.tscn":
+			print("LEVEL TWO WORKING")
+			$AnimationPlayer.play("finish_level")
+			await $AnimationPlayer.animation_finished
+			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
+			$AnimationPlayer.pause()
+			%LTwoComplete.show()
 			finaltime.show()
 
 			
