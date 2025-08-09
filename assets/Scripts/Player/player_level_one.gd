@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		elif direction > 0:
 			animated_sprite.flip_h = false
 	else:
-		await get_tree().create_timer(0.5)
+		get_tree().create_timer(0.5)
 		animated_sprite.play("default")
 			
 			

@@ -41,3 +41,6 @@ func change_scene(scene_path):
 			%AnimationPlayer.play("fade_out")
 			await %AnimationPlayer.animation_finished 
 			%LevelOneLabel.hide()
+
+
+			

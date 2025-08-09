@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqt4oh0o2bc32"
-path="res://.godot/imported/Purple Portal Sprite Sheet Flipped.png-d7f43af3c83223e9c34eb0c332468df9.ctex"
+uid="uid://b6ko30d7aoxle"
+path="res://.godot/imported/Green Portal Sprite Sheet.png-dcb2c7224946f9bf185d806c5490006b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Purple Portal Sprite Sheet Flipped.png"
-dest_files=["res://.godot/imported/Purple Portal Sprite Sheet Flipped.png-d7f43af3c83223e9c34eb0c332468df9.ctex"]
+source_file="res://assets/Sprites/Portals/Green Portal Sprite Sheet.png"
+dest_files=["res://.godot/imported/Green Portal Sprite Sheet.png-dcb2c7224946f9bf185d806c5490006b.ctex"]
 
 [params]
 

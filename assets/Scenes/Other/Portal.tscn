@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=3 uid="uid://bw5dirs1wwke2"]
 
-[ext_resource type="Texture2D" uid="uid://cqt4oh0o2bc32" path="res://assets/Sprites/Purple Portal Sprite Sheet Flipped.png" id="1_daalp"]
+[ext_resource type="Texture2D" uid="uid://cqt4oh0o2bc32" path="res://assets/Sprites/Portals/Purple Portal Sprite Sheet Flipped.png" id="1_daalp"]
 [ext_resource type="Script" uid="uid://b5dhcwu6sdy4o" path="res://assets/Scripts/Other/portal.gd" id="1_ksj4x"]
-[ext_resource type="Texture2D" uid="uid://bwpo7115ddp7o" path="res://assets/Sprites/Purple Portal Sprite Sheet.png" id="2_pdtr8"]
+[ext_resource type="Texture2D" uid="uid://bwpo7115ddp7o" path="res://assets/Sprites/Portals/Purple Portal Sprite Sheet.png" id="2_pdtr8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdtr8"]
 atlas = ExtResource("1_daalp")
