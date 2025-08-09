@@ -1,6 +1,5 @@
-[gd_scene load_steps=21 format=4 uid="uid://b42r2c2v0gsmy"]
+[gd_scene load_steps=22 format=4 uid="uid://b42r2c2v0gsmy"]
 
-[ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_pd383"]
 [ext_resource type="Script" uid="uid://4iox103xbmt6" path="res://assets/Scripts/Player/player_Tutorial.gd" id="1_s0en5"]
 [ext_resource type="PackedScene" uid="uid://byg1xe2t1e15k" path="res://assets/Scenes/Player/Player.tscn" id="2_8cnc2"]
 [ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://assets/Sprites/Tilesets/BasicPlaceholder.png" id="3_8cnc2"]
@@ -9,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="5_8cnc2"]
 [ext_resource type="Texture2D" uid="uid://dlvvj8luyyylx" path="res://assets/Sprites/Tilesets/platforms.png" id="7_t0uan"]
 [ext_resource type="PackedScene" uid="uid://bylt4xh12pwlt" path="res://assets/Scenes/DangerZone.tscn" id="8_t0uan"]
+[ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/EndPortal.tscn" id="9_e70cn"]
+[ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="9_t0uan"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e70cn"]
 texture = ExtResource("7_t0uan")
@@ -653,7 +654,6 @@ size = Vector2(1065.71, 47.4286)
 size = Vector2(753.5, 47.4286)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_pd383")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("2_8cnc2")]
 position = Vector2(167, 74)
@@ -759,3 +759,12 @@ theme_override_font_sizes/normal_font_size = 42
 text = "Secret 2/3"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_t0uan")]
+offset_left = 257.0
+offset_top = 116.0
+offset_right = 257.0
+offset_bottom = 116.0
+
+[node name="EndPortal" parent="." instance=ExtResource("9_e70cn")]
+position = Vector2(3184, -326)

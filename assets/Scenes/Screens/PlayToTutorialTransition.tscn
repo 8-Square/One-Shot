@@ -184,6 +184,7 @@ vertical_alignment = 1
 
 [node name="LOneComplete" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_b43cl")
@@ -222,6 +223,7 @@ vertical_alignment = 1
 
 [node name="Timer" type="RichTextLabel" parent="MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_b43cl")
