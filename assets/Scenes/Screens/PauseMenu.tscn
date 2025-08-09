@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dipfnur3mj433"]
+[gd_scene load_steps=3 format=3 uid="uid://dipfnur3mj433"]
 
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="1_wwqwh"]
+[ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="2_2efyi"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -19,9 +20,12 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="Resume" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 texture_normal = ExtResource("1_wwqwh")
+texture_focused = ExtResource("2_2efyi")
 
 [node name="Back" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_wwqwh")
+texture_focused = ExtResource("2_2efyi")

@@ -7,8 +7,7 @@ var leveltwo = ("res://assets/Scenes/Levels/LevelTwo.tscn")
 
 
 func _init() -> void:
-	level_start_pos
-	animated_sprite
+	pass
 
 func _physics_process(delta: float) -> void:
 	if not can_control:
