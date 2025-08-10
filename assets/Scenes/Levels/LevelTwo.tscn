@@ -299,7 +299,6 @@ tile_set = SubResource("TileSet_rulir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
 position = Vector2(-493.714, 180.285)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cgvnm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
