@@ -9,6 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		Stopwatch.stop()
 		body.velocity = Vector2.ZERO
 		body.can_control = false
+		$AudioStreamPlayer2D.play()
 		var current_path = get_tree().current_scene.scene_file_path
 		LevelComplete.level_complete(current_path)
 		

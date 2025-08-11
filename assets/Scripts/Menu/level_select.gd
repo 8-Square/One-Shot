@@ -16,20 +16,26 @@ func _ready() -> void:
 
 
 func _on_escape_button_pressed() -> void:
+	$UISelect.play()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.back)
 
 func _on_tutorial_pressed() -> void:
+	$UISelect.play()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.tutorial)
 
 func _on_level_one_pressed() -> void:
+	$UISelect.play()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelone)
 
 func _on_level_two_pressed() -> void:
+	$UISelect.play()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.leveltwo)
 
 func _on_level_three_pressed() -> void:
-	pass # Replace with function body.
+	$UISelect.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)

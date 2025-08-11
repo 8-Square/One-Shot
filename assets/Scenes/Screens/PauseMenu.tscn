@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dipfnur3mj433"]
+[gd_scene load_steps=5 format=3 uid="uid://dipfnur3mj433"]
 
 [ext_resource type="Script" uid="uid://dg4vum8u35hnp" path="res://assets/Scripts/Screens/pause_menu.gd" id="1_8fajh"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="1_wwqwh"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="2_2efyi"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_ixg3b"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -17,6 +18,7 @@ script = ExtResource("1_8fajh")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,12 +52,42 @@ texture_normal = ExtResource("1_wwqwh")
 texture_focused = ExtResource("2_2efyi")
 stretch_mode = 3
 
+[node name="PlayText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Resume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_ixg3b")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Restart" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 texture_normal = ExtResource("1_wwqwh")
 texture_focused = ExtResource("2_2efyi")
 stretch_mode = 3
+
+[node name="PlayText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Restart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_ixg3b")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 z_index = 3
@@ -64,6 +96,20 @@ size_flags_vertical = 0
 texture_normal = ExtResource("1_wwqwh")
 texture_focused = ExtResource("2_2efyi")
 stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_ixg3b")
+theme_override_font_sizes/normal_font_size = 23
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

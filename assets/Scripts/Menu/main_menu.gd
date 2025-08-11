@@ -11,11 +11,13 @@ func _process(_delta: float) -> void:
 
 func _on_play_pressed() -> void:
 	hide()
+	$UISelect.play()
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelselect)
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	$UISelect.play()
 
 func _on_quit_pressed() -> void:
+	$QuitSound.play()
 	await get_tree().create_timer(0.3).timeout
 	get_tree().quit()

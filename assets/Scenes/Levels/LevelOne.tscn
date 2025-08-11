@@ -5286,21 +5286,8 @@ visible = false
 
 [node name="LevelComplete" parent="CanvasLayer" instance=ExtResource("4_jokw5")]
 
-[node name="EndPortal" parent="." instance=ExtResource("2_818du")]
-z_index = 1
-position = Vector2(9274, -281)
-
-[node name="EndPortal2" parent="." instance=ExtResource("2_818du")]
-z_index = 1
-position = Vector2(-54, -260)
-
-[node name="AnimatableBody2D" parent="EndPortal2" index="0"]
-position = Vector2(-9503, -242)
-animation = &"default"
-frame_progress = 0.0
-
 [node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("1_jf2q3")]
-position = Vector2(120, 289)
+position = Vector2(-8442, -546)
 script = ExtResource("1_5ul2i")
 level_start_pos = NodePath("../PlayerStart")
 
@@ -5400,5 +5387,16 @@ vertical_alignment = 1
 [node name="PlayerStart" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(227, 217)
+
+[node name="EndPortal" parent="." instance=ExtResource("2_818du")]
+position = Vector2(9221, -288)
+
+[node name="EndPortal2" parent="." instance=ExtResource("2_818du")]
+position = Vector2(-9639, -517)
+
+[node name="AnimatableBody2D" parent="EndPortal2" index="0"]
+position = Vector2(0, 12.9999)
+animation = &"default"
+frame_progress = 0.0
 
 [editable path="EndPortal2"]

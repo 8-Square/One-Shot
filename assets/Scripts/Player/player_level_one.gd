@@ -15,13 +15,13 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 # JUMP
-	if Input.is_action_just_pressed("jump") and is_on_floor() and jump_count < max_jump_count:
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		jump_count += 1
 		print("JUMPED HAS BEEN USED " + str(jump_count))
 	elif Input.is_action_just_pressed("jump") and jump_count >= max_jump_count:
 		print("JUMP HAS BEEN USED, RESTART OR TRY WITHOUT")
 	
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	
 # DIRECTIONAL MOVEMENT & ANIMATION LEFT RIGHT
 	var direction := Input.get_axis("left", "right")
-	if direction and Input.is_action_just_pressed("left") and left_count < max_left_count:
+	if direction and Input.is_action_just_pressed("left"):
 		velocity.x = direction * SPEED
 # ANIMATION FLIP
 		left_count += 1
@@ -47,16 +47,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, 0)
 	
 # ANIMATION TYPE SHI
-	if velocity.x != 0:
-		animated_sprite.play("moving")
-		if direction < 0:
-			animated_sprite.flip_h = true
-		elif direction > 0:
-			animated_sprite.flip_h = false
+	if is_on_floor():
+		if velocity.x != 0:
+			animated_sprite.play("moving")
+			if direction < 0:
+				animated_sprite.flip_h = true
+			elif direction > 0:
+				animated_sprite.flip_h = false
+	elif is_on_floor() and is_on_wall():
+		animated_sprite.play("bounce")
 	else:
-		get_tree().create_timer(0.5)
-		animated_sprite.play("default")
-			
+		if velocity.y < 0:
+			animated_sprite.play("jump")
+		else:
+			animated_sprite.play("fall")
 			
 # COLLISIONN
 	var collision_info = move_and_collide(velocity * delta, false, 0.3, false)

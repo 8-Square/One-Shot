@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
 		print("JUMPED HAS BEEN USED " + str(jump_count))
@@ -67,14 +67,21 @@ func _physics_process(delta: float) -> void:
 		get_tree().create_timer(0.2)
 		set_collision_layer_value(5, true)
 ## VELOCITY FRR 
-	if velocity.x != 0:
-		animated_sprite.play("moving")
-		if direction < 0:
-			animated_sprite.flip_h = true
-		elif direction > 0:
-			animated_sprite.flip_h = false
+	if is_on_floor():
+		if velocity.x != 0:
+			animated_sprite.play("moving")
+			if direction < 0:
+				animated_sprite.flip_h = true
+			elif direction > 0:
+				animated_sprite.flip_h = false
+	elif is_on_wall():
+		animated_sprite.play("bounce")
 	else:
-		get_tree().create_timer(0.5)
+		if velocity.y < 0:
+			animated_sprite.play("jump")
+		else:
+			animated_sprite.play("fall")
+		get_tree().create_timer(0.4)
 		animated_sprite.play("default")
 	
 	move_and_slide()

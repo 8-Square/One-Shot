@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://68yveik7dd00"]
+[gd_scene load_steps=7 format=3 uid="uid://68yveik7dd00"]
 
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/main_menu.gd" id="1_u3vdq"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_5q0rw"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_sndc1"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_hlo52"]
+[ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/somersaults-edm-ost-track-176960.mp3" id="5_mlyfy"]
+[ext_resource type="AudioStream" uid="uid://dh4ijjkxxryq7" path="res://assets/Music/789464__harrisonlace__mystic_ui_selection.wav" id="6_orvih"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,7 +23,7 @@ offset_right = 698.0
 offset_bottom = 495.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.490196, 0.647059, 0.901961, 1)
+color = Color(0.372549, 0.588235, 1, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 0
@@ -117,6 +119,17 @@ offset_bottom = 274.0
 theme_override_fonts/font = ExtResource("2_5q0rw")
 theme_override_font_sizes/font_size = 50
 text = "ONE SHOT"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mlyfy")
+volume_db = -0.7
+autoplay = true
+
+[node name="UISelect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_orvih")
+
+[node name="QuitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_orvih")
 
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
