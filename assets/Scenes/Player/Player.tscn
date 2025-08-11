@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://byg1xe2t1e15k"]
+[gd_scene load_steps=37 format=3 uid="uid://byg1xe2t1e15k"]
 
 [ext_resource type="Script" uid="uid://jvneo4umsef2" path="res://assets/Scripts/Player/base_player.gd" id="1_lnf63"]
 [ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Player/slime_bounce.png" id="2_5qdut"]
+[ext_resource type="AudioStream" uid="uid://daiiom1ijtv5" path="res://assets/Music/Controls/Jump-Please.mp3" id="3_5qdut"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnf63"]
 atlas = ExtResource("2_5qdut")
@@ -165,7 +166,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"bounce",
-"speed": 20.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -196,7 +197,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"fall",
-"speed": 14.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -219,7 +220,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 14.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +264,7 @@ unique_name_in_owner = true
 position = Vector2(-51, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wnwb4")
-animation = &"fall"
+animation = &"bounce"
 autoplay = "default"
 centered = false
 
@@ -277,3 +278,6 @@ light_mask = 3
 position = Vector2(-3, 2.00001)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5qdut")

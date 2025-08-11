@@ -14,9 +14,11 @@ func pause_menu():
 	get_tree().paused = paused
 	pause_menu_scene.visible = paused
 	if paused:
+		$AudioStreamPlayer.stop()
 		$CanvasLayer/PauseMenu/CanvasLayer/ColorRect.show()
 		$CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/Resume	.grab_focus()
 	else:
+		$AudioStreamPlayer.play()
 		$CanvasLayer/PauseMenu/CanvasLayer/ColorRect.hide()
 	#if pause_menu() && Input.is_action_just_pressed("pause"):
 		#pause_menu()

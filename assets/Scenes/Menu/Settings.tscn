@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjptigt865ymr"]
+
+[ext_resource type="Script" uid="uid://dspps1ifx106u" path="res://assets/Scripts/Menu/settings.gd" id="1_6df12"]
+[ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="2_6luba"]
+[ext_resource type="LabelSettings" uid="uid://bc0ok6wpep447" path="res://assets/Scenes/Menu/new_label_settings.tres" id="2_arbsy"]
+[ext_resource type="Script" uid="uid://s1fpg2t0r50m" path="res://assets/Scripts/Menu/audio_options.gd" id="2_xp4jg"]
+[ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_arbsy"]
+[ext_resource type="PackedScene" uid="uid://hoskdmobh4sa" path="res://assets/Scenes/Menu/volume_slider.tscn" id="5_7fwda"]
+[ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="6_lfsvt"]
+[ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="7_70ccf"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6df12")
+
+[node name="AudioOptions" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+script = ExtResource("2_xp4jg")
+
+[node name="VolumeText" type="Label" parent="AudioOptions"]
+layout_mode = 2
+offset_left = 49.0
+offset_top = 54.0
+offset_right = 157.0
+offset_bottom = 87.0
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 26
+text = "Music"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 82.0
+offset_right = 576.0
+offset_bottom = 342.0
+
+[node name="VolumeText2" type="Label" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+label_settings = ExtResource("2_arbsy")
+
+[node name="Master" parent="AudioOptions/VBoxContainer" instance=ExtResource("5_7fwda")]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Music")
+step = 0.05
+bus_name = "Master"
+
+[node name="VolumeText3" type="Label" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+text = "Music"
+label_settings = ExtResource("2_arbsy")
+
+[node name="Music" parent="AudioOptions/VBoxContainer" instance=ExtResource("5_7fwda")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Master")
+focus_neighbor_bottom = NodePath("../SFX")
+step = 0.05
+bus_name = "Music"
+
+[node name="VolumeText4" type="Label" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+label_settings = ExtResource("2_arbsy")
+
+[node name="SFX" parent="AudioOptions/VBoxContainer" instance=ExtResource("5_7fwda")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Music")
+focus_neighbor_bottom = NodePath("../CheckBox")
+step = 0.05
+bus_name = "SFX"
+
+[node name="Label2" type="Label" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+label_settings = ExtResource("2_arbsy")
+
+[node name="CheckBox" type="CheckBox" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../SFX")
+focus_neighbor_bottom = NodePath("../../../Confirm")
+focus_next = NodePath("../../../Confirm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lfsvt")
+autoplay = true
+bus = &"Music"
+
+[node name="Confirm" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -48.0
+offset_right = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_top = NodePath("../AudioOptions/VBoxContainer/CheckBox")
+focus_neighbor_right = NodePath("../AudioOptions/VBoxContainer/Master")
+focus_neighbor_bottom = NodePath("../AudioOptions/VBoxContainer/Master")
+focus_next = NodePath("../AudioOptions/VBoxContainer/Master")
+texture_normal = ExtResource("7_70ccf")
+texture_hover = ExtResource("3_arbsy")
+texture_focused = ExtResource("3_arbsy")
+
+[connection signal="toggled" from="AudioOptions/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

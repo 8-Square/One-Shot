@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b42r2c2v0gsmy"]
+[gd_scene load_steps=26 format=4 uid="uid://b42r2c2v0gsmy"]
 
 [ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_27xn1"]
 [ext_resource type="Script" uid="uid://4iox103xbmt6" path="res://assets/Scripts/Player/player_Tutorial.gd" id="1_s0en5"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="9_t0uan"]
 [ext_resource type="PackedScene" uid="uid://bw5dirs1wwke2" path="res://assets/Scenes/Other/Portal.tscn" id="11_yndxw"]
 [ext_resource type="PackedScene" uid="uid://dhbbeq4o8cx4c" path="res://assets/Scenes/Menu/LevelComplete.tscn" id="13_2wjiq"]
+[ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="14_yndxw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e70cn"]
 texture = ExtResource("7_t0uan")
@@ -660,7 +661,7 @@ size = Vector2(753.5, 47.4286)
 script = ExtResource("1_27xn1")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("2_8cnc2")]
-position = Vector2(11759, -540)
+position = Vector2(223, 34)
 script = ExtResource("1_s0en5")
 level_start_pos = NodePath("../PlayerStart")
 
@@ -743,18 +744,6 @@ text = "Try to avoid falling down"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 2932.0
-offset_top = -544.0
-offset_right = 3677.0
-offset_bottom = -306.0
-theme_override_fonts/normal_font = ExtResource("5_8cnc2")
-theme_override_font_sizes/normal_font_size = 42
-text = "There might be some  secrets "
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
 offset_left = 9238.0
 offset_top = 263.0
@@ -791,12 +780,15 @@ position = Vector2(1153, -1143)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_t0uan")]
 visible = false
-offset_left = 257.0
-offset_top = 116.0
-offset_right = 257.0
-offset_bottom = 116.0
 
 [node name="LevelComplete" parent="CanvasLayer" instance=ExtResource("13_2wjiq")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_yndxw")
+volume_db = -1.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [editable path="Portal"]
 [editable path="Portal2"]

@@ -16,6 +16,8 @@ func _on_play_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	$UISelect.play()
+	to_tutorial_transition.change_scene(to_tutorial_transition.settings)
+
 
 func _on_quit_pressed() -> void:
 	$QuitSound.play()

@@ -1,4 +1,5 @@
 extends Area2D
+@onready var level_complete = $"/root/LevelComplete"
 
 
 # haha end portal.... minecraft reference

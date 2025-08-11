@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bc0ok6wpep447"]
+
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="1_ak1kp"]
+
+[resource]
+font = ExtResource("1_ak1kp")
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)

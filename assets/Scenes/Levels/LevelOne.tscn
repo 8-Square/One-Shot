@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b4mg4h3swfkwf"]
+[gd_scene load_steps=33 format=4 uid="uid://b4mg4h3swfkwf"]
 
 [ext_resource type="Script" uid="uid://jr1ttokgcx12" path="res://assets/Scripts/Player/player_level_one.gd" id="1_5ul2i"]
 [ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_hv5ue"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bi1e2o2uef65q" path="res://assets/Sprites/Tilesets/Assets.png" id="6_yookv"]
 [ext_resource type="Texture2D" uid="uid://d3b0i4q87feai" path="res://assets/Sprites/Tilesets/spritesheet_tiles.png" id="7_hv5ue"]
 [ext_resource type="PackedScene" uid="uid://bylt4xh12pwlt" path="res://assets/Scenes/DangerZone.tscn" id="8_yookv"]
+[ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="15_pjjw1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28160"]
 texture = ExtResource("3_dujvd")
@@ -5277,17 +5278,8 @@ sources/0 = SubResource("TileSetAtlasSource_jokw5")
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_hv5ue")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_8frfp")]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_kl843")]
-visible = false
-
-[node name="LevelComplete" parent="CanvasLayer" instance=ExtResource("4_jokw5")]
-
 [node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("1_jf2q3")]
-position = Vector2(-8442, -546)
+position = Vector2(343, 286)
 script = ExtResource("1_5ul2i")
 level_start_pos = NodePath("../PlayerStart")
 
@@ -5384,12 +5376,25 @@ text = "Nothing here..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_8frfp")]
+z_index = 1
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_kl843")]
+visible = false
+
+[node name="LevelComplete" parent="CanvasLayer" instance=ExtResource("4_jokw5")]
+
 [node name="PlayerStart" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(227, 217)
 
 [node name="EndPortal" parent="." instance=ExtResource("2_818du")]
 position = Vector2(9221, -288)
+
+[node name="AudioStreamPlayer2D" parent="EndPortal" index="2"]
+bus = &"SFX"
 
 [node name="EndPortal2" parent="." instance=ExtResource("2_818du")]
 position = Vector2(-9639, -517)
@@ -5399,4 +5404,15 @@ position = Vector2(0, 12.9999)
 animation = &"default"
 frame_progress = 0.0
 
+[node name="AudioStreamPlayer2D" parent="EndPortal2" index="2"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_pjjw1")
+volume_db = -1.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[editable path="EndPortal"]
 [editable path="EndPortal2"]

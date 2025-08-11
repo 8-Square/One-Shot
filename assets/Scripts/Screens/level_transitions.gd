@@ -6,6 +6,7 @@ const tutorial = ("res://assets/Scenes/Levels/Tutorial.tscn")
 const levelone = ("res://assets/Scenes/Levels/LevelOne.tscn")
 const leveltwo = ("res://assets/Scenes/Levels/LevelTwo.tscn")
 const levelthree = ("res://assets/Scenes/Levels/LevelThree.tscn")
+const settings = ("res://assets/Scenes/Menu/Settings.tscn")
 
 func change_scene(scene_path):
 	match scene_path:
@@ -30,6 +31,7 @@ func change_scene(scene_path):
 			%TutorialLable.show()
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file(tutorial)
+			get_tree().reload_current_scene()
 			Stopwatch.reset()
 			%AnimationPlayer.play("fade_out")
 			await %AnimationPlayer.animation_finished 
@@ -40,6 +42,7 @@ func change_scene(scene_path):
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file(levelone)
 			Stopwatch.reset()
+			Stopwatch.stop()
 			%AnimationPlayer.play("fade_out")
 			await %AnimationPlayer.animation_finished 
 			%LevelOneLabel.hide()
@@ -63,5 +66,11 @@ func change_scene(scene_path):
 			%AnimationPlayer.play("fade_out")
 			await  %AnimationPlayer.animation_finished
 			%LevelThreeLabel.hide()
-
-			
+		settings:
+			%AnimationPlayer.play("fade_in")
+			%SettingsLabel.show()
+			await  %AnimationPlayer.animation_finished
+			get_tree().change_scene_to_file(settings)
+			%AnimationPlayer.play("fade_out")
+			await  %AnimationPlayer.animation_finished
+			%SettingsLabel.hide()

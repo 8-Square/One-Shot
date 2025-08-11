@@ -14,35 +14,44 @@ var left_count = 0
 var jump_count = 0
 var right_count = 0
 var can_control : bool = true
-
+var bouncing = false
+var jumping = false
 var play_count : int = 0 
+
+var bounce_timer = 0.0
+const bounce_animation_time = 0.3
 
 func _init() -> void:
 	pass
-
 func _physics_process(delta: float) -> void:
-	if not can_control: 
+	if not can_control:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	
-	if Input.is_action_pressed("jump") and is_on_floor():
+# JUMP
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		jump_count += 1
+		jumping = true
 		print("JUMPED HAS BEEN USED " + str(jump_count))
-	elif Input.is_action_just_pressed("jump"):
+	elif is_on_floor():
+		jumping = false
+	elif Input.is_action_just_pressed("jump") and jump_count >= max_jump_count:
 		print("JUMP HAS BEEN USED, RESTART OR TRY WITHOUT")
-		
 	
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
+	
+
+	
+# DIRECTIONAL MOVEMENT & ANIMATION LEFT RIGHT
 	var direction := Input.get_axis("left", "right")
 	if direction and Input.is_action_just_pressed("left"):
 		velocity.x = direction * SPEED
-		left_count += 1
+# ANIMATION FLIP
 		print("left HAS BEEN CLICKED " + str(left_count))
-	elif direction and Input.is_action_just_pressed("right"):
+# RIGHT MOVEMENT
+	elif direction and Input.is_action_just_pressed("right") and right_count < max_right_count:
 		velocity.x = direction * SPEED
 		right_count += 1
 		print("RIGHT HAS BEEN CLICKED " + str(right_count))
@@ -52,38 +61,50 @@ func _physics_process(delta: float) -> void:
 		velocity.x = SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, 0)
-		
-	var collision_info = move_and_collide(velocity * delta, false, 0.3, false)
-
+	
+	
+# COLLISIONN
+	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		var direction2 = velocity.bounce(collision_info.get_normal())
-		if is_on_floor() or is_on_wall():
+		var normal = collision_info.get_normal()
+		if abs(normal.x) > 0.7 and abs(normal.y) < 0.3:
 			velocity = direction2
-		
-	#if (Input.is_action_just_pressed("left") and left_count < 5) || (Input.is_action_just_pressed("left") and left_count < 5):
-		#left_count += 1
-	if Input.is_action_just_pressed("down") and is_on_floor():
-		set_collision_mask_value(5, false)
-		get_tree().create_timer(0.2)
-		set_collision_layer_value(5, true)
-## VELOCITY FRR 
-	if is_on_floor():
-		if velocity.x != 0:
-			animated_sprite.play("moving")
-			if direction < 0:
-				animated_sprite.flip_h = true
-			elif direction > 0:
-				animated_sprite.flip_h = false
-	elif is_on_wall():
-		animated_sprite.play("bounce")
-	else:
-		if velocity.y < 0:
-			animated_sprite.play("jump")
+			bouncing = true
+			bounce_timer = bounce_animation_time
+			animated_sprite.flip_h = velocity.x > 0
+			animated_sprite.play("bounce", true)
+		#if is_on_wall():
+			#velocity = direction2
+			#bouncing = true
+	if bouncing:
+		bounce_timer -= delta
+		if bounce_timer <= 0.0:
+			bouncing = false
+			animated_sprite.stop()
+# ANIMATION TYPE SHI
+	if not bouncing:
+		if is_on_floor():
+			if velocity.x != 0:
+				animated_sprite.play("moving")
+				animated_sprite.flip_h = velocity.x < 0
+			else:
+				get_tree().create_timer(0.4)
+				animated_sprite.play("default")
+		elif jumping:
+			$JumpAudio.play()
+			if velocity.y < 0:
+				animated_sprite.play("jump")
+			else:
+				animated_sprite.play("fall")
 		else:
 			animated_sprite.play("fall")
-		get_tree().create_timer(0.4)
-		animated_sprite.play("default")
 	
+	
+	if Input.is_action_just_pressed("down") and is_on_floor():
+		position.y += 1
+		
+
 	move_and_slide()
 
 
