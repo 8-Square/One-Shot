@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		print("JUMPED HAS BEEN USED " + str(jump_count))
 	elif is_on_floor():
 		jumping = false
-	elif Input.is_action_just_pressed("jump") and jump_count >= max_jump_count:
+	elif Input.is_action_just_pressed("jump"):
 		print("JUMP HAS BEEN USED, RESTART OR TRY WITHOUT")
 	
 
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 # ANIMATION FLIP
 		print("left HAS BEEN CLICKED " + str(left_count))
 # RIGHT MOVEMENT
-	elif direction and Input.is_action_just_pressed("right") and right_count < max_right_count:
+	elif direction and Input.is_action_just_pressed("right"):
 		velocity.x = direction * SPEED
 		right_count += 1
 		print("RIGHT HAS BEEN CLICKED " + str(right_count))

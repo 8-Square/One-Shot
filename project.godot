@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="One Shot"
-config/version="1.0.0"
+config/version="1.1.1"
 run/main_scene="uid://68yveik7dd00"
 config/features=PackedStringArray("4.4", "Mobile")
 run/layer_3="Danger"
@@ -132,4 +132,5 @@ common/physics_interpolation=true
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.490196, 0.647059, 0.901961, 1)

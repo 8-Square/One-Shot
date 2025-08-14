@@ -32,10 +32,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jumping = true
+		$JumpAudio.play()
 		print("JUMPED HAS BEEN USED " + str(jump_count))
 	elif is_on_floor():
 		jumping = false
-	elif Input.is_action_just_pressed("jump") and jump_count >= max_jump_count:
+	elif Input.is_action_just_pressed("jump"):
 		print("JUMP HAS BEEN USED, RESTART OR TRY WITHOUT")
 	
 
@@ -51,7 +52,7 @@ func _physics_process(delta: float) -> void:
 # ANIMATION FLIP
 		print("left HAS BEEN CLICKED " + str(left_count))
 # RIGHT MOVEMENT
-	elif direction and Input.is_action_just_pressed("right") and right_count < max_right_count:
+	elif direction and Input.is_action_just_pressed("right"):
 		velocity.x = direction * SPEED
 		right_count += 1
 		print("RIGHT HAS BEEN CLICKED " + str(right_count))
@@ -92,7 +93,6 @@ func _physics_process(delta: float) -> void:
 				get_tree().create_timer(0.4)
 				animated_sprite.play("default")
 		elif jumping:
-			$JumpAudio.play()
 			if velocity.y < 0:
 				animated_sprite.play("jump")
 			else:
@@ -112,6 +112,7 @@ func handle_danger() -> void:
 	print("Player Died!")
 	visible = false
 	can_control = false
+	$DeathAudio.play()
 	Stopwatch.stop()
 	velocity = Vector2.ZERO
 	await get_tree().create_timer(0.6).timeout
