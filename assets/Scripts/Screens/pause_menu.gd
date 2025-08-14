@@ -22,7 +22,7 @@ func _on_restart_pressed() -> void:
 			to_tutorial_transition.change_scene(to_tutorial_transition.tutorial)
 		"res://assets/Scenes/Levels/LevelOne.tscn":
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelone)
-		"res://assets/Scenes/Levels/LeveTwo.tscn":
+		"res://assets/Scenes/Levels/LevelTwo.tscn":
 			to_tutorial_transition.change_scene(to_tutorial_transition.leveltwo)
 		"res://assets/Scenes/Levels/LevelThree.tscn":
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)

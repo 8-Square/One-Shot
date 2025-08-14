@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="One Shot"
-config/version="0.2.0"
+config/version="1.0.0"
 run/main_scene="uid://68yveik7dd00"
 config/features=PackedStringArray("4.4", "Mobile")
 run/layer_3="Danger"
+
+[audio]
+
+buses/default_bus_layout="res://assets/default_bus_layout.tres"
 
 [autoload]
 
@@ -32,10 +36,6 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 window/handheld/orientation=6
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [global_group]
 

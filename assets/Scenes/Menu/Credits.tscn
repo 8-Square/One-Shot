@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://e5g7nypajit7"]
+
+[ext_resource type="Script" uid="uid://dkyubyxjllxre" path="res://assets/Scenes/Menu/credits.gd" id="1_emerl"]
+[ext_resource type="FontFile" uid="uid://dj7eumrgnhdm3" path="res://assets/Fonts/MotionControl-Bold.otf" id="6_1a0rd"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="6_bwdso"]
+[ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="6_emerl"]
+[ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="7_qllmr"]
+[ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="8_f40da"]
+[ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_1muya"]
+[ext_resource type="AudioStream" uid="uid://dh4ijjkxxryq7" path="res://assets/Music/UISelect.wav" id="11_5lyci"]
+
+[node name="Credits" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_emerl")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.372017, 0.587277, 0.999999, 1)
+
+[node name="EscapeButton" type="TextureButton" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 0.133
+offset_right = 0.319992
+offset_bottom = 0.119999
+texture_normal = ExtResource("7_qllmr")
+texture_pressed = ExtResource("8_f40da")
+texture_hover = ExtResource("8_f40da")
+texture_focused = ExtResource("9_1muya")
+
+[node name="Back" type="RichTextLabel" parent="CanvasLayer/ColorRect/EscapeButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 117.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_bwdso")
+theme_override_font_sizes/normal_font_size = 25
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_bwdso")
+theme_override_font_sizes/normal_font_size = 15
+text = "Game Design:
+8_Square"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text3" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_bwdso")
+theme_override_font_sizes/normal_font_size = 15
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text4" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_1a0rd")
+theme_override_font_sizes/normal_font_size = 13
+text = "25 for 25 by Kjartan Abel. by kjartan_abel -- https://freesound.org/s/768490/ -- License: Attribution 4.0
+
+level_complete.wav by jivatma07 -- https://freesound.org/s/122255/ -- License: Attribution 3.0
+
+Noise_Shutdown.wav by DrMrSir 
+https://freesound.org/s/529553/  License: Attribution 4.0
+
+background music.mp3 by ZHRØ -- https://freesound.org/s/544416/ -- License: Attribution 4.0
+
+Game_over.wav by deleted_user_877451 -- https://freesound.org/s/76376/ -- License: Attribution 3.0"
+horizontal_alignment = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("6_emerl")
+volume_db = -0.7
+autoplay = true
+bus = &"Music"
+
+[node name="UISelect" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("11_5lyci")
+bus = &"SFX"
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/EscapeButton" to="CanvasLayer" method="_on_escape_button_pressed"]

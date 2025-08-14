@@ -9,10 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="7_01bmn"]
 [ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="8_fn61j"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_jwpom"]
-[ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="10_q0e6x"]
+[ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="10_q0e6x"]
 [ext_resource type="AudioStream" uid="uid://dh4ijjkxxryq7" path="res://assets/Music/UISelect.wav" id="11_aly6l"]
 
-[node name="LevelSelect" type="Node"]
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_4juup")
