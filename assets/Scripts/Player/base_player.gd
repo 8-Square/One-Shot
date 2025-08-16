@@ -33,11 +33,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		jumping = true
 		$JumpAudio.play()
-		print("JUMPED HAS BEEN USED " + str(jump_count))
 	elif is_on_floor():
 		jumping = false
-	elif Input.is_action_just_pressed("jump"):
-		print("JUMP HAS BEEN USED, RESTART OR TRY WITHOUT")
 	
 
 	if not is_on_floor():
@@ -49,13 +46,10 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction and Input.is_action_just_pressed("left"):
 		velocity.x = direction * SPEED
-# ANIMATION FLIP
-		print("left HAS BEEN CLICKED " + str(left_count))
 # RIGHT MOVEMENT
 	elif direction and Input.is_action_just_pressed("right"):
 		velocity.x = direction * SPEED
 		right_count += 1
-		print("RIGHT HAS BEEN CLICKED " + str(right_count))
 	# IMPLEMENT THE LEFT RIGHT COUNTS 
 	elif is_on_wall(): 
 		velocity.x *= -1
@@ -104,15 +98,22 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("down") and is_on_floor():
 		position.y += 1
 		
-
+	if Input.is_action_just_pressed("restart"):
+		fast_reset()
+		
 	move_and_slide()
 
-
-func handle_danger() -> void:
-	print("Player Died!")
+func fast_reset() -> void:
 	visible = false
 	can_control = false
-	$DeathAudio.play()
+	Stopwatch.stop()
+	velocity = Vector2.ZERO
+	await get_tree().create_timer(0.2).timeout
+	reset_player()
+
+func handle_danger() -> void:
+	visible = false
+	can_control = false
 	Stopwatch.stop()
 	velocity = Vector2.ZERO
 	await get_tree().create_timer(0.6).timeout

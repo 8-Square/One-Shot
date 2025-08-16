@@ -5229,7 +5229,7 @@ size = Vector2(112.785, 20)
 size = Vector2(255.071, 19.1429)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl843"]
-size = Vector2(918.107, 28.4286)
+size = Vector2(1205.34, 41.7857)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8frfp"]
 size = Vector2(32.2857, 20)
@@ -5241,7 +5241,7 @@ size = Vector2(452, 20)
 size = Vector2(748.464, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c47vi"]
-size = Vector2(451.974, 20)
+size = Vector2(1311.7, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxk5j"]
 size = Vector2(468.018, 20)
@@ -5324,6 +5324,10 @@ shape = SubResource("RectangleShape2D_818du")
 position = Vector2(-1140.29, 280.786)
 shape = SubResource("RectangleShape2D_kl843")
 
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
+position = Vector2(-2155.9, 98.8931)
+shape = SubResource("RectangleShape2D_kl843")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
 position = Vector2(-188.286, -11.7142)
 shape = SubResource("RectangleShape2D_8frfp")
@@ -5337,7 +5341,7 @@ position = Vector2(2834.57, 89.7146)
 shape = SubResource("RectangleShape2D_5db70")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
-position = Vector2(3300.29, 15.7146)
+position = Vector2(3730.15, 15.7146)
 shape = SubResource("RectangleShape2D_c47vi")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
@@ -5518,8 +5522,8 @@ autoplay = true
 bus = &"Music"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3172, 1586)
-scale = Vector2(0.0582569, 0.0407275)
+position = Vector2(3186.06, 1593.41)
+scale = Vector2(0.0728578, 0.0679004)
 texture = ExtResource("25_kjjyr")
 
 [editable path="TileMapLayer/DangerZone"]

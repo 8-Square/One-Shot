@@ -34,6 +34,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.372017, 0.587277, 0.999999, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial" type="TextureButton" parent="CanvasLayer/ColorRect"]
 unique_name_in_owner = true
@@ -59,6 +60,7 @@ texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
 texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/Tutorial"]
 layout_mode = 1
@@ -78,6 +80,7 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_46d1u")
 theme_override_font_sizes/normal_font_size = 15
 text = "Tutorial"
+metadata/_edit_use_anchors_ = true
 
 [node name="LevelOne" type="TextureButton" parent="CanvasLayer/ColorRect"]
 unique_name_in_owner = true
@@ -103,6 +106,7 @@ texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
 texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelOne"]
 layout_mode = 1
@@ -122,6 +126,7 @@ text = "Level
 One"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="LevelTwo" type="TextureButton" parent="CanvasLayer/ColorRect"]
 unique_name_in_owner = true
@@ -147,6 +152,7 @@ texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
 texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelTwo"]
 layout_mode = 1
@@ -167,6 +173,7 @@ text = "Level
 Two"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="LevelThree" type="TextureButton" parent="CanvasLayer/ColorRect"]
 unique_name_in_owner = true
@@ -192,6 +199,7 @@ texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("4_hyy3w")
 texture_hover = ExtResource("5_tgpxl")
 texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/ColorRect/LevelThree"]
 layout_mode = 1
@@ -212,6 +220,7 @@ text = "Level
 Three"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="EscapeButton" type="TextureButton" parent="CanvasLayer/ColorRect"]
 layout_mode = 1
@@ -229,6 +238,7 @@ texture_normal = ExtResource("7_01bmn")
 texture_pressed = ExtResource("8_fn61j")
 texture_hover = ExtResource("8_fn61j")
 texture_focused = ExtResource("9_jwpom")
+metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="RichTextLabel" parent="CanvasLayer/ColorRect/EscapeButton"]
 layout_mode = 0
@@ -242,6 +252,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 stream = ExtResource("10_q0e6x")

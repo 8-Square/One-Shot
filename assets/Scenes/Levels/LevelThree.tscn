@@ -5219,7 +5219,7 @@ size = Vector2(1571.14, 20)
 script = ExtResource("1_nkslk")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("1_nejv7")]
-position = Vector2(446, 296)
+position = Vector2(567.758, 271.116)
 level_start_pos = NodePath("../PlayerStart")
 max_jump_count = 20
 
@@ -5247,8 +5247,24 @@ shape = SubResource("RectangleShape2D_hv5ue")
 position = Vector2(3663.43, -19.1426)
 shape = SubResource("RectangleShape2D_xwbj2")
 
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
+position = Vector2(4947.71, -57.4283)
+shape = SubResource("RectangleShape2D_xwbj2")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
+position = Vector2(5740.86, -90.5712)
+shape = SubResource("RectangleShape2D_xwbj2")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
 position = Vector2(1214.57, 16.286)
+shape = SubResource("RectangleShape2D_8frfp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
+position = Vector2(-1085.43, -162.857)
+shape = SubResource("RectangleShape2D_8frfp")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer/DangerZone"]
+position = Vector2(-325.715, -188.571)
 shape = SubResource("RectangleShape2D_8frfp")
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
@@ -5265,10 +5281,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
-offset_left = 3114.0
-offset_top = 819.0
-offset_right = 3859.0
-offset_bottom = 1057.0
+offset_left = 19966.0
+offset_top = -399.0
+offset_right = 20711.0
+offset_bottom = -161.0
 pivot_offset = Vector2(365, 122)
 theme_override_fonts/normal_font = ExtResource("8_5hpjx")
 theme_override_font_sizes/normal_font_size = 42
@@ -5278,18 +5294,18 @@ vertical_alignment = 1
 
 [node name="PlayerStart" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(94, -64)
+position = Vector2(274, 192)
 
 [node name="Portal" parent="." instance=ExtResource("10_xwbj2")]
 position = Vector2(7729, -971)
 rotation = -1.5708
 
 [node name="AnimatableBody2D" parent="Portal" index="0"]
-position = Vector2(271, 126)
+position = Vector2(271, 157)
 scale = Vector2(6, 6)
 
 [node name="CollisionShape2D" parent="Portal" index="1"]
-position = Vector2(244, 152.375)
+position = Vector2(244, 183.375)
 
 [node name="Destination" parent="Portal" index="2"]
 position = Vector2(551, 2157)
@@ -5298,10 +5314,11 @@ position = Vector2(551, 2157)
 position = Vector2(16365, -554)
 
 [node name="AnimatableBody2D" parent="Portal2" index="0"]
+position = Vector2(-11, -460)
 animation = &"default"
 
 [node name="CollisionShape2D" parent="Portal2" index="1"]
-position = Vector2(26, 10)
+position = Vector2(7, -443)
 
 [node name="Destination" parent="Portal2" index="2"]
 position = Vector2(-6478, -999)
@@ -5310,11 +5327,11 @@ position = Vector2(-6478, -999)
 position = Vector2(16365, -554)
 
 [node name="AnimatableBody2D" parent="Portal3" index="0"]
-position = Vector2(-17, -454)
+position = Vector2(-14, 7.99997)
 animation = &"default"
 
 [node name="CollisionShape2D" parent="Portal3" index="1"]
-position = Vector2(9, -453)
+position = Vector2(12, 9)
 
 [node name="Destination" parent="Portal3" index="2"]
 position = Vector2(-19314, -131)
