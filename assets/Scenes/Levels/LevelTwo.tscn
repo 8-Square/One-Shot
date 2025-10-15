@@ -454,7 +454,7 @@ position = Vector2(-2, 2.38419e-07)
 position = Vector2(-24, 12)
 
 [node name="Destination" parent="Portal2" index="2"]
-position = Vector2(-3998, 1475)
+position = Vector2(-3259, 1525)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_m65rm")

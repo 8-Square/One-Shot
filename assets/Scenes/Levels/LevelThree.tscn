@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ddv88ijm2k083"]
+[gd_scene load_steps=20 format=4 uid="uid://ddv88ijm2k083"]
 
 [ext_resource type="PackedScene" uid="uid://byg1xe2t1e15k" path="res://assets/Scenes/Player/Player.tscn" id="1_nejv7"]
 [ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_nkslk"]
@@ -10,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://cnrgq4vi15g44" path="res://assets/Scenes/GUI/hud.tscn" id="11_o5ji7"]
 [ext_resource type="PackedScene" uid="uid://dhbbeq4o8cx4c" path="res://assets/Scenes/Menu/LevelComplete.tscn" id="12_nkslk"]
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="13_5hpjx"]
+[ext_resource type="Texture2D" uid="uid://dpbq68sm6gm3t" path="res://assets/Sprites/Backgrounds/Gradients/level three.png" id="14_nkslk"]
+[ext_resource type="Texture2D" uid="uid://dl7wac73asnel" path="res://assets/Sprites/Backgrounds/Gradients/level three down.png" id="15_8dx82"]
 [ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/EndPortal.tscn" id="15_y163g"]
+[ext_resource type="Texture2D" uid="uid://co0ngc7jccjd8" path="res://assets/Sprites/Backgrounds/Gradients/level three up.png" id="16_6r585"]
 [ext_resource type="AudioStream" uid="uid://bq6brg8n8t21" path="res://assets/Music/LevelComplete.wav" id="16_8dx82"]
 [ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="17_8dx82"]
 
@@ -172,6 +175,24 @@ bus = &"SFX"
 stream = ExtResource("17_8dx82")
 volume_db = -1.0
 bus = &"Music"
+
+[node name="LevelThree" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(3599.4988, -1386.7501)
+scale = Vector2(15.186979, 3.9967594)
+texture = ExtResource("14_nkslk")
+
+[node name="LevelThree2" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(3573.0002, 2876)
+scale = Vector2(15.186979, 3.9967594)
+texture = ExtResource("15_8dx82")
+
+[node name="LevelThree3" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(3580, -5146)
+scale = Vector2(15.186979, 3.9967594)
+texture = ExtResource("16_6r585")
 
 [editable path="Portal"]
 [editable path="Portal2"]
