@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=3 uid="uid://b68rjlysndu2u"]
+
+[ext_resource type="Texture2D" uid="uid://bqb56v46ftaku" path="res://assets/Sprites/Backgrounds/Desert Parallax/9 Background.png" id="1_wnd5r"]
+[ext_resource type="Texture2D" uid="uid://s5kaovm4ux2b" path="res://assets/Sprites/Backgrounds/Desert Parallax/Extra 9 Background.png" id="2_1vuh2"]
+[ext_resource type="Texture2D" uid="uid://46c1o7x5jit7" path="res://assets/Sprites/Backgrounds/Desert Parallax/8 Stars.png" id="2_34kmm"]
+[ext_resource type="Texture2D" uid="uid://co651yqbe0pun" path="res://assets/Sprites/Backgrounds/Desert Parallax/7 Clouds.png" id="3_1vuh2"]
+[ext_resource type="Texture2D" uid="uid://ddfr8jb5ak0ai" path="res://assets/Sprites/Backgrounds/Desert Parallax/6 Sun.png" id="4_q1bdb"]
+[ext_resource type="Texture2D" uid="uid://bg38juwxeb7x7" path="res://assets/Sprites/Backgrounds/Desert Parallax/5 Mountains.png" id="5_ed6rg"]
+[ext_resource type="Texture2D" uid="uid://boj1npe4g6u01" path="res://assets/Sprites/Backgrounds/Desert Parallax/4 Layer4.png" id="6_t7foc"]
+[ext_resource type="Texture2D" uid="uid://3ved51n7tvnf" path="res://assets/Sprites/Backgrounds/Desert Parallax/3 Layer3.png" id="7_t1qug"]
+[ext_resource type="Texture2D" uid="uid://bml3x3rv4k3i8" path="res://assets/Sprites/Backgrounds/Desert Parallax/2 Layer2.png" id="8_n3asc"]
+[ext_resource type="Texture2D" uid="uid://cp0ydj8rnr58g" path="res://assets/Sprites/Backgrounds/Desert Parallax/1 Layer1.png" id="9_rnan8"]
+[ext_resource type="Texture2D" uid="uid://c32isjiir8xdu" path="res://assets/Sprites/Backgrounds/Desert Parallax/Extra Layer1.png" id="10_34kmm"]
+
+[node name="ParallaxDesertBBackground" type="Node2D"]
+
+[node name="Parallax2D11" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(0, -61)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D11"]
+position = Vector2(988, 34)
+texture = ExtResource("2_1vuh2")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(960, 540)
+texture = ExtResource("1_wnd5r")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.13, 0.13)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(960, 540)
+texture = ExtResource("2_34kmm")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.13, 0.13)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(960, 540)
+texture = ExtResource("3_1vuh2")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(960, 540)
+texture = ExtResource("4_q1bdb")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D5"]
+position = Vector2(960, 540)
+texture = ExtResource("5_ed6rg")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D6" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D6"]
+position = Vector2(960, 540)
+texture = ExtResource("6_t7foc")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D7" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.55, 0.55)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D7" type="Sprite2D" parent="Parallax2D7"]
+position = Vector2(960, 540)
+texture = ExtResource("7_t1qug")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D8" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D8" type="Sprite2D" parent="Parallax2D8"]
+position = Vector2(960, 540)
+texture = ExtResource("8_n3asc")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D9" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D9" type="Sprite2D" parent="Parallax2D9"]
+position = Vector2(960, 540)
+texture = ExtResource("9_rnan8")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Parallax2D10" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(1920, 0)
+repeat_times = 3
+
+[node name="Sprite2D9" type="Sprite2D" parent="Parallax2D10"]
+position = Vector2(960, 1596)
+scale = Vector2(1, 0.9981481)
+texture = ExtResource("10_34kmm")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)

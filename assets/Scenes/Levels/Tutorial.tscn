@@ -1,9 +1,9 @@
 [gd_scene load_steps=26 format=4 uid="uid://b42r2c2v0gsmy"]
 
 [ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_27xn1"]
-[ext_resource type="Script" uid="uid://4iox103xbmt6" path="res://assets/Scripts/Player/player_Tutorial.gd" id="1_s0en5"]
 [ext_resource type="PackedScene" uid="uid://byg1xe2t1e15k" path="res://assets/Scenes/Player/Player.tscn" id="2_8cnc2"]
 [ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://assets/Sprites/Tilesets/BasicPlaceholder.png" id="3_8cnc2"]
+[ext_resource type="Script" uid="uid://jr1ttokgcx12" path="res://assets/Scripts/Player/player_level_one.gd" id="3_yndxw"]
 [ext_resource type="Texture2D" uid="uid://bi1e2o2uef65q" path="res://assets/Sprites/Tilesets/Assets.png" id="4_6emb6"]
 [ext_resource type="Texture2D" uid="uid://v0up5egf1li" path="res://assets/Sprites/Tilesets/world_tileset.png" id="4_e70cn"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="5_8cnc2"]
@@ -660,10 +660,9 @@ size = Vector2(753.5, 47.4286)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_27xn1")
 
-[node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("2_8cnc2")]
+[node name="Player" parent="." instance=ExtResource("2_8cnc2")]
 position = Vector2(223, 34)
-script = ExtResource("1_s0en5")
-level_start_pos = NodePath("../PlayerStart")
+script = ExtResource("3_yndxw")
 
 [node name="Platforms" type="TileMapLayer" parent="."]
 z_index = 3

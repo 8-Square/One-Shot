@@ -1,5 +1,5 @@
-class_name TutPlayer
-extends BasePlayer
+class_name ChallengePlayer
+extends PlayerLevels
 
 
 #func _physics_process(delta: float) -> void:
