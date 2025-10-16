@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c3m2hpfx0bo5o" path="res://assets/Scripts/Menu/level_complete.gd" id="1_0w1l2"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_8fffl"]
-[ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_achj7"]
-[ext_resource type="Texture2D" uid="uid://d4j70uffu0gxu" path="res://assets/Sprites/Button/green_pressed.png" id="3_ctsdo"]
+[ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_ctsdo"]
+[ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_do2pv"]
 [ext_resource type="AudioStream" uid="uid://65pmp7x5hv07" path="res://assets/Music/goodresult-82807.mp3" id="5_ctsdo"]
 
 [sub_resource type="Animation" id="Animation_m3srs"]
@@ -23,7 +23,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer:visible")
+tracks/1/path = NodePath("HBoxContainer:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -51,7 +51,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer:visible")
+tracks/1/path = NodePath("HBoxContainer:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -95,35 +95,65 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.92549, 0.517647, 0.160784, 0)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -114.0
-offset_top = -78.0
-offset_right = 38.0
-offset_bottom = -30.0
+offset_left = -124.0
+offset_top = -48.0
+offset_right = 124.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(1.5, 1.5)
+size_flags_vertical = 4
+alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="NextLevelContainer" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Restart" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+[node name="NextLevel" type="TextureButton" parent="HBoxContainer/NextLevelContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../Quit")
-focus_neighbor_right = NodePath("../NextLevel")
-focus_next = NodePath("../NextLevel")
-focus_previous = NodePath("../Quit")
-texture_normal = ExtResource("2_achj7")
-texture_focused = ExtResource("3_ctsdo")
+focus_neighbor_left = NodePath("../../RestartContainer/Restart")
+focus_neighbor_right = NodePath("../../QuitContainer/Quit")
+focus_next = NodePath("../../QuitContainer/Quit")
+focus_previous = NodePath("../../RestartContainer/Restart")
+texture_normal = ExtResource("2_ctsdo")
+texture_focused = ExtResource("3_do2pv")
 
-[node name="RestartText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/Restart"]
+[node name="NextLevelText" type="RichTextLabel" parent="HBoxContainer/NextLevelContainer/NextLevel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.33333
+offset_right = 1.33333
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+text = "Next Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Restart" type="TextureButton" parent="HBoxContainer/RestartContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../QuitContainer/Quit")
+focus_neighbor_right = NodePath("../../NextLevelContainer/NextLevel")
+focus_next = NodePath("../../NextLevelContainer/NextLevel")
+focus_previous = NodePath("../../QuitContainer/Quit")
+texture_normal = ExtResource("2_ctsdo")
+texture_focused = ExtResource("3_do2pv")
+
+[node name="RestartText" type="RichTextLabel" parent="HBoxContainer/RestartContainer/Restart"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,22 +164,26 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_8fffl")
-theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 text = "Restart"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NextLevel" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+[node name="QuitContainer" type="CenterContainer" parent="HBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../Restart")
-focus_neighbor_right = NodePath("../Quit")
-focus_next = NodePath("../Quit")
-focus_previous = NodePath("../Restart")
-texture_normal = ExtResource("2_achj7")
-texture_focused = ExtResource("3_ctsdo")
+size_flags_horizontal = 6
 
-[node name="NextLevelText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/NextLevel"]
+[node name="Quit" type="TextureButton" parent="HBoxContainer/QuitContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../NextLevelContainer/NextLevel")
+focus_neighbor_right = NodePath("../../RestartContainer/Restart")
+focus_next = NodePath("../../RestartContainer/Restart")
+focus_previous = NodePath("../../NextLevelContainer/NextLevel")
+texture_normal = ExtResource("2_ctsdo")
+texture_focused = ExtResource("3_do2pv")
+
+[node name="QuitText" type="RichTextLabel" parent="HBoxContainer/QuitContainer/Quit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,33 +194,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_8fffl")
-theme_override_font_sizes/normal_font_size = 9
-bbcode_enabled = true
-text = "Next Level"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Quit" type="TextureButton" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-focus_neighbor_left = NodePath("../NextLevel")
-focus_neighbor_right = NodePath("../Restart")
-focus_next = NodePath("../Restart")
-focus_previous = NodePath("../NextLevel")
-texture_normal = ExtResource("2_achj7")
-texture_focused = ExtResource("3_ctsdo")
-
-[node name="QuitText" type="RichTextLabel" parent="MarginContainer/HBoxContainer/Quit"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.33333
-offset_right = 1.33333
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("2_8fffl")
-theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 text = "Quit"
 horizontal_alignment = 1
@@ -264,11 +272,49 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_8fffl")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "Congrats You Beat the Game!"
+text = "Congrats Level Three Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LThreeComplete2" type="RichTextLabel" parent="."]
+[node name="LFourComplete" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "Level Four Complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LFiveComplete" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "Congrats You Beat the game!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameComplete" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -294,7 +340,7 @@ stream = ExtResource("5_ctsdo")
 wait_time = 1.2
 autostart = true
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/NextLevelContainer/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="HBoxContainer/RestartContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/QuitContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,7 +2,7 @@ class_name HUD
 extends Control
 
 @onready var level_complete_animation = $"/root/LevelComplete/AnimationPlayer"
-@onready var level_complete = $"/root/LevelComplete/MarginContainer"
+@onready var level_complete = $"/root/LevelComplete/HBoxContainer"
 
 @export var stopwatch_label : Label
 @onready var stopwatch = Stopwatch
@@ -26,8 +26,8 @@ func _process(delta):
 		$StopwatchLabel.show()
 		stopwatch_label.label_settings = override_label
 		print("WORKJNG")
-	else:
-		stopwatch_label.label_settings = default_label
+	#else:
+		#stopwatch_label.label_settings = default_label
 
 func update_stopwatch_label():
 	stopwatch_label.text = Stopwatch.time_to_string()

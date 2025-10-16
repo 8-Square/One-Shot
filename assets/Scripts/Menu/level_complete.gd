@@ -7,9 +7,11 @@ extends CanvasLayer
 func _ready():
 	$LOneComplete.add_to_group("complete_label")
 	$LThreeComplete.add_to_group("complete_label")
-	$LThreeComplete2.add_to_group("complete_label")
 	$LTwoComplete.add_to_group("complete_label")
 	$TComplete.add_to_group("complete_label")
+	$LFourComplete.add_to_group("complete_label")
+	$LFiveComplete.add_to_group("complete_label")
+	$GameComplete.add_to_group("complete_label")
 
 func hide_all_labels():
 	for label in get_tree().get_nodes_in_group("complete_label"):
@@ -28,7 +30,7 @@ func level_complete(level_no):
 			await $AnimationPlayer.animation_finished
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			%TComplete.show()
-			$MarginContainer/HBoxContainer/Restart.grab_focus()
+			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			
 		"res://assets/Scenes/Levels/LevelOne.tscn":
 			print("LEVEL One WORKING")
@@ -37,7 +39,7 @@ func level_complete(level_no):
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			$AnimationPlayer.pause()
 			%LOneComplete.show()
-			$MarginContainer/HBoxContainer/Restart.grab_focus()
+			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
 			
 		"res://assets/Scenes/Levels/LevelTwo.tscn":
@@ -47,7 +49,7 @@ func level_complete(level_no):
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			$AnimationPlayer.pause()
 			%LTwoComplete.show()
-			$MarginContainer/HBoxContainer/Restart.grab_focus()
+			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
 			
 		"res://assets/Scenes/Levels/LevelThree.tscn":
@@ -57,12 +59,30 @@ func level_complete(level_no):
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			$AnimationPlayer.pause()
 			%LThreeComplete.show()
-			%LThreeComplete2.show()
-			$MarginContainer/HBoxContainer/Restart.grab_focus()
-			$MarginContainer/HBoxContainer/NextLevel.hide()
+			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
 	#_on_next_level_pressed()
-
+# MILKYWAY EXPANSION
+		"res://assets/Scenes/Levels/LevelFour.tscn":
+			$AnimationPlayer.play("finish_level")
+			await $AnimationPlayer.animation_finished
+			audiostreamplayer.play()
+			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
+			$AnimationPlayer.pause()
+			%LFourComplete.show()
+			$HBoxContainer/RestartContainer/Restart.grab_focus()
+			finaltime.show()
+		"res://assets/Scenes/Levels/LevelFive.tscn":
+			$AnimationPlayer.play("finish_level")
+			await $AnimationPlayer.animation_finished
+			audiostreamplayer.play()
+			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
+			$AnimationPlayer.pause()
+			%LFiveComplete.show()
+			%GameComplete.show()
+			$HBoxContainer/RestartContainer/Restart.grab_focus()
+			$HBoxContainer/NextLevelContainer/NextLevel.hide()
+			finaltime.show()
 
 
 func _on_next_level_pressed() -> void:
@@ -78,6 +98,15 @@ func _on_next_level_pressed() -> void:
 			%AnimationPlayer.play_backwards("finish_level")
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)
 
+# MILKYWAY EXPANSION
+		"res://assets/Scenes/Levels/LevelThree.tscn":
+			%AnimationPlayer.play_backwards("finish_level")
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
+		"res://assets/Scenes/Levels/LevelFour.tscn":
+			%AnimationPlayer.play_backwards("finish_level")
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
+			
+			
 
 func _on_restart_pressed() -> void:
 	get_tree().create_timer(0.1)
@@ -92,6 +121,13 @@ func _on_restart_pressed() -> void:
 			to_tutorial_transition.change_scene(to_tutorial_transition.leveltwo)
 		"res://assets/Scenes/Levels/LevelThree.tscn":
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)
+# MILKY WAY EXPANSION
+		"res://assets/Scenes/Levels/LevelFour.tscn":
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
+		"res://assets/Scenes/Levels/LevelFive.tscn":
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
+
+
 
 func _on_quit_pressed() -> void:
 	%AnimationPlayer.play_backwards("finish_level")

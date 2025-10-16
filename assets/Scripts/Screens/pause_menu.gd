@@ -26,6 +26,10 @@ func _on_restart_pressed() -> void:
 			to_tutorial_transition.change_scene(to_tutorial_transition.leveltwo)
 		"res://assets/Scenes/Levels/LevelThree.tscn":
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)
+		"res://assets/Scenes/Levels/LevelFour.tscn":
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
+		"res://assets/Scenes/Levels/LevelFive.tscn":
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
 
 
 func _on_quit_pressed() -> void:
