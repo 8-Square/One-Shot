@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chxh61jsrj6kt"
-path="res://.godot/imported/9.png-73676176b2a087fcd2e83d7c5a9214f4.ctex"
+uid="uid://b3as471e7vlfk"
+path="res://.godot/imported/level two down.png-c17021ec3a17fe60c988ad6caaac2150.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Backgrounds/Parallax Cave/9.png"
-dest_files=["res://.godot/imported/9.png-73676176b2a087fcd2e83d7c5a9214f4.ctex"]
+source_file="res://assets/Sprites/Backgrounds/Gradients/level two down.png"
+dest_files=["res://.godot/imported/level two down.png-c17021ec3a17fe60c988ad6caaac2150.ctex"]
 
 [params]
 
