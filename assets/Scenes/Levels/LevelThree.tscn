@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://cnrgq4vi15g44" path="res://assets/Scenes/GUI/hud.tscn" id="11_o5ji7"]
 [ext_resource type="PackedScene" uid="uid://dhbbeq4o8cx4c" path="res://assets/Scenes/Menu/LevelComplete.tscn" id="12_nkslk"]
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="13_5hpjx"]
+[ext_resource type="AudioStream" uid="uid://doyr1gwty2njy" path="res://assets/Music/Background/GreenMusic.mp3" id="13_y163g"]
 [ext_resource type="Texture2D" uid="uid://dpbq68sm6gm3t" path="res://assets/Sprites/Backgrounds/Gradients/level three.png" id="14_nkslk"]
 [ext_resource type="Texture2D" uid="uid://dl7wac73asnel" path="res://assets/Sprites/Backgrounds/Gradients/level three down.png" id="15_8dx82"]
 [ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/EndPortal.tscn" id="15_y163g"]
 [ext_resource type="Texture2D" uid="uid://co0ngc7jccjd8" path="res://assets/Sprites/Backgrounds/Gradients/level three up.png" id="16_6r585"]
 [ext_resource type="AudioStream" uid="uid://bq6brg8n8t21" path="res://assets/Music/LevelComplete.wav" id="16_8dx82"]
-[ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="17_8dx82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv5ue"]
 size = Vector2(1299.07, 20)
@@ -172,7 +172,7 @@ stream = ExtResource("16_8dx82")
 bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_8dx82")
+stream = ExtResource("13_y163g")
 volume_db = -1.0
 bus = &"Music"
 

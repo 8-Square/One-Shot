@@ -87,6 +87,7 @@ func level_complete(level_no):
 
 func _on_next_level_pressed() -> void:
 	hide_all_labels()
+	$UISelect.play()
 	match get_tree().current_scene.scene_file_path:
 		"res://assets/Scenes/Levels/Tutorial.tscn":
 			%AnimationPlayer.play_backwards("finish_level")
@@ -109,6 +110,7 @@ func _on_next_level_pressed() -> void:
 			
 
 func _on_restart_pressed() -> void:
+	$UISelect.play()
 	get_tree().create_timer(0.1)
 	%AnimationPlayer.play_backwards("finish_level")
 	hide_all_labels()
@@ -130,6 +132,7 @@ func _on_restart_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
+	$UISelect.play()
 	%AnimationPlayer.play_backwards("finish_level")
 	hide_all_labels()
 	get_tree().create_timer(0.2)

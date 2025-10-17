@@ -4,7 +4,7 @@ var hoverfocus = preload("res://assets/Sprites/Button/green_pressed.png")
 var greenregular = preload("res://assets/Sprites/Button/green.png")
 var regular = preload("res://assets/Sprites/Button/blue.png")
 func _ready() -> void:
-	$ColorRect/Tutorial.grab_focus()
+	$PageOne/Tutorial.grab_focus()
 
 #func _on_level_three_focus_entered():
 	#%LevelThree.texture_normal = greenregular
@@ -39,3 +39,17 @@ func _on_level_three_pressed() -> void:
 	$UISelect.play()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)
+
+
+
+func _on_next_button_pressed() -> void:
+	$UISelect.play()
+	$PageOne.hide()
+	$PageTwo.show()
+	
+
+
+func _on_previous_button_pressed() -> void:
+	$UISelect.play()
+	$PageOne.show()
+	$PageTwo.hide()

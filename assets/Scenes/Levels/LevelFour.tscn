@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://d063s0ktoosph" path="res://assets/Scripts/Other/hard_portal.gd" id="6_8aeri"]
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="6_ggdr6"]
 [ext_resource type="PackedScene" uid="uid://dhbbeq4o8cx4c" path="res://assets/Scenes/Menu/LevelComplete.tscn" id="7_dkm3e"]
-[ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="9_dkm3e"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="11_jb7uh"]
 [ext_resource type="Texture2D" uid="uid://bqb56v46ftaku" path="res://assets/Sprites/Backgrounds/Desert Parallax/9 Background.png" id="13_itfdi"]
 [ext_resource type="Texture2D" uid="uid://46c1o7x5jit7" path="res://assets/Sprites/Backgrounds/Desert Parallax/8 Stars.png" id="14_02l4a"]
@@ -24,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bml3x3rv4k3i8" path="res://assets/Sprites/Backgrounds/Desert Parallax/2 Layer2.png" id="20_5e2sb"]
 [ext_resource type="Texture2D" uid="uid://cp0ydj8rnr58g" path="res://assets/Sprites/Backgrounds/Desert Parallax/1 Layer1.png" id="21_g6uh6"]
 [ext_resource type="PackedScene" uid="uid://b68rjlysndu2u" path="res://assets/Scenes/Backgrounds/parallax_desert_b_background.tscn" id="23_02l4a"]
+[ext_resource type="AudioStream" uid="uid://c4rgsy657cbda" path="res://assets/Music/Background/DesertMusic.mp3" id="23_aerul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idyc3"]
 texture = ExtResource("4_nekkc")
@@ -352,7 +352,7 @@ texture = ExtResource("21_g6uh6")
 position = Vector2(174, 137)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_dkm3e")
+stream = ExtResource("23_aerul")
 volume_db = -1.0
 autoplay = true
 bus = &"Music"

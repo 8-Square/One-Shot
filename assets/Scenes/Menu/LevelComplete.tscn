@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhbbeq4o8cx4c"]
+[gd_scene load_steps=10 format=3 uid="uid://dhbbeq4o8cx4c"]
 
 [ext_resource type="Script" uid="uid://c3m2hpfx0bo5o" path="res://assets/Scripts/Menu/level_complete.gd" id="1_0w1l2"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_8fffl"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_ctsdo"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_do2pv"]
 [ext_resource type="AudioStream" uid="uid://65pmp7x5hv07" path="res://assets/Music/goodresult-82807.mp3" id="5_ctsdo"]
+[ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="6_do2pv"]
 
 [sub_resource type="Animation" id="Animation_m3srs"]
 length = 0.001
@@ -116,10 +117,10 @@ layout_mode = 2
 
 [node name="NextLevel" type="TextureButton" parent="HBoxContainer/NextLevelContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../RestartContainer/Restart")
-focus_neighbor_right = NodePath("../../QuitContainer/Quit")
-focus_next = NodePath("../../QuitContainer/Quit")
-focus_previous = NodePath("../../RestartContainer/Restart")
+focus_neighbor_left = NodePath("../../QuitContainer/Quit")
+focus_neighbor_right = NodePath("../../RestartContainer/Restart")
+focus_next = NodePath("../../RestartContainer/Restart")
+focus_previous = NodePath("../../QuitContainer/Quit")
 texture_normal = ExtResource("2_ctsdo")
 texture_focused = ExtResource("3_do2pv")
 
@@ -146,10 +147,10 @@ size_flags_horizontal = 6
 
 [node name="Restart" type="TextureButton" parent="HBoxContainer/RestartContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../QuitContainer/Quit")
-focus_neighbor_right = NodePath("../../NextLevelContainer/NextLevel")
-focus_next = NodePath("../../NextLevelContainer/NextLevel")
-focus_previous = NodePath("../../QuitContainer/Quit")
+focus_neighbor_left = NodePath("../../NextLevelContainer/NextLevel")
+focus_neighbor_right = NodePath("../../QuitContainer/Quit")
+focus_next = NodePath("../../QuitContainer/Quit")
+focus_previous = NodePath("../../NextLevelContainer/NextLevel")
 texture_normal = ExtResource("2_ctsdo")
 texture_focused = ExtResource("3_do2pv")
 
@@ -176,10 +177,10 @@ size_flags_horizontal = 6
 
 [node name="Quit" type="TextureButton" parent="HBoxContainer/QuitContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../NextLevelContainer/NextLevel")
-focus_neighbor_right = NodePath("../../RestartContainer/Restart")
-focus_next = NodePath("../../RestartContainer/Restart")
-focus_previous = NodePath("../../NextLevelContainer/NextLevel")
+focus_neighbor_left = NodePath("../../RestartContainer/Restart")
+focus_neighbor_right = NodePath("../../NextLevelContainer/NextLevel")
+focus_next = NodePath("../../NextLevelContainer/NextLevel")
+focus_previous = NodePath("../../RestartContainer/Restart")
 texture_normal = ExtResource("2_ctsdo")
 texture_focused = ExtResource("3_do2pv")
 
@@ -339,6 +340,10 @@ stream = ExtResource("5_ctsdo")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.2
 autostart = true
+
+[node name="UISelect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_do2pv")
+bus = &"SFX"
 
 [connection signal="pressed" from="HBoxContainer/NextLevelContainer/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="HBoxContainer/RestartContainer/Restart" to="." method="_on_restart_pressed"]

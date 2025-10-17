@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://5be6rnwekg5d" path="res://assets/Sprites/Backgrounds/Parallax Cave/7.png" id="20_ps3a3"]
 [ext_resource type="Texture2D" uid="uid://bmms4oojs6q8a" path="res://assets/Sprites/Backgrounds/Parallax Cave/8fx.png" id="21_o4qgw"]
 [ext_resource type="Texture2D" uid="uid://chxh61jsrj6kt" path="res://assets/Sprites/Backgrounds/Parallax Cave/9.png" id="22_5ag0b"]
-[ext_resource type="AudioStream" uid="uid://docys3docrym" path="res://assets/Music/Background/leveltwosound.wav" id="24_wdexn"]
+[ext_resource type="AudioStream" uid="uid://docys3docrym" path="res://assets/Music/Background/IceMusic.wav" id="24_wdexn"]
 [ext_resource type="Texture2D" uid="uid://b2d8x2d2fwa1g" path="res://assets/Sprites/Backgrounds/Player/Entity.png" id="25_kjjyr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28160"]

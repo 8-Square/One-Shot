@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bmms4oojs6q8a" path="res://assets/Sprites/Backgrounds/Parallax Cave/8fx.png" id="18_4qn24"]
 [ext_resource type="Texture2D" uid="uid://chxh61jsrj6kt" path="res://assets/Sprites/Backgrounds/Parallax Cave/9.png" id="19_mmpuo"]
 [ext_resource type="PackedScene" uid="uid://dhbbeq4o8cx4c" path="res://assets/Scenes/Menu/LevelComplete.tscn" id="20_vqpyt"]
-[ext_resource type="AudioStream" uid="uid://docys3docrym" path="res://assets/Music/Background/leveltwosound.wav" id="23_m65rm"]
+[ext_resource type="AudioStream" uid="uid://docys3docrym" path="res://assets/Music/Background/IceMusic.wav" id="23_m65rm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_330gt"]
 texture = ExtResource("2_6ovuf")

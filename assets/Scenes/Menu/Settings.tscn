@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjptigt865ymr"]
+[gd_scene load_steps=9 format=3 uid="uid://bjptigt865ymr"]
 
 [ext_resource type="Script" uid="uid://dspps1ifx106u" path="res://assets/Scripts/Menu/settings.gd" id="1_6df12"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="2_6luba"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://hoskdmobh4sa" path="res://assets/Scenes/Menu/volume_slider.tscn" id="5_7fwda"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="6_7fwda"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="7_70ccf"]
-[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="9_7fwda"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -19,6 +18,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6df12")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37254903, 0.5882353, 1, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="AudioOptions" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 0
@@ -26,7 +38,7 @@ script = ExtResource("2_xp4jg")
 metadata/_edit_use_anchors_ = true
 
 [node name="VolumeText" type="Label" parent="AudioOptions"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 49.0
 offset_top = 54.0
 offset_right = 157.0
@@ -39,7 +51,7 @@ theme_override_font_sizes/font_size = 26
 text = "Music"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 64.0
 offset_top = 100.0
 offset_right = 576.0
@@ -112,7 +124,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("9_7fwda")
+theme_override_fonts/normal_font = ExtResource("2_6luba")
 theme_override_font_sizes/normal_font_size = 15
 text = "Save & Quit"
 horizontal_alignment = 1

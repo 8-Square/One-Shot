@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="7_qllmr"]
 [ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="8_f40da"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_1muya"]
-[ext_resource type="AudioStream" uid="uid://dh4ijjkxxryq7" path="res://assets/Music/UISelect.wav" id="11_5lyci"]
+[ext_resource type="AudioStream" uid="uid://dh4ijjkxxryq7" path="res://assets/Music/Controls/UISelect.wav" id="11_5lyci"]
 
 [node name="Credits" type="Node"]
 
