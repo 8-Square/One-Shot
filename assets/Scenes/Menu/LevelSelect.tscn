@@ -42,9 +42,9 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.073
-anchor_top = 0.433
+anchor_top = 0.36633334
 anchor_right = 0.223
-anchor_bottom = 0.7
+anchor_bottom = 0.6333333
 offset_left = 3.27999
 offset_top = 0.119995
 offset_right = -44.72
@@ -88,9 +88,9 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.312
-anchor_top = 0.433
-anchor_right = 0.462
-anchor_bottom = 0.7
+anchor_top = 0.36633334
+anchor_right = 0.46199998
+anchor_bottom = 0.6333333
 offset_left = 0.319992
 offset_top = 0.119995
 offset_right = -47.68
@@ -134,9 +134,9 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.547
-anchor_top = 0.433
+anchor_top = 0.36633334
 anchor_right = 0.697
-anchor_bottom = 0.7
+anchor_bottom = 0.6333333
 offset_left = -0.0800171
 offset_top = 0.119995
 offset_right = -48.08
@@ -181,9 +181,9 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.781
-anchor_top = 0.433
-anchor_right = 0.931
-anchor_bottom = 0.7
+anchor_top = 0.36633334
+anchor_right = 0.93100005
+anchor_bottom = 0.6333333
 offset_left = 0.159973
 offset_top = 0.119995
 offset_right = -47.84
@@ -298,6 +298,9 @@ anchor_right = 0.187
 anchor_bottom = 0.133
 offset_right = 0.319992
 offset_bottom = 0.119999
+focus_neighbor_right = NodePath("../LevelFour")
+focus_neighbor_bottom = NodePath("../PreviousButton")
+focus_next = NodePath("../LevelFour")
 texture_normal = ExtResource("7_01bmn")
 texture_pressed = ExtResource("8_fn61j")
 texture_hover = ExtResource("8_fn61j")
@@ -345,6 +348,101 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="LevelFour" type="TextureButton" parent="CanvasLayer/PageTwo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -48.0
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+focus_neighbor_left = NodePath("../PreviousButton")
+focus_neighbor_top = NodePath("../EscapeButton")
+focus_neighbor_right = NodePath("../LevelFive")
+focus_neighbor_bottom = NodePath("../PreviousButton")
+focus_next = NodePath("../LevelFive")
+focus_previous = NodePath("../PreviousButton")
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/PageTwo/LevelFour"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.094
+anchor_right = 0.875
+anchor_bottom = 0.875
+offset_top = -0.0119963
+offset_right = 36.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 16
+text = "Level
+Four"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelFive" type="TextureButton" parent="CanvasLayer/PageTwo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.531
+anchor_top = 0.36633334
+anchor_right = 0.68099993
+anchor_bottom = 0.6333333
+offset_left = 0.15994263
+offset_top = 0.11999512
+offset_right = -47.839966
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+focus_neighbor_left = NodePath("../LevelFour")
+focus_neighbor_top = NodePath("../EscapeButton")
+focus_neighbor_right = NodePath("../LevelFour")
+focus_neighbor_bottom = NodePath("../PreviousButton")
+focus_next = NodePath("../LevelFour")
+focus_previous = NodePath("../LevelFour")
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("4_hyy3w")
+texture_hover = ExtResource("5_tgpxl")
+texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/PageTwo/LevelFive"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.094
+anchor_right = 0.875
+anchor_bottom = 0.875
+offset_top = -0.0119963
+offset_right = 36.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+text = "Level
+Five"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 stream = ExtResource("10_q0e6x")
 volume_db = -0.7
@@ -365,3 +463,5 @@ bus = &"SFX"
 [connection signal="pressed" from="CanvasLayer/PageOne/NextButton" to="CanvasLayer" method="_on_next_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PageTwo/EscapeButton" to="CanvasLayer" method="_on_escape_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PageTwo/PreviousButton" to="CanvasLayer" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageTwo/LevelFour" to="CanvasLayer" method="_on_level_four_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageTwo/LevelFive" to="CanvasLayer" method="_on_level_five_pressed"]
