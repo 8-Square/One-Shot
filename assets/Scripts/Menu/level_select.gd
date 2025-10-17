@@ -43,12 +43,10 @@ func _on_level_three_pressed() -> void:
 
 func _on_level_four_pressed() -> void:
 	$UISelect.play()
-	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
 
 func _on_level_five_pressed() -> void:
 	$UISelect.play()
-	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
 
 

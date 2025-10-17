@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dg4vum8u35hnp" path="res://assets/Scripts/Screens/pause_menu.gd" id="1_8fajh"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="1_wwqwh"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="2_2efyi"]
-[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_ixg3b"]
+[ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="4_ixg3b"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -61,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_ixg3b")
-theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = "Resume"
 horizontal_alignment = 1
@@ -83,7 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_ixg3b")
-theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = "Restart"
 horizontal_alignment = 1
@@ -106,7 +106,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_ixg3b")
-theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/normal_font_size = 21
 text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
