@@ -2,6 +2,7 @@ class_name LevelCompletion
 extends CanvasLayer
 
 @onready var audiostreamplayer = $LevelCompleteAudio
+@onready var fakeaudiostreamplayer = $DumbCompleteAudio
 
 @onready var finaltime : Label = $FinalTime
 func _ready():
@@ -83,7 +84,16 @@ func level_complete(level_no):
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			$HBoxContainer/NextLevelContainer/NextLevel.hide()
 			finaltime.show()
-
+		"res://assets/Scenes/Levels/LevelFour.tscn_dumb":
+			$AnimationPlayer.play("finish_level")
+			await $AnimationPlayer.animation_finished
+			fakeaudiostreamplayer.play()
+			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
+			$AnimationPlayer.pause()
+			%DumbComplete.show()
+			$HBoxContainer/RestartContainer/Restart.grab_focus()
+			$HBoxContainer/NextLevelContainer/NextLevel.hide()
+			finaltime.show()
 
 func _on_next_level_pressed() -> void:
 	hide_all_labels()

@@ -315,6 +315,28 @@ text = "Congrats You Beat the game!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="DumbComplete" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "Congrats You Beat the game...
+The dumb way
+Now go and do it like how its 
+supposed to be done."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GameComplete" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -335,6 +357,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LevelCompleteAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ctsdo")
+
+[node name="DumbCompleteAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ctsdo")
 
 [node name="Timer" type="Timer" parent="."]

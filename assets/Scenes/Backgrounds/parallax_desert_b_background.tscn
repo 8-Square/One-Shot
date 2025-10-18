@@ -19,7 +19,7 @@ texture_repeat = 2
 scroll_scale = Vector2(0.05, 0.05)
 scroll_offset = Vector2(0, -61)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D11"]
 position = Vector2(960, 34)
@@ -31,7 +31,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.05, 0.05)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 position = Vector2(960, 540)
@@ -43,7 +43,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D2" type="Sprite2D" parent="Parallax2D2"]
 position = Vector2(960, 540)
@@ -56,7 +56,7 @@ visible = false
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D2" type="Sprite2D" parent="Parallax2D12"]
 position = Vector2(960, 161)
@@ -68,7 +68,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D3" type="Sprite2D" parent="Parallax2D3"]
 position = Vector2(960, 540)
@@ -81,7 +81,7 @@ visible = false
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D3" type="Sprite2D" parent="Parallax2D13"]
 position = Vector2(1056, 220)
@@ -93,7 +93,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D4" type="Sprite2D" parent="Parallax2D4"]
 position = Vector2(960, 540)
@@ -105,7 +105,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.3, 0.3)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D5" type="Sprite2D" parent="Parallax2D5"]
 position = Vector2(960, 540)
@@ -117,7 +117,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D6" type="Sprite2D" parent="Parallax2D6"]
 position = Vector2(960, 540)
@@ -129,7 +129,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.55, 0.55)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D7" type="Sprite2D" parent="Parallax2D7"]
 position = Vector2(960, 540)
@@ -141,7 +141,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D8" type="Sprite2D" parent="Parallax2D8"]
 position = Vector2(960, 540)
@@ -153,7 +153,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D9" type="Sprite2D" parent="Parallax2D9"]
 position = Vector2(960, 540)
@@ -165,7 +165,7 @@ region_rect = Rect2(0, 0, 1920, 1080)
 texture_repeat = 2
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1920, 0)
-repeat_times = 12
+repeat_times = 16
 
 [node name="Sprite2D9" type="Sprite2D" parent="Parallax2D10"]
 position = Vector2(960, 2081.5)
