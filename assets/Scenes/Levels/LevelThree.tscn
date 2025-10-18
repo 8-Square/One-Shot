@@ -164,12 +164,24 @@ texture = ExtResource("11_6r585")
 [node name="Parallax2D5" type="Parallax2D" parent="."]
 z_index = -2
 scroll_scale = Vector2(0.18, 0.18)
-scroll_offset = Vector2(-218, -819)
+scroll_offset = Vector2(-402, -811)
 repeat_size = Vector2(2000, 0)
 repeat_times = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D5"]
 position = Vector2(-45, 228.99997)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_6r585")
+
+[node name="Parallax2D6" type="Parallax2D" parent="."]
+z_index = -2
+scroll_scale = Vector2(0.18, 0.18)
+scroll_offset = Vector2(-634, -1259)
+repeat_size = Vector2(2000, 0)
+repeat_times = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D6"]
+position = Vector2(-253, 229)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("11_6r585")
 
