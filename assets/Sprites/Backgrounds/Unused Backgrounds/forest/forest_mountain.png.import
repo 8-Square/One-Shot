@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjw3cvcdbw82f"
-path="res://.godot/imported/Slime_Move_Fixed.png-a6dde5417c74382e1941e9fdf3b26b43.ctex"
+uid="uid://clkjlb1em0iii"
+path="res://.godot/imported/forest_mountain.png-d8946cf378001d5a9ea6053bee8120d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Backgrounds/Player/Slime_Move_Fixed.png"
-dest_files=["res://.godot/imported/Slime_Move_Fixed.png-a6dde5417c74382e1941e9fdf3b26b43.ctex"]
+source_file="res://assets/Sprites/Backgrounds/Unused Backgrounds/forest/forest_mountain.png"
+dest_files=["res://.godot/imported/forest_mountain.png-d8946cf378001d5a9ea6053bee8120d9.ctex"]
 
 [params]
 

@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="6_ggdr6"]
 [ext_resource type="PackedScene" uid="uid://dhbbeq4o8cx4c" path="res://assets/Scenes/Menu/LevelComplete.tscn" id="7_dkm3e"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="11_jb7uh"]
-[ext_resource type="PackedScene" uid="uid://b68rjlysndu2u" path="res://assets/Scenes/Backgrounds/parallax_desert_b_background.tscn" id="23_02l4a"]
+[ext_resource type="PackedScene" uid="uid://b68rjlysndu2u" path="res://assets/Scenes/Backgrounds/parallax_desert_background.tscn" id="23_02l4a"]
 [ext_resource type="AudioStream" uid="uid://c4rgsy657cbda" path="res://assets/Music/Background/DesertMusic.mp3" id="23_aerul"]
 [ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/EndPortal.tscn" id="25_aerul"]
 [ext_resource type="Script" uid="uid://bdmxmaa1ep5vy" path="res://assets/Scripts/Other/dumb_end_portal.gd" id="26_bakqk"]

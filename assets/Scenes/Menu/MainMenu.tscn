@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/main_menu.gd" id="1_u3vdq"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_5q0rw"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_sndc1"]
-[ext_resource type="Texture2D" uid="uid://cry4gloh32t4l" path="res://assets/Sprites/Backgrounds/Menu Backgrounds/Screenshot 2025-10-18 104913.png" id="2_x1qtw"]
+[ext_resource type="Texture2D" uid="uid://cry4gloh32t4l" path="res://assets/Sprites/Backgrounds/Menu Backgrounds/IceBackground.png" id="2_x1qtw"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_hlo52"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="4_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://bukuyfnaua0g5" path="res://assets/Music/MenuScreen.mp3" id="6_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="7_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://c7132p6yxjo37" path="res://assets/Music/Controls/Shutdown.wav" id="7_et853"]
-[ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Backgrounds/Player/slime_bounce.png" id="9_gyhcd"]
+[ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Player/slime_bounce.png" id="9_gyhcd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l720x"]
 texture = ExtResource("2_x1qtw")
@@ -339,7 +339,7 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_x1qtw")
 animation = &"default_flipped"
 autoplay = "default"
-frame_progress = 0.06589385
+frame_progress = 0.8850355
 speed_scale = 0.7
 centered = false
 flip_h = true

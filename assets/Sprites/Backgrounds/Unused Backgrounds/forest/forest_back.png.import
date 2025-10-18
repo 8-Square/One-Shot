@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2d8x2d2fwa1g"
-path="res://.godot/imported/Entity.png-98d4feee66572a7da67de466829a50e3.ctex"
+uid="uid://c55aekg80ynvx"
+path="res://.godot/imported/forest_back.png-97e3ad645ee1f34fb6f4fded91450b05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Backgrounds/Player/Entity.png"
-dest_files=["res://.godot/imported/Entity.png-98d4feee66572a7da67de466829a50e3.ctex"]
+source_file="res://assets/Sprites/Backgrounds/Unused Backgrounds/forest/forest_back.png"
+dest_files=["res://.godot/imported/forest_back.png-97e3ad645ee1f34fb6f4fded91450b05.ctex"]
 
 [params]
 

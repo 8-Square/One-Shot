@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=3 uid="uid://byg1xe2t1e15k"]
 
 [ext_resource type="Script" uid="uid://jvneo4umsef2" path="res://assets/Scripts/Player/base_player.gd" id="1_lnf63"]
-[ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Backgrounds/Player/slime_bounce.png" id="2_5qdut"]
+[ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Player/slime_bounce.png" id="2_5qdut"]
 [ext_resource type="AudioStream" uid="uid://daiiom1ijtv5" path="res://assets/Music/Controls/Jump-Please.mp3" id="3_5qdut"]
 [ext_resource type="AudioStream" uid="uid://dufbx65m3rnas" path="res://assets/Music/Controls/Splat.wav" id="4_q3ly6"]
 
