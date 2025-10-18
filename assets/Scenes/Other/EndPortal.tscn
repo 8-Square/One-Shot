@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://pwqdiggkrcde" path="res://assets/Scripts/Other/end_portal.gd" id="1_wtc3w"]
 [ext_resource type="Texture2D" uid="uid://b6ko30d7aoxle" path="res://assets/Sprites/Portals/Green Portal Sprite Sheet.png" id="2_wtc3w"]
 [ext_resource type="Texture2D" uid="uid://jjptoo1j5ctt" path="res://assets/Sprites/Portals/Green Portal Sprite Sheet Flipped.png" id="3_wtc3w"]
-[ext_resource type="AudioStream" uid="uid://65pmp7x5hv07" path="res://assets/Music/goodresult-82807.mp3" id="4_vgvfn"]
+[ext_resource type="AudioStream" uid="uid://bq6brg8n8t21" path="res://assets/Music/LevelComplete.wav" id="4_vgvfn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgvfn"]
 atlas = ExtResource("2_wtc3w")
