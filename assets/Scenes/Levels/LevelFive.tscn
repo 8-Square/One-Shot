@@ -352,16 +352,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="."]
-offset_left = 14974.0
-offset_top = -1544.0
-offset_right = 15719.0
-offset_bottom = -1306.0
+offset_left = 14008.0
+offset_top = -1404.0
+offset_right = 14753.0
+offset_bottom = -1166.0
 pivot_offset = Vector2(365, 122)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("8_vg87r")
 theme_override_font_sizes/normal_font_size = 55
-text = "you can't pass"
+text = "haha, you can't pass there"
 horizontal_alignment = 1
 vertical_alignment = 1
 

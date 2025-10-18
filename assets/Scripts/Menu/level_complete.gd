@@ -12,6 +12,7 @@ func _ready():
 	$TComplete.add_to_group("complete_label")
 	$LFourComplete.add_to_group("complete_label")
 	$LFiveComplete.add_to_group("complete_label")
+	$DumbComplete.add_to_group("complete_label")
 	$GameComplete.add_to_group("complete_label")
 
 func hide_all_labels():

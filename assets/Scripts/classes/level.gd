@@ -21,7 +21,3 @@ func pause_menu():
 		$CanvasLayer/PauseMenu/CanvasLayer/ColorRect.hide()
 	#if pause_menu() && Input.is_action_just_pressed("pause"):
 		#pause_menu()
-
-func end_portal():
-	if $CanvasLayer/LevelComplete:
-		$AudioStreamPlayer.stop()
