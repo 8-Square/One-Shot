@@ -1,14 +1,19 @@
-[gd_scene load_steps=44 format=3 uid="uid://68yveik7dd00"]
+[gd_scene load_steps=46 format=3 uid="uid://68yveik7dd00"]
 
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/main_menu.gd" id="1_u3vdq"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_5q0rw"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_sndc1"]
+[ext_resource type="Texture2D" uid="uid://cry4gloh32t4l" path="res://assets/Sprites/Backgrounds/Menu Backgrounds/Screenshot 2025-10-18 104913.png" id="2_x1qtw"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_hlo52"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="4_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://bukuyfnaua0g5" path="res://assets/Music/MenuScreen.mp3" id="6_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="7_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://c7132p6yxjo37" path="res://assets/Music/Controls/Shutdown.wav" id="7_et853"]
 [ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Backgrounds/Player/slime_bounce.png" id="9_gyhcd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l720x"]
+texture = ExtResource("2_x1qtw")
+modulate_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyhcd"]
 
@@ -193,6 +198,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_evwyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eo3f")
+}],
+"loop": true,
+"name": &"default_flipped",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_owqil")
 }, {
 "duration": 1.0,
@@ -273,150 +289,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3vdq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -67.0
-offset_top = -155.0
-offset_right = 698.0
-offset_bottom = 495.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.372549, 0.588235, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
-layout_mode = 0
-offset_left = 99.0
-offset_top = 291.0
-offset_right = 280.0
-offset_bottom = 485.0
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="Play" type="TextureButton" parent="ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Quit")
-focus_neighbor_bottom = NodePath("../Settings")
-focus_next = NodePath("../Settings")
-focus_previous = NodePath("../Quit")
-texture_normal = ExtResource("2_sndc1")
-texture_focused = ExtResource("3_hlo52")
-stretch_mode = 0
-
-[node name="PlayText" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Play"]
+[node name="ColorRect" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_3k2g4")
-theme_override_font_sizes/normal_font_size = 28
-bbcode_enabled = true
-text = "Play"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Settings" type="TextureButton" parent="ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Play")
-focus_neighbor_bottom = NodePath("../Quit")
-focus_next = NodePath("../Quit")
-focus_previous = NodePath("../Play")
-texture_normal = ExtResource("2_sndc1")
-texture_focused = ExtResource("3_hlo52")
-stretch_mode = 0
-
-[node name="SettingsText" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Settings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_3k2g4")
-theme_override_font_sizes/normal_font_size = 28
-text = "Settings"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Quit" type="TextureButton" parent="ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Settings")
-focus_neighbor_right = NodePath("../../../Credits")
-focus_neighbor_bottom = NodePath("../Play")
-focus_next = NodePath("../../../Credits")
-focus_previous = NodePath("../Settings")
-texture_normal = ExtResource("2_sndc1")
-texture_focused = ExtResource("3_hlo52")
-stretch_mode = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Quit"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_3k2g4")
-theme_override_font_sizes/normal_font_size = 28
-text = "Quit"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Credits" type="TextureButton" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -818.0
-offset_top = -543.0
-offset_right = -698.0
-offset_bottom = -495.0
-grow_horizontal = 0
-grow_vertical = 0
-focus_neighbor_left = NodePath("../MarginContainer/VBoxContainer/Quit")
-focus_neighbor_top = NodePath("../MarginContainer/VBoxContainer/Quit")
-focus_neighbor_bottom = NodePath("../MarginContainer/VBoxContainer/Play")
-focus_next = NodePath("../MarginContainer/VBoxContainer/Quit")
-focus_previous = NodePath("../MarginContainer/VBoxContainer/Quit")
-texture_normal = ExtResource("2_sndc1")
-texture_focused = ExtResource("3_hlo52")
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="CreditsText" type="RichTextLabel" parent="ColorRect/Credits"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_3k2g4")
-theme_override_font_sizes/normal_font_size = 22
-text = "Credits"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ColorRect"]
 texture_filter = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.090625
+anchor_top = -0.45277777
+anchor_right = -0.090625
+anchor_bottom = -0.45277777
 offset_left = 383.0
 offset_top = 197.0
 offset_right = 637.0
@@ -444,15 +334,142 @@ bus = &"SFX"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(337, 57)
-scale = Vector2(8, 8)
+position = Vector2(440, 121)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_x1qtw")
-animation = &"bounce"
+animation = &"default_flipped"
 autoplay = "default"
-frame = 10
+frame_progress = 0.06589385
+speed_scale = 0.7
 centered = false
+flip_h = true
 
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="ColorRect/Credits" to="." method="_on_credits_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 136.0
+offset_right = 213.0
+offset_bottom = 330.0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Settings")
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../Quit")
+texture_normal = ExtResource("2_sndc1")
+texture_focused = ExtResource("3_hlo52")
+stretch_mode = 0
+
+[node name="PlayText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_3k2g4")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Play")
+texture_normal = ExtResource("2_sndc1")
+texture_focused = ExtResource("3_hlo52")
+stretch_mode = 0
+
+[node name="SettingsText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_3k2g4")
+theme_override_font_sizes/normal_font_size = 28
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_right = NodePath("../../../Credits")
+focus_neighbor_bottom = NodePath("../Play")
+focus_next = NodePath("../../../Credits")
+focus_previous = NodePath("../Settings")
+texture_normal = ExtResource("2_sndc1")
+texture_focused = ExtResource("3_hlo52")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_3k2g4")
+theme_override_font_sizes/normal_font_size = 28
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_neighbor_left = NodePath("../MarginContainer/VBoxContainer/Quit")
+focus_neighbor_top = NodePath("../MarginContainer/VBoxContainer/Quit")
+focus_neighbor_bottom = NodePath("../MarginContainer/VBoxContainer/Play")
+focus_next = NodePath("../MarginContainer/VBoxContainer/Quit")
+focus_previous = NodePath("../MarginContainer/VBoxContainer/Quit")
+texture_normal = ExtResource("2_sndc1")
+texture_focused = ExtResource("3_hlo52")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsText" type="RichTextLabel" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_3k2g4")
+theme_override_font_sizes/normal_font_size = 22
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

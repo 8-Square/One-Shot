@@ -1,12 +1,13 @@
 extends Area2D
 @onready var level_complete = $"/root/LevelComplete"
-
+@onready var level_audio = "$/root/AudioStreamPlayer"
 
 # haha end portal.... minecraft reference
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is BasePlayer:
+		level_audio.stop()
 		Stopwatch.stop()
 		body.velocity = Vector2.ZERO
 		body.can_control = false

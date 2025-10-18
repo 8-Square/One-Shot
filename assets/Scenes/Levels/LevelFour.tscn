@@ -167,6 +167,9 @@ position = Vector2(-723, 141)
 script = ExtResource("2_3mnct")
 level_start_pos = NodePath("../PlayerStart")
 
+[node name="Camera2D" parent="Player" index="2"]
+position = Vector2(-2, 1)
+
 [node name="FakeOverlay" type="TileMapLayer" parent="."]
 visible = false
 z_index = 7
@@ -375,6 +378,7 @@ script = ExtResource("26_bakqk")
 animation = &"default"
 frame_progress = 0.0
 
+[editable path="Player"]
 [editable path="Portal"]
 [editable path="Portal2"]
 [editable path="DumbPortal"]

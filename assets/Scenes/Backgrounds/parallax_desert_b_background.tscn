@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://s5kaovm4ux2b" path="res://assets/Sprites/Backgrounds/Desert Parallax/Extra 9 Background.png" id="2_1vuh2"]
 [ext_resource type="Texture2D" uid="uid://46c1o7x5jit7" path="res://assets/Sprites/Backgrounds/Desert Parallax/8 Stars.png" id="2_34kmm"]
 [ext_resource type="Texture2D" uid="uid://co651yqbe0pun" path="res://assets/Sprites/Backgrounds/Desert Parallax/7 Clouds.png" id="3_1vuh2"]
-[ext_resource type="Texture2D" uid="uid://ddfr8jb5ak0ai" path="res://assets/Sprites/Backgrounds/Desert Parallax/6 Sun.png" id="4_q1bdb"]
+[ext_resource type="Texture2D" uid="uid://dvk3y4d0towrs" path="res://assets/Sprites/Backgrounds/Desert Parallax/6 Sun V2.png" id="5_1vuh2"]
 [ext_resource type="Texture2D" uid="uid://bg38juwxeb7x7" path="res://assets/Sprites/Backgrounds/Desert Parallax/5 Mountains.png" id="5_ed6rg"]
 [ext_resource type="Texture2D" uid="uid://boj1npe4g6u01" path="res://assets/Sprites/Backgrounds/Desert Parallax/4 Layer4.png" id="6_t7foc"]
 [ext_resource type="Texture2D" uid="uid://3ved51n7tvnf" path="res://assets/Sprites/Backgrounds/Desert Parallax/3 Layer3.png" id="7_t1qug"]
@@ -51,6 +51,18 @@ texture = ExtResource("2_34kmm")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
+[node name="Parallax2D14" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.13, 0.13)
+repeat_size = Vector2(1920, 0)
+repeat_times = 16
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D14"]
+position = Vector2(1368, 252)
+texture = ExtResource("2_34kmm")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
 [node name="Parallax2D12" type="Parallax2D" parent="."]
 visible = false
 texture_repeat = 2
@@ -76,6 +88,18 @@ texture = ExtResource("3_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
+[node name="Parallax2D15" type="Parallax2D" parent="."]
+texture_repeat = 2
+scroll_scale = Vector2(0.13, 0.13)
+repeat_size = Vector2(1920, 0)
+repeat_times = 16
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D15"]
+position = Vector2(824, 188)
+texture = ExtResource("3_1vuh2")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
 [node name="Parallax2D13" type="Parallax2D" parent="."]
 visible = false
 texture_repeat = 2
@@ -92,12 +116,12 @@ region_rect = Rect2(0, 0, 1920, 1080)
 [node name="Parallax2D4" type="Parallax2D" parent="."]
 texture_repeat = 2
 scroll_scale = Vector2(0.2, 0.2)
-repeat_size = Vector2(1920, 0)
-repeat_times = 16
+repeat_size = Vector2(2600, 0)
+repeat_times = 12
 
 [node name="Sprite2D4" type="Sprite2D" parent="Parallax2D4"]
-position = Vector2(960, 540)
-texture = ExtResource("4_q1bdb")
+position = Vector2(960, 468)
+texture = ExtResource("5_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 

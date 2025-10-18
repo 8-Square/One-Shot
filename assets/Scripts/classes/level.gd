@@ -6,7 +6,6 @@ var paused := false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		print("WORKING")
 		pause_menu()
 
 func pause_menu():
@@ -22,3 +21,7 @@ func pause_menu():
 		$CanvasLayer/PauseMenu/CanvasLayer/ColorRect.hide()
 	#if pause_menu() && Input.is_action_just_pressed("pause"):
 		#pause_menu()
+
+func end_portal():
+	if $CanvasLayer/LevelComplete:
+		$AudioStreamPlayer.stop()
