@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="One Shot"
-config/version="1.1.2"
+config/description="A fast paced rage type slime platformer"
+config/version="1.2.1"
 run/main_scene="uid://68yveik7dd00"
 config/features=PackedStringArray("4.5", "Mobile")
+config/icon="uid://n2xdf0vvm0nb"
 run/layer_3="Danger"
 
 [audio]

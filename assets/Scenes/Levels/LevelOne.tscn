@@ -5689,7 +5689,6 @@ visible = false
 [node name="LevelComplete" parent="CanvasLayer" instance=ExtResource("4_jokw5")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
-visible = false
 scale = Vector2(2.3, 2.3)
 transform = Transform2D(2.3, 0, 0, 2.3, 0, 0)
 

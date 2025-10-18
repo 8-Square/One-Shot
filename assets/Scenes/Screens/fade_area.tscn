@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnrgwbad32ell"]
 
-[ext_resource type="Script" uid="uid://cy1uq1qw2l0w5" path="res://fade_area.gd" id="1_3m0ya"]
+[ext_resource type="Script" uid="uid://cy1uq1qw2l0w5" path="res://assets/Scripts/Other/fade_area.gd" id="1_3m0ya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dc4hn"]
 size = Vector2(20.659729, 19.389143)
