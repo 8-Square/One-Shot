@@ -90,27 +90,15 @@ position = Vector2(-325.715, -188.571)
 shape = SubResource("RectangleShape2D_8frfp")
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
-visible = false
-offset_left = -311.0
-offset_top = 26.0
-offset_right = 434.0
-offset_bottom = 264.0
+offset_left = 97.0
+offset_top = 58.0
+offset_right = 842.0
+offset_bottom = 296.0
 pivot_offset = Vector2(365, 122)
+theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("8_5hpjx")
 theme_override_font_sizes/normal_font_size = 42
 text = "Find The Exit"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="."]
-offset_left = 19966.0
-offset_top = -399.0
-offset_right = 20711.0
-offset_bottom = -161.0
-pivot_offset = Vector2(365, 122)
-theme_override_fonts/normal_font = ExtResource("8_5hpjx")
-theme_override_font_sizes/normal_font_size = 42
-text = "Nothing here..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
