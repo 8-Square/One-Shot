@@ -1,4 +1,4 @@
-extends Control
+class_name PauseMenu extends Control
 
 @onready var main = $"../../"
 #

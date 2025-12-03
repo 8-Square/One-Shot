@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://e5g7nypajit7"]
 
-[ext_resource type="Script" uid="uid://dkyubyxjllxre" path="res://assets/Scenes/Menu/credits.gd" id="1_emerl"]
+[ext_resource type="Script" uid="uid://dkyubyxjllxre" path="res://assets/Scripts/Menu/credits.gd" id="1_emerl"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="5_ell6q"]
 [ext_resource type="FontFile" uid="uid://dj7eumrgnhdm3" path="res://assets/Fonts/MotionControl-Bold.otf" id="6_1a0rd"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="6_bwdso"]

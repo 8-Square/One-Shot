@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://ddv88ijm2k083"]
+[gd_scene load_steps=24 format=4 uid="uid://ddv88ijm2k083"]
 
 [ext_resource type="PackedScene" uid="uid://byg1xe2t1e15k" path="res://assets/Scenes/Player/Player.tscn" id="1_nejv7"]
 [ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_nkslk"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://dl7wac73asnel" path="res://assets/Sprites/Backgrounds/Gradients/level three down.png" id="15_8dx82"]
 [ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/EndPortal.tscn" id="15_y163g"]
 [ext_resource type="Texture2D" uid="uid://co0ngc7jccjd8" path="res://assets/Sprites/Backgrounds/Gradients/level three up.png" id="16_6r585"]
-[ext_resource type="AudioStream" uid="uid://bq6brg8n8t21" path="res://assets/Music/LevelComplete.wav" id="16_8dx82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv5ue"]
 size = Vector2(1299.07, 20)
@@ -220,7 +219,6 @@ frame_progress = 0.0
 position = Vector2(-2, 30)
 
 [node name="AudioStreamPlayer2D" parent="EndPortal" index="2"]
-stream = ExtResource("16_8dx82")
 bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

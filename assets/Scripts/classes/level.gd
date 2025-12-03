@@ -1,7 +1,7 @@
-class_name Levels
-extends Node2D
+class_name Levels extends Node2D
 
 @onready var pause_menu_scene := $CanvasLayer/PauseMenu
+
 var paused := false
 
 func _input(event: InputEvent) -> void:
@@ -21,3 +21,6 @@ func pause_menu():
 		$CanvasLayer/PauseMenu/CanvasLayer/ColorRect.hide()
 	#if pause_menu() && Input.is_action_just_pressed("pause"):
 		#pause_menu()
+
+	
+	

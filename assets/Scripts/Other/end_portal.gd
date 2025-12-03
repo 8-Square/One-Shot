@@ -1,4 +1,6 @@
-extends Area2D
+class_name EndPortal extends Area2D
+# Player Finishes the Level after entering
+
 @onready var level_complete = $"/root/LevelComplete"
 @onready var level_root = get_tree().current_scene
 @onready var level_audio = level_root.get_node("AudioStreamPlayer")

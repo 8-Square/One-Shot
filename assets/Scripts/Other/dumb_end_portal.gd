@@ -1,10 +1,7 @@
-extends Area2D
-@onready var level_complete = $"/root/LevelComplete"
-@onready var level_root = get_tree().current_scene
-@onready var level_audio = level_root.get_node("AudioStreamPlayer")
+class_name DumbEndPortal extends EndPortal
+#Player Finishes the level but DOES NOT COMPLETE IT
 
 # haha end portal.... minecraft reference
-
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is BasePlayer:

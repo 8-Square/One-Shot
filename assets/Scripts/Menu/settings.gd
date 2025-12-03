@@ -1,4 +1,4 @@
-extends Control
+class_name SettingsMenu extends Control
 
 
 func _on_volume_value_changed(value: float) -> void:

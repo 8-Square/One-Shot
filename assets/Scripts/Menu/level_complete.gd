@@ -3,8 +3,8 @@ extends CanvasLayer
 
 @onready var audiostreamplayer = $LevelCompleteAudio
 @onready var fakeaudiostreamplayer = $DumbCompleteAudio
-
 @onready var finaltime : Label = $FinalTime
+
 func _ready():
 	$LOneComplete.add_to_group("complete_label")
 	$LThreeComplete.add_to_group("complete_label")

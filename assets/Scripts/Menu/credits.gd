@@ -1,4 +1,4 @@
-extends CanvasLayer
+class_name CreditsScreenMenu extends CanvasLayer
 
 func _ready() -> void:
 	$ColorRect/EscapeButton.grab_focus()

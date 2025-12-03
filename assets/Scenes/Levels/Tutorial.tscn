@@ -851,7 +851,7 @@ script = ExtResource("1_27xn1")
 
 [node name="parallax_grass_background" parent="." instance=ExtResource("2_fveqh")]
 z_index = -2
-position = Vector2(0, -24)
+position = Vector2(0, -72)
 
 [node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("2_8cnc2")]
 position = Vector2(223, 34)
@@ -1003,7 +1003,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_yndxw")
-volume_db = -3.0
+volume_db = -15.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true

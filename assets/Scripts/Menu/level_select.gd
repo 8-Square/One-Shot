@@ -1,4 +1,4 @@
-extends CanvasLayer
+class_name LevelSelectMenu extends CanvasLayer
 
 var hoverfocus = preload("res://assets/Sprites/Button/green_pressed.png")
 var greenregular = preload("res://assets/Sprites/Button/green.png")
