@@ -11,7 +11,7 @@
 scale = Vector2(1.2, 1.2)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.05, 0.05)
+scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1728, 0)
 repeat_times = 7
 
