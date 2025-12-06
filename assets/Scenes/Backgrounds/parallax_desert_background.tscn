@@ -22,7 +22,7 @@ repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D11"]
-position = Vector2(960, 34)
+position = Vector2(960, -198)
 texture = ExtResource("2_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
@@ -95,7 +95,7 @@ repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
 [node name="Sprite2D3" type="Sprite2D" parent="Parallax2D15"]
-position = Vector2(824, 188)
+position = Vector2(824, 100)
 texture = ExtResource("3_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)

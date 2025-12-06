@@ -365,10 +365,6 @@ volume_db = 2.0
 [node name="DumbCompleteAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ctsdo")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 1.2
-autostart = true
-
 [node name="UISelect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_do2pv")
 bus = &"SFX"
@@ -376,4 +372,3 @@ bus = &"SFX"
 [connection signal="pressed" from="HBoxContainer/NextLevelContainer/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="HBoxContainer/RestartContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="HBoxContainer/QuitContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

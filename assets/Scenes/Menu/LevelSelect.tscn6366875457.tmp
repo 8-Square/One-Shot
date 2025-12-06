@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvx4t5ypgmt6i"]
+[gd_scene load_steps=12 format=3 uid="uid://bvx4t5ypgmt6i"]
 
 [ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/Menu/level_select.gd" id="1_4juup"]
 [ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_pq36x"]
 [ext_resource type="Texture2D" uid="uid://dy5clo7x35ncu" path="res://assets/Sprites/Button/blue_pressed.png" id="3_b8dml"]
 [ext_resource type="Texture2D" uid="uid://d4j70uffu0gxu" path="res://assets/Sprites/Button/green_pressed.png" id="4_hyy3w"]
-[ext_resource type="Texture2D" uid="uid://dgv5koourig5u" path="res://assets/Sprites/Button/red.png" id="5_aly6l"]
 [ext_resource type="Texture2D" uid="uid://x1ihqgxq21f1" path="res://assets/Sprites/Button/green.png" id="5_tgpxl"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="6_aly6l"]
 [ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="7_01bmn"]
@@ -39,6 +38,7 @@ color = Color(0.372017, 0.587277, 0.999999, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial" type="TextureButton" parent="CanvasLayer/PageOne"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.073
@@ -59,7 +59,6 @@ focus_previous = NodePath("../LevelThree")
 texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
@@ -85,6 +84,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LevelOne" type="TextureButton" parent="CanvasLayer/PageOne"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.312
@@ -130,6 +130,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelTwo" type="TextureButton" parent="CanvasLayer/PageOne"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.547
@@ -150,7 +151,6 @@ focus_previous = NodePath("../LevelOne")
 texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
@@ -177,6 +177,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelThree" type="TextureButton" parent="CanvasLayer/PageOne"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.781
@@ -197,7 +198,6 @@ focus_previous = NodePath("../LevelTwo")
 texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("4_hyy3w")
 texture_hover = ExtResource("5_tgpxl")
-texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
@@ -349,6 +349,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelFour" type="TextureButton" parent="CanvasLayer/PageTwo"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -370,7 +371,6 @@ focus_previous = NodePath("../PreviousButton")
 texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
@@ -396,6 +396,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LevelFive" type="TextureButton" parent="CanvasLayer/PageTwo"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.531
@@ -418,7 +419,6 @@ focus_previous = NodePath("../LevelFour")
 texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("4_hyy3w")
 texture_hover = ExtResource("5_tgpxl")
-texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
@@ -456,6 +456,8 @@ bus = &"SFX"
 [connection signal="pressed" from="CanvasLayer/PageOne/Tutorial" to="CanvasLayer" method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CanvasLayer/PageOne/LevelOne" to="CanvasLayer" method="_on_level_one_pressed"]
 [connection signal="pressed" from="CanvasLayer/PageOne/LevelTwo" to="CanvasLayer" method="_on_level_two_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/PageOne/LevelThree" to="CanvasLayer" method="_on_level_three_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/PageOne/LevelThree" to="CanvasLayer" method="_on_level_three_focus_exited"]
 [connection signal="pressed" from="CanvasLayer/PageOne/LevelThree" to="CanvasLayer" method="_on_level_three_pressed"]
 [connection signal="pressed" from="CanvasLayer/PageOne/EscapeButton" to="CanvasLayer" method="_on_escape_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PageOne/NextButton" to="CanvasLayer" method="_on_next_button_pressed"]

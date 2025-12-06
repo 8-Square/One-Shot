@@ -969,10 +969,10 @@ text = "Secret 2/3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EndPortal2" parent="." instance=ExtResource("9_e70cn")]
+[node name="EndPortal2" parent="." groups=["Exits"] instance=ExtResource("9_e70cn")]
 position = Vector2(12307, -473)
 
-[node name="EndPortal3" parent="." instance=ExtResource("9_e70cn")]
+[node name="EndPortal3" parent="." groups=["Exits"] instance=ExtResource("9_e70cn")]
 position = Vector2(12207, 1371)
 
 [node name="Portal" parent="." instance=ExtResource("11_yndxw")]

@@ -362,6 +362,7 @@ size = Vector2(33, 150)
 
 [node name="LevelTwo" type="Node2D"]
 script = ExtResource("1_6ovuf")
+level_no = 2
 
 [node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("6_jrirm")]
 position = Vector2(72.6441, -20.7112)
@@ -622,7 +623,7 @@ position = Vector2(-3259, 1525)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_m65rm")
-volume_db = -0.5
+volume_db = -5.0
 autoplay = true
 bus = &"Music"
 

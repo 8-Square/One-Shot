@@ -293,5 +293,5 @@ volume_db = -10.0
 
 [node name="DeathAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q3ly6")
-volume_db = -5.0
+volume_db = -8.0
 bus = &"SFX"

@@ -27,6 +27,7 @@ buses/default_bus_layout="res://assets/default_bus_layout.tres"
 to_tutorial_transition="*res://assets/Scenes/Screens/PlayToTutorialTransition.tscn"
 Stopwatch="*res://assets/Scenes/GUI/stopwatch.gd"
 LevelComplete="*res://assets/Scenes/Menu/LevelComplete.tscn"
+Globallevel="*res://assets/Scripts/classes/globallevel.gd"
 
 [display]
 
@@ -45,6 +46,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 stopwatch=""
+Exits="Portal Exits"
 
 [input]
 

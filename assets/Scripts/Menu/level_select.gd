@@ -3,17 +3,40 @@ class_name LevelSelectMenu extends CanvasLayer
 var hoverfocus = preload("res://assets/Sprites/Button/green_pressed.png")
 var greenregular = preload("res://assets/Sprites/Button/green.png")
 var regular = preload("res://assets/Sprites/Button/blue.png")
+
+@onready var level_0: TextureButton = $PageOne/Tutorial
+@onready var level_1: TextureButton = $PageOne/LevelOne
+@onready var level_2: TextureButton = $PageOne/LevelTwo
+@onready var level_3: TextureButton = $PageOne/LevelThree
+@onready var level_4: TextureButton = $PageTwo/LevelFour
+@onready var level_5: TextureButton = $PageTwo/LevelFive
+
+
 func _ready() -> void:
 	$PageTwo.hide()
 	$PageOne/Tutorial.grab_focus()
+	
+	#LEVEL TWO
+	if Globallevel.completed_1 == true:
+		level_2.disabled = false
+	else:
+		level_2.disabled = true
+	#LEVEL THREE
+	if Globallevel.completed_2 == true:
+		level_3.disabled = false
+	else:
+		level_3.disabled = true
+	#LEVEL FOUR
+	if Globallevel.completed_3 == true:
+		level_4.disabled = false
+	else:
+		level_4.disabled = true
+	#LEVEL FIVE
+	if Globallevel.completed_4 == true:
+		level_5.disabled = false
+	else:
+		level_5.disabled = true
 
-#func _on_level_three_focus_entered():
-	#%LevelThree.texture_normal = greenregular
-	#if %LevelThree.pressed():
-		#%LevelThree.texture_pressed = "res://assets/Sprites/Button/green_pressed.png"
-	#else:
-		#pass
-	#print("WORKING")
 
 
 func _on_escape_button_pressed() -> void:
@@ -32,22 +55,37 @@ func _on_level_one_pressed() -> void:
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelone)
 
 func _on_level_two_pressed() -> void:
-	$UISelect.play()
-	get_tree().create_timer(0.3)
-	to_tutorial_transition.change_scene(to_tutorial_transition.leveltwo)
+	if Globallevel.completed_1 ==  false:
+		level_2.disabled = true
+		print("LEVEL ONE NOT COMPLETED")
+	if Globallevel.completed_1 == true:
+		level_2.disabled = false
+		$UISelect.play()
+		get_tree().create_timer(0.3)
+		to_tutorial_transition.change_scene(to_tutorial_transition.leveltwo)
 
 func _on_level_three_pressed() -> void:
-	$UISelect.play()
-	get_tree().create_timer(0.3)
-	to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)
+	if Globallevel.completed_2 ==  false:
+		print("LEVEL TWO NOT COMPLETED")
+	if Globallevel.completed_2 == true:
+		$UISelect.play()
+		get_tree().create_timer(0.3)
+		to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)
 
 func _on_level_four_pressed() -> void:
-	$UISelect.play()
-	to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
+	if Globallevel.completed_3 ==  false:
+		print("LEVEL THREE NOT COMPLETED")
+	if Globallevel.completed_3 == true:
+		$UISelect.play()
+		get_tree().create_timer(0.3)
+		to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
 
 func _on_level_five_pressed() -> void:
-	$UISelect.play()
-	to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
+	if Globallevel.completed_4 ==  false:
+		print("LEVEL FOUR NOT COMPLETED")
+	if Globallevel.completed_4 == true:
+		$UISelect.play()
+		to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
 
 
 

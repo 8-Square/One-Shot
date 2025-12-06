@@ -1,5 +1,4 @@
-class_name LevelCompletion 
-extends CanvasLayer
+class_name LevelCompletedScreen extends CanvasLayer
 
 @onready var audiostreamplayer = $LevelCompleteAudio
 @onready var fakeaudiostreamplayer = $DumbCompleteAudio
@@ -14,12 +13,19 @@ func _ready():
 	$LFiveComplete.add_to_group("complete_label")
 	$DumbComplete.add_to_group("complete_label")
 	$GameComplete.add_to_group("complete_label")
+	$HBoxContainer/NextLevelContainer.add_to_group("containers")
+	$HBoxContainer/RestartContainer.add_to_group("containers")
+	$HBoxContainer/QuitContainer.add_to_group("containers")
 
 func hide_all_labels():
 	for label in get_tree().get_nodes_in_group("complete_label"):
 		if label is RichTextLabel:
 			label.hide()
 
+func show_all_containers():
+	for container in get_tree().get_nodes_in_group("containers"):
+		if container is Container:
+			container.show()
 
 func display_final_time():
 	var time_string = Stopwatch.time_to_string()
@@ -32,6 +38,7 @@ func level_complete(level_no):
 			await $AnimationPlayer.animation_finished
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			%TComplete.show()
+			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			
 		"res://assets/Scenes/Levels/LevelOne.tscn":
@@ -41,6 +48,7 @@ func level_complete(level_no):
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			$AnimationPlayer.pause()
 			%LOneComplete.show()
+			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
 			
@@ -51,6 +59,7 @@ func level_complete(level_no):
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			$AnimationPlayer.pause()
 			%LTwoComplete.show()
+			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
 			
@@ -61,9 +70,9 @@ func level_complete(level_no):
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			$AnimationPlayer.pause()
 			%LThreeComplete.show()
+			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
-	#_on_next_level_pressed()
 # MILKYWAY EXPANSION
 		"res://assets/Scenes/Levels/LevelFour.tscn":
 			$AnimationPlayer.play("finish_level")
@@ -71,6 +80,7 @@ func level_complete(level_no):
 			audiostreamplayer.play()
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			$AnimationPlayer.pause()
+			show_all_containers()
 			%LFourComplete.show()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
@@ -82,8 +92,9 @@ func level_complete(level_no):
 			$AnimationPlayer.pause()
 			%LFiveComplete.show()
 			%GameComplete.show()
+			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			$HBoxContainer/NextLevelContainer/NextLevel.hide()
+			$HBoxContainer/NextLevelContainer.hide()
 			finaltime.show()
 		"res://assets/Scenes/Levels/LevelFour.tscn_dumb":
 			$AnimationPlayer.play("finish_level")
@@ -92,8 +103,9 @@ func level_complete(level_no):
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			$AnimationPlayer.pause()
 			%DumbComplete.show()
+			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			$HBoxContainer/NextLevelContainer/NextLevel.hide()
+			$HBoxContainer/NextLevelContainer.hide()
 			finaltime.show()
 
 func _on_next_level_pressed() -> void:

@@ -1,6 +1,10 @@
-class_name Levels extends Node2D
+extends Node2D
 
 @onready var pause_menu_scene := $CanvasLayer/PauseMenu
+
+@export var level_no: int
+#@export var level_completed: bool
+
 
 var paused := false
 
@@ -22,5 +26,13 @@ func pause_menu():
 	#if pause_menu() && Input.is_action_just_pressed("pause"):
 		#pause_menu()
 
-	
-	
+
+
+func level_complete():
+	#level_completed = true	
+	Globallevel.is_completed(level_no)
+	print("LEVEL COMPLETE WORKS")
+
+
+func _on_end_portal_level_finished() -> void:
+	level_complete()

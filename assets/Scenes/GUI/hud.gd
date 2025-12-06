@@ -25,7 +25,6 @@ func _process(delta):
 		get_tree().create_timer(0.3)
 		$StopwatchLabel.show()
 		stopwatch_label.label_settings = override_label
-		print("WORKJNG")
 	#else:
 		#stopwatch_label.label_settings = default_label
 
