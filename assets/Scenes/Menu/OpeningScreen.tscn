@@ -287,19 +287,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_flw0q")
 
 [node name="ColorRect" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ColorRect"]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -311,6 +315,7 @@ offset_left = 383.0
 offset_top = 197.0
 offset_right = 637.0
 offset_bottom = 274.0
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("3_npb1v")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_gyhcd")
@@ -318,6 +323,7 @@ text = "ONE SHOT"
 metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("4_ih48t")
 volume_db = -0.7
 autoplay = true
@@ -325,16 +331,19 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="UISelect" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("5_c4hwk")
 bus = &"SFX"
 
 [node name="QuitSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("6_rgqcu")
 volume_db = 3.4
 bus = &"SFX"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+visible = false
 position = Vector2(440, 121)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_x1qtw")
@@ -345,8 +354,9 @@ speed_scale = 0.7
 centered = false
 flip_h = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 offset_left = 32.0
 offset_top = 136.0
 offset_right = 213.0
@@ -354,21 +364,23 @@ offset_bottom = 330.0
 theme_override_constants/margin_left = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
+metadata/_edit_use_anchors_ = true
 
-[node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Settings")
 focus_next = NodePath("../Settings")
 focus_previous = NodePath("../Quit")
 texture_normal = ExtResource("8_0g2b4")
+texture_hover = ExtResource("9_o0ds7")
 texture_focused = ExtResource("9_o0ds7")
 stretch_mode = 0
 
-[node name="PlayText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Play"]
+[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Play"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -384,17 +396,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Play")
 texture_normal = ExtResource("8_0g2b4")
+texture_hover = ExtResource("9_o0ds7")
 texture_focused = ExtResource("9_o0ds7")
 stretch_mode = 0
 
-[node name="SettingsText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Settings"]
+[node name="SettingsText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -409,18 +422,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Settings")
-focus_neighbor_right = NodePath("../../../Credits")
+focus_neighbor_right = NodePath("../../../../Credits")
 focus_neighbor_bottom = NodePath("../Play")
-focus_next = NodePath("../../../Credits")
+focus_next = NodePath("../../../../Credits")
 focus_previous = NodePath("../Settings")
 texture_normal = ExtResource("8_0g2b4")
+texture_hover = ExtResource("9_o0ds7")
 texture_focused = ExtResource("9_o0ds7")
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Quit"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Quit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -446,11 +460,11 @@ offset_left = -120.0
 offset_top = -48.0
 grow_horizontal = 0
 grow_vertical = 0
-focus_neighbor_left = NodePath("../MarginContainer/VBoxContainer/Quit")
-focus_neighbor_top = NodePath("../MarginContainer/VBoxContainer/Quit")
-focus_neighbor_bottom = NodePath("../MarginContainer/VBoxContainer/Play")
-focus_next = NodePath("../MarginContainer/VBoxContainer/Quit")
-focus_previous = NodePath("../MarginContainer/VBoxContainer/Quit")
+focus_neighbor_left = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Quit")
+focus_neighbor_top = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Quit")
+focus_neighbor_bottom = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Play")
+focus_next = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Quit")
+focus_previous = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Quit")
 texture_normal = ExtResource("8_0g2b4")
 texture_focused = ExtResource("9_o0ds7")
 stretch_mode = 0
@@ -471,7 +485,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

@@ -345,8 +345,9 @@ speed_scale = 0.7
 centered = false
 flip_h = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 offset_left = 32.0
 offset_top = 136.0
 offset_right = 213.0
@@ -354,11 +355,11 @@ offset_bottom = 330.0
 theme_override_constants/margin_left = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Settings")
@@ -368,7 +369,7 @@ texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 
-[node name="PlayText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Play"]
+[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Play"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -384,7 +385,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Quit")
@@ -394,7 +395,7 @@ texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 
-[node name="SettingsText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Settings"]
+[node name="SettingsText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -409,7 +410,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Settings")
 focus_neighbor_right = NodePath("../../../Credits")
@@ -420,7 +421,7 @@ texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Quit"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Quit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -435,8 +436,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Credits" type="TextureButton" parent="."]
-layout_mode = 1
+[node name="Credits" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -456,7 +456,7 @@ texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="CreditsText" type="RichTextLabel" parent="Credits"]
+[node name="CreditsText" type="RichTextLabel" parent="CanvasLayer/Credits"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -471,7 +471,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credits" to="." method="_on_credits_pressed"]

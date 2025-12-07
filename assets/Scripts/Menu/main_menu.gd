@@ -1,7 +1,7 @@
 class_name MainMenu extends Control
 
 func _ready() -> void:
-	$MarginContainer/VBoxContainer/Play.grab_focus()
+	$CanvasLayer/MarginContainer/VBoxContainer/Play.grab_focus()
 
 func _on_play_pressed() -> void:
 	hide()
