@@ -290,38 +290,6 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_flw0q")
 
-[node name="ColorRect" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="ColorRect"]
-visible = false
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.090625
-anchor_top = -0.45277777
-anchor_right = -0.090625
-anchor_bottom = -0.45277777
-offset_left = 383.0
-offset_top = 197.0
-offset_right = 637.0
-offset_bottom = 274.0
-mouse_filter = 1
-theme_override_fonts/font = ExtResource("3_npb1v")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxTexture_gyhcd")
-text = "ONE SHOT"
-metadata/_edit_use_anchors_ = true
-
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 visible = false
 stream = ExtResource("4_ih48t")
@@ -341,7 +309,40 @@ stream = ExtResource("6_rgqcu")
 volume_db = 3.4
 bus = &"SFX"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.090625
+anchor_top = -0.45277777
+anchor_right = -0.090625
+anchor_bottom = -0.45277777
+offset_left = 383.0
+offset_top = 197.0
+offset_right = 637.0
+offset_bottom = 274.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_npb1v")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_gyhcd")
+text = "ONE SHOT"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
 visible = false
 position = Vector2(440, 121)
@@ -353,8 +354,6 @@ frame_progress = 0.8850355
 speed_scale = 0.7
 centered = false
 flip_h = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 offset_left = 32.0

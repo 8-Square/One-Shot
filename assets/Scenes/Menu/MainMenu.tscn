@@ -13,7 +13,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l720x"]
 texture = ExtResource("2_x1qtw")
-modulate_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
+modulate_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyhcd"]
 
@@ -289,8 +289,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3vdq")
 
-[node name="ColorRect" type="Panel" parent="."]
-layout_mode = 1
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3k2g4")
+volume_db = -0.7
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="UISelect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_3k2g4")
+bus = &"SFX"
+
+[node name="QuitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_et853")
+volume_db = 3.4
+bus = &"SFX"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -299,7 +316,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -317,23 +334,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gyhcd")
 text = "ONE SHOT"
 metadata/_edit_use_anchors_ = true
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_3k2g4")
-volume_db = -0.7
-autoplay = true
-bus = &"Music"
-parameters/looping = true
-
-[node name="UISelect" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_3k2g4")
-bus = &"SFX"
-
-[node name="QuitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_et853")
-volume_db = 3.4
-bus = &"SFX"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
 position = Vector2(440, 121)
 scale = Vector2(6, 6)
@@ -344,8 +345,6 @@ frame_progress = 0.8850355
 speed_scale = 0.7
 centered = false
 flip_h = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 offset_left = 32.0
