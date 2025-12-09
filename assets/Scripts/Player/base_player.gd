@@ -2,14 +2,14 @@ class_name BasePlayer
 extends CharacterBody2D
 
 @export var level_start_pos : Node2D
-
 @export var SPEED = 500.0
 @export var JUMP_VELOCITY = -600.0
 @export var max_jump_count = 100
 @export var max_right_count = 100
 @export var max_left_count = 100
 
-@onready var animated_sprite = %AnimatedSprite2D
+@onready var animated_sprite = $SlimeAnimations
+
 var left_count = 0
 var jump_count = 0
 var right_count = 0
