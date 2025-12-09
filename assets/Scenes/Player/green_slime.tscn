@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Player/slime_bounce.png" id="1_xf1d8"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf1d8"]
+atlas = ExtResource("1_xf1d8")
+region = Rect2(0, 36, 23, 22)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnf63"]
 atlas = ExtResource("1_xf1d8")
 region = Rect2(0, 102, 23, 24)
@@ -126,12 +130,16 @@ region = Rect2(92, 68, 23, 24)
 atlas = ExtResource("1_xf1d8")
 region = Rect2(115, 68, 23, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqmob"]
-atlas = ExtResource("1_xf1d8")
-region = Rect2(138, 68, 23, 24)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_wx0pb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf1d8")
+}],
+"loop": true,
+"name": &"RESET",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lnf63")
@@ -245,9 +253,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_re3dn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sqmob")
 }],
 "loop": true,
 "name": &"moving",
@@ -258,6 +263,6 @@ animations = [{
 position = Vector2(-51, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wx0pb")
+animation = &"RESET"
 autoplay = "default"
-frame_progress = 0.3002273
 centered = false

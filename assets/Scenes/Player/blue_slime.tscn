@@ -1,6 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://bfhesm6n0w0jx"]
+[gd_scene load_steps=35 format=3 uid="uid://bfhesm6n0w0jx"]
 
 [ext_resource type="Texture2D" uid="uid://cbl04827xahfd" path="res://assets/Sprites/Player/blue_slime_bounce.png" id="1_e8sqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8sqg"]
+atlas = ExtResource("1_e8sqg")
+region = Rect2(0, 36, 23, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r05ks"]
 atlas = ExtResource("1_e8sqg")
@@ -130,6 +134,14 @@ region = Rect2(138, 70, 23, 22)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_e8sqg")
+}],
+"loop": true,
+"name": &"RESET",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_r05ks")
 }, {
 "duration": 1.0,
@@ -251,5 +263,6 @@ animations = [{
 position = Vector2(-51, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_mrrbp")
+animation = &"RESET"
 autoplay = "default"
 centered = false
