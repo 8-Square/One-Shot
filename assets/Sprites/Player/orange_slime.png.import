@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbl04827xahfd"
-path="res://.godot/imported/blue_slime_bounce.png-fbf2d55c6dab8f9719cb5db3ecc4db84.ctex"
+uid="uid://dhi71htyegcq"
+path="res://.godot/imported/orange_slime.png-51c9dfc1c9cb6c8201ac211fa8713406.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Player/blue_slime_bounce.png"
-dest_files=["res://.godot/imported/blue_slime_bounce.png-fbf2d55c6dab8f9719cb5db3ecc4db84.ctex"]
+source_file="res://assets/Sprites/Player/orange_slime.png"
+dest_files=["res://.godot/imported/orange_slime.png-51c9dfc1c9cb6c8201ac211fa8713406.ctex"]
 
 [params]
 

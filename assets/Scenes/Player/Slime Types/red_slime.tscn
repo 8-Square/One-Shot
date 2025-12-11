@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://b1a672drl77uy"]
 
-[ext_resource type="Texture2D" uid="uid://njhvj7lxggfn" path="res://assets/Sprites/Player/orange_slime_bounce.png" id="1_70my8"]
+[ext_resource type="Texture2D" uid="uid://dhi71htyegcq" path="res://assets/Sprites/Player/orange_slime.png" id="1_70my8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70my8"]
 atlas = ExtResource("1_70my8")
@@ -259,7 +259,7 @@ animations = [{
 "speed": 14.0
 }]
 
-[node name="OrangeSlime" type="AnimatedSprite2D"]
+[node name="RedSlime" type="AnimatedSprite2D"]
 position = Vector2(-51, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_5agvu")

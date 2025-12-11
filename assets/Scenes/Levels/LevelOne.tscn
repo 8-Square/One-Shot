@@ -5807,9 +5807,6 @@ position = Vector2(3186.06, 1593.41)
 scale = Vector2(0.0728578, 0.0679004)
 texture = ExtResource("25_kjjyr")
 
-[connection signal="level_finished" from="EndPortal" to="." method="_on_end_portal_level_finished"]
-[connection signal="level_finished" from="EndPortal2" to="." method="_on_end_portal_level_finished"]
-
 [editable path="HiddenArea/FadeArea"]
 [editable path="TileMapLayer/DangerZone"]
 [editable path="EndPortal"]

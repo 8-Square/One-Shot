@@ -5,9 +5,6 @@ class_name EndPortal extends Area2D
 @onready var level_audio = level_root.get_node("AudioStreamPlayer")
 
 # haha end portal.... minecraft reference
-
-signal level_finished
-
 func _on_body_entered(body: Node2D) -> void:
 	if body is BasePlayer:
 		if is_instance_valid(level_audio):

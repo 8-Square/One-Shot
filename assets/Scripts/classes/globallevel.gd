@@ -1,6 +1,6 @@
 extends Node
 
-
+# GLOBAL LEVEL
 var completed_0 := false
 var completed_1 := false
 var completed_2 := false

@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://15lrl5a6td4m"]
 
-[ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Player/slime_bounce.png" id="1_xf1d8"]
+[ext_resource type="Texture2D" uid="uid://cy0uvvso0pe5l" path="res://assets/Sprites/Player/green_slime.png" id="1_xf1d8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xf1d8"]
 atlas = ExtResource("1_xf1d8")
@@ -263,6 +263,5 @@ animations = [{
 position = Vector2(-51, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wx0pb")
-animation = &"RESET"
 autoplay = "default"
 centered = false

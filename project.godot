@@ -28,6 +28,7 @@ to_tutorial_transition="*res://assets/Scenes/Screens/PlayToTutorialTransition.ts
 Stopwatch="*res://assets/Scenes/GUI/stopwatch.gd"
 LevelComplete="*res://assets/Scenes/Menu/LevelComplete.tscn"
 Globallevel="*res://assets/Scripts/classes/globallevel.gd"
+Globalskin="*res://assets/Scripts/classes/globalskin.gd"
 
 [display]
 

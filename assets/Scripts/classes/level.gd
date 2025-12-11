@@ -6,6 +6,7 @@ extends Node2D
 #@export var level_completed: bool
 
 
+
 var paused := false
 
 func _input(event: InputEvent) -> void:
@@ -29,7 +30,6 @@ func pause_menu():
 
 
 func level_complete():
-	#level_completed = true	
 	Globallevel.is_completed(level_no)
 	print("LEVEL COMPLETE WORKS")
 
