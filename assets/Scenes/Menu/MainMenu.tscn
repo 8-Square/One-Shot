@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://68yveik7dd00"]
+[gd_scene load_steps=53 format=3 uid="uid://68yveik7dd00"]
 
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/main_menu.gd" id="1_u3vdq"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_5q0rw"]
@@ -9,7 +9,14 @@
 [ext_resource type="AudioStream" uid="uid://bukuyfnaua0g5" path="res://assets/Music/MenuScreen.mp3" id="6_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="7_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://c7132p6yxjo37" path="res://assets/Music/Controls/Shutdown.wav" id="7_et853"]
-[ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Player/slime_bounce.png" id="9_gyhcd"]
+[ext_resource type="PackedScene" uid="uid://b1a672drl77uy" path="res://assets/Scenes/Player/Slime Types/red_slime.tscn" id="8_l720x"]
+[ext_resource type="Texture2D" uid="uid://cy0uvvso0pe5l" path="res://assets/Sprites/Player/green_slime.png" id="9_gyhcd"]
+[ext_resource type="PackedScene" uid="uid://bfhesm6n0w0jx" path="res://assets/Scenes/Player/Slime Types/blue_slime.tscn" id="9_r8hni"]
+[ext_resource type="PackedScene" uid="uid://cmvm2s8ki0j7w" path="res://assets/Scenes/Player/Slime Types/brown_slime.tscn" id="10_0hg7e"]
+[ext_resource type="PackedScene" uid="uid://c60y2w3oajtc4" path="res://assets/Scenes/Player/Slime Types/light_slime.tscn" id="10_fn6r1"]
+[ext_resource type="PackedScene" uid="uid://c8jx4jbvnecey" path="res://assets/Scenes/Player/Slime Types/dark_slime.tscn" id="11_cpl1f"]
+[ext_resource type="PackedScene" uid="uid://bbfc6p5clxur8" path="res://assets/Scenes/Player/Slime Types/purple_slime.tscn" id="13_pfymn"]
+[ext_resource type="PackedScene" uid="uid://15lrl5a6td4m" path="res://assets/Scenes/Player/Slime Types/green_slime.tscn" id="14_fyw2a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l720x"]
 texture = ExtResource("2_x1qtw")
@@ -280,7 +287,7 @@ animations = [{
 "speed": 14.0
 }]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("player_skins")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -288,6 +295,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3vdq")
+player_skins = [NodePath("CanvasLayer/SlimeSkins/GreenSlime"), NodePath("CanvasLayer/SlimeSkins/BlueSlime"), NodePath("CanvasLayer/SlimeSkins/RedSlime"), NodePath("CanvasLayer/SlimeSkins/BrownSlime"), NodePath("CanvasLayer/SlimeSkins/PurpleSlime"), NodePath("CanvasLayer/SlimeSkins/DarkSlime"), NodePath("CanvasLayer/SlimeSkins/LightSlime")]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_3k2g4")
@@ -334,8 +342,11 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gyhcd")
 text = "ONE SHOT"
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+[node name="SlimeSkins" type="Node" parent="CanvasLayer"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/SlimeSkins"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(440, 121)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_x1qtw")
@@ -344,6 +355,44 @@ autoplay = "default"
 frame_progress = 0.8850355
 speed_scale = 0.7
 centered = false
+flip_h = true
+
+[node name="RedSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("8_l720x")]
+position = Vector2(440, 129)
+scale = Vector2(6, 6)
+flip_h = true
+
+[node name="BlueSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("9_r8hni")]
+position = Vector2(440, 129)
+scale = Vector2(6, 6)
+animation = &"default"
+frame_progress = 0.43310836
+speed_scale = 0.7
+flip_h = true
+
+[node name="LightSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("10_fn6r1")]
+position = Vector2(440, 129)
+scale = Vector2(6, 6)
+flip_h = true
+
+[node name="DarkSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("11_cpl1f")]
+position = Vector2(440, 129)
+scale = Vector2(6, 6)
+flip_h = true
+
+[node name="BrownSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("10_0hg7e")]
+position = Vector2(440, 129)
+scale = Vector2(6, 6)
+flip_h = true
+
+[node name="PurpleSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("13_pfymn")]
+position = Vector2(440, 129)
+scale = Vector2(6, 6)
+flip_h = true
+
+[node name="GreenSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("14_fyw2a")]
+position = Vector2(440, 129)
+scale = Vector2(6, 6)
 flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]

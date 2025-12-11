@@ -1,12 +1,16 @@
-[gd_scene load_steps=42 format=3 uid="uid://byg1xe2t1e15k"]
+[gd_scene load_steps=46 format=3 uid="uid://byg1xe2t1e15k"]
 
 [ext_resource type="Script" uid="uid://jvneo4umsef2" path="res://assets/Scripts/Player/base_player.gd" id="1_lnf63"]
-[ext_resource type="Texture2D" path="res://assets/Sprites/Player/slime_bounce.png" id="2_5qdut"]
+[ext_resource type="Texture2D" uid="uid://cy0uvvso0pe5l" path="res://assets/Sprites/Player/green_slime.png" id="2_5qdut"]
 [ext_resource type="PackedScene" uid="uid://15lrl5a6td4m" path="res://assets/Scenes/Player/Slime Types/green_slime.tscn" id="2_kkvr3"]
 [ext_resource type="AudioStream" uid="uid://daiiom1ijtv5" path="res://assets/Music/Controls/Jump-Please.mp3" id="3_5qdut"]
 [ext_resource type="PackedScene" uid="uid://b1a672drl77uy" path="res://assets/Scenes/Player/Slime Types/red_slime.tscn" id="4_08cid"]
 [ext_resource type="AudioStream" uid="uid://dufbx65m3rnas" path="res://assets/Music/Controls/Splat.wav" id="4_q3ly6"]
 [ext_resource type="PackedScene" uid="uid://bfhesm6n0w0jx" path="res://assets/Scenes/Player/Slime Types/blue_slime.tscn" id="5_dghhb"]
+[ext_resource type="PackedScene" uid="uid://bbfc6p5clxur8" path="res://assets/Scenes/Player/Slime Types/purple_slime.tscn" id="6_wnwb4"]
+[ext_resource type="PackedScene" uid="uid://c60y2w3oajtc4" path="res://assets/Scenes/Player/Slime Types/light_slime.tscn" id="9_qi08v"]
+[ext_resource type="PackedScene" uid="uid://c8jx4jbvnecey" path="res://assets/Scenes/Player/Slime Types/dark_slime.tscn" id="10_8eo3f"]
+[ext_resource type="PackedScene" uid="uid://cmvm2s8ki0j7w" path="res://assets/Scenes/Player/Slime Types/brown_slime.tscn" id="11_t2ilm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnf63"]
 atlas = ExtResource("2_5qdut")
@@ -269,16 +273,17 @@ position = Vector2(313, 168)
 collision_layer = 3
 collision_mask = 17
 script = ExtResource("1_lnf63")
-player_skins = [NodePath("GreenSlime"), NodePath("BlueSlime"), NodePath("OrangeSlime")]
+player_skins = [NodePath("GreenSlime"), NodePath("BlueSlime"), NodePath("RedSlime"), NodePath("BrownSlime"), NodePath("PurpleSlime"), NodePath("DarkSlime"), NodePath("LightSlime")]
 
 [node name="Skins" type="Node" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Skins"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(262, 107)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wnwb4")
-animation = &"fall"
+animation = &"bounce"
 autoplay = "default"
 centered = false
 
@@ -304,11 +309,23 @@ bus = &"SFX"
 
 [node name="GreenSlime" parent="." instance=ExtResource("2_kkvr3")]
 position = Vector2(-51, -53)
+animation = &"RESET"
 
 [node name="BlueSlime" parent="." instance=ExtResource("5_dghhb")]
-visible = false
 position = Vector2(-51, -53)
 
-[node name="OrangeSlime" parent="." instance=ExtResource("4_08cid")]
-visible = false
+[node name="RedSlime" parent="." instance=ExtResource("4_08cid")]
+position = Vector2(-51, -53)
+
+[node name="BrownSlime" parent="." instance=ExtResource("11_t2ilm")]
+position = Vector2(-51, -53)
+animation = &"RESET"
+
+[node name="PurpleSlime" parent="." instance=ExtResource("6_wnwb4")]
+position = Vector2(-51, -53)
+
+[node name="DarkSlime" parent="." instance=ExtResource("10_8eo3f")]
+position = Vector2(-51, -53)
+
+[node name="LightSlime" parent="." instance=ExtResource("9_qi08v")]
 position = Vector2(-51, -53)

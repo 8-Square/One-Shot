@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ci3tr2x3ho44u"]
+[gd_scene load_steps=14 format=3 uid="uid://ci3tr2x3ho44u"]
 
 [ext_resource type="Script" uid="uid://jg1hjww5lp5a" path="res://SkinSelection.gd" id="1_42il4"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_o5ylx"]
@@ -6,8 +6,12 @@
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="3_qayvk"]
 [ext_resource type="PackedScene" uid="uid://b1a672drl77uy" path="res://assets/Scenes/Player/Slime Types/red_slime.tscn" id="4_hxphq"]
 [ext_resource type="PackedScene" uid="uid://15lrl5a6td4m" path="res://assets/Scenes/Player/Slime Types/green_slime.tscn" id="4_o5ylx"]
+[ext_resource type="PackedScene" uid="uid://c60y2w3oajtc4" path="res://assets/Scenes/Player/Slime Types/light_slime.tscn" id="5_larco"]
+[ext_resource type="PackedScene" uid="uid://bbfc6p5clxur8" path="res://assets/Scenes/Player/Slime Types/purple_slime.tscn" id="5_uphsa"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="6_p5xmi"]
+[ext_resource type="PackedScene" uid="uid://cmvm2s8ki0j7w" path="res://assets/Scenes/Player/Slime Types/brown_slime.tscn" id="6_sb48k"]
 [ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="8_hlsa0"]
+[ext_resource type="PackedScene" uid="uid://c8jx4jbvnecey" path="res://assets/Scenes/Player/Slime Types/dark_slime.tscn" id="8_tvdxc"]
 [ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="9_larco"]
 
 [node name="SkinSelection" type="Control" node_paths=PackedStringArray("skins")]
@@ -18,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_42il4")
-skins = [NodePath("Container/GreenSlime"), NodePath("Container/BlueSlime"), NodePath("Container/OrangeSlime")]
+skins = [NodePath("Container/GreenSlime"), NodePath("Container/BlueSlime"), NodePath("Container/RedSlime"), NodePath("Container/BrownSlime"), NodePath("Container/PurpleSlime"), NodePath("Container/DarkSlime"), NodePath("Container/LightSlime")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -57,10 +61,27 @@ grow_vertical = 2
 
 [node name="GreenSlime" parent="Container" instance=ExtResource("4_o5ylx")]
 animation = &"RESET"
+centered = true
 
 [node name="BlueSlime" parent="Container" instance=ExtResource("3_hxphq")]
+centered = true
 
-[node name="OrangeSlime" parent="Container" instance=ExtResource("4_hxphq")]
+[node name="RedSlime" parent="Container" instance=ExtResource("4_hxphq")]
+centered = true
+
+[node name="BrownSlime" parent="Container" instance=ExtResource("6_sb48k")]
+animation = &"RESET"
+centered = true
+
+[node name="PurpleSlime" parent="Container" instance=ExtResource("5_uphsa")]
+centered = true
+
+[node name="DarkSlime" parent="Container" instance=ExtResource("8_tvdxc")]
+centered = true
+
+[node name="LightSlime" parent="Container" instance=ExtResource("5_larco")]
+animation = &"default"
+centered = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
