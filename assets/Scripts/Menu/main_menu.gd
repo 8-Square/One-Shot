@@ -15,7 +15,7 @@ func apply_skin(skin_index: int) -> void:
 	for i in range(player_skins.size()):
 		player_skins[i].visible = (i == skin_index)
 	animated_sprite = player_skins[skin_index]
-	animated_sprite.play("idle", 0.7)
+	animated_sprite.play("default", 0.7)
 
 func _on_play_pressed() -> void:
 	canvas_layer.hide()
@@ -38,3 +38,9 @@ func _on_credits_pressed() -> void:
 	canvas_layer.hide()
 	$UISelect.play()
 	to_tutorial_transition.change_scene(to_tutorial_transition.credits)
+
+
+func _on_skin_pressed() -> void:
+	canvas_layer.hide()
+	$UISelect.play()
+	to_tutorial_transition.change_scene(to_tutorial_transition.skins)

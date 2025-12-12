@@ -20,10 +20,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4juup")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("1_4juup")
 
 [node name="PageOne" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -443,23 +444,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("10_q0e6x")
 volume_db = -0.7
 autoplay = true
 bus = &"Music"
 
-[node name="UISelect" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+[node name="UISelect" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("11_q0e6x")
 bus = &"SFX"
 
-[connection signal="pressed" from="CanvasLayer/PageOne/Tutorial" to="CanvasLayer" method="_on_tutorial_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/LevelOne" to="CanvasLayer" method="_on_level_one_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/LevelTwo" to="CanvasLayer" method="_on_level_two_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/LevelThree" to="CanvasLayer" method="_on_level_three_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/EscapeButton" to="CanvasLayer" method="_on_escape_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/NextButton" to="CanvasLayer" method="_on_next_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageTwo/EscapeButton" to="CanvasLayer" method="_on_escape_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageTwo/PreviousButton" to="CanvasLayer" method="_on_previous_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageTwo/LevelFour" to="CanvasLayer" method="_on_level_four_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageTwo/LevelFive" to="CanvasLayer" method="_on_level_five_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageOne/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageOne/LevelOne" to="." method="_on_level_one_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageOne/LevelTwo" to="." method="_on_level_two_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageOne/LevelThree" to="." method="_on_level_three_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageOne/EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageOne/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageTwo/EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageTwo/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageTwo/LevelFour" to="." method="_on_level_four_pressed"]
+[connection signal="pressed" from="CanvasLayer/PageTwo/LevelFive" to="." method="_on_level_five_pressed"]

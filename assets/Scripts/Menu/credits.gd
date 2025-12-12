@@ -1,5 +1,7 @@
 class_name CreditsScreenMenu extends CanvasLayer
 
+@onready var canvas_layer: CreditsScreenMenu = $"."
+
 func _ready() -> void:
 	$ColorRect/EscapeButton.grab_focus()
 
@@ -14,5 +16,6 @@ func _ready() -> void:
 
 func _on_escape_button_pressed() -> void:
 	$UISelect.play()
+	canvas_layer.hide()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.back)

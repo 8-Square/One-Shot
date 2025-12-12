@@ -4,6 +4,7 @@ const back = ("res://assets/Scenes/Menu/MainMenu.tscn")
 const levelselect = ("res://assets/Scenes/Menu/LevelSelect.tscn")
 const settings = ("res://assets/Scenes/Menu/Settings.tscn")
 const credits = ("res://assets/Scenes/Menu/Credits.tscn")
+const skins = ("res://assets/Scenes/Player/skin_selection.tscn")
 
 const tutorial = ("res://assets/Scenes/Levels/Tutorial.tscn")
 const levelone = ("res://assets/Scenes/Levels/LevelOne.tscn")
@@ -12,98 +13,65 @@ const levelthree = ("res://assets/Scenes/Levels/LevelThree.tscn")
 const levelfour = ("res://assets/Scenes/Levels/LevelFour.tscn")
 const levelfive = ("res://assets/Scenes/Levels/LevelFive.tscn")
 
+func _ready() -> void:
+	%MainMenuLabel.add_to_group("labels")
+	%SettingsLabel.add_to_group("labels")
+	%CreditsLabel.add_to_group("labels")
+	%SkinLabel.add_to_group("labels")
+	%LevelSelect.add_to_group("labels")
+	
+	%TutorialLable.add_to_group("labels")
+	%LevelOneLabel.add_to_group("labels")
+	%LevelTwoLabel.add_to_group("labels")
+	%LevelThreeLabel.add_to_group("labels")
+	%LevelFourLabel.add_to_group("labels")
+	%LevelFiveLabel.add_to_group("labels")
+
+
+func hide_all_labels():
+	for label in get_tree().get_nodes_in_group("labels"):
+		if label is RichTextLabel:
+			label.hide()
+	
+func change_scene_anim(new_scene, reload: bool, watch: bool, label: RichTextLabel):
+	%AnimationPlayer.play("fade_in")
+	label.show()
+	await %AnimationPlayer.animation_finished
+	%AnimationPlayer.play("RESET")
+	get_tree().change_scene_to_file(new_scene)
+	#%AnimationPlayer.play("fade_out")
+	#await %AnimationPlayer.animation_finished 
+	#if reload == true:
+		#get_tree().reload_current_scene()
+	if watch == true:
+		Stopwatch.reset()
+		Stopwatch.stop()
+	hide_all_labels()
+
 func change_scene(scene_path):
 	match scene_path:
 		back:
-			%AnimationPlayer.play("fade_in")
-			%MainMenuLabel.show()
-			await %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(back)
-			%AnimationPlayer.play("fade_out")
-			await %AnimationPlayer.animation_finished 
-			%MainMenuLabel.hide()
+			change_scene_anim(back, true, false, %MainMenuLabel)
 		levelselect:
-			%AnimationPlayer.play("fade_in", -1, 1.4)
-			%LevelSelect.show()
-			await %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(levelselect)
-			%AnimationPlayer.play("fade_out", -1, 1)
-			await %AnimationPlayer.animation_finished 
-			%LevelSelect.hide()
+			change_scene_anim(levelselect, true, false, %LevelSelect)
 		tutorial:
-			$AnimationPlayer.play("fade_in")
-			%TutorialLable.show()
-			await %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(tutorial)
-			get_tree().reload_current_scene()
-			Stopwatch.reset()
-			%AnimationPlayer.play("fade_out")
-			await %AnimationPlayer.animation_finished 
-			%TutorialLable.hide()
+			change_scene_anim(tutorial, true, true, %TutorialLable)
 		levelone:
-			%AnimationPlayer.play("fade_in")
-			%LevelOneLabel.show()
-			await %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(levelone)
-			Stopwatch.reset()
-			Stopwatch.stop()
-			%AnimationPlayer.play("fade_out")
-			await %AnimationPlayer.animation_finished 
-			%LevelOneLabel.hide()
+			change_scene_anim(levelone, false, true, %LevelOneLabel)
 		leveltwo:
-			%AnimationPlayer.play("fade_in")
-			%LevelTwoLabel.show()
-			await  %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(leveltwo)
-			Stopwatch.reset()
-			Stopwatch.stop()
-			%AnimationPlayer.play("fade_out")
-			await  %AnimationPlayer.animation_finished
-			%LevelTwoLabel.hide()
+			change_scene_anim(leveltwo, true, true, %LevelTwoLabel)
 		levelthree:
-			%AnimationPlayer.play("fade_in")
-			%LevelThreeLabel.show()
-			await  %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(levelthree)
-			Stopwatch.reset()
-			Stopwatch.stop()
-			%AnimationPlayer.play("fade_out")
-			await  %AnimationPlayer.animation_finished
-			%LevelThreeLabel.hide()
+			change_scene_anim(levelthree, true, true, %LevelThreeLabel)
 		levelfour:
-			%AnimationPlayer.play("fade_in")
-			%LevelFourLabel.show()
-			await  %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(levelfour)
-			Stopwatch.reset()
-			Stopwatch.stop()
-			%AnimationPlayer.play("fade_out")
-			await  %AnimationPlayer.animation_finished
-			%LevelFourLabel.hide()
+			change_scene_anim(levelfour, true, true, %LevelFourLabel)
 		levelfive:
-			%AnimationPlayer.play("fade_in")
-			%LevelFiveLabel.show()
-			await  %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(levelfive)
-			Stopwatch.reset()
-			Stopwatch.stop()
-			%AnimationPlayer.play("fade_out")
-			await  %AnimationPlayer.animation_finished
-			%LevelFiveLabel.hide()
+			change_scene_anim(levelfive, true, true, %LevelFiveLabel)
 		
 		settings:
-			%AnimationPlayer.play("fade_in")
-			%SettingsLabel.show()
-			await  %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(settings)
-			%AnimationPlayer.play("fade_out")
-			await  %AnimationPlayer.animation_finished
-			%SettingsLabel.hide()
+			change_scene_anim(settings, false, false, %SettingsLabel)
+
 		credits:
-			%AnimationPlayer.play("fade_in")
-			%CreditsLabel.show()
-			await  %AnimationPlayer.animation_finished
-			get_tree().change_scene_to_file(credits)
-			%AnimationPlayer.play("fade_out")
-			await  %AnimationPlayer.animation_finished
-			%CreditsLabel.hide()
+			change_scene_anim(credits, false, false, %CreditsLabel)
+
+		skins:
+			change_scene_anim(skins, false, false, %SkinLabel)

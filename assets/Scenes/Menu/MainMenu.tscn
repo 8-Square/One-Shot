@@ -342,7 +342,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gyhcd")
 text = "ONE SHOT"
 metadata/_edit_use_anchors_ = true
 
-[node name="SlimeSkins" type="Node" parent="CanvasLayer"]
+[node name="SlimeSkins" type="Container" parent="CanvasLayer"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/SlimeSkins"]
 unique_name_in_owner = true
@@ -396,6 +396,8 @@ scale = Vector2(6, 6)
 flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_bottom = 0.119444445
 offset_left = 32.0
 offset_top = 136.0
 offset_right = 213.0
@@ -405,13 +407,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 6
 
 [node name="Play" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
-focus_neighbor_bottom = NodePath("../Settings")
-focus_next = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Skin")
+focus_next = NodePath("../Skin")
 focus_previous = NodePath("../Quit")
 texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
@@ -433,12 +435,38 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Skin" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Settings")
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../Play")
+texture_normal = ExtResource("2_sndc1")
+texture_focused = ExtResource("3_hlo52")
+stretch_mode = 0
+
+[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Skin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_3k2g4")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Skins"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Skin")
 focus_neighbor_bottom = NodePath("../Quit")
 focus_next = NodePath("../Quit")
-focus_previous = NodePath("../Play")
+focus_previous = NodePath("../Skin")
 texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
@@ -520,6 +548,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Skin" to="." method="_on_skin_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Credits" to="." method="_on_credits_pressed"]

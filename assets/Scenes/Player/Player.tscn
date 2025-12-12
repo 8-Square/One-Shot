@@ -323,6 +323,7 @@ animation = &"RESET"
 
 [node name="PurpleSlime" parent="." instance=ExtResource("6_wnwb4")]
 position = Vector2(-51, -53)
+animation = &"moving"
 
 [node name="DarkSlime" parent="." instance=ExtResource("10_8eo3f")]
 position = Vector2(-51, -53)

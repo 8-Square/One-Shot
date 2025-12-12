@@ -3,6 +3,8 @@ class_name SkinSelection extends Control
 
 @onready var label: Label = $Label
 @onready var previousone: TextureButton = $CanvasLayer/Previous
+@onready var container: Container = $Container
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 @export var skins: Array[AnimatedSprite2D]
 
@@ -18,6 +20,8 @@ var current_index: int = 0
 
 
 func _ready() -> void:
+	canvas_layer.show()
+	container.show()
 	previousone.grab_focus()
 	update_display()
 
@@ -101,11 +105,12 @@ func _on_next_pressed() -> void:
 	current_index = wrapi(current_index + 1, 0, skins.size())
 	update_display()
 
-
 func _on_select_pressed() -> void:
 	Globalskin.selected_skin_index = current_index
 
 
 func _on_escape_button_pressed() -> void:
 	get_tree().create_timer(0.3)
+	canvas_layer.hide()
+	container.hide()
 	to_tutorial_transition.change_scene(to_tutorial_transition.back)

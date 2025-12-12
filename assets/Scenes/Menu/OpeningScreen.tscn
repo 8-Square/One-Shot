@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bukuyfnaua0g5" path="res://assets/Music/MenuScreen.mp3" id="4_ih48t"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="5_c4hwk"]
 [ext_resource type="AudioStream" uid="uid://c7132p6yxjo37" path="res://assets/Music/Controls/Shutdown.wav" id="6_rgqcu"]
-[ext_resource type="Texture2D" uid="uid://cbefgump40iqy" path="res://assets/Sprites/Player/slime_bounce.png" id="7_b3pni"]
+[ext_resource type="Texture2D" uid="uid://cy0uvvso0pe5l" path="res://assets/Sprites/Player/green_slime.png" id="7_b3pni"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="8_0g2b4"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_o0ds7"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="10_ht0ji"]
@@ -280,7 +280,7 @@ animations = [{
 "speed": 14.0
 }]
 
-[node name="MainMenu" type="Control"]
+[node name="OpeningScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -291,7 +291,6 @@ mouse_filter = 1
 script = ExtResource("1_flw0q")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("4_ih48t")
 volume_db = -0.7
 autoplay = true
@@ -299,12 +298,10 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="UISelect" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("5_c4hwk")
 bus = &"SFX"
 
 [node name="QuitSound" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("6_rgqcu")
 volume_db = 3.4
 bus = &"SFX"
@@ -312,7 +309,6 @@ bus = &"SFX"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="Panel" parent="CanvasLayer"]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -323,7 +319,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
-visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -344,7 +339,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(440, 121)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_x1qtw")
@@ -390,7 +384,7 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("10_ht0ji")
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Play"
+text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
