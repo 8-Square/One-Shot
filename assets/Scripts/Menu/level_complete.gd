@@ -35,7 +35,7 @@ func display_final_time():
 func level_complete(path):
 	match path:
 		"res://assets/Scenes/Levels/Tutorial.tscn":
-			var level_number = 0
+			level_number = 0
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
@@ -44,7 +44,7 @@ func level_complete(path):
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			Globallevel.is_completed(level_number)
 		"res://assets/Scenes/Levels/LevelOne.tscn":
-			var level_number = 1
+			level_number = 1
 			print("LEVEL One WORKING")
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
@@ -57,7 +57,7 @@ func level_complete(path):
 			Globallevel.is_completed(level_number)
 		
 		"res://assets/Scenes/Levels/LevelTwo.tscn":
-			var level_number = 2
+			level_number = 2
 			print("LEVEL TWO WORKING")
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
@@ -69,7 +69,7 @@ func level_complete(path):
 			finaltime.show()
 			Globallevel.is_completed(level_number)
 		"res://assets/Scenes/Levels/LevelThree.tscn":
-			var level_number = 3
+			level_number = 3
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
 			audiostreamplayer.play()
@@ -82,7 +82,7 @@ func level_complete(path):
 			Globallevel.is_completed(level_number)
 # MILKYWAY EXPANSION
 		"res://assets/Scenes/Levels/LevelFour.tscn":
-			var level_number = 4
+			level_number = 4
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
 			audiostreamplayer.play()
@@ -94,7 +94,7 @@ func level_complete(path):
 			finaltime.show()
 			Globallevel.is_completed(level_number)
 		"res://assets/Scenes/Levels/LevelFive.tscn":
-			var level_number = 5
+			level_number = 5
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
 			audiostreamplayer.play()
@@ -120,7 +120,6 @@ func level_complete(path):
 			$HBoxContainer/NextLevelContainer.hide()
 			finaltime.show()
 			
-	print(level_number)
 
 
 		

@@ -1,5 +1,4 @@
-class_name PlayerLevels
-extends BasePlayer
+class_name PlayerLevels extends BasePlayer
 
 var tutorial = ("res://assets/Scenes/Levels/Tutorial.tscn")
 var levelone = ("res://assets/Scenes/Levels/LevelOne.tscn")
