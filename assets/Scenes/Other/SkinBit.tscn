@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy2lqglvlk144"]
+
+[ext_resource type="Script" uid="uid://cjv54jekpgnsh" path="res://assets/Scripts/classes/skin_bit.gd" id="1_3fxwl"]
+
+[node name="SkinBit" type="Node" node_paths=PackedStringArray("player_skins")]
+script = ExtResource("1_3fxwl")
+player_skins = [null, null, null, null, null, null]

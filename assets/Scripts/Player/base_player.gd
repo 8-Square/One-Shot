@@ -7,7 +7,9 @@ extends CharacterBody2D
 @export var max_jump_count = 100
 @export var max_right_count = 100
 @export var max_left_count = 100
-@export var player_skins: Array[AnimatedSprite2D]
+#@export var player_skins: Array[AnimatedSprite2D]
+
+@onready var skin_bit = $SkinBit
 
 var animated_sprite: AnimatedSprite2D
 var left_count = 0
@@ -22,14 +24,16 @@ var bounce_timer = 0.0
 const bounce_animation_time = 0.3
 
 func _ready() -> void:
-	var skin_index = Globalskin.selected_skin_index
-	apply_skin(skin_index)
+	#var skin_index = Globalskin.selected_skin_index
+	#apply_skin(skin_index)
+	skin_bit.apply_skin(Globalskin.selected_skin_index)
+	animated_sprite = skin_bit.current_sprite()
 
-func apply_skin(skin_index: int) -> void:
-	for i in range(player_skins.size()):
-		player_skins[i].visible = (i == skin_index)
-	animated_sprite = player_skins[skin_index]
-	animated_sprite.play("idle")
+#func apply_skin(skin_index: int) -> void:
+	#for i in range(player_skins.size()):
+		#player_skins[i].visible = (i == skin_index)
+	#animated_sprite = player_skins[skin_index]
+	#animated_sprite.play("default")
 
 func _physics_process(delta: float) -> void:
 	if not can_control:

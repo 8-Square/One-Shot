@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=3 uid="uid://68yveik7dd00"]
+[gd_scene load_steps=54 format=3 uid="uid://68yveik7dd00"]
 
-[ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/main_menu.gd" id="1_u3vdq"]
+[ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/MainMenu/main_menu.gd" id="1_u3vdq"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_5q0rw"]
+[ext_resource type="PackedScene" uid="uid://dy2lqglvlk144" path="res://assets/Scenes/Other/SkinBit.tscn" id="2_cpl1f"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_sndc1"]
 [ext_resource type="Texture2D" uid="uid://cry4gloh32t4l" path="res://assets/Sprites/Backgrounds/Menu Backgrounds/IceBackground.png" id="2_x1qtw"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_hlo52"]
@@ -287,7 +288,7 @@ animations = [{
 "speed": 14.0
 }]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("player_skins")]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -295,7 +296,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3vdq")
-player_skins = [NodePath("CanvasLayer/SlimeSkins/GreenSlime"), NodePath("CanvasLayer/SlimeSkins/BlueSlime"), NodePath("CanvasLayer/SlimeSkins/RedSlime"), NodePath("CanvasLayer/SlimeSkins/BrownSlime"), NodePath("CanvasLayer/SlimeSkins/PurpleSlime"), NodePath("CanvasLayer/SlimeSkins/DarkSlime"), NodePath("CanvasLayer/SlimeSkins/LightSlime")]
+
+[node name="SkinBit" parent="." node_paths=PackedStringArray("player_skins") instance=ExtResource("2_cpl1f")]
+player_skins = [NodePath("../CanvasLayer/SlimeSkins/GreenSlime"), NodePath("../CanvasLayer/SlimeSkins/BlueSlime"), NodePath("../CanvasLayer/SlimeSkins/RedSlime"), NodePath("../CanvasLayer/SlimeSkins/BrownSlime"), NodePath("../CanvasLayer/SlimeSkins/PurpleSlime"), NodePath("../CanvasLayer/SlimeSkins/DarkSlime"), NodePath("../CanvasLayer/SlimeSkins/LightSlime")]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_3k2g4")
@@ -397,7 +400,7 @@ flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_bottom = 0.119444445
+anchor_bottom = 0.044444446
 offset_left = 32.0
 offset_top = 136.0
 offset_right = 213.0

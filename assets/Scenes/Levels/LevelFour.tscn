@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://did1tgt1gv2uu" path="res://assets/Sprites/Tilesets/Level.tres" id="3_or8on"]
 [ext_resource type="Texture2D" uid="uid://v0up5egf1li" path="res://assets/Sprites/Tilesets/world_tileset.png" id="4_nekkc"]
 [ext_resource type="TileSet" uid="uid://bifudq4rwaeuf" path="res://assets/Sprites/Tilesets/Platform.tres" id="4_oguxd"]
-[ext_resource type="PackedScene" uid="uid://bw5dirs1wwke2" path="res://assets/Scenes/Other/Portal.tscn" id="5_idyc3"]
+[ext_resource type="PackedScene" uid="uid://bw5dirs1wwke2" path="res://assets/Scenes/Other/Portals/Portal.tscn" id="5_idyc3"]
 [ext_resource type="PackedScene" uid="uid://cnrgq4vi15g44" path="res://assets/Scenes/GUI/hud.tscn" id="5_wdtl3"]
 [ext_resource type="PackedScene" uid="uid://bylt4xh12pwlt" path="res://assets/Scenes/DangerZone.tscn" id="5_yjkar"]
 [ext_resource type="Script" uid="uid://d063s0ktoosph" path="res://assets/Scripts/Other/hard_portal.gd" id="6_8aeri"]
@@ -16,7 +16,7 @@
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="11_jb7uh"]
 [ext_resource type="PackedScene" uid="uid://b68rjlysndu2u" path="res://assets/Scenes/Backgrounds/parallax_desert_background.tscn" id="23_02l4a"]
 [ext_resource type="AudioStream" uid="uid://c4rgsy657cbda" path="res://assets/Music/Background/DesertMusic.mp3" id="23_aerul"]
-[ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/EndPortal.tscn" id="25_aerul"]
+[ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/Portals/EndPortal.tscn" id="25_aerul"]
 [ext_resource type="Script" uid="uid://bdmxmaa1ep5vy" path="res://assets/Scripts/Other/dumb_end_portal.gd" id="26_bakqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idyc3"]

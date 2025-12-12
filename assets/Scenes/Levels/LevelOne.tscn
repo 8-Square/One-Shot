@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_hv5ue"]
 [ext_resource type="PackedScene" uid="uid://byg1xe2t1e15k" path="res://assets/Scenes/Player/Player.tscn" id="1_jf2q3"]
 [ext_resource type="PackedScene" uid="uid://cnrgq4vi15g44" path="res://assets/Scenes/GUI/hud.tscn" id="2_8frfp"]
-[ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/EndPortal.tscn" id="2_818du"]
+[ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/Portals/EndPortal.tscn" id="2_818du"]
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="2_kl843"]
 [ext_resource type="Texture2D" uid="uid://v0up5egf1li" path="res://assets/Sprites/Tilesets/world_tileset.png" id="3_dujvd"]
 [ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://assets/Sprites/Tilesets/BasicPlaceholder.png" id="3_lquwl"]
@@ -5798,7 +5798,7 @@ bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_wdexn")
-volume_db = -6.0
+volume_db = -9.0
 autoplay = true
 bus = &"Music"
 

@@ -1,21 +1,11 @@
-class_name MainMenu extends Control
+class_name DefaultMenu extends Control
 
-@export var player_skins: Array[AnimatedSprite2D]
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 
-var animated_sprite: AnimatedSprite2D
 
 func _ready() -> void:
 	$CanvasLayer/MarginContainer/VBoxContainer/Play.grab_focus()
-	var skin_index = Globalskin.selected_skin_index
-	apply_skin(skin_index)
-
-func apply_skin(skin_index: int) -> void:
-	for i in range(player_skins.size()):
-		player_skins[i].visible = (i == skin_index)
-	animated_sprite = player_skins[skin_index]
-	animated_sprite.play("default", 0.7)
 
 func _on_play_pressed() -> void:
 	canvas_layer.hide()

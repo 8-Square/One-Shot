@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cy0uvvso0pe5l" path="res://assets/Sprites/Player/green_slime.png" id="1_xf1d8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xf1d8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w6on"]
 atlas = ExtResource("1_xf1d8")
 region = Rect2(0, 36, 23, 22)
 
@@ -130,7 +130,7 @@ region = Rect2(115, 70, 23, 22)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xf1d8")
+"texture": SubResource("AtlasTexture_5w6on")
 }],
 "loop": true,
 "name": &"RESET",
@@ -256,6 +256,6 @@ animations = [{
 position = Vector2(-51, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wx0pb")
-animation = &"bounce"
+animation = &"RESET"
 autoplay = "default"
 centered = false

@@ -11,9 +11,9 @@
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="5_8cnc2"]
 [ext_resource type="Texture2D" uid="uid://dlvvj8luyyylx" path="res://assets/Sprites/Tilesets/platforms.png" id="7_t0uan"]
 [ext_resource type="PackedScene" uid="uid://bylt4xh12pwlt" path="res://assets/Scenes/DangerZone.tscn" id="8_t0uan"]
-[ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/EndPortal.tscn" id="9_e70cn"]
+[ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/Portals/EndPortal.tscn" id="9_e70cn"]
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="9_t0uan"]
-[ext_resource type="PackedScene" uid="uid://bw5dirs1wwke2" path="res://assets/Scenes/Other/Portal.tscn" id="11_yndxw"]
+[ext_resource type="PackedScene" uid="uid://bw5dirs1wwke2" path="res://assets/Scenes/Other/Portals/Portal.tscn" id="11_yndxw"]
 [ext_resource type="PackedScene" uid="uid://dhbbeq4o8cx4c" path="res://assets/Scenes/Menu/LevelComplete.tscn" id="13_2wjiq"]
 [ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="14_yndxw"]
 
