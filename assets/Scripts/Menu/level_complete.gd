@@ -4,6 +4,7 @@ class_name LevelCompletedScreen extends CanvasLayer
 @onready var fakeaudiostreamplayer = $DumbCompleteAudio
 @onready var finaltime : Label = $FinalTime
 
+var level_number: int
 func _ready():
 	$LOneComplete.add_to_group("complete_label")
 	$LThreeComplete.add_to_group("complete_label")
@@ -31,17 +32,19 @@ func display_final_time():
 	var time_string = Stopwatch.time_to_string()
 	finaltime.text = "Your Final Time Was:" + time_string
 
-func level_complete(level_no):
-	match level_no:
+func level_complete(path):
+	match path:
 		"res://assets/Scenes/Levels/Tutorial.tscn":
+			var level_number = 0
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
 			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			%TComplete.show()
 			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			
+			Globallevel.is_completed(level_number)
 		"res://assets/Scenes/Levels/LevelOne.tscn":
+			var level_number = 1
 			print("LEVEL One WORKING")
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
@@ -51,8 +54,10 @@ func level_complete(level_no):
 			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
-			
+			Globallevel.is_completed(level_number)
+		
 		"res://assets/Scenes/Levels/LevelTwo.tscn":
+			var level_number = 2
 			print("LEVEL TWO WORKING")
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
@@ -62,8 +67,9 @@ func level_complete(level_no):
 			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
-			
+			Globallevel.is_completed(level_number)
 		"res://assets/Scenes/Levels/LevelThree.tscn":
+			var level_number = 3
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
 			audiostreamplayer.play()
@@ -73,8 +79,10 @@ func level_complete(level_no):
 			show_all_containers()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
+			Globallevel.is_completed(level_number)
 # MILKYWAY EXPANSION
 		"res://assets/Scenes/Levels/LevelFour.tscn":
+			var level_number = 4
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
 			audiostreamplayer.play()
@@ -84,7 +92,9 @@ func level_complete(level_no):
 			%LFourComplete.show()
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			finaltime.show()
+			Globallevel.is_completed(level_number)
 		"res://assets/Scenes/Levels/LevelFive.tscn":
+			var level_number = 5
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
 			audiostreamplayer.play()
@@ -96,6 +106,8 @@ func level_complete(level_no):
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			$HBoxContainer/NextLevelContainer.hide()
 			finaltime.show()
+			Globallevel.is_completed(level_number)
+
 		"res://assets/Scenes/Levels/LevelFour.tscn_dumb":
 			$AnimationPlayer.play("finish_level")
 			await $AnimationPlayer.animation_finished
@@ -107,7 +119,11 @@ func level_complete(level_no):
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			$HBoxContainer/NextLevelContainer.hide()
 			finaltime.show()
+			
+	print(level_number)
 
+
+		
 func _on_next_level_pressed() -> void:
 	hide_all_labels()
 	$UISelect.play()
@@ -129,8 +145,6 @@ func _on_next_level_pressed() -> void:
 		"res://assets/Scenes/Levels/LevelFour.tscn":
 			%AnimationPlayer.play_backwards("finish_level")
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
-			
-			
 
 func _on_restart_pressed() -> void:
 	$UISelect.play()
@@ -151,8 +165,6 @@ func _on_restart_pressed() -> void:
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
 		"res://assets/Scenes/Levels/LevelFive.tscn":
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
-
-
 
 func _on_quit_pressed() -> void:
 	$UISelect.play()
