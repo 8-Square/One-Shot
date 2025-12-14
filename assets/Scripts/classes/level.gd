@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var pause_menu_scene := $CanvasLayer/PauseMenu
+@onready var player: PlayerLevels = $Player
 
 @export var level_no: int
 #@export var level_completed: bool
@@ -19,11 +20,13 @@ func pause_menu():
 	pause_menu_scene.visible = paused
 	if paused:
 		$AudioStreamPlayer.stop()
-		$CanvasLayer/PauseMenu/CanvasLayer/ColorRect.show()
-		$CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/Resume	.grab_focus()
+		$CanvasLayer/PauseMenu/CanvasLayer.show()
+		$CanvasLayer/PauseMenu/CanvasLayer/MarginContainer/VBoxContainer/Resume.grab_focus()
+		player.can_control = false
 	else:
+		player.can_control = true
 		$AudioStreamPlayer.play()
-		$CanvasLayer/PauseMenu/CanvasLayer/ColorRect.hide()
+		$CanvasLayer/PauseMenu/CanvasLayer.hide()
 	#if pause_menu() && Input.is_action_just_pressed("pause"):
 		#pause_menu()
 

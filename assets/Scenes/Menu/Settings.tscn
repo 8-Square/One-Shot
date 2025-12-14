@@ -1,13 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjptigt865ymr"]
+[gd_scene load_steps=14 format=3 uid="uid://bjptigt865ymr"]
 
 [ext_resource type="Script" uid="uid://dspps1ifx106u" path="res://assets/Scripts/Menu/settings.gd" id="1_6df12"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="2_6luba"]
 [ext_resource type="LabelSettings" uid="uid://bc0ok6wpep447" path="res://assets/Scenes/Menu/new_label_settings.tres" id="2_arbsy"]
 [ext_resource type="Script" uid="uid://s1fpg2t0r50m" path="res://assets/Scripts/Menu/audio_options.gd" id="2_xp4jg"]
+[ext_resource type="Shader" uid="uid://dimxgmuqrj8h4" path="res://assets/Scripts/Menu/Blur.gdshader" id="3_6gofj"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_arbsy"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_x5ewj"]
 [ext_resource type="PackedScene" uid="uid://hoskdmobh4sa" path="res://assets/Scenes/Menu/volume_slider.tscn" id="5_7fwda"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="6_7fwda"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="7_70ccf"]
+[ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="9_lfsvt"]
+[ext_resource type="Texture2D" uid="uid://x1ihqgxq21f1" path="res://assets/Sprites/Button/green.png" id="10_x5ewj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hb75k"]
+shader = ExtResource("3_6gofj")
+shader_parameter/lod = 1.8000000855
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -18,39 +26,132 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6df12")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7fwda")
+autoplay = true
+bus = &"Music"
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-z_index = -2
+[node name="Settings" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="Settings"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.37254903, 0.5882353, 1, 1)
-metadata/_edit_use_anchors_ = true
 
-[node name="AudioOptions" type="Control" parent="."]
+[node name="TabContainer" type="TabContainer" parent="Settings"]
+material = SubResource("ShaderMaterial_hb75k")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+tabs_visible = false
+
+[node name="Gameplay" type="Control" parent="Settings/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MenuLabel" type="Label" parent="Settings/TabContainer/Gameplay"]
 layout_mode = 1
-anchors_preset = 0
-script = ExtResource("2_xp4jg")
-metadata/_edit_use_anchors_ = true
-
-[node name="VolumeText" type="Label" parent="AudioOptions"]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 54.0
-offset_right = 157.0
-offset_bottom = 87.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 32.0
+offset_right = 77.0
+offset_bottom = 81.0
+grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_6luba")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 40
+text = "Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/TabContainer/Gameplay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -31.5
+offset_right = 224.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/TabContainer/Gameplay/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Settings/TabContainer/Gameplay/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Hard Mode "
+label_settings = ExtResource("2_arbsy")
+
+[node name="CheckBox" type="CheckBox" parent="Settings/TabContainer/Gameplay/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Panel" type="Panel" parent="Settings/TabContainer/Gameplay"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/TabContainer/Gameplay/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "By turning on hard mode cyote time and other features will stop working. "
+
+[node name="Deny" type="TextureButton" parent="Settings/TabContainer/Gameplay/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Accept" type="TextureButton" parent="Settings/TabContainer/Gameplay/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Music" type="Control" parent="Settings/TabContainer"]
+layout_mode = 2
+script = ExtResource("2_xp4jg")
+metadata/_tab_index = 1
+
+[node name="MenuLabel" type="Label" parent="Settings/TabContainer/Music"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 32.0
+offset_right = 77.0
+offset_bottom = 81.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 40
 text = "Music"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/TabContainer/Music"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 100.0
@@ -58,47 +159,218 @@ offset_right = 576.0
 offset_bottom = 243.0
 metadata/_edit_use_anchors_ = true
 
-[node name="VolumeText2" type="Label" parent="AudioOptions/VBoxContainer"]
+[node name="VolumeText2" type="Label" parent="Settings/TabContainer/Music/VBoxContainer"]
 layout_mode = 2
 text = "Master Volume"
 label_settings = ExtResource("2_arbsy")
 
-[node name="Master" parent="AudioOptions/VBoxContainer" instance=ExtResource("5_7fwda")]
+[node name="Master" parent="Settings/TabContainer/Music/VBoxContainer" instance=ExtResource("5_7fwda")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../../Previous")
 focus_neighbor_bottom = NodePath("../Music")
 step = 0.05
 bus_name = "Master"
 
-[node name="VolumeText3" type="Label" parent="AudioOptions/VBoxContainer"]
+[node name="VolumeText3" type="Label" parent="Settings/TabContainer/Music/VBoxContainer"]
 layout_mode = 2
 text = "Music"
 label_settings = ExtResource("2_arbsy")
 
-[node name="Music" parent="AudioOptions/VBoxContainer" instance=ExtResource("5_7fwda")]
+[node name="Music" parent="Settings/TabContainer/Music/VBoxContainer" instance=ExtResource("5_7fwda")]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Master")
 focus_neighbor_bottom = NodePath("../SFX")
 step = 0.05
 bus_name = "Music"
 
-[node name="VolumeText4" type="Label" parent="AudioOptions/VBoxContainer"]
+[node name="VolumeText4" type="Label" parent="Settings/TabContainer/Music/VBoxContainer"]
 layout_mode = 2
 text = "SFX"
 label_settings = ExtResource("2_arbsy")
 
-[node name="SFX" parent="AudioOptions/VBoxContainer" instance=ExtResource("5_7fwda")]
+[node name="SFX" parent="Settings/TabContainer/Music/VBoxContainer" instance=ExtResource("5_7fwda")]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Music")
 step = 0.05
 bus_name = "SFX"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_7fwda")
-autoplay = true
-bus = &"Music"
+[node name="Display" type="Control" parent="Settings/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
 
-[node name="Confirm" type="TextureButton" parent="."]
+[node name="MenuLabel" type="Label" parent="Settings/TabContainer/Display"]
 layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 32.0
+offset_right = 77.0
+offset_bottom = 81.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 40
+text = "Display"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/TabContainer/Display"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -68.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/TabContainer/Display/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Display/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 23
+text = "Display Mode"
+label_settings = ExtResource("2_arbsy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Settings/TabContainer/Display/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+icon_alignment = 1
+selected = 2
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Settings/TabContainer/Display/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Display/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "FPS"
+label_settings = ExtResource("2_arbsy")
+
+[node name="HSlider" type="HSlider" parent="Settings/TabContainer/Display/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+min_value = 10.0
+max_value = 360.0
+step = 10.0
+value = 10.0
+
+[node name="HScrollBar" type="HScrollBar" parent="Settings/TabContainer/Display/VBoxContainer"]
+layout_mode = 2
+min_value = 10.0
+step = 10.0
+value = 10.0
+rounded = true
+custom_step = 1.0
+
+[node name="CheckBox" type="CheckBox" parent="Settings/TabContainer/Display/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_x5ewj")
+theme_override_font_sizes/font_size = 23
+text = " FullScreen"
+
+[node name="Previous" type="TextureButton" parent="Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.0
+offset_top = 32.0
+offset_right = -120.0
+offset_bottom = 80.0
+grow_horizontal = 2
+focus_neighbor_left = NodePath("../Next")
+focus_neighbor_top = NodePath("../EscapeButton")
+focus_neighbor_right = NodePath("../Select")
+focus_neighbor_bottom = NodePath("../Select")
+focus_next = NodePath("../Select")
+focus_previous = NodePath("../Next")
+texture_normal = ExtResource("9_lfsvt")
+texture_pressed = ExtResource("10_x5ewj")
+texture_focused = ExtResource("10_x5ewj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Previous"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_6luba")
+theme_override_font_sizes/normal_font_size = 20
+text = "<<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuLabel2" type="Label" parent="Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_right = 77.0
+offset_bottom = 49.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 23
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="TextureButton" parent="Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 120.0
+offset_top = 32.0
+offset_right = 168.0
+offset_bottom = 80.0
+grow_horizontal = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../EscapeButton")
+focus_neighbor_right = NodePath("../Select")
+focus_neighbor_bottom = NodePath("../Select")
+focus_next = NodePath("../Select")
+focus_previous = NodePath(".")
+texture_normal = ExtResource("9_lfsvt")
+texture_pressed = ExtResource("10_x5ewj")
+texture_focused = ExtResource("10_x5ewj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Next"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_6luba")
+theme_override_font_sizes/normal_font_size = 20
+text = ">>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" type="TextureButton" parent="Settings"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -109,14 +381,14 @@ offset_top = -48.0
 offset_right = 60.0
 grow_horizontal = 2
 grow_vertical = 0
-focus_neighbor_right = NodePath("../AudioOptions/VBoxContainer/Master")
-focus_neighbor_bottom = NodePath("../AudioOptions/VBoxContainer/Master")
-focus_next = NodePath("../AudioOptions/VBoxContainer/Master")
+focus_neighbor_right = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_neighbor_bottom = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_next = NodePath("../TabContainer/Music/VBoxContainer/Master")
 texture_normal = ExtResource("7_70ccf")
 texture_hover = ExtResource("3_arbsy")
 texture_focused = ExtResource("3_arbsy")
 
-[node name="Text" type="RichTextLabel" parent="Confirm"]
+[node name="Text" type="RichTextLabel" parent="Settings/Confirm"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -130,4 +402,4 @@ text = "Save & Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Settings/Confirm" to="." method="_on_confirm_pressed"]

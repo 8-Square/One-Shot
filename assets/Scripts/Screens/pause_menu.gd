@@ -31,6 +31,9 @@ func _on_restart_pressed() -> void:
 		"res://assets/Scenes/Levels/LevelFive.tscn":
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
 
+func _on_settings_pressed() -> void:
+	pass # Replace with function body.
+
 
 func _on_quit_pressed() -> void:
 	get_tree().create_timer(0.2)
