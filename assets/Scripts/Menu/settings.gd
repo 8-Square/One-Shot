@@ -1,40 +1,39 @@
 class_name SettingsMenu extends Control
 
-@onready var master: HSlider = $Settings/MusicSettings/AudioOptions/VBoxContainer/Master
-@onready var music: HSlider = $Settings/MusicSettings/AudioOptions/VBoxContainer/Music
-@onready var sfx: HSlider = $Settings/MusicSettings/AudioOptions/VBoxContainer/SFX
+@onready var tab_container: TabContainer = $Settings/TabContainer
+@onready var main = $"../../"
+@onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
 
 func _ready() -> void:
-	master.grab_click_focus()
-	master.grab_focus()
-	
-	master.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
-	music.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
-	sfx.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
+	pass
+
+func save():
+	var current_tab = tab_container.current_tab
+	var tab_node = tab_container.get_child(current_tab)
+	if tab_node.has_method("save_settings"):
+		tab_node.save_settings()
+	else:
+		print("SAVE SETTINGS OPTION NOT FOUND")
+
+func exit():
+	canvas_layer.show()
+	self.hide()
+
+func _on_confirm_exit_pressed() -> void:
+	save()
+	exit()
+
+func _on_save_pressed() -> void:
+	save()
+
+func _on_cancel_pressed() -> void:
+	exit()
 
 
-func _on_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(0, value)
 
-func _on_check_box_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+func _on_previous_pressed() -> void:
+	tab_container.select_previous_available()
 
 
-func _on_confirm_pressed() -> void:
-	AudioServer.set_bus_volume_db(0, linear_to_db(master.value))
-	AudioServer.set_bus_volume_db(1, linear_to_db(music.value))
-	AudioServer.set_bus_volume_db(2, linear_to_db(sfx.value))
-	to_tutorial_transition.change_scene(to_tutorial_transition.back)
-
-
-
-func _on__value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)
-
-
-func _on_musicvol_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), value)
-
-
-func _on_sfx_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), value)
+func _on_next_pressed() -> void:
+	tab_container.select_next_available()

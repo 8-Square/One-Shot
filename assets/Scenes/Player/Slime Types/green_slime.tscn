@@ -172,7 +172,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"bounce",
-"speed": 24.0
+"speed": 35.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -256,6 +256,8 @@ animations = [{
 position = Vector2(-51, -61)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wx0pb")
-animation = &"RESET"
+animation = &"bounce"
 autoplay = "default"
+frame = 10
+frame_progress = 1.0
 centered = false

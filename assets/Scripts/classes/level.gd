@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var pause_menu_scene := $CanvasLayer/PauseMenu
-@onready var player: PlayerLevels = $Player
+@onready var player: BasePlayer = $Player
 
 @export var level_no: int
 #@export var level_completed: bool

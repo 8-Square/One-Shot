@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjptigt865ymr"]
+[gd_scene load_steps=15 format=3 uid="uid://bjptigt865ymr"]
 
 [ext_resource type="Script" uid="uid://dspps1ifx106u" path="res://assets/Scripts/Menu/settings.gd" id="1_6df12"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="2_6luba"]
@@ -11,7 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="6_7fwda"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="7_70ccf"]
 [ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="9_lfsvt"]
-[ext_resource type="Texture2D" uid="uid://x1ihqgxq21f1" path="res://assets/Sprites/Button/green.png" id="10_x5ewj"]
+[ext_resource type="Texture2D" uid="uid://d4j70uffu0gxu" path="res://assets/Sprites/Button/green_pressed.png" id="13_hb75k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gofj"]
+shader = ExtResource("3_6gofj")
+shader_parameter/lod = 1.200000057
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hb75k"]
 shader = ExtResource("3_6gofj")
@@ -34,7 +38,7 @@ bus = &"Music"
 [node name="Settings" type="CanvasLayer" parent="."]
 
 [node name="Background" type="ColorRect" parent="Settings"]
-visible = false
+material = SubResource("ShaderMaterial_6gofj")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -53,6 +57,7 @@ current_tab = 1
 tabs_visible = false
 
 [node name="Gameplay" type="Control" parent="Settings/TabContainer"]
+process_mode = 3
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
@@ -130,6 +135,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Music" type="Control" parent="Settings/TabContainer"]
+process_mode = 3
 layout_mode = 2
 script = ExtResource("2_xp4jg")
 metadata/_tab_index = 1
@@ -166,7 +172,6 @@ label_settings = ExtResource("2_arbsy")
 
 [node name="Master" parent="Settings/TabContainer/Music/VBoxContainer" instance=ExtResource("5_7fwda")]
 layout_mode = 2
-focus_neighbor_top = NodePath("../../../../Previous")
 focus_neighbor_bottom = NodePath("../Music")
 step = 0.05
 bus_name = "Master"
@@ -195,6 +200,7 @@ step = 0.05
 bus_name = "SFX"
 
 [node name="Display" type="Control" parent="Settings/TabContainer"]
+process_mode = 3
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
@@ -289,38 +295,6 @@ theme_override_fonts/font = ExtResource("4_x5ewj")
 theme_override_font_sizes/font_size = 23
 text = " FullScreen"
 
-[node name="Previous" type="TextureButton" parent="Settings"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -168.0
-offset_top = 32.0
-offset_right = -120.0
-offset_bottom = 80.0
-grow_horizontal = 2
-focus_neighbor_left = NodePath("../Next")
-focus_neighbor_top = NodePath("../EscapeButton")
-focus_neighbor_right = NodePath("../Select")
-focus_neighbor_bottom = NodePath("../Select")
-focus_next = NodePath("../Select")
-focus_previous = NodePath("../Next")
-texture_normal = ExtResource("9_lfsvt")
-texture_pressed = ExtResource("10_x5ewj")
-texture_focused = ExtResource("10_x5ewj")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Previous"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("2_6luba")
-theme_override_font_sizes/normal_font_size = 20
-text = "<<"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MenuLabel2" type="Label" parent="Settings"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -336,6 +310,35 @@ theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 23
 text = "Settings"
 horizontal_alignment = 1
+
+[node name="Previous" type="TextureButton" parent="Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.0
+offset_top = 32.0
+offset_right = -120.0
+offset_bottom = 80.0
+grow_horizontal = 2
+focus_neighbor_right = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_neighbor_bottom = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_next = NodePath("../TabContainer/Music/VBoxContainer/Master")
+texture_normal = ExtResource("9_lfsvt")
+texture_hover = ExtResource("13_hb75k")
+texture_focused = ExtResource("13_hb75k")
+
+[node name="Text" type="RichTextLabel" parent="Settings/Previous"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_6luba")
+theme_override_font_sizes/normal_font_size = 23
+text = "<<"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Next" type="TextureButton" parent="Settings"]
@@ -347,30 +350,28 @@ offset_top = 32.0
 offset_right = 168.0
 offset_bottom = 80.0
 grow_horizontal = 2
-focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../EscapeButton")
-focus_neighbor_right = NodePath("../Select")
-focus_neighbor_bottom = NodePath("../Select")
-focus_next = NodePath("../Select")
-focus_previous = NodePath(".")
+focus_neighbor_right = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_neighbor_bottom = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_next = NodePath("../TabContainer/Music/VBoxContainer/Master")
 texture_normal = ExtResource("9_lfsvt")
-texture_pressed = ExtResource("10_x5ewj")
-texture_focused = ExtResource("10_x5ewj")
+texture_hover = ExtResource("13_hb75k")
+texture_focused = ExtResource("13_hb75k")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Next"]
+[node name="Text" type="RichTextLabel" parent="Settings/Next"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_6luba")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 23
 text = ">>"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Confirm" type="TextureButton" parent="Settings"]
+[node name="ConfirmExit" type="TextureButton" parent="Settings"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -388,7 +389,7 @@ texture_normal = ExtResource("7_70ccf")
 texture_hover = ExtResource("3_arbsy")
 texture_focused = ExtResource("3_arbsy")
 
-[node name="Text" type="RichTextLabel" parent="Settings/Confirm"]
+[node name="Text" type="RichTextLabel" parent="Settings/ConfirmExit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -402,4 +403,75 @@ text = "Save & Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Settings/Confirm" to="." method="_on_confirm_pressed"]
+[node name="Cancel" type="TextureButton" parent="Settings"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -316.0
+offset_top = -48.0
+offset_right = -196.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_right = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_neighbor_bottom = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_next = NodePath("../TabContainer/Music/VBoxContainer/Master")
+texture_normal = ExtResource("7_70ccf")
+texture_hover = ExtResource("3_arbsy")
+texture_focused = ExtResource("3_arbsy")
+
+[node name="Text" type="RichTextLabel" parent="Settings/Cancel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_6luba")
+theme_override_font_sizes/normal_font_size = 15
+text = "Cancel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Save" type="TextureButton" parent="Settings"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -48.0
+offset_right = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_right = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_neighbor_bottom = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_next = NodePath("../TabContainer/Music/VBoxContainer/Master")
+texture_normal = ExtResource("7_70ccf")
+texture_hover = ExtResource("3_arbsy")
+texture_focused = ExtResource("3_arbsy")
+
+[node name="Text" type="RichTextLabel" parent="Settings/Save"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_6luba")
+theme_override_font_sizes/normal_font_size = 15
+text = "Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/Master" to="Settings/TabContainer/Music" method="_on_master_value_changed"]
+[connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/Music" to="Settings/TabContainer/Music" method="_on_music_value_changed"]
+[connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/SFX" to="Settings/TabContainer/Music" method="_on_sfx_value_changed"]
+[connection signal="pressed" from="Settings/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Settings/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Settings/ConfirmExit" to="." method="_on_confirm_exit_pressed"]
+[connection signal="pressed" from="Settings/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Settings/Save" to="." method="_on_save_pressed"]
