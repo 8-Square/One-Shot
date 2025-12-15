@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjptigt865ymr"]
+[gd_scene load_steps=17 format=3 uid="uid://bjptigt865ymr"]
 
 [ext_resource type="Script" uid="uid://dspps1ifx106u" path="res://assets/Scripts/Menu/settings.gd" id="1_6df12"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="2_6luba"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://s1fpg2t0r50m" path="res://assets/Scripts/Menu/audio_options.gd" id="2_xp4jg"]
 [ext_resource type="Shader" uid="uid://dimxgmuqrj8h4" path="res://assets/Scripts/Menu/Blur.gdshader" id="3_6gofj"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_arbsy"]
+[ext_resource type="Script" uid="uid://dcouayy2qluap" path="res://assets/Scenes/Menu/gameplay.gd" id="4_hb75k"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_x5ewj"]
 [ext_resource type="PackedScene" uid="uid://hoskdmobh4sa" path="res://assets/Scenes/Menu/volume_slider.tscn" id="5_7fwda"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="6_7fwda"]
@@ -21,7 +22,11 @@ shader_parameter/lod = 1.200000057
 shader = ExtResource("3_6gofj")
 shader_parameter/lod = 1.8000000855
 
-[node name="SettingsMenu" type="Control"]
+[sub_resource type="Theme" id="Theme_ytshp"]
+default_font = ExtResource("2_6luba")
+/fonts/Conthrax_SemiBold_otf = ExtResource("2_6luba")
+
+[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("SettingsTabNames")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,6 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6df12")
+SettingsTabNames = [NodePath("Settings/GameLabel"), NodePath("Settings/MusicLabel"), NodePath("Settings/DisplayLabel")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7fwda")
@@ -53,16 +59,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 1
+current_tab = 2
 tabs_visible = false
 
 [node name="Gameplay" type="Control" parent="Settings/TabContainer"]
 process_mode = 3
 visible = false
 layout_mode = 2
+script = ExtResource("4_hb75k")
 metadata/_tab_index = 0
 
 [node name="MenuLabel" type="Label" parent="Settings/TabContainer/Gameplay"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -74,7 +82,7 @@ offset_bottom = 81.0
 grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 40
 text = "Game"
@@ -88,10 +96,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -220.0
-offset_top = -31.5
-offset_right = 224.0
-offset_bottom = 31.5
+offset_left = -240.0
+offset_top = -36.25
+offset_right = 244.0
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -103,9 +111,33 @@ layout_mode = 2
 text = "Hard Mode "
 label_settings = ExtResource("2_arbsy")
 
-[node name="CheckBox" type="CheckBox" parent="Settings/TabContainer/Gameplay/VBoxContainer/HBoxContainer"]
+[node name="CheckButton" type="CheckButton" parent="Settings/TabContainer/Gameplay/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 10
+
+[node name="Button" type="Button" parent="Settings/TabContainer/Gameplay/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = SubResource("Theme_ytshp")
+text = "Off"
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Gameplay/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Settings/TabContainer/Gameplay/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/TabContainer/Gameplay/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Delete Save Data"
+label_settings = ExtResource("2_arbsy")
+
+[node name="Button" type="Button" parent="Settings/TabContainer/Gameplay/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_6luba")
+text = "Delete My Save Data"
 
 [node name="Panel" type="Panel" parent="Settings/TabContainer/Gameplay"]
 visible = false
@@ -136,11 +168,13 @@ offset_bottom = 40.0
 
 [node name="Music" type="Control" parent="Settings/TabContainer"]
 process_mode = 3
+visible = false
 layout_mode = 2
 script = ExtResource("2_xp4jg")
 metadata/_tab_index = 1
 
 [node name="MenuLabel" type="Label" parent="Settings/TabContainer/Music"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -152,7 +186,7 @@ offset_bottom = 81.0
 grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 40
 text = "Music"
@@ -201,23 +235,23 @@ bus_name = "SFX"
 
 [node name="Display" type="Control" parent="Settings/TabContainer"]
 process_mode = 3
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="MenuLabel" type="Label" parent="Settings/TabContainer/Display"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -77.0
+offset_left = -94.0
 offset_top = 32.0
-offset_right = 77.0
+offset_right = 94.0
 offset_bottom = 81.0
 grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 40
 text = "Display"
@@ -295,7 +329,7 @@ theme_override_fonts/font = ExtResource("4_x5ewj")
 theme_override_font_sizes/font_size = 23
 text = " FullScreen"
 
-[node name="MenuLabel2" type="Label" parent="Settings"]
+[node name="MenuLabel" type="Label" parent="Settings"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -310,6 +344,58 @@ theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 23
 text = "Settings"
 horizontal_alignment = 1
+
+[node name="GameLabel" type="Label" parent="Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 32.0
+offset_right = 77.0
+offset_bottom = 81.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 40
+text = "Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 32.0
+offset_right = 77.0
+offset_bottom = 81.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 40
+text = "Music"
+
+[node name="DisplayLabel" type="Label" parent="Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = 32.0
+offset_right = 94.0
+offset_bottom = 81.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 40
+text = "Display"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Previous" type="TextureButton" parent="Settings"]
 anchors_preset = 5
@@ -467,6 +553,7 @@ text = "Save"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="Settings/TabContainer/Gameplay/VBoxContainer/HBoxContainer/Button" to="Settings/TabContainer/Gameplay" method="_on_button_pressed"]
 [connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/Master" to="Settings/TabContainer/Music" method="_on_master_value_changed"]
 [connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/Music" to="Settings/TabContainer/Music" method="_on_music_value_changed"]
 [connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/SFX" to="Settings/TabContainer/Music" method="_on_sfx_value_changed"]

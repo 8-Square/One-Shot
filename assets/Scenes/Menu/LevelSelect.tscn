@@ -289,7 +289,7 @@ offset_right = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0627451, 0.0627451, 0.0627451, 0.76862746)
+color = Color(0.37254903, 0.5882353, 1, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="EscapeButton" type="TextureButton" parent="CanvasLayer/PageTwo"]
