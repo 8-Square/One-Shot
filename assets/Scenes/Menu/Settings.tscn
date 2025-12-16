@@ -59,12 +59,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 2
+current_tab = 0
 tabs_visible = false
 
 [node name="Gameplay" type="Control" parent="Settings/TabContainer"]
 process_mode = 3
-visible = false
 layout_mode = 2
 script = ExtResource("4_hb75k")
 metadata/_tab_index = 0
@@ -121,6 +120,13 @@ layout_mode = 2
 size_flags_horizontal = 10
 theme = SubResource("Theme_ytshp")
 text = "Off"
+
+[node name="Label3" type="Label" parent="Settings/TabContainer/Gameplay/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 12
+text = "Hard Mode makes progression reset 
+every death and removes features like coyote time"
 
 [node name="Label" type="Label" parent="Settings/TabContainer/Gameplay/VBoxContainer"]
 layout_mode = 2
@@ -235,6 +241,7 @@ bus_name = "SFX"
 
 [node name="Display" type="Control" parent="Settings/TabContainer"]
 process_mode = 3
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

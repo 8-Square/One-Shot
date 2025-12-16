@@ -311,7 +311,7 @@ metadata/_edit_use_anchors_ = true
 [node name="SkinBit" parent="." node_paths=PackedStringArray("player_skins") instance=ExtResource("2_cpl1f")]
 player_skins = [NodePath("../CanvasLayer/SlimeSkins/GreenSlime"), NodePath("../CanvasLayer/SlimeSkins/BlueSlime"), NodePath("../CanvasLayer/SlimeSkins/RedSlime"), NodePath("../CanvasLayer/SlimeSkins/BrownSlime"), NodePath("../CanvasLayer/SlimeSkins/PurpleSlime"), NodePath("../CanvasLayer/SlimeSkins/DarkSlime"), NodePath("../CanvasLayer/SlimeSkins/LightSlime")]
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_3k2g4")
 volume_db = -0.7
 autoplay = true
@@ -328,6 +328,7 @@ volume_db = 3.4
 bus = &"SFX"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("19_pfymn")]
+visible = false
 layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -410,7 +411,6 @@ flip_h = true
 [node name="GreenSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("14_fyw2a")]
 position = Vector2(440, 129)
 scale = Vector2(6, 6)
-flip_h = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = -1

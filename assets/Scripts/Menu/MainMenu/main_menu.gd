@@ -22,6 +22,7 @@ func _on_play_pressed() -> void:
 func _on_settings_pressed() -> void:
 	canvas_layer.hide()
 	$UISelect.play()
+	settings_menu.initiate()
 	settings_menu.show()
 
 func _on_quit_pressed() -> void:

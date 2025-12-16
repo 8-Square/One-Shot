@@ -2,7 +2,9 @@ class_name SettingsMenu extends Control
 
 @onready var tab_container: TabContainer = $Settings/TabContainer
 @onready var main = $"../../"
-@onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
+@onready var outside_canvas_layer: CanvasLayer = $"../CanvasLayer"
+@onready var outside_background_music: AudioStreamPlayer = $"../BackgroundMusic"
+@onready var background_music: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var SettingsTabNames: Array[Label]
 
@@ -14,7 +16,13 @@ var RightTabPos = Vector2(500, TabName_y)
 
 
 func _ready() -> void:
+	background_music.stop()
+	print("WORKING")
 	update_display()
+
+func initiate() -> void:
+	outside_background_music.stop()
+	background_music.play()
 
 func update_display() -> void:
 	var current_index := tab_container.current_tab
@@ -51,7 +59,9 @@ func save():
 	else:
 		print("SAVE SETTINGS OPTION NOT FOUND")
 func exit():
-	canvas_layer.show()
+	background_music.stop()
+	outside_canvas_layer.show()
+	outside_background_music.play()
 	self.hide()
 
 func _on_confirm_exit_pressed() -> void:
