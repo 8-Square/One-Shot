@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvx4t5ypgmt6i"]
+[gd_scene load_steps=17 format=3 uid="uid://bvx4t5ypgmt6i"]
 
 [ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/Menu/level_select.gd" id="1_4juup"]
 [ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_pq36x"]
@@ -12,8 +12,21 @@
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_jwpom"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="10_q0e6x"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="11_q0e6x"]
+[ext_resource type="Texture2D" uid="uid://phxg4b8yb1li" path="res://assets/Sprites/Backgrounds/final-pixelated.png" id="13_xls26"]
+[ext_resource type="Script" uid="uid://bqpq8wvmvaw75" path="res://assets/Scripts/Menu/carousel_container.gd" id="14_wm6wf"]
 
-[node name="LevelSelect" type="Control"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm6wf"]
+texture = ExtResource("13_xls26")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm6wf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8303357, 0.83033496, 0.83033514, 1)
+
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("LevelTabNodes")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,41 +35,88 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_4juup")
+LevelTabNodes = [NodePath("CanvasLayer/Levels/Tutorial"), NodePath("CanvasLayer/Levels/LevelOne"), NodePath("CanvasLayer/Levels/LevelTwo"), NodePath("CanvasLayer/Levels/LevelThree"), NodePath("CanvasLayer/Levels/LevelFour"), NodePath("CanvasLayer/Levels/LevelFive")]
+LeftTabPos = Vector2(453, 23)
+CenterTabPos = Vector2(441, 124)
+RightTabPos = Vector2(453, 255)
 metadata/_edit_use_anchors_ = true
+metadata/_edit_horizontal_guides_ = [180.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PageOne" type="ColorRect" parent="CanvasLayer"]
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = -1.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.372017, 0.587277, 0.999999, 1)
-metadata/_edit_use_anchors_ = true
+color = Color(0.37254903, 0.5882353, 1, 1)
 
-[node name="Tutorial" type="TextureButton" parent="CanvasLayer/PageOne"]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("10_q0e6x")
+volume_db = -0.7
+autoplay = true
+bus = &"Music"
+
+[node name="UISelect" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("11_q0e6x")
+bus = &"SFX"
+
+[node name="DotsTop" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 246.28601
+offset_top = -85.0
+offset_right = -262.081
+offset_bottom = -215.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wm6wf")
+
+[node name="DotsBottom" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 246.0
+offset_top = 145.0
+offset_right = -262.367
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wm6wf")
+
+[node name="BlackHalfway" type="ColorRect" parent="CanvasLayer"]
+offset_left = -5.0
+offset_top = -11.0
+offset_right = 255.0
+offset_bottom = 366.0
+color = Color(0, 0, 0, 1)
+
+[node name="Levels" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tutorial" type="TextureButton" parent="CanvasLayer/Levels"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.073
-anchor_top = 0.36633334
-anchor_right = 0.223
-anchor_bottom = 0.6333333
+anchor_left = 0.70268726
+anchor_top = 0.06355551
+anchor_right = 0.8526875
+anchor_bottom = 0.33055568
 offset_left = 3.27999
 offset_top = 0.119995
 offset_right = -44.72
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
-focus_neighbor_left = NodePath("../LevelThree")
-focus_neighbor_right = NodePath("../LevelOne")
-focus_next = NodePath("../LevelOne")
-focus_previous = NodePath("../LevelThree")
+scale = Vector2(1.9, 1.9)
 texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
@@ -64,90 +124,38 @@ texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/PageOne/Tutorial"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/Tutorial"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.104
-anchor_top = 0.354
-anchor_right = 0.927
-anchor_bottom = 0.604
-offset_left = -1.9919963
-offset_top = -13.492001
-offset_right = 41.504
-offset_bottom = 51.508003
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0527099
+offset_right = 868.84216
+offset_bottom = 867.7897
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.05, 0.05)
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/normal_font_size = 160
 text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelOne" type="TextureButton" parent="CanvasLayer/PageOne"]
+[node name="LevelOne" type="TextureButton" parent="CanvasLayer/Levels"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.312
-anchor_top = 0.36633334
-anchor_right = 0.46199998
-anchor_bottom = 0.6333333
+anchor_left = 0.68856245
+anchor_top = 0.3441111
+anchor_right = 0.8385626
+anchor_bottom = 0.6111111
 offset_left = 0.319992
 offset_top = 0.119995
 offset_right = -47.68
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
-focus_neighbor_left = NodePath("../Tutorial")
-focus_neighbor_right = NodePath("../LevelTwo")
-focus_next = NodePath("../LevelTwo")
-focus_previous = NodePath("../Tutorial")
-texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("3_b8dml")
-texture_hover = ExtResource("4_hyy3w")
-texture_focused = ExtResource("5_tgpxl")
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/PageOne/LevelOne"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.062
-anchor_top = 0.104
-anchor_right = 0.937
-anchor_bottom = 0.885
-offset_left = 0.0239999
-offset_top = 0.0079999
-offset_right = 42.024
-offset_bottom = 37.52
-scale = Vector2(0.5, 0.5)
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 16
-text = "Level
-One"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="LevelTwo" type="TextureButton" parent="CanvasLayer/PageOne"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.547
-anchor_top = 0.36633334
-anchor_right = 0.697
-anchor_bottom = 0.6333333
-offset_left = -0.0800171
-offset_top = 0.119995
-offset_right = -48.08
-offset_bottom = -48.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-focus_neighbor_left = NodePath("../LevelOne")
-focus_neighbor_right = NodePath("../LevelThree")
-focus_next = NodePath("../LevelThree")
-focus_previous = NodePath("../LevelOne")
+scale = Vector2(2.5, 2.5)
 texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
@@ -155,7 +163,49 @@ texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/PageOne/LevelTwo"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelOne"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.104
+anchor_right = 0.937
+anchor_bottom = 0.885
+offset_left = 0.02399993
+offset_top = 0.007999897
+offset_right = -0.5760956
+offset_bottom = 0.31999588
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 10
+text = "Level
+One"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelTwo" type="TextureButton" parent="CanvasLayer/Levels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -0.0800171
+offset_top = 0.119995
+offset_right = -48.08
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.9, 1.9)
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelTwo"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.125
@@ -177,32 +227,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="LevelThree" type="TextureButton" parent="CanvasLayer/PageOne"]
+[node name="LevelThree" type="TextureButton" parent="CanvasLayer/Levels"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.781
-anchor_top = 0.36633334
-anchor_right = 0.93100005
-anchor_bottom = 0.6333333
-offset_left = 0.159973
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -0.0800171
 offset_top = 0.119995
-offset_right = -47.84
+offset_right = -48.08
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
-focus_neighbor_left = NodePath("../LevelTwo")
-focus_neighbor_right = NodePath("../Tutorial")
-focus_next = NodePath("../Tutorial")
-focus_previous = NodePath("../LevelTwo")
+scale = Vector2(1.9, 1.9)
 texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("4_hyy3w")
-texture_hover = ExtResource("5_tgpxl")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
 texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/PageOne/LevelThree"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelThree"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.125
@@ -217,157 +263,27 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 16
 text = "Level
 Three"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="EscapeButton" type="TextureButton" parent="CanvasLayer/PageOne"]
+[node name="LevelFour" type="TextureButton" parent="CanvasLayer/Levels"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.187
-anchor_bottom = 0.133
-offset_right = 0.31999207
-offset_bottom = 0.11999893
-texture_normal = ExtResource("7_01bmn")
-texture_pressed = ExtResource("8_fn61j")
-texture_hover = ExtResource("8_fn61j")
-texture_focused = ExtResource("9_jwpom")
-metadata/_edit_use_anchors_ = true
-
-[node name="Back" type="RichTextLabel" parent="CanvasLayer/PageOne/EscapeButton"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 117.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 26
-text = "Back"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="NextButton" type="TextureButton" parent="CanvasLayer/PageOne"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -120.0
-offset_top = -48.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("7_01bmn")
-texture_pressed = ExtResource("8_fn61j")
-texture_hover = ExtResource("8_fn61j")
-texture_focused = ExtResource("9_jwpom")
-
-[node name="Next" type="RichTextLabel" parent="CanvasLayer/PageOne/NextButton"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 117.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 18
-text = "Next"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PageTwo" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
-offset_right = -1.0
-offset_bottom = -1.0
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -0.0800171
+offset_top = 0.119995
+offset_right = -48.08
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.37254903, 0.5882353, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="EscapeButton" type="TextureButton" parent="CanvasLayer/PageTwo"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.187
-anchor_bottom = 0.133
-offset_right = 0.319992
-offset_bottom = 0.119999
-focus_neighbor_right = NodePath("../LevelFour")
-focus_neighbor_bottom = NodePath("../PreviousButton")
-focus_next = NodePath("../LevelFour")
-texture_normal = ExtResource("7_01bmn")
-texture_pressed = ExtResource("8_fn61j")
-texture_hover = ExtResource("8_fn61j")
-texture_focused = ExtResource("9_jwpom")
-metadata/_edit_use_anchors_ = true
-
-[node name="Back" type="RichTextLabel" parent="CanvasLayer/PageTwo/EscapeButton"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 117.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 26
-text = "Back"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="PreviousButton" type="TextureButton" parent="CanvasLayer/PageTwo"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -48.0
-offset_right = 120.0
-grow_vertical = 0
-texture_normal = ExtResource("7_01bmn")
-texture_pressed = ExtResource("8_fn61j")
-texture_hover = ExtResource("8_fn61j")
-texture_focused = ExtResource("9_jwpom")
-
-[node name="Previous" type="RichTextLabel" parent="CanvasLayer/PageTwo/PreviousButton"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 117.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 18
-text = "Previous"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="LevelFour" type="TextureButton" parent="CanvasLayer/PageTwo"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -48.0
-offset_right = -96.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-focus_neighbor_left = NodePath("../PreviousButton")
-focus_neighbor_top = NodePath("../EscapeButton")
-focus_neighbor_right = NodePath("../LevelFive")
-focus_neighbor_bottom = NodePath("../PreviousButton")
-focus_next = NodePath("../LevelFive")
-focus_previous = NodePath("../PreviousButton")
+scale = Vector2(1.9, 1.9)
 texture_normal = ExtResource("2_pq36x")
 texture_pressed = ExtResource("3_b8dml")
 texture_hover = ExtResource("4_hyy3w")
@@ -375,7 +291,7 @@ texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/PageTwo/LevelFour"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelFour"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.125
@@ -385,7 +301,7 @@ anchor_bottom = 0.875
 offset_top = -0.0119963
 offset_right = 36.0
 offset_bottom = 37.5
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
@@ -395,41 +311,36 @@ text = "Level
 Four"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="LevelFive" type="TextureButton" parent="CanvasLayer/PageTwo"]
+[node name="LevelFive" type="TextureButton" parent="CanvasLayer/Levels"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.531
-anchor_top = 0.36633334
-anchor_right = 0.68099993
-anchor_bottom = 0.6333333
-offset_left = 0.15994263
-offset_top = 0.11999512
-offset_right = -47.839966
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -0.0800171
+offset_top = 0.119995
+offset_right = -48.08
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
-focus_neighbor_left = NodePath("../LevelFour")
-focus_neighbor_top = NodePath("../EscapeButton")
-focus_neighbor_right = NodePath("../LevelFour")
-focus_neighbor_bottom = NodePath("../PreviousButton")
-focus_next = NodePath("../LevelFour")
-focus_previous = NodePath("../LevelFour")
+scale = Vector2(1.9, 1.9)
 texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("4_hyy3w")
-texture_hover = ExtResource("5_tgpxl")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
 texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/PageTwo/LevelFive"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelFive"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.125
-anchor_top = 0.094
-anchor_right = 0.875
-anchor_bottom = 0.875
+anchor_left = 0.10964972
+anchor_top = 0.10989944
+anchor_right = 0.85964966
+anchor_bottom = 0.89089954
 offset_top = -0.0119963
 offset_right = 36.0
 offset_bottom = 37.5
@@ -438,29 +349,344 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 16
 text = "Level
 Five"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="CanvasLayer"]
-stream = ExtResource("10_q0e6x")
-volume_db = -0.7
-autoplay = true
-bus = &"Music"
+[node name="EscapeButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 0.133
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.3199921
+offset_bottom = 1.1199989
+texture_normal = ExtResource("7_01bmn")
+texture_pressed = ExtResource("8_fn61j")
+texture_hover = ExtResource("8_fn61j")
+texture_focused = ExtResource("9_jwpom")
+metadata/_edit_use_anchors_ = true
 
-[node name="UISelect" type="AudioStreamPlayer" parent="CanvasLayer"]
-stream = ExtResource("11_q0e6x")
-bus = &"SFX"
+[node name="Back" type="RichTextLabel" parent="CanvasLayer/EscapeButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 117.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 27
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="CanvasLayer/PageOne/Tutorial" to="." method="_on_tutorial_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/LevelOne" to="." method="_on_level_one_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/LevelTwo" to="." method="_on_level_two_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/LevelThree" to="." method="_on_level_three_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/EscapeButton" to="." method="_on_escape_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageOne/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageTwo/EscapeButton" to="." method="_on_escape_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageTwo/PreviousButton" to="." method="_on_previous_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageTwo/LevelFour" to="." method="_on_level_four_pressed"]
-[connection signal="pressed" from="CanvasLayer/PageTwo/LevelFive" to="." method="_on_level_five_pressed"]
+[node name="LevelPreview" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 46.0
+offset_top = 91.0
+offset_right = 230.0
+offset_bottom = 203.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/LevelPreview"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+
+[node name="CarouselContainer" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("position_offset_node")]
+physics_interpolation_mode = 0
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_wm6wf")
+spacing = 35.0
+scale_min = 0.1
+current_index = 2
+follow_button_focus = true
+carousel_center_y = 175.0
+position_offset_node = NodePath("Control")
+metadata/_custom_type_script = "uid://bqpq8wvmvaw75"
+
+[node name="Control" type="Control" parent="CanvasLayer/CarouselContainer"]
+anchors_preset = 0
+offset_left = 330.0
+offset_top = -94.99971
+offset_right = 450.0
+offset_bottom = 24.998505
+
+[node name="Tutorial" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+modulate = Color(1, 1, 1, 0.3)
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.3770001
+anchor_top = -0.31
+anchor_right = -0.66200006
+anchor_bottom = 0.55700004
+offset_left = 132.24
+offset_top = 37.199448
+offset_right = 112.44001
+offset_bottom = 13.160835
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(441, 39.999977)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/Tutorial"]
+texture_filter = 1
+layout_mode = 1
+offset_right = 132.0
+offset_bottom = 160.03331
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 22
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelOne" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68856245
+anchor_top = 0.3441111
+anchor_right = 0.8385626
+anchor_bottom = 0.6111111
+offset_left = -115.627495
+offset_top = 73.70712
+offset_right = -67.62751
+offset_bottom = 121.66765
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+pivot_offset = Vector2(441, 39.999992)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelOne"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.104
+anchor_right = 0.937
+anchor_bottom = 0.885
+offset_left = -4.091997
+offset_top = -8.347515
+offset_right = 70.15799
+offset_bottom = 89.14126
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+One"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelTwo" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 145.04117
+offset_right = -69.95249
+offset_bottom = 193.00125
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(441, 39.999847)
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelTwo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 64.000015
+offset_bottom = 77.83322
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThree" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 260.04077
+offset_right = -69.95249
+offset_bottom = 308.00125
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+pivot_offset = Vector2(441, 0)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelThree"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 67.20001
+offset_bottom = 80.000244
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Three"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelFour" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+modulate = Color(1, 1, 1, 0.3)
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 375.04077
+offset_right = -69.95249
+offset_bottom = 422.98593
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(441, 39.99254)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelFour"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 66.0
+offset_bottom = 80.01904
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Four"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelFive" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+modulate = Color(1, 1, 1, 0)
+z_index = -3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 490.02545
+offset_right = -69.95249
+offset_bottom = 537.9707
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(441, 39.992325)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelFive"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 67.20026
+offset_bottom = 79.98047
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Five"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/EscapeButton" to="." method="_on_escape_button_pressed"]

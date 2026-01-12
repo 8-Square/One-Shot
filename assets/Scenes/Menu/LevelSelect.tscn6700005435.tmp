@@ -1,0 +1,252 @@
+[gd_scene load_steps=15 format=3 uid="uid://bvx4t5ypgmt6i"]
+
+[ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/Menu/level_select.gd" id="1_4juup"]
+[ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_pq36x"]
+[ext_resource type="Texture2D" uid="uid://dy5clo7x35ncu" path="res://assets/Sprites/Button/blue_pressed.png" id="3_b8dml"]
+[ext_resource type="Texture2D" uid="uid://d4j70uffu0gxu" path="res://assets/Sprites/Button/green_pressed.png" id="4_hyy3w"]
+[ext_resource type="Texture2D" uid="uid://dgv5koourig5u" path="res://assets/Sprites/Button/red.png" id="5_aly6l"]
+[ext_resource type="Texture2D" uid="uid://x1ihqgxq21f1" path="res://assets/Sprites/Button/green.png" id="5_tgpxl"]
+[ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="6_aly6l"]
+[ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="7_01bmn"]
+[ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="8_fn61j"]
+[ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_jwpom"]
+[ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="10_q0e6x"]
+[ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="11_q0e6x"]
+[ext_resource type="Texture2D" uid="uid://phxg4b8yb1li" path="res://assets/Sprites/Backgrounds/final-pixelated.png" id="13_xls26"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm6wf"]
+texture = ExtResource("13_xls26")
+
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("LevelTabNodes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4juup")
+LevelTabNodes = [NodePath("CanvasLayer/Levels/Tutorial"), NodePath("CanvasLayer/Levels/LevelOne"), NodePath("CanvasLayer/Levels/LevelTwo")]
+LeftTabPos = Vector2(330, 180)
+CenterTabPos = Vector2(455, 180)
+RightTabPos = null
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37254903, 0.5882353, 1, 1)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("10_q0e6x")
+volume_db = -0.7
+autoplay = true
+bus = &"Music"
+
+[node name="UISelect" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("11_q0e6x")
+bus = &"SFX"
+
+[node name="DotsTop" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 222.28601
+offset_top = -85.0
+offset_right = -286.081
+offset_bottom = -215.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wm6wf")
+
+[node name="DotsBottom" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 222.0
+offset_top = 145.0
+offset_right = -286.367
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wm6wf")
+
+[node name="BlackHalfway" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_left = -29.0
+offset_top = -11.0
+offset_right = 231.0
+offset_bottom = 366.0
+color = Color(0, 0, 0, 1)
+
+[node name="Levels" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tutorial" type="TextureButton" parent="CanvasLayer/Levels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63393736
+anchor_top = 0.36633334
+anchor_right = 0.78393745
+anchor_bottom = 0.6333333
+offset_left = 3.27999
+offset_top = 0.119995
+offset_right = -44.72
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/Tutorial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104
+anchor_top = 0.354
+anchor_right = 0.927
+anchor_bottom = 0.604
+offset_left = -1.9919963
+offset_top = -13.492001
+offset_right = 41.504
+offset_bottom = 51.508003
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 16
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelOne" type="TextureButton" parent="CanvasLayer/Levels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6385625
+anchor_top = 0.36633334
+anchor_right = 0.7885625
+anchor_bottom = 0.6333333
+offset_left = 0.319992
+offset_top = 0.119995
+offset_right = -47.68
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelOne"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.104
+anchor_right = 0.937
+anchor_bottom = 0.885
+offset_left = 0.0239999
+offset_top = 0.0079999
+offset_right = 42.024
+offset_bottom = 37.52
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 16
+text = "Level
+One"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelTwo" type="TextureButton" parent="CanvasLayer/Levels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63918746
+anchor_top = 0.36633334
+anchor_right = 0.78918743
+anchor_bottom = 0.6333333
+offset_left = -0.0800171
+offset_top = 0.119995
+offset_right = -48.08
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelTwo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.094
+anchor_right = 0.875
+anchor_bottom = 0.875
+offset_top = -0.0119963
+offset_right = 36.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 16
+text = "Level
+Two"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EscapeButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 0.133
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.3199921
+offset_bottom = 1.1199989
+texture_normal = ExtResource("7_01bmn")
+texture_pressed = ExtResource("8_fn61j")
+texture_hover = ExtResource("8_fn61j")
+texture_focused = ExtResource("9_jwpom")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="RichTextLabel" parent="CanvasLayer/EscapeButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 117.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 26
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/EscapeButton" to="." method="_on_escape_button_pressed"]
