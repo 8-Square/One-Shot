@@ -11,6 +11,7 @@ func _ready() -> void:
 	$CanvasLayer/MarginContainer/VBoxContainer/Play.grab_focus()
 	skin_bit.apply_skin(Globalskin.selected_skin_index)
 	animated_sprite = skin_bit.current_sprite()
+	settings_menu.menu_hide()
 
 
 

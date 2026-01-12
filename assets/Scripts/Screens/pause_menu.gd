@@ -1,5 +1,7 @@
 class_name PauseMenu extends Control
 
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var settings_menu: SettingsMenu = $SettingsMenu
 @onready var main = $"../../"
 #
 #
@@ -10,10 +12,13 @@ class_name PauseMenu extends Control
 
 func _on_resume_pressed() -> void:
 	main.pause_menu()
+	$UISelect.play()
+
 
 
 func _on_restart_pressed() -> void:
 	get_tree().create_timer(0.1)
+	$UISelect.play()
 	main.pause_menu()
 	Stopwatch.stop()
 	Stopwatch.reset()
@@ -32,11 +37,14 @@ func _on_restart_pressed() -> void:
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
-
+	canvas_layer.hide()
+	$UISelect.play()
+	settings_menu.initiate()
+	settings_menu.show()
 
 func _on_quit_pressed() -> void:
 	get_tree().create_timer(0.2)
+	$UISelect.play()
 	Stopwatch.stop()
 	Stopwatch.reset()
 	main.pause_menu()

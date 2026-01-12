@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ci3tr2x3ho44u"]
+[gd_scene load_steps=16 format=3 uid="uid://ci3tr2x3ho44u"]
 
 [ext_resource type="Script" uid="uid://jg1hjww5lp5a" path="res://SkinSelection.gd" id="1_42il4"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_o5ylx"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="8_hlsa0"]
 [ext_resource type="PackedScene" uid="uid://c8jx4jbvnecey" path="res://assets/Scenes/Player/Slime Types/dark_slime.tscn" id="8_tvdxc"]
 [ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="9_larco"]
+[ext_resource type="Texture2D" uid="uid://phxg4b8yb1li" path="res://assets/Sprites/Backgrounds/final-pixelated.png" id="9_sb48k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tvdxc"]
+texture = ExtResource("9_sb48k")
 
 [node name="SkinSelection" type="Control" node_paths=PackedStringArray("skins")]
 layout_mode = 3
@@ -22,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_42il4")
-skins = [NodePath("Container/GreenSlime"), NodePath("Container/BlueSlime"), NodePath("Container/RedSlime"), NodePath("Container/BrownSlime"), NodePath("Container/PurpleSlime"), NodePath("Container/DarkSlime"), NodePath("Container/LightSlime")]
+skins = [NodePath("CanvasLayer/Container/GreenSlime"), NodePath("CanvasLayer/Container/BlueSlime"), NodePath("CanvasLayer/Container/RedSlime"), NodePath("CanvasLayer/Container/BrownSlime"), NodePath("CanvasLayer/Container/PurpleSlime"), NodePath("CanvasLayer/Container/DarkSlime"), NodePath("CanvasLayer/Container/LightSlime")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -33,24 +37,120 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.37254903, 0.5882353, 1, 1)
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BlackArea" type="Node" parent="CanvasLayer"]
+
+[node name="DotsTop" type="Panel" parent="CanvasLayer/BlackArea"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 298.0
+offset_top = 123.00001
+offset_right = -276.18298
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_styles/panel = SubResource("StyleBoxTexture_tvdxc")
+
+[node name="DotsTop2" type="Panel" parent="CanvasLayer/BlackArea"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = 123.00001
+offset_right = -391.18298
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_styles/panel = SubResource("StyleBoxTexture_tvdxc")
+
+[node name="DotsTop3" type="Panel" parent="CanvasLayer/BlackArea"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 413.0
+offset_top = 123.00001
+offset_right = -161.18298
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_styles/panel = SubResource("StyleBoxTexture_tvdxc")
+
+[node name="DotsTop4" type="Panel" parent="CanvasLayer/BlackArea"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 528.0
+offset_top = 123.00001
+offset_right = -46.182983
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_styles/panel = SubResource("StyleBoxTexture_tvdxc")
+
+[node name="DotsTop5" type="Panel" parent="CanvasLayer/BlackArea"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = 123.00001
+offset_right = -621.183
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_styles/panel = SubResource("StyleBoxTexture_tvdxc")
+
+[node name="DotsTop6" type="Panel" parent="CanvasLayer/BlackArea"]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 123.00001
+offset_right = -506.18298
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+theme_override_styles/panel = SubResource("StyleBoxTexture_tvdxc")
+
+[node name="BlackHalfway" type="ColorRect" parent="CanvasLayer/BlackArea"]
+z_index = -2
+offset_left = -21.0
+offset_top = 123.0
+offset_right = 649.0
+offset_bottom = 376.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.5
-offset_top = 36.5
-offset_right = 21.5
-offset_bottom = 59.5
+offset_left = -43.0
+offset_top = 35.0
+offset_right = 43.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "Red Slime"
 
-[node name="Container" type="Container" parent="."]
-layout_mode = 1
+[node name="Container" type="Container" parent="CanvasLayer"]
+z_index = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -59,38 +159,39 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GreenSlime" parent="Container" instance=ExtResource("4_o5ylx")]
+[node name="GreenSlime" parent="CanvasLayer/Container" instance=ExtResource("4_o5ylx")]
+animation = &"RESET"
+frame = 0
+frame_progress = 0.0
+centered = true
+
+[node name="BlueSlime" parent="CanvasLayer/Container" instance=ExtResource("3_hxphq")]
+centered = true
+
+[node name="RedSlime" parent="CanvasLayer/Container" instance=ExtResource("4_hxphq")]
+centered = true
+
+[node name="BrownSlime" parent="CanvasLayer/Container" instance=ExtResource("6_sb48k")]
 animation = &"RESET"
 centered = true
 
-[node name="BlueSlime" parent="Container" instance=ExtResource("3_hxphq")]
+[node name="PurpleSlime" parent="CanvasLayer/Container" instance=ExtResource("5_uphsa")]
 centered = true
 
-[node name="RedSlime" parent="Container" instance=ExtResource("4_hxphq")]
+[node name="DarkSlime" parent="CanvasLayer/Container" instance=ExtResource("8_tvdxc")]
 centered = true
 
-[node name="BrownSlime" parent="Container" instance=ExtResource("6_sb48k")]
-animation = &"RESET"
-centered = true
-
-[node name="PurpleSlime" parent="Container" instance=ExtResource("5_uphsa")]
-centered = true
-
-[node name="DarkSlime" parent="Container" instance=ExtResource("8_tvdxc")]
-centered = true
-
-[node name="LightSlime" parent="Container" instance=ExtResource("5_larco")]
+[node name="LightSlime" parent="CanvasLayer/Container" instance=ExtResource("5_larco")]
 animation = &"default"
 centered = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Previous" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = 48.0
 offset_top = 40.0
-offset_right = 135.0
+offset_right = 183.0
 offset_bottom = 88.0
 grow_vertical = 2
 focus_neighbor_left = NodePath("../Next")
@@ -157,8 +258,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -135.0
+offset_left = -183.0
 offset_top = 40.0
+offset_right = -48.0
 offset_bottom = 88.0
 grow_horizontal = 0
 grow_vertical = 2

@@ -5,6 +5,7 @@ class_name SettingsMenu extends Control
 @onready var outside_canvas_layer: CanvasLayer = $"../CanvasLayer"
 @onready var outside_background_music: AudioStreamPlayer = $"../BackgroundMusic"
 @onready var background_music: AudioStreamPlayer = $AudioStreamPlayer
+@onready var canvas_layer: CanvasLayer = $Settings
 
 @export var SettingsTabNames: Array[Label]
 
@@ -23,6 +24,13 @@ func _ready() -> void:
 func initiate() -> void:
 	outside_background_music.stop()
 	background_music.play()
+	self.show()
+	canvas_layer.show()
+
+func menu_hide() -> void:
+	self.hide()
+	canvas_layer.hide()
+
 
 func update_display() -> void:
 	var current_index := tab_container.current_tab
@@ -83,3 +91,7 @@ func _on_next_pressed() -> void:
 	var current_index := tab_container.current_tab
 	tab_loop(current_index + 1)
 	update_display()
+
+
+func _on_check_button_pressed() -> void:
+	pass # Replace with function body.

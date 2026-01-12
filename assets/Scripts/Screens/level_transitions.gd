@@ -41,8 +41,8 @@ func change_scene_anim(new_scene, reload: bool, watch: bool, label: RichTextLabe
 	get_tree().change_scene_to_file(new_scene)
 	#%AnimationPlayer.play("fade_out")
 	#await %AnimationPlayer.animation_finished 
-	#if reload == true:
-		#get_tree().reload_current_scene()
+	if reload == true:
+		pass
 	if watch == true:
 		Stopwatch.reset()
 		Stopwatch.stop()

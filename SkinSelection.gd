@@ -1,9 +1,9 @@
-class_name SkinSelection extends Control
+@tool class_name SkinSelection extends Control
 
 
-@onready var label: Label = $Label
+@onready var label: Label = $CanvasLayer/Label
 @onready var previousone: TextureButton = $CanvasLayer/Previous
-@onready var container: Container = $Container
+@onready var container: Container = $CanvasLayer/Container
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 @export var skins: Array[AnimatedSprite2D]
@@ -16,7 +16,7 @@ var center_pos := Vector2(0, skin_y)
 var right_pos := Vector2(100, skin_y)
 var far_right_pos := Vector2(180, skin_y)
 
-var current_index: int = 0
+@export var current_index: int = 0
 
 
 func _ready() -> void:
@@ -97,12 +97,12 @@ func update_display() -> void:
 
 
 func _on_previous_pressed() -> void:
-	current_index = wrapi(current_index - 1, 0, skins.size())
+	current_index = wrapi(current_index + 1, 0, skins.size())
 
 	update_display()
 
 func _on_next_pressed() -> void:
-	current_index = wrapi(current_index + 1, 0, skins.size())
+	current_index = wrapi(current_index - 1, 0, skins.size())
 	update_display()
 
 func _on_select_pressed() -> void:

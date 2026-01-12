@@ -49,6 +49,10 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 stopwatch=""
 Exits="Portal Exits"
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [input]
 
 ui_left={
