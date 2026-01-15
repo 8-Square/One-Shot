@@ -124,3 +124,39 @@ func _on_escape_button_pressed() -> void:
 	###ui_select.play()
 	###page_two.hide()
 	###tutorial.grab_focus()
+
+
+func _on_tutorial_pressed() -> void:
+	ui_select.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.tutorial)
+
+
+func _on_level_one_pressed() -> void:
+	ui_select.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.levelone)
+
+
+func _on_level_two_pressed() -> void:
+	ui_select.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.leveltwo)
+
+
+func _on_level_three_pressed() -> void:
+	ui_select.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)
+
+
+func _on_level_four_pressed() -> void:
+	ui_select.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
+
+
+func _on_level_five_pressed() -> void:
+	ui_select.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)

@@ -31,7 +31,6 @@ func _process(delta: float) -> void:
 	if !position_offset_node or position_offset_node.get_child_count() == 0:
 		return
 	
-	current_index = clamp(current_index, 0, position_offset_node.get_child_count()-1)
 	
 	for i in position_offset_node.get_children():
 		var distance = i.get_index() - current_index
@@ -76,14 +75,45 @@ func _process(delta: float) -> void:
 	var child_center_y = child.position.y + child.size.y / 2.0
 	position_offset_node.position.y = lerp(position_offset_node.position.y, carousel_center_y - child_center_y, min(smoothing_speed * delta, 1.0))
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	
-	var max_index = position_offset_node.get_child_count() - 1
+	var max_index = position_offset_node.get_child_count()
 	
+	# SCROLL IN BOX
 	if get_global_rect().has_point(get_global_mouse_position()):
-		if event.is_action_pressed("scroll_up"):
+		if event.is_action_pressed("scroll_down"):
 			print("WAA")
-			current_index = wrapi(current_index + 1, 0, max_index)
-		elif event.is_action_pressed("scroll_down"):
+			#current_index = wrapi(current_index + 1, 0, max_index)
+			#get_viewport().set_input_as_handled()
+			carousel_down()
+		elif event.is_action_pressed("scroll_up"):
 			print("WIII")
-			current_index = wrapi(current_index - 1, 0, max_index)
+			#current_index = wrapi(current_index - 1, 0, max_index)
+			#get_viewport().set_input_as_handled()
+			carousel_up()
+	# UP DOWN ARROWS
+	if event.is_action_pressed("down"):
+		print("GOING DOWN")
+		carousel_down()
+	elif event.is_action_pressed("jump"):
+		print("GOING UP")
+		carousel_up()
+	
+	var selected_button = position_offset_node.get_child(current_index)
+	if event.is_action_pressed("continue"):
+		if !selected_button.disabled:
+			print("BUTTON NOT DISABLED")
+			await get_tree().create_timer(0.3)
+			selected_button.emit_signal("pressed")
+		else:
+			print("BUTTON DISABLED")
+
+func carousel_down() -> void:
+	current_index -= 1 
+	if current_index < 0:
+		current_index += 1
+
+func carousel_up() -> void:
+	current_index += 1 
+	if current_index > position_offset_node.get_child_count()-1:
+		current_index -= 1
