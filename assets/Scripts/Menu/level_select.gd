@@ -44,7 +44,6 @@ func update_display() -> void:
 	RightLabel.visible = true
 
 func _ready() -> void:
-	update_display()
 	#tutorial.grab_focus()
 	#
 ## GLOBAL COMPLETED LEVELS

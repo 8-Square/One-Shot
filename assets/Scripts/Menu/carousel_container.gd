@@ -4,13 +4,6 @@
 # Pixels between container children
 @export var spacing: float = 20.0
 
-# 3D wrap around effect
-@export var wraparound_enabled: bool = false
-# horizontal spacing between container children
-@export var wraparound_radius: float = 300.0
-# Height of children behind selected child
-@export var wraparound_height: float = 50.0
-
 # How quick options fade out
 @export_range(0.0, 1.0) var opacity_strength: float = 0.35
 # How quickly children scale down
@@ -29,6 +22,8 @@
 # Target
 @export var position_offset_node: Control = null
 
+@export var level_size: Array[TextureButton]
+
 var target_scale: float
 var center_y: float
 
@@ -38,17 +33,11 @@ func _process(delta: float) -> void:
 	
 	current_index = clamp(current_index, 0, position_offset_node.get_child_count()-1)
 	
-	var cumulative_y = 0
 	for i in position_offset_node.get_children():
-		if wraparound_enabled:
-			pass
-		else:
-			var position_y = 0
-			var distance = i.get_index() - current_index
-			#i.position.y = position_y + distance * (i.size.y + spacing)
-			i.position.x = -i.size.x / 2.0
-			i.position.y = cumulative_y
-			cumulative_y += i.size.y + spacing
+		var distance = i.get_index() - current_index
+		#i.position.y = position_y + distance * (i.size.y + spacing)
+		i.position.x = -i.size.x / 2.0
+		i.position.y = distance * (i.size.y + spacing)
 	
 	# Scale Movement
 		#Scaling Origin
@@ -80,13 +69,21 @@ func _process(delta: float) -> void:
 			current_index = i.get_index()
 	
 	# Smooth lerp movement
-	if wraparound_enabled:
-		# Lerp to middle
-		position_offset_node.position.y = lerp(position_offset_node.position.y, 0.0, smoothing_speed*delta)
-	else:
 		# Lerp to current (selected) child
 		#position_offset_node.position.y = lerp(position_offset_node.position.y, -(position_offset_node.get_child(current_index).position.y + position_offset_node.get_child(current_index).size.y/2.0), smoothing_speed*delta)
 		#position_offset_node.position.y = lerp(position_offset_node.position.y, carousel_center_y -(position_offset_node.get_child(current_index).position.y + position_offset_node.get_child(current_index).size.y/2.0), smoothing_speed*delta)
-		var child = position_offset_node.get_child(current_index)
-		var child_center_y = child.position.y + child.size.y / 2.0
-		position_offset_node.position.y = lerp(position_offset_node.position.y, carousel_center_y - child_center_y, min(smoothing_speed * delta, 1.0))
+	var child = position_offset_node.get_child(current_index)
+	var child_center_y = child.position.y + child.size.y / 2.0
+	position_offset_node.position.y = lerp(position_offset_node.position.y, carousel_center_y - child_center_y, min(smoothing_speed * delta, 1.0))
+
+func _unhandled_input(event: InputEvent) -> void:
+	
+	var max_index = position_offset_node.get_child_count() - 1
+	
+	if get_global_rect().has_point(get_global_mouse_position()):
+		if event.is_action_pressed("scroll_up"):
+			print("WAA")
+			current_index = wrapi(current_index + 1, 0, max_index)
+		elif event.is_action_pressed("scroll_down"):
+			print("WIII")
+			current_index = wrapi(current_index - 1, 0, max_index)

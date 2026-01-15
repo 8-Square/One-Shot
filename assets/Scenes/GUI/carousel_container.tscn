@@ -10,3 +10,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8e68r")
+scale_min = 0.1
+carousel_center_y = null
