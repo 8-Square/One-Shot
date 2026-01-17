@@ -1,9 +1,10 @@
-class_name Stop 
 extends Node
 
 var time = 0.0
 var stopped = true
 var game_started = false
+
+
 func _process(delta):
 	if stopped:
 		return

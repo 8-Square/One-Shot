@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://b4mg4h3swfkwf"]
+[gd_scene load_steps=52 format=4 uid="uid://b4mg4h3swfkwf"]
 
 [ext_resource type="Script" uid="uid://jr1ttokgcx12" path="res://assets/Scripts/Player/player_level_one.gd" id="1_5ul2i"]
 [ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_hv5ue"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bi1e2o2uef65q" path="res://assets/Sprites/Tilesets/Assets.png" id="6_yookv"]
 [ext_resource type="Texture2D" uid="uid://d3b0i4q87feai" path="res://assets/Sprites/Tilesets/spritesheet_tiles.png" id="7_hv5ue"]
 [ext_resource type="PackedScene" uid="uid://bylt4xh12pwlt" path="res://assets/Scenes/DangerZone.tscn" id="8_yookv"]
+[ext_resource type="PackedScene" uid="uid://bjptigt865ymr" path="res://assets/Scenes/Menu/Settings.tscn" id="12_5l1cy"]
 [ext_resource type="Texture2D" uid="uid://cqlxo5bujinfg" path="res://assets/Sprites/Backgrounds/Parallax Cave/1.png" id="14_wdexn"]
 [ext_resource type="Texture2D" uid="uid://citslpmtnutb2" path="res://assets/Sprites/Backgrounds/Parallax Cave/2.png" id="15_kjjyr"]
 [ext_resource type="Texture2D" uid="uid://jbuu5k2ytv3u" path="res://assets/Sprites/Backgrounds/Parallax Cave/3fx.png" id="16_pecrg"]
@@ -1166,6 +1167,8 @@ text = "Nothing here..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SettingsMenu" parent="." instance=ExtResource("12_5l1cy")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("2_8frfp")]
@@ -1282,7 +1285,7 @@ frame_progress = 0.0
 [node name="AudioStreamPlayer2D" parent="EndPortal2" index="2"]
 bus = &"SFX"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_wdexn")
 volume_db = -9.0
 autoplay = true
@@ -1295,5 +1298,6 @@ texture = ExtResource("25_kjjyr")
 
 [editable path="HiddenArea/FadeArea"]
 [editable path="TileMapLayer/DangerZone"]
+[editable path="SettingsMenu"]
 [editable path="EndPortal"]
 [editable path="EndPortal2"]

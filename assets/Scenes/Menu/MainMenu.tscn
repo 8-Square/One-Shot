@@ -328,7 +328,6 @@ volume_db = 3.4
 bus = &"SFX"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("19_pfymn")]
-visible = false
 layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

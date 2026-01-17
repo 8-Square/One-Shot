@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://s1fpg2t0r50m" path="res://assets/Scripts/Menu/audio_options.gd" id="2_xp4jg"]
 [ext_resource type="Shader" uid="uid://dimxgmuqrj8h4" path="res://assets/Scripts/Menu/Blur.gdshader" id="3_6gofj"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_arbsy"]
-[ext_resource type="Script" uid="uid://dcouayy2qluap" path="res://assets/Scenes/Menu/gameplay.gd" id="4_hb75k"]
+[ext_resource type="Script" uid="uid://dcouayy2qluap" path="res://assets/Scripts/Settings/gameplay.gd" id="4_hb75k"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_x5ewj"]
 [ext_resource type="PackedScene" uid="uid://hoskdmobh4sa" path="res://assets/Scenes/Menu/volume_slider.tscn" id="5_7fwda"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="6_7fwda"]

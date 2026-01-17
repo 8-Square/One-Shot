@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_4juup")
-LevelTabNodes = [NodePath("CanvasLayer/Levels/Tutorial"), NodePath("CanvasLayer/Levels/LevelOne"), NodePath("CanvasLayer/Levels/LevelTwo"), NodePath("CanvasLayer/Levels/LevelThree"), NodePath("CanvasLayer/Levels/LevelFour"), NodePath("CanvasLayer/Levels/LevelFive")]
+LevelTabNodes = [NodePath("../../../../../../../../@WindowWrapper@12615/@ScriptEditor@12614/@VBoxContainer@11811/@HSplitContainer@11814/@VBoxContainer@11839/@TabContainer@11841/@ScriptTextEditor@52132/@PopupPanel@51939/@ColorPicker@52103/@MarginContainer@51940/@VBoxContainer@51941/@GridContainer@51964/@SpinBox@52033/@SpinBoxLineEdit@52031/@PopupMenu@52018/@PopupMenu@52030/@PanelContainer@52024/@ScrollContainer@52025"), NodePath("../../../../../../../../@WindowWrapper@12615/@ScriptEditor@12614/@VBoxContainer@11811/@HSplitContainer@11814/@VBoxContainer@11839/@TabContainer@11841/@ScriptTextEditor@51600/@VSplitContainer@51602/@CodeTextEditor@51603/@HBoxContainer@51345/@MenuButton@51360/@PopupMenu@51359/@PanelContainer@51354/@ScrollContainer@51355"), NodePath("../../../../../../../../@WindowWrapper@12615/@ScriptEditor@12614/@VBoxContainer@11811/@HSplitContainer@11814/@VBoxContainer@11839/@TabContainer@11841/@ScriptTextEditor@52132/@PopupPanel@51939/@ColorPicker@52103/@MarginContainer@51940/@VBoxContainer@51941/@GridContainer@51964/@HSlider@52035"), NodePath("../../../../../../../../@WindowWrapper@12615/@ScriptEditor@12614/@VBoxContainer@11811/@HBoxContainer@11812/@HBoxContainer@51834/@MenuButton@51804/@PopupMenu@51378/@PanelContainer@51373/@ScrollContainer@51374"), NodePath("../../../../../../../../@WindowWrapper@12615/@ScriptEditor@12614/@VBoxContainer@11811/@HBoxContainer@11812/@HBoxContainer@51834/@MenuButton@51831/@PopupMenu@51395/@PanelContainer@51390/@ScrollContainer@51391"), NodePath("../../../../../../../../@WindowWrapper@12615/@ScriptEditor@12614/@VBoxContainer@11811/@HSplitContainer@11814/@VBoxContainer@11839/@TabContainer@11841/@ScriptTextEditor@51600/@PopupMenu@51606/@PanelContainer@51367/@ScrollContainer@51368")]
 LeftTabPos = Vector2(453, 23)
 CenterTabPos = Vector2(441, 124)
 RightTabPos = Vector2(453, 255)
@@ -94,268 +94,6 @@ offset_right = 255.0
 offset_bottom = 366.0
 color = Color(0, 0, 0, 1)
 
-[node name="Levels" type="Control" parent="CanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Tutorial" type="TextureButton" parent="CanvasLayer/Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.70268726
-anchor_top = 0.06355551
-anchor_right = 0.8526875
-anchor_bottom = 0.33055568
-offset_left = 3.27999
-offset_top = 0.119995
-offset_right = -44.72
-offset_bottom = -48.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.9, 1.9)
-texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("3_b8dml")
-texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
-texture_focused = ExtResource("5_tgpxl")
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/Tutorial"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0527099
-offset_right = 868.84216
-offset_bottom = 867.7897
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.05, 0.05)
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 160
-text = "Tutorial"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LevelOne" type="TextureButton" parent="CanvasLayer/Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.68856245
-anchor_top = 0.3441111
-anchor_right = 0.8385626
-anchor_bottom = 0.6111111
-offset_left = 0.319992
-offset_top = 0.119995
-offset_right = -47.68
-offset_bottom = -48.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2.5, 2.5)
-texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("3_b8dml")
-texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
-texture_focused = ExtResource("5_tgpxl")
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelOne"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.062
-anchor_top = 0.104
-anchor_right = 0.937
-anchor_bottom = 0.885
-offset_left = 0.02399993
-offset_top = 0.007999897
-offset_right = -0.5760956
-offset_bottom = 0.31999588
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 10
-text = "Level
-One"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LevelTwo" type="TextureButton" parent="CanvasLayer/Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.7079375
-anchor_top = 0.70799994
-anchor_right = 0.85793746
-anchor_bottom = 0.975
-offset_left = -0.0800171
-offset_top = 0.119995
-offset_right = -48.08
-offset_bottom = -48.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.9, 1.9)
-texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("3_b8dml")
-texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
-texture_focused = ExtResource("5_tgpxl")
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelTwo"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.125
-anchor_top = 0.094
-anchor_right = 0.875
-anchor_bottom = 0.875
-offset_top = -0.0119963
-offset_right = 36.0
-offset_bottom = 37.5
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 16
-text = "Level
-Two"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="LevelThree" type="TextureButton" parent="CanvasLayer/Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.7079375
-anchor_top = 0.70799994
-anchor_right = 0.85793746
-anchor_bottom = 0.975
-offset_left = -0.0800171
-offset_top = 0.119995
-offset_right = -48.08
-offset_bottom = -48.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.9, 1.9)
-texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("3_b8dml")
-texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
-texture_focused = ExtResource("5_tgpxl")
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelThree"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.125
-anchor_top = 0.094
-anchor_right = 0.875
-anchor_bottom = 0.875
-offset_top = -0.0119963
-offset_right = 36.0
-offset_bottom = 37.5
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 16
-text = "Level
-Three"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="LevelFour" type="TextureButton" parent="CanvasLayer/Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.7079375
-anchor_top = 0.70799994
-anchor_right = 0.85793746
-anchor_bottom = 0.975
-offset_left = -0.0800171
-offset_top = 0.119995
-offset_right = -48.08
-offset_bottom = -48.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.9, 1.9)
-texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("3_b8dml")
-texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
-texture_focused = ExtResource("5_tgpxl")
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelFour"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.125
-anchor_top = 0.094
-anchor_right = 0.875
-anchor_bottom = 0.875
-offset_top = -0.0119963
-offset_right = 36.0
-offset_bottom = 37.5
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 16
-text = "Level
-Four"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="LevelFive" type="TextureButton" parent="CanvasLayer/Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.7079375
-anchor_top = 0.70799994
-anchor_right = 0.85793746
-anchor_bottom = 0.975
-offset_left = -0.0800171
-offset_top = 0.119995
-offset_right = -48.08
-offset_bottom = -48.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.9, 1.9)
-texture_normal = ExtResource("2_pq36x")
-texture_pressed = ExtResource("3_b8dml")
-texture_hover = ExtResource("4_hyy3w")
-texture_disabled = ExtResource("5_aly6l")
-texture_focused = ExtResource("5_tgpxl")
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/Levels/LevelFive"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.10964972
-anchor_top = 0.10989944
-anchor_right = 0.85964966
-anchor_bottom = 0.89089954
-offset_top = -0.0119963
-offset_right = 36.0
-offset_bottom = 37.5
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_aly6l")
-theme_override_font_sizes/normal_font_size = 16
-text = "Level
-Five"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="EscapeButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.187
@@ -384,13 +122,34 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Leaderboard" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 195.0
+offset_right = 226.0
+offset_bottom = 275.0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Leaderboard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Leaderboard/VBoxContainer"]
+layout_mode = 2
+
 [node name="LevelPreview" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 46.0
-offset_top = 91.0
+offset_top = 75.0
 offset_right = 230.0
-offset_bottom = 203.0
+offset_bottom = 187.0
 
 [node name="Panel" type="Panel" parent="CanvasLayer/LevelPreview"]
 layout_mode = 1
@@ -418,7 +177,7 @@ current_index = 1
 follow_button_focus = true
 carousel_center_y = 175.0
 position_offset_node = NodePath("Control")
-level_size = [NodePath("Control/tutorial"), NodePath("Control/level_one"), NodePath("Control/level_two"), NodePath("Control/level_three"), NodePath("Control/level_four"), NodePath("Control/level_five")]
+level_size = [NodePath("Control/Tutorial"), NodePath("Control/LevelOne"), NodePath("Control/LevelTwo"), NodePath("Control/LevelThree"), NodePath("Control/LevelFour"), NodePath("Control/LevelFive")]
 metadata/_custom_type_script = "uid://bqpq8wvmvaw75"
 
 [node name="Control" type="Control" parent="CanvasLayer/CarouselContainer"]
@@ -428,7 +187,7 @@ offset_top = 134.99997
 offset_right = 450.0
 offset_bottom = 254.99811
 
-[node name="tutorial" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+[node name="Tutorial" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -1
 layout_mode = 1
@@ -455,7 +214,7 @@ texture_focused = ExtResource("5_tgpxl")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/tutorial"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/Tutorial"]
 texture_filter = 1
 layout_mode = 1
 offset_right = 132.0
@@ -468,7 +227,7 @@ text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level_one" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+[node name="LevelOne" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -492,7 +251,7 @@ texture_focused = ExtResource("5_tgpxl")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/level_one"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelOne"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.062
@@ -514,7 +273,7 @@ One"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level_two" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+[node name="LevelTwo" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -1
 layout_mode = 1
@@ -540,7 +299,7 @@ texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 stretch_mode = 0
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/level_two"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelTwo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -558,7 +317,7 @@ Two"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level_three" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+[node name="LevelThree" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0.3)
 z_index = -2
 layout_mode = 1
@@ -584,7 +343,7 @@ texture_focused = ExtResource("5_tgpxl")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/level_three"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelThree"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -602,7 +361,7 @@ Three"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level_four" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+[node name="LevelFour" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0)
 z_index = -3
 layout_mode = 1
@@ -629,7 +388,7 @@ texture_focused = ExtResource("5_tgpxl")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/level_four"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelFour"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -647,7 +406,7 @@ Four"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level_five" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
+[node name="LevelFive" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0)
 z_index = -4
 layout_mode = 1
@@ -674,7 +433,7 @@ texture_focused = ExtResource("5_tgpxl")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/level_five"]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelFive"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -693,9 +452,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/EscapeButton" to="." method="_on_escape_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/tutorial" to="." method="_on_tutorial_pressed"]
-[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/level_one" to="." method="_on_level_one_pressed"]
-[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/level_two" to="." method="_on_level_two_pressed"]
-[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/level_three" to="." method="_on_level_three_pressed"]
-[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/level_four" to="." method="_on_level_four_pressed"]
-[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/level_five" to="." method="_on_level_five_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelOne" to="." method="_on_level_one_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelTwo" to="." method="_on_level_two_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelThree" to="." method="_on_level_three_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelFour" to="." method="_on_level_four_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelFive" to="." method="_on_level_five_pressed"]

@@ -1,4 +1,5 @@
-@tool class_name SkinSelection extends Control
+# @tool 
+class_name SkinSelection extends Control
 
 
 @onready var label: Label = $CanvasLayer/Label
