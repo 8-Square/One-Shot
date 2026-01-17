@@ -1,4 +1,5 @@
-@tool class_name CarouselContainer extends Control
+# @tool
+class_name CarouselContainer extends Control
 # I don't really understand too much what I'm writing so im trying to comment to make it clearer for me
 
 # Pixels between container children
@@ -27,6 +28,10 @@
 var target_scale: float
 var center_y: float
 
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	
 func _process(delta: float) -> void:
 	if !position_offset_node or position_offset_node.get_child_count() == 0:
 		return
@@ -59,13 +64,14 @@ func _process(delta: float) -> void:
 			i.z_index = 1
 			i.mouse_filter = Control.MOUSE_FILTER_STOP
 			i.focus_mode = Control.FOCUS_ALL
+			# Gives focus to current index
+			if !i.has_focus(): 
+				i.grab_focus() 
+				
 		else:
 			i.z_index = -abs(i.get_index()-current_index)
 			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			i.focus_mode = Control.FOCUS_NONE
-	# Give current index focus
-		if follow_button_focus and i.has_focus():
-			current_index = i.get_index()
 	
 	# Smooth lerp movement
 		# Lerp to current (selected) child
@@ -76,6 +82,9 @@ func _process(delta: float) -> void:
 	position_offset_node.position.y = lerp(position_offset_node.position.y, carousel_center_y - child_center_y, min(smoothing_speed * delta, 1.0))
 
 func _input(event: InputEvent) -> void:
+	# Stops _Input from working when in editor (Fixes Crashing
+	if Engine.is_editor_hint():
+		return
 	
 	var max_index = position_offset_node.get_child_count()
 	
