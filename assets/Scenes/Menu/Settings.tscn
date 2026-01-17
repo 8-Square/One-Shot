@@ -23,6 +23,7 @@ shader = ExtResource("3_6gofj")
 shader_parameter/lod = 1.8000000855
 
 [node name="SettingsMenu" type="Control" node_paths=PackedStringArray("SettingsTabNames")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,6 +39,8 @@ autoplay = true
 bus = &"Music"
 
 [node name="Settings" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 5
 
 [node name="Background" type="ColorRect" parent="Settings"]
 material = SubResource("ShaderMaterial_6gofj")
@@ -382,6 +385,8 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 40
 text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DisplayLabel" type="Label" parent="Settings"]
 anchors_preset = 5

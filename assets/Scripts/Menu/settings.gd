@@ -11,9 +11,9 @@ class_name SettingsMenu extends Control
 
 var TabName_y = 45
 
-var LeftTabPos = Vector2(50, TabName_y)
-var CenterTabPos = Vector2(226, 32)
-var RightTabPos = Vector2(500, TabName_y)
+var LeftTabPos = Vector2(130, TabName_y)
+var CenterTabPos = Vector2(320, 32)
+var RightTabPos = Vector2(600, TabName_y)
 
 
 func _ready() -> void:
@@ -38,25 +38,33 @@ func update_display() -> void:
 	for label in SettingsTabNames:
 		label.visible = false
 		
-	
+	# Defining the center label and its position, scale and area
 	var CenterLabel = SettingsTabNames[current_index]
 	CenterLabel.position = CenterTabPos
 	CenterLabel.scale = Vector2(1, 1)
 	CenterLabel.visible = true
+	# Centering the label
+	CenterLabel.position.x = CenterTabPos.x - CenterLabel.size.x / 2.0
 	
 	# LEFT & RIGHT TAB
 	var left_index = wrapi(current_index - 1, 0, SettingsTabNames.size())
 	var right_index = wrapi(current_index + 1, 0, SettingsTabNames.size())	
 	
-	var left_skin = SettingsTabNames[left_index]
-	left_skin.position = LeftTabPos
-	left_skin.scale = Vector2(0.5, 0.5)
-	left_skin.visible = true
+	# Defining the left label and its position, scale and area
+	var LeftLabel = SettingsTabNames[left_index]
+	LeftLabel.position = LeftTabPos
+	LeftLabel.scale = Vector2(0.5, 0.5)
+	LeftLabel.visible = true
 	
+	LeftLabel.position.x = LeftTabPos.x - LeftLabel.size.x / 2.0
+	
+	# Defining the right label and its position, scale and area
 	var RightLabel = SettingsTabNames[right_index]
 	RightLabel.position = RightTabPos
 	RightLabel.scale = Vector2(0.5, 0.5)
 	RightLabel.visible = true
+	# Centering the right label
+	RightLabel.position.x = RightTabPos.x - RightLabel.size.x / 2.0
 
 
 func save():

@@ -1298,6 +1298,5 @@ texture = ExtResource("25_kjjyr")
 
 [editable path="HiddenArea/FadeArea"]
 [editable path="TileMapLayer/DangerZone"]
-[editable path="SettingsMenu"]
 [editable path="EndPortal"]
 [editable path="EndPortal2"]
