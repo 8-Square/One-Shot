@@ -8,6 +8,7 @@ var completed_3 := false
 var completed_4 := false
 var completed_5 := false
 
+
 func is_completed(level_no: int): 
 	match level_no:
 		0:

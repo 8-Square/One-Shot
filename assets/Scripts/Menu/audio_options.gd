@@ -1,11 +1,15 @@
 class_name AudioSettings extends Control
 #
-#
+# Defines Horizontal Slider to a variable 
 @onready var master: HSlider = $VBoxContainer/Master
 @onready var music: HSlider = $VBoxContainer/Music
 @onready var sfx: HSlider = $VBoxContainer/SFX
 
+# Save File
+var save_pref: SaveManager
+
 func _ready() -> void:
+	save_pref = SaveManager.load_or_create()
 	master.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
 	music.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
 	sfx.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))

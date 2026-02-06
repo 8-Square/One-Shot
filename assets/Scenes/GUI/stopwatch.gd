@@ -32,6 +32,6 @@ func time_to_string() -> String:
 	var sec = int(fmod(total_time, 60.0))
 	var minute = int(total_time / 60)	
 	# FORMAT TIME
-	var format_string = "%02d . %02d . %03d"
+	var format_string = "%02d : %02d . %03d"
 	var actual_string = format_string % [minute, sec, msec]
 	return actual_string

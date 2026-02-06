@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://boyhi8m36wbbb"]
 
-[ext_resource type="Script" uid="uid://dspps1ifx106u" path="res://assets/Scripts/Menu/settings.gd" id="1_r1x3p"]
+[ext_resource type="Script" uid="uid://dspps1ifx106u" path="res://assets/Scripts/SettingsMenu/settings.gd" id="1_r1x3p"]
 [ext_resource type="AudioStream" uid="uid://bdxcsn7r28u6t" path="res://assets/Music/Background/somersaults-edm-ost-track-176960.mp3" id="2_ious4"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="3_34t13"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="4_0qxqi"]

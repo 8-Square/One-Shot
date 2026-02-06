@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://dimxgmuqrj8h4" path="res://assets/Presets/Blur.gdshader" id="3_6gofj"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_arbsy"]
 [ext_resource type="Script" uid="uid://dcouayy2qluap" path="res://assets/Scripts/SettingsMenu/gameplay.gd" id="4_hb75k"]
+[ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_x5ewj"]
 [ext_resource type="PackedScene" uid="uid://hoskdmobh4sa" path="res://assets/Scenes/Menu/volume_slider.tscn" id="5_7fwda"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="6_7fwda"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="7_70ccf"]
@@ -61,7 +62,6 @@ grow_horizontal = 2
 grow_vertical = 2
 current_tab = 2
 tabs_visible = false
-metadata/_edit_use_anchors_ = true
 
 [node name="Gameplay" type="Control" parent="Settings/TabContainer" unique_id=1986572234]
 process_mode = 3
@@ -281,7 +281,6 @@ offset_right = -20.0
 offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="DisplayModeBox" type="HBoxContainer" parent="Settings/TabContainer/Display/VBoxContainer" unique_id=153744740]
 layout_mode = 2
@@ -334,19 +333,17 @@ theme_override_font_sizes/font_size = 16
 alignment = 1
 icon_alignment = 1
 selected = 2
-item_count = 6
-popup/item_0/text = "2560x1440"
+item_count = 5
+popup/item_0/text = "1920x1080"
 popup/item_0/id = 0
-popup/item_1/text = "1920x1080"
+popup/item_1/text = "1280x720"
 popup/item_1/id = 1
-popup/item_2/text = "1280x720"
+popup/item_2/text = "800x600"
 popup/item_2/id = 2
-popup/item_3/text = "800x600"
+popup/item_3/text = "640x480"
 popup/item_3/id = 3
-popup/item_4/text = "640x480"
+popup/item_4/text = "640x360"
 popup/item_4/id = 4
-popup/item_5/text = "640x360"
-popup/item_5/id = 5
 
 [node name="FPSBox" type="HBoxContainer" parent="Settings/TabContainer/Display/VBoxContainer" unique_id=458055411]
 layout_mode = 2
@@ -375,14 +372,8 @@ layout_mode = 2
 min_value = 10.0
 max_value = 160.0
 step = 10.0
-value = 60.0
+value = 10.0
 rounded = true
-
-[node name="Label3" type="Label" parent="Settings/TabContainer/Display/VBoxContainer" unique_id=361536995]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_6luba")
-theme_override_font_sizes/font_size = 12
-text = "FPS will be capped (to refresh rate) if VSync is enabled"
 
 [node name="VSyncBox" type="HBoxContainer" parent="Settings/TabContainer/Display/VBoxContainer" unique_id=1355641686]
 layout_mode = 2
@@ -395,24 +386,19 @@ size_flags_horizontal = 2
 text = "Vsync"
 label_settings = ExtResource("2_arbsy")
 
-[node name="VSyncText" type="Label" parent="Settings/TabContainer/Display/VBoxContainer/VSyncBox" unique_id=271651470]
-custom_minimum_size = Vector2(0, 34.9)
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("2_6luba")
-theme_override_font_sizes/font_size = 17
-text = "State::"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSyncButton" type="CheckBox" parent="Settings/TabContainer/Display/VBoxContainer/VSyncBox" unique_id=2023053120]
-custom_minimum_size = Vector2(25, 34.9)
+[node name="VSyncButton" type="CheckButton" parent="Settings/TabContainer/Display/VBoxContainer/VSyncBox" unique_id=782481485]
+custom_minimum_size = Vector2(300, 34.9)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6luba")
-button_pressed = true
+theme_override_font_sizes/font_size = 16
+text = "VSync State"
 alignment = 2
-icon_alignment = 1
-expand_icon = true
+
+[node name="CheckBox" type="CheckBox" parent="Settings/TabContainer/Display/VBoxContainer" unique_id=1494971418]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_x5ewj")
+theme_override_font_sizes/font_size = 23
+text = " FullScreen"
 
 [node name="MenuLabel" type="Label" parent="Settings" unique_id=576865829]
 anchors_preset = 5
@@ -644,8 +630,6 @@ vertical_alignment = 1
 [connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/Master" to="Settings/TabContainer/Music" method="_on_master_value_changed"]
 [connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/Music" to="Settings/TabContainer/Music" method="_on_music_value_changed"]
 [connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/SFX" to="Settings/TabContainer/Music" method="_on_sfx_value_changed"]
-[connection signal="item_selected" from="Settings/TabContainer/Display/VBoxContainer/ResolutionBox/ResolutionOptions" to="Settings/TabContainer/Display" method="_on_resolution_options_item_selected"]
-[connection signal="toggled" from="Settings/TabContainer/Display/VBoxContainer/VSyncBox/VSyncButton" to="Settings/TabContainer/Display" method="_on_v_sync_button_toggled"]
 [connection signal="pressed" from="Settings/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Settings/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Settings/ConfirmExit" to="." method="_on_confirm_exit_pressed"]

@@ -1,16 +1,18 @@
 class_name SettingsMenu extends Control
 
-@onready var tab_container: TabContainer = $Settings/TabContainer
+# Defining Outside Nodes
 @onready var main = $"../../"
 @onready var outside_canvas_layer: CanvasLayer = $"../CanvasLayer"
 @onready var outside_background_music: AudioStreamPlayer = $"../BackgroundMusic"
+# Defining inside nodes
+@onready var tab_container: TabContainer = $Settings/TabContainer
 @onready var background_music: AudioStreamPlayer = $AudioStreamPlayer
 @onready var canvas_layer: CanvasLayer = $Settings
 
 @export var SettingsTabNames: Array[Label]
 
+# Circular Menu positions
 var TabName_y = 45
-
 var LeftTabPos = Vector2(130, TabName_y)
 var CenterTabPos = Vector2(320, 32)
 var RightTabPos = Vector2(600, TabName_y)
@@ -21,17 +23,16 @@ func _ready() -> void:
 	print("WORKING")
 	update_display()
 
+func menu_hide() -> void:
+	self.hide()
+	canvas_layer.hide()
+
+# CIRCULAR MENNU
 func initiate() -> void:
 	outside_background_music.stop()
 	background_music.play()
 	self.show()
 	canvas_layer.show()
-
-func menu_hide() -> void:
-	self.hide()
-	canvas_layer.hide()
-
-
 func update_display() -> void:
 	var current_index := tab_container.current_tab
 	
@@ -65,6 +66,17 @@ func update_display() -> void:
 	RightLabel.visible = true
 	# Centering the right label
 	RightLabel.position.x = RightTabPos.x - RightLabel.size.x / 2.0
+func tab_loop(new_index: int) -> void:
+	var total_tabs = tab_container.get_tab_count()
+	tab_container.current_tab = wrapi(new_index, 0, total_tabs)
+func _on_previous_pressed() -> void:
+	var current_index := tab_container.current_tab
+	tab_loop(current_index - 1)
+	update_display()
+func _on_next_pressed() -> void:
+	var current_index := tab_container.current_tab
+	tab_loop(current_index + 1)
+	update_display()
 
 
 func save():
@@ -74,6 +86,7 @@ func save():
 		tab_node.save_settings()
 	else:
 		print("SAVE SETTINGS OPTION NOT FOUND")
+
 func exit():
 	background_music.stop()
 	outside_canvas_layer.show()
@@ -87,18 +100,6 @@ func _on_save_pressed() -> void:
 	save()
 func _on_cancel_pressed() -> void:
 	exit()
-
-func tab_loop(new_index: int) -> void:
-	var total_tabs = tab_container.get_tab_count()
-	tab_container.current_tab = wrapi(new_index, 0, total_tabs)
-func _on_previous_pressed() -> void:
-	var current_index := tab_container.current_tab
-	tab_loop(current_index - 1)
-	update_display()
-func _on_next_pressed() -> void:
-	var current_index := tab_container.current_tab
-	tab_loop(current_index + 1)
-	update_display()
 
 
 func _on_check_button_pressed() -> void:

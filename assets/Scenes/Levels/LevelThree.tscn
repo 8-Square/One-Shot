@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=4 uid="uid://ddv88ijm2k083"]
 
 [ext_resource type="PackedScene" uid="uid://byg1xe2t1e15k" path="res://assets/Scenes/Player/Player.tscn" id="1_nejv7"]
-[ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_nkslk"]
+[ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/Base/level.gd" id="1_nkslk"]
 [ext_resource type="TileSet" uid="uid://bifudq4rwaeuf" path="res://assets/Sprites/Tilesets/Platform.tres" id="2_xwbj2"]
 [ext_resource type="TileSet" uid="uid://did1tgt1gv2uu" path="res://assets/Sprites/Tilesets/Level.tres" id="4_o5ji7"]
 [ext_resource type="PackedScene" uid="uid://bylt4xh12pwlt" path="res://assets/Scenes/DangerZone.tscn" id="7_nkslk"]

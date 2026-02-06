@@ -1,4 +1,4 @@
-extends HSlider
+class_name VolumeSlider extends HSlider
 
 @export var bus_name : String
 

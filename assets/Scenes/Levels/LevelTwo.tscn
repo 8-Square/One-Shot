@@ -1,6 +1,6 @@
-[gd_scene load_steps=35 format=4 uid="uid://mweg7yavekcc"]
+[gd_scene load_steps=36 format=4 uid="uid://mweg7yavekcc"]
 
-[ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_6ovuf"]
+[ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/Base/level.gd" id="1_6ovuf"]
 [ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://assets/Sprites/Tilesets/BasicPlaceholder.png" id="1_ky6uf"]
 [ext_resource type="Texture2D" uid="uid://v0up5egf1li" path="res://assets/Sprites/Tilesets/world_tileset.png" id="2_6ovuf"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="4_d1e1y"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cnrgq4vi15g44" path="res://assets/Scenes/GUI/hud.tscn" id="8_6ovuf"]
 [ext_resource type="PackedScene" uid="uid://bw5dirs1wwke2" path="res://assets/Scenes/Other/Portals/Portal.tscn" id="8_330gt"]
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="10_7xg8r"]
+[ext_resource type="PackedScene" uid="uid://bjptigt865ymr" path="res://assets/Scenes/Menu/Settings.tscn" id="10_lmjxn"]
 [ext_resource type="Texture2D" uid="uid://cqlxo5bujinfg" path="res://assets/Sprites/Backgrounds/Parallax Cave/1.png" id="11_dq1ej"]
 [ext_resource type="PackedScene" uid="uid://dheketjghw7gl" path="res://assets/Scenes/Other/Portals/EndPortal.tscn" id="11_jrirm"]
 [ext_resource type="Texture2D" uid="uid://citslpmtnutb2" path="res://assets/Sprites/Backgrounds/Parallax Cave/2.png" id="12_vqpyt"]
@@ -365,7 +366,7 @@ script = ExtResource("1_6ovuf")
 level_no = 2
 
 [node name="Player" parent="." node_paths=PackedStringArray("level_start_pos") instance=ExtResource("6_jrirm")]
-position = Vector2(72.6441, -20.7112)
+position = Vector2(100, -6)
 script = ExtResource("7_df7rf")
 level_start_pos = NodePath("../PlayerStart")
 max_jump_count = 100000
@@ -468,6 +469,8 @@ theme_override_font_sizes/normal_font_size = 55
 text = "Wrong Way..."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SettingsMenu" parent="." instance=ExtResource("10_lmjxn")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -621,7 +624,7 @@ shape = SubResource("RectangleShape2D_lmjxn")
 [node name="Destination" parent="Portal2" index="2"]
 position = Vector2(-3259, 1525)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_m65rm")
 volume_db = -5.0
 autoplay = true

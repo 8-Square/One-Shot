@@ -38,6 +38,9 @@ position_smoothing_enabled = true
 
 [node name="GreenSlime" parent="." instance=ExtResource("2_kkvr3")]
 position = Vector2(-51, -53)
+animation = &"default"
+frame = 0
+frame_progress = 0.0
 
 [node name="BlueSlime" parent="." instance=ExtResource("5_dghhb")]
 visible = false

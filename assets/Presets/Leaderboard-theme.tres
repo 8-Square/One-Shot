@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://oip8a1psp816"]
+
+[ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="1_6y2r6"]
+
+[resource]
+Label/font_sizes/font_size = 14
+Label/fonts/font = ExtResource("1_6y2r6")
+RichTextLabel/constants/line_separation = 2
+RichTextLabel/font_sizes/normal_font_size = 11
+RichTextLabel/fonts/normal_font = ExtResource("1_6y2r6")

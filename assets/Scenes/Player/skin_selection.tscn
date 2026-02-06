@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://ci3tr2x3ho44u"]
 
-[ext_resource type="Script" uid="uid://jg1hjww5lp5a" path="res://SkinSelection.gd" id="1_42il4"]
+[ext_resource type="Script" uid="uid://jg1hjww5lp5a" path="res://assets/Scripts/Player/SkinSelection.gd" id="1_42il4"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_o5ylx"]
 [ext_resource type="PackedScene" uid="uid://bfhesm6n0w0jx" path="res://assets/Scenes/Player/Slime Types/blue_slime.tscn" id="3_hxphq"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="3_qayvk"]

@@ -8,27 +8,32 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="One Shot"
+config/name="One Shot (4.6)"
 config/description="A fast paced rage type slime platformer"
 config/version="1.2.1"
 run/main_scene="uid://dx327gpo6edk"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="uid://n2xdf0vvm0nb"
 run/layer_3="Danger"
 
 [audio]
 
-buses/default_bus_layout="res://assets/default_bus_layout.tres"
+buses/default_bus_layout="res://assets/Presets/default_bus_layout.tres"
 
 [autoload]
 
 to_tutorial_transition="*res://assets/Scenes/Screens/PlayToTutorialTransition.tscn"
 Stopwatch="*res://assets/Scenes/GUI/stopwatch.gd"
 LevelComplete="*res://assets/Scenes/Menu/LevelComplete.tscn"
-Globallevel="*res://assets/Scripts/classes/globallevel.gd"
-Globalskin="*res://assets/Scripts/classes/globalskin.gd"
+Globallevel="*res://assets/Scripts/Autoloads/globallevel.gd"
+Globalskin="*res://assets/Scripts/Autoloads/globalskin.gd"
+Talo="*uid://cf5txmco4tia4"
 
 [display]
 
@@ -37,12 +42,11 @@ window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
-window/stretch/aspect="ignore"
 window/handheld/orientation=6
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/talo/plugin.cfg")
 
 [global_group]
 

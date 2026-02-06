@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=4 uid="uid://b42r2c2v0gsmy"]
 
-[ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/classes/level.gd" id="1_27xn1"]
+[ext_resource type="Script" uid="uid://fjqk8nnesj7a" path="res://assets/Scripts/Base/level.gd" id="1_27xn1"]
 [ext_resource type="PackedScene" uid="uid://byg1xe2t1e15k" path="res://assets/Scenes/Player/Player.tscn" id="2_8cnc2"]
 [ext_resource type="PackedScene" uid="uid://d11s8cyvuu3gt" path="res://assets/Scenes/Backgrounds/parallax_grass_background.tscn" id="2_fveqh"]
 [ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://assets/Sprites/Tilesets/BasicPlaceholder.png" id="3_8cnc2"]

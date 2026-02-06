@@ -94,19 +94,24 @@ func _input(event: InputEvent) -> void:
 			print("WAA")
 			#current_index = wrapi(current_index + 1, 0, max_index)
 			#get_viewport().set_input_as_handled()
+			await get_tree().create_timer(0.3)
 			carousel_down()
 		elif event.is_action_pressed("scroll_up"):
 			print("WIII")
 			#current_index = wrapi(current_index - 1, 0, max_index)
 			#get_viewport().set_input_as_handled()
+			await get_tree().create_timer(0.3)
 			carousel_up()
 	# UP DOWN ARROWS
 	if event.is_action_pressed("down"):
 		print("GOING DOWN")
 		carousel_down()
+		await get_tree().create_timer(0.1)
+
 	elif event.is_action_pressed("jump"):
 		print("GOING UP")
 		carousel_up()
+		await get_tree().create_timer(0.1)
 	
 	var selected_button = position_offset_node.get_child(current_index)
 	if event.is_action_pressed("continue"):
@@ -117,12 +122,13 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("BUTTON DISABLED")
 
-func carousel_down() -> void:
+
+func carousel_up() -> void:
 	current_index -= 1 
 	if current_index < 0:
 		current_index += 1
 
-func carousel_up() -> void:
+func carousel_down() -> void:
 	current_index += 1 
 	if current_index > position_offset_node.get_child_count()-1:
 		current_index -= 1

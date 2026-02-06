@@ -3,7 +3,7 @@ class_name EndPortal extends Area2D
 @onready var level_complete = $"/root/LevelComplete"
 @onready var level_root = get_tree().current_scene
 @onready var level_audio = level_root.get_node("BackgroundMusic")
-
+var leaderboard_time: String
 # haha end portal.... minecraft reference
 func _on_body_entered(body: Node2D) -> void:
 	if body is BasePlayer:
@@ -16,7 +16,9 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		# Stops stopwatch (for final time)
 		Stopwatch.stop()
-		
+		leaderboard_time = Stopwatch.time_to_string()
+		print(leaderboard_time)
+		#var res := await Talo.leaderboards.add_entry(global_leaderboard, score)
 		# Stops player
 		body.velocity = Vector2.ZERO
 		body.can_control = false
