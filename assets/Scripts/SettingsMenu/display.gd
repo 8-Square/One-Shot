@@ -50,7 +50,28 @@ func _on_v_sync_button_toggled(enabled: bool) -> void:
 
 @warning_ignore("unused_parameter")
 func _on_resolution_options_item_selected(index: int) -> void:
-	pass # Replace with function body.
+	match index:
+		0: 
+			DisplayServer.window_set_size(Vector2i(2560,1440))
+		1: 
+			DisplayServer.window_set_size(Vector2i(1920,1080))
+		2: 
+			DisplayServer.window_set_size(Vector2i(1280,720))
+		3: 
+			DisplayServer.window_set_size(Vector2i(1152,648))
+		4: 
+			DisplayServer.window_set_size(Vector2i(640,360))
+
+
+
+func _on_display_options_item_selected(index: int) -> void:
+	match index:
+		0:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		1:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		2:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
 func save_settings(): 

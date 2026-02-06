@@ -1,7 +1,7 @@
 class_name SettingsMenu extends Control
 
 # Defining Outside Nodes
-@onready var main = $"../../"
+@onready var main = $".."
 @onready var outside_canvas_layer: CanvasLayer = $"../CanvasLayer"
 @onready var outside_background_music: AudioStreamPlayer = $"../BackgroundMusic"
 # Defining inside nodes
@@ -91,7 +91,7 @@ func exit():
 	background_music.stop()
 	outside_canvas_layer.show()
 	outside_background_music.play()
-	self.hide()
+	main._ready()
 
 func _on_confirm_exit_pressed() -> void:
 	save()

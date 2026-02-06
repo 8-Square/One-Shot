@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://68yveik7dd00"]
+[gd_scene format=3 uid="uid://68yveik7dd00"]
 
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/MainMenu/main_menu.gd" id="1_u3vdq"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_5q0rw"]
@@ -289,8 +289,7 @@ animations = [{
 "speed": 14.0
 }]
 
-[node name="MainMenu" type="Control"]
-visible = false
+[node name="MainMenu" type="Control" unique_id=1566113423]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -299,8 +298,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3vdq")
 
-[node name="ColorRect" type="Panel" parent="."]
-visible = false
+[node name="ColorRect" type="Panel" parent="." unique_id=847842027]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -310,35 +308,32 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
 metadata/_edit_use_anchors_ = true
 
-[node name="SkinBit" parent="." node_paths=PackedStringArray("player_skins") instance=ExtResource("2_cpl1f")]
+[node name="SkinBit" parent="." unique_id=861400845 node_paths=PackedStringArray("player_skins") instance=ExtResource("2_cpl1f")]
 player_skins = [NodePath("../CanvasLayer/SlimeSkins/GreenSlime"), NodePath("../CanvasLayer/SlimeSkins/BlueSlime"), NodePath("../CanvasLayer/SlimeSkins/RedSlime"), NodePath("../CanvasLayer/SlimeSkins/BrownSlime"), NodePath("../CanvasLayer/SlimeSkins/PurpleSlime"), NodePath("../CanvasLayer/SlimeSkins/DarkSlime"), NodePath("../CanvasLayer/SlimeSkins/LightSlime")]
 
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=788441706]
 stream = ExtResource("6_3k2g4")
 volume_db = -0.7
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="UISelect" type="AudioStreamPlayer2D" parent="."]
+[node name="UISelect" type="AudioStreamPlayer2D" parent="." unique_id=1056876263]
 stream = ExtResource("7_3k2g4")
 bus = &"SFX"
 
-[node name="QuitSound" type="AudioStreamPlayer2D" parent="."]
+[node name="QuitSound" type="AudioStreamPlayer2D" parent="." unique_id=8651039]
 stream = ExtResource("7_et853")
 volume_db = 3.4
 bus = &"SFX"
 
-[node name="SettingsMenu" parent="." instance=ExtResource("19_pfymn")]
+[node name="SettingsMenu" parent="." unique_id=1261551135 instance=ExtResource("19_pfymn")]
 visible = false
 layout_mode = 1
 
-[node name="Settings" parent="SettingsMenu" index="1"]
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=648888014]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="Panel" parent="CanvasLayer"]
+[node name="ColorRect" type="Panel" parent="CanvasLayer" unique_id=699498694]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -347,7 +342,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect" unique_id=1717835333]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -365,9 +360,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gyhcd")
 text = "ONE SHOT"
 metadata/_edit_use_anchors_ = true
 
-[node name="SlimeSkins" type="Container" parent="CanvasLayer"]
+[node name="SlimeSkins" type="Container" parent="CanvasLayer" unique_id=1480185379]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/SlimeSkins"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/SlimeSkins" unique_id=2080453035]
 unique_name_in_owner = true
 visible = false
 position = Vector2(440, 121)
@@ -380,12 +375,12 @@ speed_scale = 0.7
 centered = false
 flip_h = true
 
-[node name="RedSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("8_l720x")]
+[node name="RedSlime" parent="CanvasLayer/SlimeSkins" unique_id=76701278 instance=ExtResource("8_l720x")]
 position = Vector2(440, 129)
 scale = Vector2(6, 6)
 flip_h = true
 
-[node name="BlueSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("9_r8hni")]
+[node name="BlueSlime" parent="CanvasLayer/SlimeSkins" unique_id=182427300 instance=ExtResource("9_r8hni")]
 position = Vector2(440, 129)
 scale = Vector2(6, 6)
 animation = &"default"
@@ -393,31 +388,31 @@ frame_progress = 0.43310836
 speed_scale = 0.7
 flip_h = true
 
-[node name="LightSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("10_fn6r1")]
+[node name="LightSlime" parent="CanvasLayer/SlimeSkins" unique_id=512981013 instance=ExtResource("10_fn6r1")]
 position = Vector2(440, 129)
 scale = Vector2(6, 6)
 flip_h = true
 
-[node name="DarkSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("11_cpl1f")]
+[node name="DarkSlime" parent="CanvasLayer/SlimeSkins" unique_id=1571854516 instance=ExtResource("11_cpl1f")]
 position = Vector2(440, 129)
 scale = Vector2(6, 6)
 flip_h = true
 
-[node name="BrownSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("10_0hg7e")]
+[node name="BrownSlime" parent="CanvasLayer/SlimeSkins" unique_id=1090754244 instance=ExtResource("10_0hg7e")]
 position = Vector2(440, 129)
 scale = Vector2(6, 6)
 flip_h = true
 
-[node name="PurpleSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("13_pfymn")]
+[node name="PurpleSlime" parent="CanvasLayer/SlimeSkins" unique_id=764489512 instance=ExtResource("13_pfymn")]
 position = Vector2(440, 129)
 scale = Vector2(6, 6)
 flip_h = true
 
-[node name="GreenSlime" parent="CanvasLayer/SlimeSkins" instance=ExtResource("14_fyw2a")]
+[node name="GreenSlime" parent="CanvasLayer/SlimeSkins" unique_id=325088607 instance=ExtResource("14_fyw2a")]
 position = Vector2(440, 129)
 scale = Vector2(6, 6)
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=109381098]
 anchors_preset = -1
 anchor_bottom = 0.044444446
 offset_left = 32.0
@@ -427,11 +422,11 @@ offset_bottom = 330.0
 theme_override_constants/margin_left = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1608072467]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="Play" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=564376218]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Skin")
@@ -441,7 +436,7 @@ texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 
-[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Play"]
+[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Play" unique_id=1306075892]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -457,7 +452,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Skin" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Skin" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=71000667]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Settings")
@@ -467,7 +462,7 @@ texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 
-[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Skin"]
+[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Skin" unique_id=2137454204]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -483,7 +478,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=472616651]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Skin")
 focus_neighbor_bottom = NodePath("../Quit")
@@ -493,7 +488,7 @@ texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 
-[node name="SettingsText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Settings"]
+[node name="SettingsText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Settings" unique_id=475335772]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -508,7 +503,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=366944186]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Settings")
 focus_neighbor_right = NodePath("../../../Credits")
@@ -519,7 +514,7 @@ texture_normal = ExtResource("2_sndc1")
 texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Quit"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Quit" unique_id=1743546697]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -534,7 +529,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Credits" type="TextureButton" parent="CanvasLayer"]
+[node name="Credits" type="TextureButton" parent="CanvasLayer" unique_id=479163061]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -554,7 +549,7 @@ texture_focused = ExtResource("3_hlo52")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="CreditsText" type="RichTextLabel" parent="CanvasLayer/Credits"]
+[node name="CreditsText" type="RichTextLabel" parent="CanvasLayer/Credits" unique_id=1551151046]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -574,5 +569,3 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Credits" to="." method="_on_credits_pressed"]
-
-[editable path="SettingsMenu"]
