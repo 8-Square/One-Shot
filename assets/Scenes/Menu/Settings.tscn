@@ -382,7 +382,8 @@ rounded = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 12
-text = "FPS will be capped (to refresh rate) if VSync is enabled"
+text = "FPS will be capped to your monitors
+refresh rate (usually 60) if VSync is enabled"
 
 [node name="VSyncBox" type="HBoxContainer" parent="Settings/TabContainer/Display/VBoxContainer" unique_id=1355641686]
 layout_mode = 2
