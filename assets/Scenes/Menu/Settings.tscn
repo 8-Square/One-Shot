@@ -215,7 +215,6 @@ label_settings = ExtResource("2_arbsy")
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Music")
 step = 0.05
-bus_name = "Master"
 
 [node name="VolumeText3" type="Label" parent="Settings/TabContainer/Music/VBoxContainer" unique_id=1646221566]
 layout_mode = 2
@@ -227,7 +226,6 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../Master")
 focus_neighbor_bottom = NodePath("../SFX")
 step = 0.05
-bus_name = "Music"
 
 [node name="VolumeText4" type="Label" parent="Settings/TabContainer/Music/VBoxContainer" unique_id=1305691325]
 layout_mode = 2
@@ -238,7 +236,6 @@ label_settings = ExtResource("2_arbsy")
 layout_mode = 2
 focus_neighbor_top = NodePath("../Music")
 step = 0.05
-bus_name = "SFX"
 
 [node name="Display" type="Control" parent="Settings/TabContainer" unique_id=1957027495]
 process_mode = 3

@@ -91,6 +91,15 @@ func save():
 		print("SAVE SETTINGS OPTION NOT FOUND")
 
 func exit():
+	# In case of exit settings (Music)
+	var current_tab = tab_container.current_tab
+	var tab_node = tab_container.get_child(current_tab)
+	if tab_node.has_method("exit_settings"):
+		tab_node.exit_settings()
+	else:
+		pass
+	
+	
 	background_music.stop()
 	outside_canvas_layer.show()
 	outside_background_music.play()
@@ -101,6 +110,7 @@ func exit():
 		pause_menu.on_settings_exited()
 	else:
 		pass
+	
 
 func _on_confirm_exit_pressed() -> void:
 	save()
