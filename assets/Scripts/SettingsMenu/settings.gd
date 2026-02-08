@@ -4,6 +4,7 @@ class_name SettingsMenu extends Control
 @onready var main = $".."
 @onready var outside_canvas_layer: CanvasLayer = $"../CanvasLayer"
 @onready var outside_background_music: AudioStreamPlayer = $"../BackgroundMusic"
+@onready var pause_menu: Control = $"../CanvasLayer/PauseMenu"
 # Defining inside nodes
 @onready var tab_container: TabContainer = $Settings/TabContainer
 @onready var background_music: AudioStreamPlayer = $AudioStreamPlayer
@@ -26,6 +27,8 @@ func _ready() -> void:
 func menu_hide() -> void:
 	self.hide()
 	canvas_layer.hide()
+	
+
 
 # CIRCULAR MENNU
 func initiate() -> void:
@@ -92,6 +95,12 @@ func exit():
 	outside_canvas_layer.show()
 	outside_background_music.play()
 	main._ready()
+	print("EXITED")
+	# Checks for pause menu (because not all scenes are gameplay scenes)
+	if pause_menu != null:
+		pause_menu.on_settings_exited()
+	else:
+		pass
 
 func _on_confirm_exit_pressed() -> void:
 	save()

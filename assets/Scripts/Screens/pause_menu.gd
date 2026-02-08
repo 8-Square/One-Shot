@@ -1,8 +1,9 @@
 class_name PauseMenu extends Control
 
 @onready var canvas_layer: CanvasLayer = $"../"
-@onready var settings_menu: SettingsMenu = $"../../SettingsMenu"
 @onready var main = $"../../"
+@onready var settings_menu: SettingsMenu = $"../../SettingsMenu"
+@onready var resume: TextureButton = $CanvasLayer/MarginContainer/VBoxContainer/Resume
 
 @onready var pause_menu_canvas_layer: CanvasLayer = $CanvasLayer
 #
@@ -51,6 +52,14 @@ func _on_settings_pressed() -> void:
 	settings_menu.initiate()
 	settings_menu.show()
 	
+func on_settings_exited() -> void:
+	$UISelect.play()
+	self.show()
+	canvas_layer.show()
+	pause_menu_canvas_layer.show()
+	
+	settings_menu.hide()
+	resume.grab_focus()
 
 func _on_quit_pressed() -> void:
 	get_tree().create_timer(0.2)

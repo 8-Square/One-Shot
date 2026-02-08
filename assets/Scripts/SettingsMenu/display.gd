@@ -11,6 +11,11 @@ class_name DisplaySettings extends Control
 
 @onready var vsync_text: Label = $VBoxContainer/VSyncBox/VSyncText
 var vsync_toggle: bool 
+
+# Acting as placeholders for window mode and resolution
+var window_mode = DisplayServer.WINDOW_MODE_WINDOWED
+var window_resolution = Vector2i(1280, 720)
+
 func _ready() -> void:
 	Engine.max_fps = 0
 	_on_v_sync_button_toggled(true)
@@ -52,27 +57,30 @@ func _on_v_sync_button_toggled(enabled: bool) -> void:
 func _on_resolution_options_item_selected(index: int) -> void:
 	match index:
 		0: 
-			DisplayServer.window_set_size(Vector2i(2560,1440))
+			window_resolution = Vector2i(2560,1440)
 		1: 
-			DisplayServer.window_set_size(Vector2i(1920,1080))
+			window_resolution = Vector2i(1920,1080)
 		2: 
-			DisplayServer.window_set_size(Vector2i(1280,720))
+			window_resolution = Vector2i(1280,720)
 		3: 
-			DisplayServer.window_set_size(Vector2i(1152,648))
+			window_resolution = Vector2i(1152,648)
 		4: 
-			DisplayServer.window_set_size(Vector2i(640,360))
-
-
-
+			window_resolution = Vector2i(640,360)
 func _on_display_options_item_selected(index: int) -> void:
 	match index:
 		0:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			window_mode = DisplayServer.WINDOW_MODE_WINDOWED
 		1:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+			window_mode = DisplayServer.WINDOW_MODE_MAXIMIZED
 		2:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
 
+func center_window():
+	@warning_ignore("integer_division")
+	var screen_center = DisplayServer.screen_get_position() + DisplayServer.screen_get_size() / 2
+	var window_size = get_window().get_size_with_decorations()
+	@warning_ignore("integer_division")
+	get_window().set_position(screen_center - window_size / 2)
 
 func save_settings(): 
 	# Checks for fps value. 
@@ -84,6 +92,12 @@ func save_settings():
 		Engine.max_fps = 0
 	print("Display Settings Successfully Saved")
 	print(str(vsync_toggle))
+	
 	# Sets VSync mode
 	var vsync_mode = DisplayServer.VSYNC_ENABLED if vsync_toggle == true else DisplayServer.VSYNC_DISABLED
 	DisplayServer.window_set_vsync_mode(vsync_mode)
+	# Window Mode
+	DisplayServer.window_set_mode(window_mode)
+	# Resolution 
+	DisplayServer.window_set_size(window_resolution)
+	center_window()

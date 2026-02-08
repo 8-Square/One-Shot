@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhbbeq4o8cx4c"]
+[gd_scene format=3 uid="uid://dhbbeq4o8cx4c"]
 
 [ext_resource type="Script" uid="uid://c3m2hpfx0bo5o" path="res://assets/Scripts/Menu/level_complete.gd" id="1_0w1l2"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_8fffl"]
@@ -70,10 +70,10 @@ _data = {
 &"finish_level": SubResource("Animation_wmn80")
 }
 
-[node name="LevelComplete" type="CanvasLayer"]
+[node name="LevelComplete" type="CanvasLayer" unique_id=358205334]
 script = ExtResource("1_0w1l2")
 
-[node name="FinalTime" type="Label" parent="."]
+[node name="FinalTime" type="Label" parent="." unique_id=1415268721]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -85,14 +85,11 @@ mouse_filter = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=545897236]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_ip6mi")
-}
+libraries/ = SubResource("AnimationLibrary_ip6mi")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1807416443]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -101,7 +98,7 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0.92549, 0.517647, 0.160784, 0)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2024655547]
 visible = false
 anchors_preset = 7
 anchor_left = 0.5
@@ -117,10 +114,10 @@ size_flags_vertical = 4
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="NextLevelContainer" type="CenterContainer" parent="HBoxContainer"]
+[node name="NextLevelContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1003057422]
 layout_mode = 2
 
-[node name="NextLevel" type="TextureButton" parent="HBoxContainer/NextLevelContainer"]
+[node name="NextLevel" type="TextureButton" parent="HBoxContainer/NextLevelContainer" unique_id=1505123343]
 layout_mode = 2
 focus_neighbor_left = NodePath("../../QuitContainer/Quit")
 focus_neighbor_right = NodePath("../../RestartContainer/Restart")
@@ -129,7 +126,7 @@ focus_previous = NodePath("../../QuitContainer/Quit")
 texture_normal = ExtResource("2_ctsdo")
 texture_focused = ExtResource("3_do2pv")
 
-[node name="NextLevelText" type="RichTextLabel" parent="HBoxContainer/NextLevelContainer/NextLevel"]
+[node name="NextLevelText" type="RichTextLabel" parent="HBoxContainer/NextLevelContainer/NextLevel" unique_id=124908058]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -146,11 +143,11 @@ text = "Next Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RestartContainer" type="CenterContainer" parent="HBoxContainer"]
+[node name="RestartContainer" type="CenterContainer" parent="HBoxContainer" unique_id=2104565568]
 layout_mode = 2
 size_flags_horizontal = 6
 
-[node name="Restart" type="TextureButton" parent="HBoxContainer/RestartContainer"]
+[node name="Restart" type="TextureButton" parent="HBoxContainer/RestartContainer" unique_id=968335405]
 layout_mode = 2
 focus_neighbor_left = NodePath("../../NextLevelContainer/NextLevel")
 focus_neighbor_right = NodePath("../../QuitContainer/Quit")
@@ -159,7 +156,7 @@ focus_previous = NodePath("../../NextLevelContainer/NextLevel")
 texture_normal = ExtResource("2_ctsdo")
 texture_focused = ExtResource("3_do2pv")
 
-[node name="RestartText" type="RichTextLabel" parent="HBoxContainer/RestartContainer/Restart"]
+[node name="RestartText" type="RichTextLabel" parent="HBoxContainer/RestartContainer/Restart" unique_id=858177602]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -176,11 +173,11 @@ text = "Restart"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QuitContainer" type="CenterContainer" parent="HBoxContainer"]
+[node name="QuitContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1013738930]
 layout_mode = 2
 size_flags_horizontal = 6
 
-[node name="Quit" type="TextureButton" parent="HBoxContainer/QuitContainer"]
+[node name="Quit" type="TextureButton" parent="HBoxContainer/QuitContainer" unique_id=2062276558]
 layout_mode = 2
 focus_neighbor_left = NodePath("../../RestartContainer/Restart")
 focus_neighbor_right = NodePath("../../NextLevelContainer/NextLevel")
@@ -189,7 +186,7 @@ focus_previous = NodePath("../../RestartContainer/Restart")
 texture_normal = ExtResource("2_ctsdo")
 texture_focused = ExtResource("3_do2pv")
 
-[node name="QuitText" type="RichTextLabel" parent="HBoxContainer/QuitContainer/Quit"]
+[node name="QuitText" type="RichTextLabel" parent="HBoxContainer/QuitContainer/Quit" unique_id=495966682]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -206,7 +203,7 @@ text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LOneComplete" type="RichTextLabel" parent="."]
+[node name="LOneComplete" type="RichTextLabel" parent="." unique_id=1101377958]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -225,7 +222,7 @@ text = "Level One Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TComplete" type="RichTextLabel" parent="."]
+[node name="TComplete" type="RichTextLabel" parent="." unique_id=1060936649]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -244,7 +241,7 @@ text = "Tutorial Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LTwoComplete" type="RichTextLabel" parent="."]
+[node name="LTwoComplete" type="RichTextLabel" parent="." unique_id=1988234860]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -263,7 +260,7 @@ text = "Level Two Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LThreeComplete" type="RichTextLabel" parent="."]
+[node name="LThreeComplete" type="RichTextLabel" parent="." unique_id=2078343900]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -282,7 +279,7 @@ text = "Congrats Level Three Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LFourComplete" type="RichTextLabel" parent="."]
+[node name="LFourComplete" type="RichTextLabel" parent="." unique_id=209855863]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -301,7 +298,7 @@ text = "Level Four Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LFiveComplete" type="RichTextLabel" parent="."]
+[node name="LFiveComplete" type="RichTextLabel" parent="." unique_id=380037219]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -320,7 +317,7 @@ text = "Congrats You Beat the game!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DumbComplete" type="RichTextLabel" parent="."]
+[node name="DumbComplete" type="RichTextLabel" parent="." unique_id=2006261026]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -342,7 +339,7 @@ supposed to be done."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameComplete" type="RichTextLabel" parent="."]
+[node name="GameComplete" type="RichTextLabel" parent="." unique_id=1809102023]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -361,14 +358,14 @@ text = "Made by: 8_Square"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelCompleteAudio" type="AudioStreamPlayer2D" parent="."]
+[node name="LevelCompleteAudio" type="AudioStreamPlayer2D" parent="." unique_id=940024025]
 stream = ExtResource("6_c1oqg")
 volume_db = 2.0
 
-[node name="DumbCompleteAudio" type="AudioStreamPlayer2D" parent="."]
+[node name="DumbCompleteAudio" type="AudioStreamPlayer2D" parent="." unique_id=2050234832]
 stream = ExtResource("5_ctsdo")
 
-[node name="UISelect" type="AudioStreamPlayer2D" parent="."]
+[node name="UISelect" type="AudioStreamPlayer2D" parent="." unique_id=1796230853]
 stream = ExtResource("6_do2pv")
 bus = &"SFX"
 

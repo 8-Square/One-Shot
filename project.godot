@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="One Shot (4.6)"
+config/name="One Shot"
 config/description="A fast paced rage type slime platformer"
 config/version="1.2.1"
 run/main_scene="uid://dx327gpo6edk"
@@ -39,6 +39,8 @@ Talo="*uid://cf5txmco4tia4"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/handheld/orientation=6
 

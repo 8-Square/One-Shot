@@ -119,10 +119,9 @@ func level_complete(path):
 			$HBoxContainer/RestartContainer/Restart.grab_focus()
 			$HBoxContainer/NextLevelContainer.hide()
 			finaltime.show()
-			
 
 
-		
+
 func _on_next_level_pressed() -> void:
 	hide_all_labels()
 	$UISelect.play()
