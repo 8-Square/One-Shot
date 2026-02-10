@@ -10,19 +10,39 @@ class_name DisplaySettings extends Control
 @onready var fps_label: Label = $VBoxContainer/FPSBox/FPSLabel
 
 @onready var vsync_text: Label = $VBoxContainer/VSyncBox/VSyncText
-var vsync_toggle: bool 
+var vsync_toggle: bool = true
 
 # Acting as placeholders for window mode and resolution
 var window_mode = DisplayServer.WINDOW_MODE_WINDOWED
 var window_resolution = Vector2i(1280, 720)
 
+var save_pref = SaveManager
+
 func _ready() -> void:
-	Engine.max_fps = 0
-	_on_v_sync_button_toggled(true)
+	# Save Manager
+	save_pref = SaveManager.load_or_create()
+	fps_slider.value = save_pref.max_fps
+	Engine.max_fps = int(save_pref.max_fps)
+	vsync_toggle = save_pref.vsync
+	window_mode = save_pref.window_mode
+	window_resolution = save_pref.window_resolution
+	
+	# Check if loaded
+	print("LOADING SETTINGS")
+	print("fps: " + str(save_pref.max_fps))
+	print("vsync: " + str(save_pref.vsync))
+	print("window mode: " + str(save_pref.window_mode))
+	print("window resolution: " + str(save_pref.window_resolution))
+	
+	#
+	
+	# VSync Fix 
+	var vsync_mode = DisplayServer.VSYNC_ENABLED if vsync_toggle == true else DisplayServer.VSYNC_DISABLED
+	DisplayServer.window_set_vsync_mode(vsync_mode)
+	vsync_text.text = "On" if vsync_toggle else "Off"
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
-	fps_label.text = str(Engine.get_frames_per_second())
 	fps_preview()
 
 func fps_preview() -> void:
@@ -86,8 +106,7 @@ func save_settings():
 	# Checks for fps value. 
 	# if below 365 then it = to slider ||| if above 365 (unlimited), don't cap fps 
 	if fps_slider.value < 155.0:
-		@warning_ignore("narrowing_conversion")
-		Engine.max_fps = fps_slider.value
+		Engine.max_fps = int(fps_slider.value)
 	else: 
 		Engine.max_fps = 0
 	print("Display Settings Successfully Saved")
@@ -101,3 +120,11 @@ func save_settings():
 	# Resolution 
 	DisplayServer.window_set_size(window_resolution)
 	center_window()
+	
+	# Save MANAGER
+	if save_pref:
+		save_pref.max_fps = fps_slider.value
+		save_pref.vsync = vsync_toggle
+		save_pref.window_mode = window_mode
+		save_pref.window_resolution = window_resolution
+		save_pref.save()

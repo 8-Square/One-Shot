@@ -9,41 +9,38 @@ class_name AudioSettings extends Control
 @onready var music: HSlider = $VBoxContainer/Music
 @onready var sfx: HSlider = $VBoxContainer/SFX
 
-var master_sound: float
-var music_sound: float
-var sfx_sound: float
-
 # Previous sound, in case of exiting
 var previous_master: float
 var previous_music: float
 var previous_sfx: float
 
 
-var master_val 
-var music_val 
-var sfx_val 
-
 # Save File
 var save_pref: SaveManager
 
 func _ready() -> void:
+	# Save Manager
 	save_pref = SaveManager.load_or_create()
 	
-	master_val = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
-	music_val = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
-	sfx_val = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
+	master.set_block_signals(true)
 	
-	master.value = master_val
-	music.value = music_val
-	sfx.value = sfx_val
+	if master:
+		master.value = save_pref.master_audio_level
+	if music:
+		music.value = save_pref.music_audio_level
+	if sfx:
+		sfx.value = save_pref.sfx_audio_level
 	
-	master_sound = master_val
-	music_sound = music_val
-	sfx_sound = sfx_val
+	master.set_block_signals(false)
+	# Sets audioServer to values (save pref, as declared above)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), master.value)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), music.value)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), sfx.value)
 	
-	previous_master = master_val
-	previous_music = music_val
-	previous_sfx = sfx_val
+	# Sets as previous in case of exitting 
+	previous_master = master.value
+	previous_music = music.value
+	previous_sfx = sfx.value
 	
 func _on_master_mouse_exited() -> void:
 	release_focus()
@@ -56,25 +53,33 @@ func _on_sfx_mouse_exited() -> void:
 # work without master
 func _on_master_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)
-	master_sound = value
 func _on_music_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), value)
-	music_sound = value
 func _on_sfx_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), value)
-	sfx_sound = value
+
+
+
 
 func save_settings():
 	# Sets the value of sound from the bars
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), master_sound)
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), music_sound)
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), sfx_sound)
-	previous_master = master_sound
-	previous_music = music_sound
-	previous_sfx = sfx_sound
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), master.value)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), music.value)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), sfx.value)
+	previous_master = master.value
+	previous_music = music.value
+	previous_sfx = sfx.value
+	
+	if save_pref:  
+		save_pref.master_audio_level = master.value
+		save_pref.music_audio_level = music.value
+		save_pref.sfx_audio_level = sfx.value
+		save_pref.save()
+
 
 # In case if someone decides to quit
 func exit_settings():
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), previous_master)
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), previous_music)
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), previous_sfx)
+	

@@ -82,6 +82,8 @@ func _on_next_pressed() -> void:
 	update_display()
 
 
+#func load_settings():
+	
 func save():
 	var current_tab = tab_container.current_tab
 	var tab_node = tab_container.get_child(current_tab)
