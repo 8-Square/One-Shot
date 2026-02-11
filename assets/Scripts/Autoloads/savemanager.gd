@@ -11,6 +11,26 @@ class_name SaveManager extends Resource
 @export_range(10, 160, 10) var max_fps: float = 60.0
 @export var vsync: bool = true
 
+
+# Trying out a dictionary for level completed
+@export var levels_completed: Array = [
+	false, 
+	false, 
+	false, 
+	false,
+	false,
+]
+
+@export var levels_completed_w_names: Dictionary = {
+	"Level One": false, 
+	"Level Two": false, 
+	"Level Three": false, 
+	"Level Four": false, 
+	"Level Five": false, 
+}
+
+
+
 func save() -> void:
 	ResourceSaver.save(self, "user://save_manager.tres")
 	
@@ -22,3 +42,12 @@ static func load_or_create() -> SaveManager:
 		res = SaveManager.new()
 		res.save()
 	return res
+
+func wipe_save() -> void: 
+	# wipe level saves 
+	for levels in levels_completed:
+		var level_finished = levels_completed_w_names[true]
+		level_finished = false
+		
+			
+	

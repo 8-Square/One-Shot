@@ -19,6 +19,9 @@ class_name LevelSelectMenu extends Control
 
 var current_index = 0
 
+# Save file, for level access
+var save_pref: SaveManager
+
 func update_display() -> void:
 	for button in LevelTabNodes:
 		button.visible = false

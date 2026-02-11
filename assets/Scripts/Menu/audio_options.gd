@@ -22,16 +22,11 @@ func _ready() -> void:
 	# Save Manager
 	save_pref = SaveManager.load_or_create()
 	
-	master.set_block_signals(true)
 	
-	if master:
-		master.value = save_pref.master_audio_level
-	if music:
-		music.value = save_pref.music_audio_level
-	if sfx:
-		sfx.value = save_pref.sfx_audio_level
+	master.value = save_pref.master_audio_level
+	music.value = save_pref.music_audio_level
+	sfx.value = save_pref.sfx_audio_level
 	
-	master.set_block_signals(false)
 	# Sets audioServer to values (save pref, as declared above)
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), master.value)
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), music.value)
@@ -83,3 +78,6 @@ func exit_settings():
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), previous_music)
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), previous_sfx)
 	
+	master.value = previous_master
+	music.value = previous_music
+	sfx.value = previous_sfx
