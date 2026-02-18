@@ -13,15 +13,7 @@ class_name SaveManager extends Resource
 
 
 # Trying out a dictionary for level completed
-@export var levels_completed: Array = [
-	false, 
-	false, 
-	false, 
-	false,
-	false,
-]
-
-@export var levels_completed_w_names: Dictionary = {
+@export var levels_completed: Dictionary = {
 	"Level One": false, 
 	"Level Two": false, 
 	"Level Three": false, 
@@ -29,11 +21,8 @@ class_name SaveManager extends Resource
 	"Level Five": false, 
 }
 
-
-
 func save() -> void:
 	ResourceSaver.save(self, "user://save_manager.tres")
-	
 	
 
 static func load_or_create() -> SaveManager:
@@ -43,11 +32,22 @@ static func load_or_create() -> SaveManager:
 		res.save()
 	return res
 
-func wipe_save() -> void: 
+
+func delete_save() -> void: 
 	# wipe level saves 
 	for levels in levels_completed:
-		var level_finished = levels_completed_w_names[true]
+		var level_finished = levels_completed[levels]
 		level_finished = false
-		
-			
-	
+
+func level_completed(path):
+	match path:
+		"res://assets/Scenes/Levels/LevelOne.tscn":
+			pass
+		"res://assets/Scenes/Levels/LevelTwo.tscn":
+			pass
+		"res://assets/Scenes/Levels/LevelThree.tscn":
+			pass
+		"res://assets/Scenes/Levels/LevelFour.tscn":
+			pass
+		"res://assets/Scenes/Levels/LevelFive.tscn":
+			pass

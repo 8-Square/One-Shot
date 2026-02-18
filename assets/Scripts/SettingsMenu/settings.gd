@@ -12,6 +12,9 @@ class_name SettingsMenu extends Control
 
 @export var SettingsTabNames: Array[Label]
 
+# Delete Save Double Check Panel
+@onready var real_delete_panel: Panel = $Settings/RealDeletePanel
+
 # Circular Menu positions
 var TabName_y = 45
 var LeftTabPos = Vector2(130, TabName_y)
@@ -23,6 +26,7 @@ func _ready() -> void:
 	background_music.stop()
 	print("WORKING")
 	update_display()
+	real_delete_panel.hide()
 
 func menu_hide() -> void:
 	self.hide()

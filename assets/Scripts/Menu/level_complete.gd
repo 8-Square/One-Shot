@@ -5,18 +5,12 @@ class_name LevelCompletedScreen extends CanvasLayer
 @onready var finaltime : Label = $FinalTime
 
 var level_number: int
+
+var save_pref: SaveManager
+
 func _ready():
-	$LOneComplete.add_to_group("complete_label")
-	$LThreeComplete.add_to_group("complete_label")
-	$LTwoComplete.add_to_group("complete_label")
-	$TComplete.add_to_group("complete_label")
-	$LFourComplete.add_to_group("complete_label")
-	$LFiveComplete.add_to_group("complete_label")
-	$DumbComplete.add_to_group("complete_label")
-	$GameComplete.add_to_group("complete_label")
-	$HBoxContainer/NextLevelContainer.add_to_group("containers")
-	$HBoxContainer/RestartContainer.add_to_group("containers")
-	$HBoxContainer/QuitContainer.add_to_group("containers")
+	save_pref = SaveManager.load_or_create()
+
 
 func hide_all_labels():
 	for label in get_tree().get_nodes_in_group("complete_label"):
