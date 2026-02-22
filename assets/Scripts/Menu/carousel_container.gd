@@ -1,4 +1,4 @@
-# @tool
+@tool
 class_name CarouselContainer extends Control
 # I don't really understand too much what I'm writing so im trying to comment to make it clearer for me
 
@@ -94,30 +94,30 @@ func _input(event: InputEvent) -> void:
 			print("WAA")
 			#current_index = wrapi(current_index + 1, 0, max_index)
 			#get_viewport().set_input_as_handled()
-			await get_tree().create_timer(0.3)
+			get_tree().create_timer(0.3)
 			carousel_down()
 		elif event.is_action_pressed("scroll_up"):
 			print("WIII")
 			#current_index = wrapi(current_index - 1, 0, max_index)
 			#get_viewport().set_input_as_handled()
-			await get_tree().create_timer(0.3)
+			get_tree().create_timer(0.3)
 			carousel_up()
 	# UP DOWN ARROWS
 	if event.is_action_pressed("down"):
 		print("GOING DOWN")
 		carousel_down()
-		await get_tree().create_timer(0.1)
+		get_tree().create_timer(0.1)
 
 	elif event.is_action_pressed("jump"):
 		print("GOING UP")
 		carousel_up()
-		await get_tree().create_timer(0.1)
+		get_tree().create_timer(0.1)
 	
 	var selected_button = position_offset_node.get_child(current_index)
 	if event.is_action_pressed("continue"):
 		if !selected_button.disabled:
 			print("BUTTON NOT DISABLED")
-			await get_tree().create_timer(0.3)
+			get_tree().create_timer(0.3)
 			selected_button.emit_signal("pressed")
 		else:
 			print("BUTTON DISABLED")

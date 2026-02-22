@@ -47,30 +47,13 @@ func update_display() -> void:
 	RightLabel.visible = true
 
 func _ready() -> void:
-	#tutorial.grab_focus()
-	#
-## GLOBAL COMPLETED LEVELS
-	#
-	##LEVEL TWO
-	if Globallevel.completed_1 == true:
-		level_two.disabled = false
-	else:
-		level_two.disabled = true
-	##LEVEL THREE
-	if Globallevel.completed_2 == true:
-		level_three.disabled = false
-	else:
-		level_three.disabled = true
-	##LEVEL FOUR
-	if Globallevel.completed_3 == true:
-		level_four.disabled = false
-	else:
-		level_four.disabled = true
-	##LEVEL FIVE
-	if Globallevel.completed_4 == true:
-		level_five.disabled = false
-	else:
-		level_five.disabled = true
+	# GLOBAL COMPLETED LEVELS
+	save_pref = SaveManager.load_or_create()
+	
+	level_two.disabled = !save_pref.has_previous_level_completed(1)
+	level_three.disabled = !save_pref.has_previous_level_completed(2)
+	level_four.disabled = !save_pref.has_previous_level_completed(3)
+	level_five.disabled = !save_pref.has_previous_level_completed(4)
 #
 
 func _on_escape_button_pressed() -> void:

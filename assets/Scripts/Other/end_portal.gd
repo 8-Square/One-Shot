@@ -5,10 +5,10 @@ class_name EndPortal extends Area2D
 @onready var level_audio = level_root.get_node("BackgroundMusic")
 var leaderboard_time: String
 
-var current_path = get_tree().current_scene.scene_file_path
 
 # haha end portal.... minecraft reference
 func _on_body_entered(body: Node2D) -> void:
+	var current_path = get_tree().current_scene.scene_file_path
 	if body is BasePlayer:
 		
 		# Stops audio and plays level finished audio

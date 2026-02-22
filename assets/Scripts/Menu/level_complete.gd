@@ -18,7 +18,7 @@ func hide_all_labels():
 			label.hide()
 
 func show_all_containers():
-	for container in get_tree().get_nodes_in_group("containers"):
+	for container in get_tree().get_nodes_in_group("container"):
 		if container is Container:
 			container.show()
 
@@ -30,89 +30,74 @@ func level_complete(path):
 	match path:
 		"res://assets/Scenes/Levels/Tutorial.tscn":
 			level_number = 0
-			$AnimationPlayer.play("finish_level")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 			%TComplete.show()
-			show_all_containers()
-			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			Globallevel.is_completed(level_number)
+			finish_animation(true, level_number, true)
+			
 		"res://assets/Scenes/Levels/LevelOne.tscn":
 			level_number = 1
-			print("LEVEL One WORKING")
-			$AnimationPlayer.play("finish_level")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
-			$AnimationPlayer.pause()
 			%LOneComplete.show()
-			show_all_containers()
-			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			finaltime.show()
-			Globallevel.is_completed(level_number)
-		
+			finish_animation(true, level_number, true)
+			
 		"res://assets/Scenes/Levels/LevelTwo.tscn":
 			level_number = 2
-			print("LEVEL TWO WORKING")
-			$AnimationPlayer.play("finish_level")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
-			$AnimationPlayer.pause()
 			%LTwoComplete.show()
-			show_all_containers()
-			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			finaltime.show()
-			Globallevel.is_completed(level_number)
+			finish_animation(true, level_number, true)
+			
 		"res://assets/Scenes/Levels/LevelThree.tscn":
 			level_number = 3
-			$AnimationPlayer.play("finish_level")
-			await $AnimationPlayer.animation_finished
-			audiostreamplayer.play()
-			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
-			$AnimationPlayer.pause()
 			%LThreeComplete.show()
-			show_all_containers()
-			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			finaltime.show()
-			Globallevel.is_completed(level_number)
+			finish_animation(true, level_number, true)
+			
 # MILKYWAY EXPANSION
 		"res://assets/Scenes/Levels/LevelFour.tscn":
 			level_number = 4
-			$AnimationPlayer.play("finish_level")
-			await $AnimationPlayer.animation_finished
-			audiostreamplayer.play()
-			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
-			$AnimationPlayer.pause()
-			show_all_containers()
 			%LFourComplete.show()
-			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			finaltime.show()
-			Globallevel.is_completed(level_number)
+			finish_animation(true, level_number, true)
+			
 		"res://assets/Scenes/Levels/LevelFive.tscn":
 			level_number = 5
-			$AnimationPlayer.play("finish_level")
-			await $AnimationPlayer.animation_finished
-			audiostreamplayer.play()
-			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
-			$AnimationPlayer.pause()
 			%LFiveComplete.show()
-			%GameComplete.show()
-			show_all_containers()
-			$HBoxContainer/RestartContainer/Restart.grab_focus()
-			$HBoxContainer/NextLevelContainer.hide()
-			finaltime.show()
-			Globallevel.is_completed(level_number)
+			finish_animation(true, level_number, true)
+
 
 		"res://assets/Scenes/Levels/LevelFour.tscn_dumb":
-			$AnimationPlayer.play("finish_level")
-			await $AnimationPlayer.animation_finished
-			fakeaudiostreamplayer.play()
-			$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
-			$AnimationPlayer.pause()
+			
 			%DumbComplete.show()
-			show_all_containers()
-			$HBoxContainer/RestartContainer/Restart.grab_focus()
+			finish_animation(false, null, false)
+
+
+func finish_animation(progress: bool, level_no, real_audio: bool):
+	$AnimationPlayer.play("finish_level")
+	
+	# fake or real audio
+	if real_audio == true:
+		audiostreamplayer.play()
+	else:
+		fakeaudiostreamplayer.play()
+	
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
+	$AnimationPlayer.pause()
+	
+	# Show Boxes
+	show_all_containers()
+	$HBoxContainer/RestartContainer/Restart.grab_focus()
+	
+	# progress should almost always be true and is for normal levels 
+	if progress == true:
+		finaltime.show()
+		save_pref.completing_level(level_no)
+		
+		# Specifically for final level (dont allow a next button)
+		if level_no == 5:
 			$HBoxContainer/NextLevelContainer.hide()
-			finaltime.show()
+			%GameComplete.show()
+		else: 
+			pass
+		
+	else:
+		# For Fake Level Four Ending
+		$HBoxContainer/NextLevelContainer.hide()
 
 
 

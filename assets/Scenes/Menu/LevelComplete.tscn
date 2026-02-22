@@ -114,7 +114,7 @@ size_flags_vertical = 4
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="NextLevelContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1003057422]
+[node name="NextLevelContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1003057422 groups=["container"]]
 layout_mode = 2
 
 [node name="NextLevel" type="TextureButton" parent="HBoxContainer/NextLevelContainer" unique_id=1505123343]
@@ -143,7 +143,7 @@ text = "Next Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RestartContainer" type="CenterContainer" parent="HBoxContainer" unique_id=2104565568]
+[node name="RestartContainer" type="CenterContainer" parent="HBoxContainer" unique_id=2104565568 groups=["container"]]
 layout_mode = 2
 size_flags_horizontal = 6
 
@@ -173,7 +173,7 @@ text = "Restart"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QuitContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1013738930]
+[node name="QuitContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1013738930 groups=["container"]]
 layout_mode = 2
 size_flags_horizontal = 6
 
@@ -203,7 +203,7 @@ text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LOneComplete" type="RichTextLabel" parent="." unique_id=1101377958]
+[node name="LOneComplete" type="RichTextLabel" parent="." unique_id=1101377958 groups=["complete_label"]]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -222,7 +222,7 @@ text = "Level One Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TComplete" type="RichTextLabel" parent="." unique_id=1060936649]
+[node name="TComplete" type="RichTextLabel" parent="." unique_id=1060936649 groups=["complete_label"]]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -241,7 +241,7 @@ text = "Tutorial Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LTwoComplete" type="RichTextLabel" parent="." unique_id=1988234860]
+[node name="LTwoComplete" type="RichTextLabel" parent="." unique_id=1988234860 groups=["complete_label"]]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -260,7 +260,7 @@ text = "Level Two Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LThreeComplete" type="RichTextLabel" parent="." unique_id=2078343900]
+[node name="LThreeComplete" type="RichTextLabel" parent="." unique_id=2078343900 groups=["complete_label"]]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -279,7 +279,7 @@ text = "Congrats Level Three Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LFourComplete" type="RichTextLabel" parent="." unique_id=209855863]
+[node name="LFourComplete" type="RichTextLabel" parent="." unique_id=209855863 groups=["complete_label"]]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -298,7 +298,7 @@ text = "Level Four Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LFiveComplete" type="RichTextLabel" parent="." unique_id=380037219]
+[node name="LFiveComplete" type="RichTextLabel" parent="." unique_id=380037219 groups=["complete_label"]]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -317,7 +317,7 @@ text = "Congrats You Beat the game!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DumbComplete" type="RichTextLabel" parent="." unique_id=2006261026]
+[node name="DumbComplete" type="RichTextLabel" parent="." unique_id=2006261026 groups=["complete_label"]]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15
@@ -339,7 +339,7 @@ supposed to be done."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameComplete" type="RichTextLabel" parent="." unique_id=1809102023]
+[node name="GameComplete" type="RichTextLabel" parent="." unique_id=1809102023 groups=["complete_label"]]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 15

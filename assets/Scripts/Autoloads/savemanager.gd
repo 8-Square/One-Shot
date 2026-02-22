@@ -14,11 +14,11 @@ class_name SaveManager extends Resource
 
 # Trying out a dictionary for level completed
 @export var levels_completed: Dictionary = {
-	"Level One": false, 
-	"Level Two": false, 
-	"Level Three": false, 
-	"Level Four": false, 
-	"Level Five": false, 
+	#"level_one": false, 
+	#"level_two": false, 
+	#"level_three": false, 
+	#"level_four": false, 
+	#"level_five": false, 
 }
 
 func save() -> void:
@@ -39,15 +39,43 @@ func delete_save() -> void:
 		var level_finished = levels_completed[levels]
 		level_finished = false
 
-func level_completed(path):
-	match path:
-		"res://assets/Scenes/Levels/LevelOne.tscn":
-			pass
-		"res://assets/Scenes/Levels/LevelTwo.tscn":
-			pass
-		"res://assets/Scenes/Levels/LevelThree.tscn":
-			pass
-		"res://assets/Scenes/Levels/LevelFour.tscn":
-			pass
-		"res://assets/Scenes/Levels/LevelFive.tscn":
-			pass
+# Completing the level
+func completing_level(level_no):
+	print("Completing level")
+	match level_no:
+		1:
+			levels_completed["level_one"] = true
+		2:
+			levels_completed["level_two"] = true
+		3:
+			levels_completed["level_three"] = true
+		4:
+			levels_completed["level_four"] = true
+		5:
+			levels_completed["level_five"] = true
+		#6:
+			#levels_completed["level_five"] = true
+
+func has_previous_level_completed(level_no) -> bool:
+	var check_level: String
+	print("Checking Level")
+	match level_no:
+		0:
+			return true
+		1:
+			check_level = "level_one"
+		2:
+			check_level = "level_two"
+		3:
+			check_level = "level_three"
+		4:
+			check_level = "level_four"
+		5:
+			check_level = "level_five"
+	
+	# Check if check_level is valid and is in the Dictionary 
+	if levels_completed.has(check_level):
+		return levels_completed.has(check_level)
+	else:
+		return false
+		

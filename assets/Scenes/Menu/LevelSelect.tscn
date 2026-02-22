@@ -173,7 +173,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("9_rnpe2")
-text = "1: 
+text = "1: ${Username} - 00:00:00
 2:
 3:"
 
@@ -286,7 +286,6 @@ texture_hover = ExtResource("4_hyy3w")
 texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 stretch_mode = 0
-metadata/_edit_use_anchors_ = true
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelOne" unique_id=1333442570]
 layout_mode = 1
@@ -354,22 +353,23 @@ Two"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelThree" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=272990473]
-modulate = Color(1, 1, 1, 0.3)
-z_index = -2
+[node name="LevelThree" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=1171022356]
+modulate = Color(1, 1, 1, 0.16078432)
+z_index = -1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7079375
 anchor_top = 0.70799994
 anchor_right = 0.85793746
 anchor_bottom = 0.975
-offset_left = -117.9525
-offset_top = 145.0412
-offset_right = -69.95249
-offset_bottom = 193.00163
+offset_left = 2.0475006
+offset_top = 174.04095
+offset_right = 50.04751
+offset_bottom = 222.00099
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(441, 0)
+scale = Vector2(1.25, 1.25)
+pivot_offset = Vector2(441, 39.999847)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("2_pq36x")
@@ -378,15 +378,14 @@ texture_hover = ExtResource("4_hyy3w")
 texture_disabled = ExtResource("5_aly6l")
 texture_focused = ExtResource("5_tgpxl")
 stretch_mode = 0
-metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelThree" unique_id=1444264525]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelThree" unique_id=1122395862]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 67.20001
-offset_bottom = 80.000244
+offset_right = 64.000015
+offset_bottom = 77.83322
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -409,7 +408,7 @@ anchor_right = 0.85793746
 anchor_bottom = 0.975
 offset_left = -117.9525
 offset_top = 259.99536
-offset_right = -69.95249
+offset_right = -69.95252
 offset_bottom = 307.94055
 grow_horizontal = 2
 grow_vertical = 2
@@ -442,6 +441,7 @@ text = "Level
 Four"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="LevelFive" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=2110363257]
 modulate = Color(1, 1, 1, 0)
@@ -487,6 +487,7 @@ text = "Level
 Five"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CanvasLayer/EscapeButton" to="." method="_on_escape_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/Tutorial" to="." method="_on_tutorial_pressed"]
