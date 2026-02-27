@@ -15,6 +15,13 @@ class_name SettingsMenu extends Control
 # Delete Save Double Check Panel
 @onready var real_delete_panel: Panel = $Settings/RealDeletePanel
 
+# Get Nodes of other Settings sections (display, gameplay, music)
+@onready var gameplay: GamePlaySettings = $Settings/TabContainer/Gameplay
+@onready var music: AudioSettings = $Settings/TabContainer/Music
+@onready var display: DisplaySettings = $Settings/TabContainer/Display
+
+
+
 # Circular Menu positions
 var TabName_y = 45
 var LeftTabPos = Vector2(130, TabName_y)
@@ -40,6 +47,7 @@ func initiate() -> void:
 	background_music.play()
 	self.show()
 	canvas_layer.show()
+
 func update_display() -> void:
 	var current_index := tab_container.current_tab
 	
@@ -129,3 +137,8 @@ func _on_cancel_pressed() -> void:
 
 func _on_check_button_pressed() -> void:
 	pass # Replace with function body.
+
+func reload():
+	gameplay._ready()
+	display._ready()
+	music._ready()

@@ -98,6 +98,8 @@ func finish_animation(progress: bool, level_no, real_audio: bool):
 	else:
 		# For Fake Level Four Ending
 		$HBoxContainer/NextLevelContainer.hide()
+	save_pref.save()
+	
 
 
 

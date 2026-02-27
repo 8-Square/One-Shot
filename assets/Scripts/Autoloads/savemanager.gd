@@ -1,5 +1,21 @@
 class_name SaveManager extends Resource
 
+# DEFAULT ONES
+# Music Settings
+const default_master_audio_level: float = 1.0
+const default_music_audio_level: float = 1.0
+const default_sfx_audio_level: float = 1.0
+
+# Display Settings
+const default_window_mode: int = DisplayServer.WINDOW_MODE_WINDOWED
+const default_window_resolution: Vector2i = Vector2i(1280, 720)
+const default_max_fps: float = 60.0
+const default_vsync: bool = true
+
+# Tutorial Completed
+const default_comp_tutorial: bool = false
+
+# REGULAR ONES
 # Music Settings
 @export_range(0, 1, 0.05) var master_audio_level: float = 1.0
 @export_range(0, 1, 0.05) var music_audio_level: float = 1.0
@@ -12,13 +28,16 @@ class_name SaveManager extends Resource
 @export var vsync: bool = true
 
 
+# Completed Tutorial (for Opening Screen)
+@export var comp_tutorial: bool = false
+
 # Trying out a dictionary for level completed
 @export var levels_completed: Dictionary = {
-	#"level_one": false, 
-	#"level_two": false, 
-	#"level_three": false, 
-	#"level_four": false, 
-	#"level_five": false, 
+	"level_one": false, 
+	"level_two": false, 
+	"level_three": false, 
+	"level_four": false, 
+	"level_five": false, 
 }
 
 func save() -> void:
@@ -34,10 +53,23 @@ static func load_or_create() -> SaveManager:
 
 
 func delete_save() -> void: 
+	print("DELETING SAVE")
 	# wipe level saves 
 	for levels in levels_completed:
 		var level_finished = levels_completed[levels]
 		level_finished = false
+	# Resets to default values
+	master_audio_level = default_master_audio_level
+	music_audio_level = default_music_audio_level
+	sfx_audio_level = default_sfx_audio_level
+	window_mode = default_window_mode
+	window_resolution = default_window_resolution
+	max_fps = default_max_fps
+	vsync = default_vsync
+	comp_tutorial = default_comp_tutorial
+
+#func reload():
+	
 
 # Completing the level
 func completing_level(level_no):
@@ -78,4 +110,12 @@ func has_previous_level_completed(level_no) -> bool:
 		return levels_completed.has(check_level)
 	else:
 		return false
-		
+
+func completed_tutorial(set_value) -> bool:
+	if comp_tutorial == default_comp_tutorial:
+		comp_tutorial = true
+		set_value = false
+	elif comp_tutorial == !default_comp_tutorial:
+		set_value = true
+	return set_value
+	

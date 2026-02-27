@@ -1,10 +1,11 @@
-[gd_scene load_steps=46 format=3 uid="uid://dx327gpo6edk"]
+[gd_scene format=3 uid="uid://dx327gpo6edk"]
 
 [ext_resource type="Script" uid="uid://7g4i0jtcisw" path="res://assets/Scripts/Menu/MainMenu/opening_screen.gd" id="1_flw0q"]
 [ext_resource type="Texture2D" uid="uid://cry4gloh32t4l" path="res://assets/Sprites/Backgrounds/Menu Backgrounds/IceBackground.png" id="2_kihcl"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="3_npb1v"]
 [ext_resource type="AudioStream" uid="uid://bukuyfnaua0g5" path="res://assets/Music/MenuScreen.mp3" id="4_ih48t"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="5_c4hwk"]
+[ext_resource type="PackedScene" uid="uid://bjptigt865ymr" path="res://assets/Scenes/Menu/Settings.tscn" id="5_kihcl"]
 [ext_resource type="AudioStream" uid="uid://c7132p6yxjo37" path="res://assets/Music/Controls/Shutdown.wav" id="6_rgqcu"]
 [ext_resource type="Texture2D" uid="uid://cy0uvvso0pe5l" path="res://assets/Sprites/Player/green_slime.png" id="7_b3pni"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="8_0g2b4"]
@@ -280,7 +281,7 @@ animations = [{
 "speed": 14.0
 }]
 
-[node name="OpeningScreen" type="Control"]
+[node name="OpeningScreen" type="Control" unique_id=432072328]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -290,25 +291,28 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_flw0q")
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=408703661]
 stream = ExtResource("4_ih48t")
 volume_db = -0.7
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="UISelect" type="AudioStreamPlayer2D" parent="."]
+[node name="UISelect" type="AudioStreamPlayer" parent="." unique_id=1329498199]
 stream = ExtResource("5_c4hwk")
 bus = &"SFX"
 
-[node name="QuitSound" type="AudioStreamPlayer2D" parent="."]
+[node name="QuitSound" type="AudioStreamPlayer" parent="." unique_id=74068262]
 stream = ExtResource("6_rgqcu")
 volume_db = 3.4
 bus = &"SFX"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="SettingsMenu" parent="." unique_id=234800305 instance=ExtResource("5_kihcl")]
+layout_mode = 1
 
-[node name="ColorRect" type="Panel" parent="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=170009270]
+
+[node name="ColorRect" type="Panel" parent="CanvasLayer" unique_id=1895377883]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -318,7 +322,7 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_l720x")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect" unique_id=1509445208]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -337,7 +341,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_gyhcd")
 text = "ONE SHOT"
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1419460211]
 unique_name_in_owner = true
 position = Vector2(440, 121)
 scale = Vector2(6, 6)
@@ -349,7 +353,42 @@ speed_scale = 0.7
 centered = false
 flip_h = true
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="Credits" type="TextureButton" parent="CanvasLayer" unique_id=1616126476]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_neighbor_left = NodePath("../MarginContainer/VBoxContainer/Quit")
+focus_neighbor_top = NodePath("../MarginContainer/VBoxContainer/Quit")
+focus_neighbor_bottom = NodePath("../MarginContainer/VBoxContainer/Play")
+focus_next = NodePath("../MarginContainer/VBoxContainer/Quit")
+focus_previous = NodePath("../MarginContainer/VBoxContainer/Quit")
+texture_normal = ExtResource("8_0g2b4")
+texture_focused = ExtResource("9_o0ds7")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsText" type="RichTextLabel" parent="CanvasLayer/Credits" unique_id=1617262079]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_ht0ji")
+theme_override_font_sizes/normal_font_size = 22
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=610939607]
 offset_left = 32.0
 offset_top = 136.0
 offset_right = 213.0
@@ -357,12 +396,12 @@ offset_bottom = 330.0
 theme_override_constants/margin_left = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1172154243]
 layout_mode = 2
 theme_override_constants/separation = 15
 metadata/_edit_use_anchors_ = true
 
-[node name="Play" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=822705577]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Settings")
@@ -373,7 +412,7 @@ texture_hover = ExtResource("9_o0ds7")
 texture_focused = ExtResource("9_o0ds7")
 stretch_mode = 0
 
-[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Play"]
+[node name="PlayText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Play" unique_id=2074058294]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -389,7 +428,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1803057194]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Quit")
@@ -400,7 +439,7 @@ texture_hover = ExtResource("9_o0ds7")
 texture_focused = ExtResource("9_o0ds7")
 stretch_mode = 0
 
-[node name="SettingsText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Settings"]
+[node name="SettingsText" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Settings" unique_id=761382082]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -415,19 +454,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=462676384]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Settings")
-focus_neighbor_right = NodePath("../../../../Credits")
+focus_neighbor_right = NodePath("../../../Credits")
 focus_neighbor_bottom = NodePath("../Play")
-focus_next = NodePath("../../../../Credits")
+focus_next = NodePath("../../../Credits")
 focus_previous = NodePath("../Settings")
 texture_normal = ExtResource("8_0g2b4")
 texture_hover = ExtResource("9_o0ds7")
 texture_focused = ExtResource("9_o0ds7")
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Quit"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/VBoxContainer/Quit" unique_id=2127022107]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -442,43 +481,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Credits" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -120.0
-offset_top = -48.0
-grow_horizontal = 0
-grow_vertical = 0
-focus_neighbor_left = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Quit")
-focus_neighbor_top = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Quit")
-focus_neighbor_bottom = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Play")
-focus_next = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Quit")
-focus_previous = NodePath("../CanvasLayer/MarginContainer/VBoxContainer/Quit")
-texture_normal = ExtResource("8_0g2b4")
-texture_focused = ExtResource("9_o0ds7")
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="CreditsText" type="RichTextLabel" parent="Credits"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("10_ht0ji")
-theme_override_font_sizes/normal_font_size = 22
-text = "Credits"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
+[connection signal="pressed" from="CanvasLayer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
