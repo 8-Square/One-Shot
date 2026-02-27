@@ -30,6 +30,7 @@ const default_comp_tutorial: bool = false
 
 # Completed Tutorial (for Opening Screen)
 @export var comp_tutorial: bool = false
+@export var next_time_comp_tutorial: bool = false
 
 # Trying out a dictionary for level completed
 @export var levels_completed: Dictionary = {
@@ -67,6 +68,8 @@ func delete_save() -> void:
 	max_fps = default_max_fps
 	vsync = default_vsync
 	comp_tutorial = default_comp_tutorial
+	next_time_comp_tutorial = default_comp_tutorial
+	save()
 
 #func reload():
 	
@@ -111,11 +114,10 @@ func has_previous_level_completed(level_no) -> bool:
 	else:
 		return false
 
-func completed_tutorial(set_value) -> bool:
+func completed_tutorial() -> bool:
 	if comp_tutorial == default_comp_tutorial:
 		comp_tutorial = true
-		set_value = false
+		next_time_comp_tutorial = false
 	elif comp_tutorial == !default_comp_tutorial:
-		set_value = true
-	return set_value
-	
+		next_time_comp_tutorial = true
+	return next_time_comp_tutorial
