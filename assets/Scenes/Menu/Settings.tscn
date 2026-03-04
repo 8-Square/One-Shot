@@ -67,6 +67,7 @@ parameters/looping = true
 [node name="Settings" type="CanvasLayer" parent="." unique_id=983886994]
 process_mode = 3
 layer = 5
+visible = false
 
 [node name="Background" type="ColorRect" parent="Settings" unique_id=474550762]
 material = SubResource("ShaderMaterial_6gofj")
@@ -634,6 +635,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RealDeletePanel" type="Panel" parent="Settings" unique_id=1382575403]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

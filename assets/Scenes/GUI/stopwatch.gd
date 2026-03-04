@@ -24,7 +24,7 @@ func start():
 	stopped = false
 
 func stop():
-		stopped = true
+	stopped = true
 
 func time_to_string() -> String:
 	var total_time = time

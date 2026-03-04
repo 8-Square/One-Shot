@@ -49,6 +49,7 @@ func change_scene_anim(new_scene, reload: bool, watch: bool, label: RichTextLabe
 	hide_all_labels()
 
 func change_scene(scene_path):
+	hide_all_labels()
 	match scene_path:
 		back:
 			change_scene_anim(back, true, false, %MainMenuLabel)

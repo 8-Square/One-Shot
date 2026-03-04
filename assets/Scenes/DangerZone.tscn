@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bylt4xh12pwlt"]
+[gd_scene format=3 uid="uid://bylt4xh12pwlt"]
 
 [ext_resource type="Script" uid="uid://c3m11w2tigdye" path="res://assets/Scripts/danger_zone.gd" id="1_pay12"]
 [ext_resource type="AudioStream" uid="uid://dufbx65m3rnas" path="res://assets/Music/Controls/Splat.wav" id="2_b2hnj"]
 
-[node name="DangerZone" type="Area2D"]
+[node name="DangerZone" type="Area2D" unique_id=1163442690]
 collision_layer = 4
 collision_mask = 2
 monitorable = false
 script = ExtResource("1_pay12")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=643758813]
 stream = ExtResource("2_b2hnj")
 bus = &"SFX"
 

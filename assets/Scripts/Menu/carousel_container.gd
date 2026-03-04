@@ -1,6 +1,6 @@
-@tool
 class_name CarouselContainer extends Control
 # I don't really understand too much what I'm writing so im trying to comment to make it clearer for me
+@onready var escape_button: TextureButton = $"../EscapeButton"
 
 # Pixels between container children
 @export var spacing: float = 20.0
@@ -28,10 +28,26 @@ class_name CarouselContainer extends Control
 var target_scale: float
 var center_y: float
 
+# for touchpad
+var can_scroll: bool = true
+@export var scroll_cooldown: float = 0.3
+
+
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	
+	for child in position_offset_node.get_children():
+		child.focus_neighbor_left = escape_button.get_path()
+		
+	# Focus for right (of escape)
+	escape_button.focus_neighbor_right = position_offset_node.get_child(current_index).get_path()
+	
+	if position_offset_node.get_child_count() > 0:
+		position_offset_node.get_child(current_index).grab_focus()
+	
+	
+
 func _process(delta: float) -> void:
 	if !position_offset_node or position_offset_node.get_child_count() == 0:
 		return
@@ -63,15 +79,11 @@ func _process(delta: float) -> void:
 		if i.get_index() == current_index:
 			i.z_index = 1
 			i.mouse_filter = Control.MOUSE_FILTER_STOP
-			i.focus_mode = Control.FOCUS_ALL
 			# Gives focus to current index
-			if !i.has_focus(): 
-				i.grab_focus() 
-				
+			
 		else:
 			i.z_index = -abs(i.get_index()-current_index)
 			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			i.focus_mode = Control.FOCUS_NONE
 	
 	# Smooth lerp movement
 		# Lerp to current (selected) child
@@ -80,6 +92,7 @@ func _process(delta: float) -> void:
 	var child = position_offset_node.get_child(current_index)
 	var child_center_y = child.position.y + child.size.y / 2.0
 	position_offset_node.position.y = lerp(position_offset_node.position.y, carousel_center_y - child_center_y, min(smoothing_speed * delta, 1.0))
+
 
 func _input(event: InputEvent) -> void:
 	# Stops _Input from working when in editor (Fixes Crashing
@@ -90,17 +103,20 @@ func _input(event: InputEvent) -> void:
 	
 	# SCROLL IN BOX
 	if get_global_rect().has_point(get_global_mouse_position()):
+		if !can_scroll:
+			return
+		
 		if event.is_action_pressed("scroll_down"):
 			print("WAA")
 			#current_index = wrapi(current_index + 1, 0, max_index)
 			#get_viewport().set_input_as_handled()
-			get_tree().create_timer(0.3)
+			limit_scroll()
 			carousel_down()
 		elif event.is_action_pressed("scroll_up"):
 			print("WIII")
 			#current_index = wrapi(current_index - 1, 0, max_index)
 			#get_viewport().set_input_as_handled()
-			get_tree().create_timer(0.3)
+			limit_scroll()
 			carousel_up()
 	# UP DOWN ARROWS
 	if event.is_action_pressed("down"):
@@ -122,13 +138,19 @@ func _input(event: InputEvent) -> void:
 		else:
 			print("BUTTON DISABLED")
 
+func limit_scroll() -> void:
+	can_scroll = false
+	await get_tree().create_timer(scroll_cooldown).timeout
+	can_scroll = true
 
 func carousel_up() -> void:
 	current_index -= 1 
 	if current_index < 0:
 		current_index += 1
+	escape_button.focus_neighbor_right = position_offset_node.get_child(current_index).get_path()
 
 func carousel_down() -> void:
 	current_index += 1 
 	if current_index > position_offset_node.get_child_count()-1:
 		current_index -= 1
+	escape_button.focus_neighbor_right = position_offset_node.get_child(current_index).get_path()
