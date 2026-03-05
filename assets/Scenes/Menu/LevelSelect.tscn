@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvx4t5ypgmt6i"]
 
 [ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/Menu/level_select.gd" id="1_4juup"]
+[ext_resource type="Texture2D" uid="uid://dg4t82ugwanqb" path="res://assets/Sprites/WIP SPRITES/background.png" id="2_2thln"]
 [ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_pq36x"]
 [ext_resource type="Texture2D" uid="uid://dy5clo7x35ncu" path="res://assets/Sprites/Button/blue_pressed.png" id="3_b8dml"]
 [ext_resource type="Texture2D" uid="uid://d4j70uffu0gxu" path="res://assets/Sprites/Button/green_pressed.png" id="4_hyy3w"]
@@ -46,6 +47,14 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_horizontal_guides_ = [180.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1917904677]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=827527042]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2thln")
 
 [node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=738687583]
 z_index = -1
@@ -199,6 +208,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
 
 [node name="CarouselContainer" type="Control" parent="CanvasLayer" unique_id=52605381 node_paths=PackedStringArray("position_offset_node", "level_size")]
 physics_interpolation_mode = 0
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

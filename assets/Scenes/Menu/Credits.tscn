@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://e5g7nypajit7"]
+[gd_scene format=3 uid="uid://e5g7nypajit7"]
 
 [ext_resource type="Script" uid="uid://dkyubyxjllxre" path="res://assets/Scripts/Menu/credits.gd" id="1_emerl"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="5_ell6q"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="8_f40da"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_1muya"]
 
-[node name="Credits" type="Control"]
+[node name="Credits" type="Control" unique_id=714716794]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,10 +19,10 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=811578073]
 script = ExtResource("1_emerl")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=834707998]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,7 +32,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.372017, 0.587277, 0.999999, 1)
 
-[node name="EscapeButton" type="TextureButton" parent="CanvasLayer/ColorRect"]
+[node name="EscapeButton" type="TextureButton" parent="CanvasLayer/ColorRect" unique_id=706629221]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.187
@@ -48,7 +48,7 @@ texture_pressed = ExtResource("8_f40da")
 texture_hover = ExtResource("8_f40da")
 texture_focused = ExtResource("9_1muya")
 
-[node name="Back" type="RichTextLabel" parent="CanvasLayer/ColorRect/EscapeButton"]
+[node name="Back" type="RichTextLabel" parent="CanvasLayer/ColorRect/EscapeButton" unique_id=1352362754]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -61,7 +61,7 @@ text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect" unique_id=291328091]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,7 +70,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="Game Design" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="Game Design" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer" unique_id=319787434]
 layout_mode = 2
 size_flags_stretch_ratio = 0.5
 mouse_filter = 2
@@ -83,7 +83,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="8_Square" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="8_Square" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer" unique_id=680707271]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_stretch_ratio = 0.5
@@ -95,7 +95,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ColorRect/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ColorRect/VBoxContainer" unique_id=257382809]
 custom_minimum_size = Vector2(0, 290)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../EscapeButton")
@@ -107,12 +107,12 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer" unique_id=447649209]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Music" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Music" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=854190888]
 clip_contents = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -124,7 +124,7 @@ text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text11" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text11" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=628033243]
 clip_contents = false
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
@@ -137,7 +137,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text7" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text7" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=172925366]
 clip_contents = false
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
@@ -150,7 +150,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text23" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text23" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=685698434]
 clip_contents = false
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
@@ -163,7 +163,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text13" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text13" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1650422599]
 clip_contents = false
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
@@ -176,7 +176,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text10" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text10" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1001243205]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -188,7 +188,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text25" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text25" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1011890233]
 clip_contents = false
 custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
@@ -201,7 +201,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text26" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text26" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=77017793]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -213,7 +213,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text24" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text24" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2141911107]
 clip_contents = false
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
@@ -226,7 +226,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text8" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text8" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1493994299]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -238,7 +238,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text27" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text27" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=934695869]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -250,7 +250,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text9" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text9" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2026407918]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -262,7 +262,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text12" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text12" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=751910105]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -274,7 +274,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text14" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text14" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=457712433]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -286,7 +286,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Backgrounds" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Backgrounds" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=848830531]
 clip_contents = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -298,7 +298,7 @@ text = "Backgrounds"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text17" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text17" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1986960359]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -311,7 +311,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text18" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text18" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1447639174]
 clip_contents = false
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
@@ -324,7 +324,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fonts" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Fonts" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1028094398]
 clip_contents = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -336,7 +336,7 @@ text = "Textures"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text19" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text19" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=692153852]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -348,7 +348,18 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text20" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text28" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2091599742]
+clip_contents = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_1a0rd")
+theme_override_font_sizes/normal_font_size = 15
+text = "^^ Expanded by 8 Square ^^"
+tab_size = 3
+horizontal_alignment = 1
+
+[node name="Text20" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1804725050]
 clip_contents = false
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
@@ -361,7 +372,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text21" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text21" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=567206157]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -374,7 +385,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text22" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text22" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=126284030]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -386,7 +397,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text15" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text15" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1176754090]
 visible = false
 clip_contents = false
 custom_minimum_size = Vector2(0, 25)
@@ -399,7 +410,7 @@ text = "Backgrounds"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text16" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="Text16" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1410079928]
 visible = false
 clip_contents = false
 custom_minimum_size = Vector2(0, 25)
@@ -412,13 +423,13 @@ text = "Backgrounds"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1733481790]
 stream = ExtResource("6_emerl")
 volume_db = -0.7
 autoplay = true
 bus = &"Music"
 
-[node name="UISelect" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+[node name="UISelect" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=763084953]
 stream = ExtResource("8_1a0rd")
 bus = &"SFX"
 
