@@ -5,6 +5,7 @@ class_name SkinSelection extends Control
 @onready var previousone: TextureButton = $CanvasLayer/Previous
 @onready var container: Container = $CanvasLayer/Container
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var select: TextureButton = $CanvasLayer/Select
 
 @export var skins: Array[AnimatedSprite2D]
 
@@ -22,7 +23,7 @@ var far_right_pos := Vector2(180, skin_y)
 func _ready() -> void:
 	canvas_layer.show()
 	container.show()
-	previousone.grab_focus()
+	select.grab_focus()
 	update_display()
 
 func update_display() -> void:
@@ -95,16 +96,6 @@ func update_display() -> void:
 
 	label.text = slime_name + " Slime"
 
-
-func _on_previous_pressed() -> void:
-	current_index = wrapi(current_index + 1, 0, skins.size())
-
-	update_display()
-
-func _on_next_pressed() -> void:
-	current_index = wrapi(current_index - 1, 0, skins.size())
-	update_display()
-
 func _on_select_pressed() -> void:
 	Globalskin.selected_skin_index = current_index
 
@@ -114,3 +105,25 @@ func _on_escape_button_pressed() -> void:
 	canvas_layer.hide()
 	container.hide()
 	to_tutorial_transition.change_scene(to_tutorial_transition.back)
+
+func _input(event: InputEvent) -> void:
+	# LEFT AND RIGHT
+	if event.is_action_pressed("left"):
+		print("GOING LEFT")
+		_on_previous_pressed()
+		await get_tree().create_timer(0.1).timeout
+
+	elif event.is_action_pressed("right"):
+		print("GOING RIGHT")
+		_on_next_pressed()
+		await get_tree().create_timer(0.1).timeout
+
+
+func _on_previous_pressed() -> void:
+	current_index = wrapi(current_index + 1, 0, skins.size())
+
+	update_display()
+
+func _on_next_pressed() -> void:
+	current_index = wrapi(current_index - 1, 0, skins.size())
+	update_display()
