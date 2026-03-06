@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://jg1hjww5lp5a" path="res://assets/Scripts/Player/SkinSelection.gd" id="1_42il4"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_o5ylx"]
-[ext_resource type="Texture2D" uid="uid://dejmlvachs2ah" path="res://assets/Sprites/WIP SPRITES/Sprite-0001.png" id="2_tvdxc"]
+[ext_resource type="Texture2D" uid="uid://d1h7iptnhtbes" path="res://assets/Sprites/WIP SPRITES/background_with_white.png" id="2_sb48k"]
 [ext_resource type="PackedScene" uid="uid://bfhesm6n0w0jx" path="res://assets/Scenes/Player/Slime Types/blue_slime.tscn" id="3_hxphq"]
-[ext_resource type="Texture2D" uid="uid://dg4t82ugwanqb" path="res://assets/Sprites/WIP SPRITES/background.png" id="3_lciaa"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="3_qayvk"]
 [ext_resource type="PackedScene" uid="uid://b1a672drl77uy" path="res://assets/Scenes/Player/Slime Types/red_slime.tscn" id="4_hxphq"]
 [ext_resource type="PackedScene" uid="uid://15lrl5a6td4m" path="res://assets/Scenes/Player/Slime Types/green_slime.tscn" id="4_o5ylx"]
@@ -45,16 +44,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="TextureRect" parent="CanvasLayer/DarkerArea" unique_id=1327909691]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_tvdxc")
-
 [node name="ColorRect2" type="TextureRect" parent="CanvasLayer/DarkerArea" unique_id=1818033186]
 layout_mode = 1
 anchors_preset = 15
@@ -62,7 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_lciaa")
+texture = ExtResource("2_sb48k")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=294152997]
 z_index = 2

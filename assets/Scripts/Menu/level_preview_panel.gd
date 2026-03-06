@@ -1,5 +1,6 @@
 extends Control
 
+@onready var carousel_container: CarouselContainer = $"../CarouselContainer"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

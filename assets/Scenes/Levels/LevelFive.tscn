@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dfik8iwvepo3s" path="res://assets/Sprites/Tilesets/BasicPlaceholder.png" id="6_vrctl"]
 [ext_resource type="PackedScene" uid="uid://bylt4xh12pwlt" path="res://assets/Scenes/DangerZone.tscn" id="7_xhfqf"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="8_vg87r"]
+[ext_resource type="PackedScene" uid="uid://bjptigt865ymr" path="res://assets/Scenes/Menu/Settings.tscn" id="9_kuj1c"]
 [ext_resource type="PackedScene" uid="uid://cnrgq4vi15g44" path="res://assets/Scenes/GUI/hud.tscn" id="9_wdsk1"]
 [ext_resource type="PackedScene" uid="uid://dipfnur3mj433" path="res://assets/Scenes/Screens/PauseMenu.tscn" id="10_e1lr7"]
 [ext_resource type="PackedScene" uid="uid://dhbbeq4o8cx4c" path="res://assets/Scenes/Menu/LevelComplete.tscn" id="11_be454"]
@@ -365,6 +366,8 @@ theme_override_font_sizes/normal_font_size = 55
 text = "haha, you can't pass there"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SettingsMenu" parent="." unique_id=234800305 instance=ExtResource("9_kuj1c")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1059385496]
 
