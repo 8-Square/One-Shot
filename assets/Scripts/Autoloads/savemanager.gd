@@ -57,8 +57,8 @@ func delete_save() -> void:
 	print("DELETING SAVE")
 	# wipe level saves 
 	for levels in levels_completed:
-		var level_finished = levels_completed[levels]
-		level_finished = false
+		levels_completed[levels] = false
+	
 	# Resets to default values
 	master_audio_level = default_master_audio_level
 	music_audio_level = default_music_audio_level
@@ -110,7 +110,7 @@ func has_previous_level_completed(level_no) -> bool:
 	
 	# Check if check_level is valid and is in the Dictionary 
 	if levels_completed.has(check_level):
-		return levels_completed.has(check_level)
+		return levels_completed[check_level]
 	else:
 		return false
 

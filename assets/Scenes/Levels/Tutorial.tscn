@@ -836,7 +836,10 @@ sources/3 = SubResource("TileSetAtlasSource_ai780")
 size = Vector2(1124, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai780"]
-size = Vector2(1137.71, 47.4286)
+size = Vector2(976.001, 47.4286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83rhu"]
+size = Vector2(341.7146, 47.4286)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27xn1"]
 size = Vector2(1065.71, 47.4286)
@@ -858,6 +861,9 @@ position = Vector2(0, -72)
 position = Vector2(223, 34)
 script = ExtResource("3_yndxw")
 level_start_pos = NodePath("../PlayerStart")
+
+[node name="Camera2D" parent="Player" index="2" unique_id=1033930520]
+zoom = Vector2(0.4, 0.4)
 
 [node name="HiddenArea" type="TileMapLayer" parent="." unique_id=670297528]
 z_index = 2
@@ -895,19 +901,25 @@ tile_set = SubResource("TileSet_5vw27")
 [node name="DangerZone" parent="TileMapLayer" unique_id=231155227 instance=ExtResource("8_t0uan")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/DangerZone" unique_id=336851607]
-position = Vector2(809.428, 490)
+position = Vector2(809.428, 455.71423)
 shape = SubResource("RectangleShape2D_e5x30")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/DangerZone" unique_id=1461146946]
-position = Vector2(2069.14, 389.429)
+position = Vector2(1988.2849, 316.28598)
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_ai780")
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer/DangerZone" unique_id=182067197]
+position = Vector2(2552.8572, 402)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_83rhu")
+
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer/DangerZone" unique_id=1103114071]
-position = Vector2(3285.14, 675.143)
+position = Vector2(3280.286, 605.1429)
 shape = SubResource("RectangleShape2D_27xn1")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer/DangerZone" unique_id=355422733]
-position = Vector2(4258, 397.71426)
+position = Vector2(4264.2856, 362.85715)
 scale = Vector2(0.9999989, 0.9999989)
 shape = SubResource("RectangleShape2D_yndxw")
 
@@ -1011,6 +1023,7 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
+[editable path="Player"]
 [editable path="HiddenArea/FadeArea"]
 [editable path="Portal"]
 [editable path="Portal2"]

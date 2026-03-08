@@ -16,11 +16,17 @@
 [ext_resource type="Script" uid="uid://c00j4vgropfcl" path="res://assets/Scripts/Menu/level_preview_panel.gd" id="10_0ptye"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="10_q0e6x"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="11_q0e6x"]
+[ext_resource type="Texture2D" uid="uid://bdhw1e42c3vp3" path="res://assets/Sprites/Panels/PanelTutorial.png" id="13_n7lj8"]
 [ext_resource type="Texture2D" uid="uid://phxg4b8yb1li" path="res://assets/Sprites/Backgrounds/final-pixelated.png" id="13_xls26"]
 [ext_resource type="Script" uid="uid://bqpq8wvmvaw75" path="res://assets/Scripts/Menu/carousel_container.gd" id="14_wm6wf"]
+[ext_resource type="Texture2D" uid="uid://oc7qimfl4lik" path="res://assets/Sprites/Panels/PanelThree.png" id="14_yyov1"]
+[ext_resource type="Texture2D" uid="uid://bomqibqcxd2ew" path="res://assets/Sprites/Panels/PanelFive.png" id="15_2jka5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm6wf"]
 texture = ExtResource("13_xls26")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kq84p"]
+texture = ExtResource("13_n7lj8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm6wf"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -29,6 +35,12 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.8303357, 0.83033496, 0.83033514, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiucm"]
+texture = ExtResource("14_yyov1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h80m3"]
+texture = ExtResource("15_2jka5")
 
 [node name="LevelSelect" type="Control" unique_id=688171917 node_paths=PackedStringArray("LevelTabNodes")]
 layout_mode = 3
@@ -186,7 +198,7 @@ text = "1: ${Username} - 00:00:00
 2:
 3:"
 
-[node name="LevelPreview" type="Control" parent="CanvasLayer" unique_id=909651246]
+[node name="LevelPreview" type="Control" parent="CanvasLayer" unique_id=909651246 node_paths=PackedStringArray("panels")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 46.0
@@ -194,8 +206,75 @@ offset_top = 75.0
 offset_right = 230.0
 offset_bottom = 187.0
 script = ExtResource("10_0ptye")
+panels = [NodePath("PanelTutorial"), NodePath("PanelLevelOne"), NodePath("PanelLevelTwo"), NodePath("PanelLevelThree"), NodePath("PanelLevelFour"), NodePath("PanelLevelFive")]
 
-[node name="Panel" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1552768493]
+[node name="PanelTutorial" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1552768493]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kq84p")
+
+[node name="PanelLevelOne" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1369193070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+
+[node name="PanelLevelTwo" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1757683030]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+
+[node name="PanelLevelThree" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1154213259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_aiucm")
+
+[node name="PanelLevelFour" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=517705557]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+
+[node name="PanelLevelFive" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=605665213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h80m3")
+
+[node name="PanelLevelSix" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1091683252]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

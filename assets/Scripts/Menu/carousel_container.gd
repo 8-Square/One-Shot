@@ -32,6 +32,9 @@ var center_y: float
 var can_scroll: bool = true
 @export var scroll_cooldown: float = 0.3
 
+# For LevelPreview
+signal index_changed(index: int)
+
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -148,9 +151,11 @@ func carousel_up() -> void:
 	if current_index < 0:
 		current_index += 1
 	escape_button.focus_neighbor_right = position_offset_node.get_child(current_index).get_path()
+	index_changed.emit(current_index)
 
 func carousel_down() -> void:
 	current_index += 1 
 	if current_index > position_offset_node.get_child_count()-1:
 		current_index -= 1
 	escape_button.focus_neighbor_right = position_offset_node.get_child(current_index).get_path()
+	index_changed.emit(current_index)
