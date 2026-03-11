@@ -18,9 +18,9 @@
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="11_q0e6x"]
 [ext_resource type="Texture2D" uid="uid://bdhw1e42c3vp3" path="res://assets/Sprites/Panels/PanelTutorial.png" id="13_n7lj8"]
 [ext_resource type="Texture2D" uid="uid://phxg4b8yb1li" path="res://assets/Sprites/Backgrounds/final-pixelated.png" id="13_xls26"]
+[ext_resource type="Texture2D" uid="uid://cnfh3dc0ck5gi" path="res://assets/Sprites/Panels/PanelLevelThree.png" id="14_n7lj8"]
 [ext_resource type="Script" uid="uid://bqpq8wvmvaw75" path="res://assets/Scripts/Menu/carousel_container.gd" id="14_wm6wf"]
-[ext_resource type="Texture2D" uid="uid://oc7qimfl4lik" path="res://assets/Sprites/Panels/PanelThree.png" id="14_yyov1"]
-[ext_resource type="Texture2D" uid="uid://bomqibqcxd2ew" path="res://assets/Sprites/Panels/PanelFive.png" id="15_2jka5"]
+[ext_resource type="Texture2D" uid="uid://c8qj1nsfx78og" path="res://assets/Sprites/Panels/PanelLevelFive.png" id="15_yyov1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm6wf"]
 texture = ExtResource("13_xls26")
@@ -37,10 +37,10 @@ border_width_bottom = 3
 border_color = Color(0.8303357, 0.83033496, 0.83033514, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiucm"]
-texture = ExtResource("14_yyov1")
+texture = ExtResource("14_n7lj8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h80m3"]
-texture = ExtResource("15_2jka5")
+texture = ExtResource("15_yyov1")
 
 [node name="LevelSelect" type="Control" unique_id=688171917 node_paths=PackedStringArray("LevelTabNodes")]
 layout_mode = 3
