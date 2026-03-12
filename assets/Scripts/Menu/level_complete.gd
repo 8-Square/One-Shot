@@ -103,18 +103,8 @@ func finish_animation(progress: bool, level_no, real_audio: bool):
 
 func finish_level(level_no, final_time: float):
 	var final_score = final_time
-	match level_no:
-		"0":
-			if final_score 
-		"1":
-			
-		"2":
-			
-		"3":
-			
-		"4":
-			
-
+	save_pref.level_final_time(level_no, final_score)
+	save_pref.save()
 
 func _on_next_level_pressed() -> void:
 	hide_all_labels()

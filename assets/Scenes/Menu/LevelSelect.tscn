@@ -184,6 +184,7 @@ text = "1:
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1109610766]
+visible = false
 layout_mode = 2
 theme = ExtResource("9_rnpe2")
 text = "Global Leaderboard"
@@ -191,6 +192,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PersonalLeaderBoardTimes2" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=318987619]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("9_rnpe2")

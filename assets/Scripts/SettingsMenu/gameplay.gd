@@ -11,22 +11,21 @@ class_name GamePlaySettings extends Control
 @onready var real_delete_panel: Panel = $"../../RealDeletePanel"
 @onready var settings_menu: SettingsMenu = $"../../.."
 
+@onready var hard_mode_toggle: CheckButton = $GameplaySettingsText/HardModeHoriz/HardModeToggle
+
 var save_pref = SaveManager
+var turned_on: bool = false
 
 func _ready() -> void:
 	save_pref = SaveManager.load_or_create()
 
-#var turned_on: bool = false
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
-#func _on_check_button_pressed() -> void:
-	#if not turned_on:
-		#check_button.text = "On"
-		#turned_on = true
-	#else:
-		#check_button.text = "Off"
-		#turned_on = false
+func _on_check_button_pressed() -> void:
+	if not turned_on:
+		hard_mode_toggle.text = "On"
+		turned_on = true
+	else:
+		hard_mode_toggle.text = "Off"
+		turned_on = false
 
 
 func _on_delete_save_button_pressed() -> void:
@@ -46,5 +45,7 @@ func _on_delete_pressed() -> void:
 	real_delete_panel.hide()
 	gameplay_settings_text.show()
 	
-
-	
+func save_settings():
+	if save_pref:
+		if turned_on == true:
+			save_pref.hard_mode = true

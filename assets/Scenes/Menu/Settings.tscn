@@ -67,7 +67,6 @@ parameters/looping = true
 [node name="Settings" type="CanvasLayer" parent="." unique_id=983886994]
 process_mode = 3
 layer = 5
-visible = false
 
 [node name="Background" type="ColorRect" parent="Settings" unique_id=474550762]
 material = SubResource("ShaderMaterial_6gofj")
@@ -134,7 +133,7 @@ layout_mode = 2
 
 [node name="HardModeText" type="Label" parent="Settings/TabContainer/Gameplay/GameplaySettingsText/HardModeHoriz" unique_id=175368463]
 layout_mode = 2
-text = "Extremely Hard Mode "
+text = "Hard Mode "
 label_settings = ExtResource("2_arbsy")
 
 [node name="HardModeToggle" type="CheckButton" parent="Settings/TabContainer/Gameplay/GameplaySettingsText/HardModeHoriz" unique_id=545590741]
@@ -146,8 +145,30 @@ text = "Off"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 12
+text = "Hard Mode emoves features like coyote time"
+
+[node name="ExtremeHardMode" type="HBoxContainer" parent="Settings/TabContainer/Gameplay/GameplaySettingsText" unique_id=660600477]
+visible = false
+layout_mode = 2
+
+[node name="HardModeText" type="Label" parent="Settings/TabContainer/Gameplay/GameplaySettingsText/ExtremeHardMode" unique_id=1388981360]
+layout_mode = 2
+text = "Extremely Hard Mode "
+label_settings = ExtResource("2_arbsy")
+
+[node name="HardModeToggle" type="CheckButton" parent="Settings/TabContainer/Gameplay/GameplaySettingsText/ExtremeHardMode" unique_id=663067593]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Off"
+
+[node name="HardModeNote2" type="Label" parent="Settings/TabContainer/Gameplay/GameplaySettingsText" unique_id=710288675]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 12
 text = "Hard Mode makes progression reset 
-every death and removes features like coyote time"
+every death"
 
 [node name="BlankSpace" type="Label" parent="Settings/TabContainer/Gameplay/GameplaySettingsText" unique_id=899592439]
 layout_mode = 2
@@ -171,6 +192,18 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 12
 text = "Your games save files including settings"
+
+[node name="BlankSpace2" type="Label" parent="Settings/TabContainer/Gameplay/GameplaySettingsText" unique_id=172751693]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 11
+
+[node name="BlankSpace3" type="Label" parent="Settings/TabContainer/Gameplay/GameplaySettingsText" unique_id=264191902]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 11
+text = "Maybe in a later update I'll add more Modes"
+horizontal_alignment = 1
 
 [node name="Music" type="Control" parent="Settings/TabContainer" unique_id=1187880509]
 process_mode = 3
@@ -727,6 +760,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_emfjy")
 text = " Delete "
 
 [connection signal="pressed" from="Settings/TabContainer/Gameplay/GameplaySettingsText/HardModeHoriz/HardModeToggle" to="Settings/TabContainer/Gameplay" method="_on_check_button_pressed"]
+[connection signal="pressed" from="Settings/TabContainer/Gameplay/GameplaySettingsText/ExtremeHardMode/HardModeToggle" to="Settings/TabContainer/Gameplay" method="_on_check_button_pressed"]
 [connection signal="pressed" from="Settings/TabContainer/Gameplay/GameplaySettingsText/DeleteSaveHoriz/DeleteSaveButton" to="Settings/TabContainer/Gameplay" method="_on_delete_save_button_pressed"]
 [connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/Master" to="Settings/TabContainer/Music" method="_on_master_value_changed"]
 [connection signal="value_changed" from="Settings/TabContainer/Music/VBoxContainer/Music" to="Settings/TabContainer/Music" method="_on_music_value_changed"]

@@ -15,6 +15,9 @@ const default_vsync: bool = true
 # Tutorial Completed
 const default_comp_tutorial: bool = false
 
+# Gameplay
+const default_hard_mode: bool = false
+
 # REGULAR ONES
 # Music Settings
 @export_range(0, 1, 0.05) var master_audio_level: float = 1.0
@@ -41,17 +44,29 @@ const default_comp_tutorial: bool = false
 	"level_five": false, 
 }
 
-
 # LEVEL TIMES
-@export var level_times: Dictionary = {
-	0: [00, 00, 00],
-	1: [00, 00, 00],
-	2: [00, 00, 00],
-	3: [00, 00, 00],
-	4: [00, 00, 00],
-	5: [00, 00, 00],
-	6: [00, 00, 00]
+@export var leaderboard_level_times: Dictionary = {
+	0: [9999999, 9999999, 9999999],
+	1: [9999999, 9999999, 9999999],
+	2: [9999999, 9999999, 9999999],
+	3: [9999999, 9999999, 9999999],
+	4: [9999999, 9999999, 9999999],
+	5: [9999999, 9999999, 9999999],
+	6: [9999999, 9999999, 9999999]
 }
+
+@export var hard_mode: bool = false
+@export var hard_mode_leaderboard_level_times: Dictionary = {
+	0: [9999999, 9999999, 9999999],
+	1: [9999999, 9999999, 9999999],
+	2: [9999999, 9999999, 9999999],
+	3: [9999999, 9999999, 9999999],
+	4: [9999999, 9999999, 9999999],
+	5: [9999999, 9999999, 9999999],
+	6: [9999999, 9999999, 9999999]
+}
+
+
 
 func save() -> void:
 	ResourceSaver.save(self, "user://save_manager.tres")
@@ -105,7 +120,34 @@ func completing_level(level_no):
 
 # Leaderboard Time
 func level_final_time(level_no, final_time):
-	pass
+	var level_time = leaderboard_level_times[level_no]
+	
+	# NOT TOO SURE WHICH METHOD I PREFER MORE
+	#if !(final_time < level_time[2]):
+		#if !(final_time < level_time[1]):
+			#if !(final_time < level_time[0]):
+				#pass
+			#else:
+				#level_time[2] = level_time[1]
+				#level_time[1] = level_time[0]
+				#level_time[0] = final_time
+		#else:
+			#level_time[2] = level_time[1]
+			#level_time[1] = final_time
+	#else:
+		#level_time[2] = final_time
+	
+	# ILL USE THIS ONE FOR NOW 
+	if final_time < level_time[0]:
+		level_time[2] = level_time[1]
+		level_time[1] = level_time[0]
+		level_time[0] = final_time
+	elif final_time < level_time[1]:
+		level_time[2] = level_time[1]
+		level_time[1] = final_time
+	elif final_time < level_time[2]:
+		level_time[2] = final_time
+
 
 func has_better_score(final_time):
 	pass
