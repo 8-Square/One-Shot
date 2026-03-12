@@ -13,5 +13,5 @@ func _on_body_entered(body: Node2D) -> void:
 		body.can_control = false
 		$AudioStreamPlayer2D.play()
 		var current_path = get_tree().current_scene.scene_file_path
-		LevelComplete.level_complete(current_path + "_dumb")
+		LevelComplete.level_complete(current_path + "_dumb", leaderboard_time)
 		

@@ -26,12 +26,13 @@ func display_final_time():
 	var time_string = Stopwatch.time_to_string()
 	finaltime.text = "Your Final Time Was:" + time_string
 
-func level_complete(path):
+func level_complete(path, final_time: float):
 	match path:
 		"res://assets/Scenes/Levels/Tutorial.tscn":
 			level_number = 0
 			%TComplete.show()
 			finish_animation(true, level_number, true)
+			finish_level(level_number, final_time)
 			
 		"res://assets/Scenes/Levels/LevelOne.tscn":
 			level_number = 1
@@ -99,8 +100,20 @@ func finish_animation(progress: bool, level_no, real_audio: bool):
 		# For Fake Level Four Ending
 		$HBoxContainer/NextLevelContainer.hide()
 	save_pref.save()
-	
 
+func finish_level(level_no, final_time: float):
+	var final_score = final_time
+	match level_no:
+		"0":
+			if final_score 
+		"1":
+			
+		"2":
+			
+		"3":
+			
+		"4":
+			
 
 
 func _on_next_level_pressed() -> void:

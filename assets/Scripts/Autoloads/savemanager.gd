@@ -41,6 +41,18 @@ const default_comp_tutorial: bool = false
 	"level_five": false, 
 }
 
+
+# LEVEL TIMES
+@export var level_times: Dictionary = {
+	0: [00, 00, 00],
+	1: [00, 00, 00],
+	2: [00, 00, 00],
+	3: [00, 00, 00],
+	4: [00, 00, 00],
+	5: [00, 00, 00],
+	6: [00, 00, 00]
+}
+
 func save() -> void:
 	ResourceSaver.save(self, "user://save_manager.tres")
 	
@@ -90,6 +102,13 @@ func completing_level(level_no):
 			levels_completed["level_five"] = true
 		#6:
 			#levels_completed["level_five"] = true
+
+# Leaderboard Time
+func level_final_time(level_no, final_time):
+	pass
+
+func has_better_score(final_time):
+	pass
 
 func has_previous_level_completed(level_no) -> bool:
 	var check_level: String

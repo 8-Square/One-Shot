@@ -34,4 +34,5 @@ func time_to_string() -> String:
 	# FORMAT TIME
 	var format_string = "%02d : %02d . %03d"
 	var actual_string = format_string % [minute, sec, msec]
+	#print(msec + sec + minute)
 	return actual_string
