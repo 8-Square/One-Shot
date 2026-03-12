@@ -226,7 +226,7 @@ position = Vector2(-2, 30)
 [node name="AudioStreamPlayer2D" parent="EndPortal" index="2"]
 bus = &"SFX"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1645019268]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1645019268]
 stream = ExtResource("13_y163g")
 volume_db = -1.0
 bus = &"Music"

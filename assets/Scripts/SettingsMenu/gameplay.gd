@@ -49,3 +49,6 @@ func save_settings():
 	if save_pref:
 		if turned_on == true:
 			save_pref.hard_mode = true
+		elif turned_on == false:
+			save_pref.hard_mode = false
+		save_pref.save()

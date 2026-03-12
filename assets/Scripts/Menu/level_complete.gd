@@ -32,34 +32,38 @@ func level_complete(path, final_time: float):
 			level_number = 0
 			%TComplete.show()
 			finish_animation(true, level_number, true)
-			finish_level(level_number, final_time)
 			
 		"res://assets/Scenes/Levels/LevelOne.tscn":
 			level_number = 1
 			%LOneComplete.show()
 			finish_animation(true, level_number, true)
+			finish_level(level_number, final_time)
 			
 		"res://assets/Scenes/Levels/LevelTwo.tscn":
 			level_number = 2
 			%LTwoComplete.show()
 			finish_animation(true, level_number, true)
+			finish_level(level_number, final_time)
 			
 		"res://assets/Scenes/Levels/LevelThree.tscn":
 			level_number = 3
 			%LThreeComplete.show()
 			finish_animation(true, level_number, true)
+			finish_level(level_number, final_time)
 			
 # MILKYWAY EXPANSION
 		"res://assets/Scenes/Levels/LevelFour.tscn":
 			level_number = 4
 			%LFourComplete.show()
 			finish_animation(true, level_number, true)
+			finish_level(level_number, final_time)
 			
 		"res://assets/Scenes/Levels/LevelFive.tscn":
 			level_number = 5
 			%LFiveComplete.show()
 			finish_animation(true, level_number, true)
-
+			finish_level(level_number, final_time)
+			
 
 		"res://assets/Scenes/Levels/LevelFour.tscn_dumb":
 			

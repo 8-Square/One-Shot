@@ -86,6 +86,16 @@ func delete_save() -> void:
 	for levels in levels_completed:
 		levels_completed[levels] = false
 	
+	# Wipe regular leaderboard 
+	for times in leaderboard_level_times:
+		for i in range(leaderboard_level_times[times].size()):
+			leaderboard_level_times[times][i] = 9999999
+	
+	# Wipe Hard Mode leaderboard 
+	for times in hard_mode_leaderboard_level_times:
+		for i in range(hard_mode_leaderboard_level_times[times].size()):
+			hard_mode_leaderboard_level_times[times][i] = 9999999
+	
 	# Resets to default values
 	master_audio_level = default_master_audio_level
 	music_audio_level = default_music_audio_level
@@ -96,6 +106,9 @@ func delete_save() -> void:
 	vsync = default_vsync
 	comp_tutorial = default_comp_tutorial
 	next_time_comp_tutorial = default_comp_tutorial
+	
+	hard_mode = default_hard_mode
+	
 	save()
 
 #func reload():
@@ -121,7 +134,6 @@ func completing_level(level_no):
 # Leaderboard Time
 func level_final_time(level_no, final_time):
 	var level_time = leaderboard_level_times[level_no]
-	
 	# NOT TOO SURE WHICH METHOD I PREFER MORE
 	#if !(final_time < level_time[2]):
 		#if !(final_time < level_time[1]):
@@ -147,10 +159,11 @@ func level_final_time(level_no, final_time):
 		level_time[1] = final_time
 	elif final_time < level_time[2]:
 		level_time[2] = final_time
+	
+	print(level_time[0])
+	print(level_time[1])
+	print(level_time[2])
 
-
-func has_better_score(final_time):
-	pass
 
 func has_previous_level_completed(level_no) -> bool:
 	var check_level: String
