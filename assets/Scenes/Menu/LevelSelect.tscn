@@ -16,10 +16,11 @@
 [ext_resource type="Script" uid="uid://c00j4vgropfcl" path="res://assets/Scripts/Menu/level_preview_panel.gd" id="10_0ptye"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="10_q0e6x"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="11_q0e6x"]
-[ext_resource type="Texture2D" uid="uid://bdhw1e42c3vp3" path="res://assets/Sprites/Panels/PanelTutorial.png" id="13_n7lj8"]
+[ext_resource type="Texture2D" uid="uid://bdhw1e42c3vp3" path="res://assets/Sprites/Panels/PanelLevelTutorial.png" id="13_n7lj8"]
 [ext_resource type="Texture2D" uid="uid://phxg4b8yb1li" path="res://assets/Sprites/Backgrounds/final-pixelated.png" id="13_xls26"]
 [ext_resource type="Texture2D" uid="uid://cnfh3dc0ck5gi" path="res://assets/Sprites/Panels/PanelLevelThree.png" id="14_n7lj8"]
 [ext_resource type="Script" uid="uid://bqpq8wvmvaw75" path="res://assets/Scripts/Menu/carousel_container.gd" id="14_wm6wf"]
+[ext_resource type="Texture2D" uid="uid://bmge8tq7jn15h" path="res://assets/Sprites/Panels/PanelLevelTwo.png" id="14_yyov1"]
 [ext_resource type="Texture2D" uid="uid://c8qj1nsfx78og" path="res://assets/Sprites/Panels/PanelLevelFive.png" id="15_yyov1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm6wf"]
@@ -35,6 +36,9 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.8303357, 0.83033496, 0.83033514, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jka5"]
+texture = ExtResource("14_yyov1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiucm"]
 texture = ExtResource("14_n7lj8")
@@ -174,13 +178,37 @@ text = "Personal Leaderboard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PersonalLeaderBoardTimes" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1322787989]
+[node name="PLeaderBoard1" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1322787989]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("9_rnpe2")
-text = "1: 
-2: 
-3: "
+text = "1: "
+horizontal_alignment = 1
+
+[node name="PLeaderBoard2" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1439498760]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+text = "2: "
+horizontal_alignment = 1
+
+[node name="PLeaderBoard3" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1587277367]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+text = "3: "
+horizontal_alignment = 1
+
+[node name="BlankSpace" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=879270653]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+horizontal_alignment = 1
+
+[node name="BlankSpace2" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=635447338]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1109610766]
@@ -241,7 +269,7 @@ offset_left = -12.0
 offset_right = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+theme_override_styles/panel = SubResource("StyleBoxTexture_2jka5")
 
 [node name="PanelLevelThree" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1154213259]
 layout_mode = 1

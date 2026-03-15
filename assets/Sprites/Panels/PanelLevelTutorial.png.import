@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdhw1e42c3vp3"
-path="res://.godot/imported/PanelTutorial.png-040721502b397c5ee22979dc7761686d.ctex"
+path="res://.godot/imported/PanelLevelTutorial.png-73942cbf092c8138790d680ca4e6085a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Panels/PanelTutorial.png"
-dest_files=["res://.godot/imported/PanelTutorial.png-040721502b397c5ee22979dc7761686d.ctex"]
+source_file="res://assets/Sprites/Panels/PanelLevelTutorial.png"
+dest_files=["res://.godot/imported/PanelLevelTutorial.png-73942cbf092c8138790d680ca4e6085a.ctex"]
 
 [params]
 
