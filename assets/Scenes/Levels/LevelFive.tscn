@@ -372,7 +372,6 @@ vertical_alignment = 1
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1059385496]
 
 [node name="HUD" parent="CanvasLayer" unique_id=2045857666 instance=ExtResource("9_wdsk1")]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1184111170 instance=ExtResource("10_e1lr7")]
 visible = false
