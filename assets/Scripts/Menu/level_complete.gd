@@ -107,7 +107,10 @@ func finish_animation(progress: bool, level_no, real_audio: bool):
 
 func finish_level(level_no, final_time: float):
 	var final_score = final_time
-	save_pref.level_final_time(level_no, final_score)
+	if save_pref.hard_mode == true:
+		save_pref.hard_level_final_time(level_no, final_score)
+	elif save_pref.hard_mode == false:
+		save_pref.level_final_time(level_no, final_score)
 	save_pref.save()
 
 func _on_next_level_pressed() -> void:

@@ -18,14 +18,11 @@ var turned_on: bool = false
 
 func _ready() -> void:
 	save_pref = SaveManager.load_or_create()
+	hard_mode_toggle.button_pressed = save_pref.hard_mode
+	hard_mode_toggle.text = "On" if save_pref.hard_mode else "Off"
 
 func _on_check_button_pressed() -> void:
-	if not turned_on:
-		hard_mode_toggle.text = "On"
-		turned_on = true
-	else:
-		hard_mode_toggle.text = "Off"
-		turned_on = false
+	hard_mode_toggle.text = "On" if hard_mode_toggle.button_pressed else "Off"
 
 
 func _on_delete_save_button_pressed() -> void:
@@ -47,8 +44,5 @@ func _on_delete_pressed() -> void:
 	
 func save_settings():
 	if save_pref:
-		if turned_on == true:
-			save_pref.hard_mode = true
-		elif turned_on == false:
-			save_pref.hard_mode = false
+		save_pref.hard_mode = hard_mode_toggle.button_pressed
 		save_pref.save()

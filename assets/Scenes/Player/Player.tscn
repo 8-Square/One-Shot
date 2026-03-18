@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byg1xe2t1e15k"]
 
-[ext_resource type="Script" uid="uid://jvneo4umsef2" path="res://assets/Scripts/Player/base_player.gd" id="1_lnf63"]
+[ext_resource type="Script" uid="uid://jvneo4umsef2" path="res://assets/Scripts/Base/base_player.gd" id="1_lnf63"]
 [ext_resource type="PackedScene" uid="uid://15lrl5a6td4m" path="res://assets/Scenes/Player/Slime Types/green_slime.tscn" id="2_kkvr3"]
 [ext_resource type="PackedScene" uid="uid://dy2lqglvlk144" path="res://assets/Scenes/Other/SkinBit.tscn" id="2_wnwb4"]
 [ext_resource type="AudioStream" uid="uid://daiiom1ijtv5" path="res://assets/Music/Controls/Jump-Please.mp3" id="3_5qdut"]

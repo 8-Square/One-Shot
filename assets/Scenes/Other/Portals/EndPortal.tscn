@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dheketjghw7gl"]
+[gd_scene format=3 uid="uid://dheketjghw7gl"]
 
 [ext_resource type="Script" uid="uid://pwqdiggkrcde" path="res://assets/Scripts/Other/end_portal.gd" id="1_wtc3w"]
 [ext_resource type="Texture2D" uid="uid://b6ko30d7aoxle" path="res://assets/Sprites/Portals/Green Portal Sprite Sheet.png" id="2_wtc3w"]
@@ -133,21 +133,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daalp"]
 size = Vector2(12.5, 150)
 
-[node name="EndPortal" type="Area2D"]
+[node name="EndPortal" type="Area2D" unique_id=2037747805]
 script = ExtResource("1_wtc3w")
 
-[node name="AnimatableBody2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatableBody2D" type="AnimatedSprite2D" parent="." unique_id=583752350]
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_28k04")
 animation = &"flipped default"
 autoplay = "default"
 frame_progress = 0.786809
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91303494]
 position = Vector2(-2, 14)
 shape = SubResource("RectangleShape2D_daalp")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2018057509]
 stream = ExtResource("4_vgvfn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

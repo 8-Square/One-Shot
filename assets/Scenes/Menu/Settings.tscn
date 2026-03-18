@@ -145,7 +145,13 @@ text = "Off"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_6luba")
 theme_override_font_sizes/font_size = 12
-text = "Hard Mode emoves features like coyote time"
+text = "Hard Mode removes features like coyote time"
+
+[node name="HardModeNote3" type="Label" parent="Settings/TabContainer/Gameplay/GameplaySettingsText" unique_id=861139610]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6luba")
+theme_override_font_sizes/font_size = 12
+text = "*Does not immediately apply to the current level"
 
 [node name="ExtremeHardMode" type="HBoxContainer" parent="Settings/TabContainer/Gameplay/GameplaySettingsText" unique_id=660600477]
 visible = false

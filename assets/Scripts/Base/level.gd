@@ -3,12 +3,13 @@ class_name Level extends Node2D
 @onready var pause_menu_scene := $CanvasLayer/PauseMenu
 @onready var player: BasePlayer = $Player
 @onready var settings_menu: SettingsMenu = $SettingsMenu
-
 @export var level_no: int
 #@export var level_completed: bool
 
+
 func _ready() -> void:
 	settings_menu.menu_hide()
+
 
 var paused := false
 

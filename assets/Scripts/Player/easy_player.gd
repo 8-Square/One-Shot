@@ -1,33 +1,10 @@
-class_name BasePlayer
-extends CharacterBody2D
-
-@export var level_start_pos : Node2D
-@export var SPEED = 500.0
-@export var JUMP_VELOCITY = -600.0
-@export var max_jump_count = 100
-@export var max_right_count = 100
-@export var max_left_count = 100
-#@export var player_skins: Array[AnimatedSprite2D]
-
-@onready var skin_bit = $SkinBit
-
-var animated_sprite: AnimatedSprite2D
-var left_count = 0
-var jump_count = 0
-var right_count = 0
-var can_control : bool = true
-var bouncing = false
-var jumping = false
-var play_count : int = 0 
-
-var bounce_timer = 0.0
-const bounce_animation_time = 0.3
-
-func _ready() -> void:
-	skin_bit.apply_skin(Globalskin.selected_skin_index)
-	animated_sprite = skin_bit.current_sprite()
+class_name EasyPlayerLevels extends BasePlayer
+# Easy Mode Player
 
 func _physics_process(delta: float) -> void:
+	if animated_sprite == null:
+		return
+	
 	if not can_control:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -39,6 +16,7 @@ func _physics_process(delta: float) -> void:
 		$JumpAudio.play()
 	elif is_on_floor():
 		jumping = false
+
 	
 
 	if not is_on_floor():
@@ -91,6 +69,7 @@ func _physics_process(delta: float) -> void:
 				get_tree().create_timer(0.4)
 				animated_sprite.play("default")
 		elif jumping:
+
 			if velocity.y < 0:
 				animated_sprite.play("jump")
 			else:
@@ -98,34 +77,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("fall")
 	
+	print("EASY MODE")
 	
 	if Input.is_action_just_pressed("down") and is_on_floor():
 		position.y += 1
 		
 	if Input.is_action_just_pressed("restart"):
 		fast_reset()
-		
 	move_and_slide()
-
-func fast_reset() -> void:
-	visible = false
-	can_control = false
-	Stopwatch.stop()
-	velocity = Vector2.ZERO
-	await get_tree().create_timer(0.2).timeout
-	reset_player()
-
-func handle_danger() -> void:
-	visible = false
-	can_control = false
-	Stopwatch.stop()
-	velocity = Vector2.ZERO
-	await get_tree().create_timer(0.6).timeout
-	reset_player()
 	
-func reset_player() -> void:
-	global_position = level_start_pos.global_position
-	visible = true
-	can_control = true
-	Stopwatch.reset()
-	animated_sprite.play("default")

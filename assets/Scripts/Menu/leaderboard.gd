@@ -41,12 +41,12 @@ func on_index_changed(index: int):
 		p_leader_board_2.text = ""
 		p_leader_board_3.text = ""
 	else:
-		var scores = save_pref.leaderboard_level_times[index]
-		#if save_pref.hard_mode == true:
-			#p_leader_board_1.text = "1: " + (time_to_string(scores[0]) if scores[0] != 9999999 else "--") +  (" - (Hard)" if scores[0] != 9999999 else "") 
-			#p_leader_board_2.text = "2: " + (time_to_string(scores[1]) if scores[1] != 9999999 else "--") +  (" - (Hard)" if scores[1] != 9999999 else "") 
-			#p_leader_board_3.text = "3: " + (time_to_string(scores[2]) if scores[2] != 9999999 else "--") +  (" - (Hard)" if scores[2] != 9999999 else "") 
-		#else:
-		p_leader_board_1.text = "1: " + (time_to_string(scores[0]) if scores[0] != 9999999 else "--")
-		p_leader_board_2.text = "2: " + (time_to_string(scores[1]) if scores[1] != 9999999 else "--")
-		p_leader_board_3.text = "3: " + (time_to_string(scores[2]) if scores[2] != 9999999 else "--")
+		var easy_scores = save_pref.leaderboard_level_times[index]
+		var hard_scores = save_pref.hard_mode_leaderboard_level_times[index]
+		
+		# Combine all scores
+		var all_scores = []
+		
+		#p_leader_board_1.text = "1: " + (time_to_string(scores[0]) if scores[0] != 9999999 else "--")
+		#p_leader_board_2.text = "2: " + (time_to_string(scores[1]) if scores[1] != 9999999 else "--")
+		#p_leader_board_3.text = "3: " + (time_to_string(scores[2]) if scores[2] != 9999999 else "--")

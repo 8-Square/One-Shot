@@ -133,37 +133,55 @@ func completing_level(level_no):
 
 # Leaderboard Time
 func level_final_time(level_no, final_time):
-	var level_time = leaderboard_level_times[level_no]
-	# NOT TOO SURE WHICH METHOD I PREFER MORE
-	#if !(final_time < level_time[2]):
-		#if !(final_time < level_time[1]):
-			#if !(final_time < level_time[0]):
-				#pass
+		var level_time = leaderboard_level_times[level_no]
+		# NOT TOO SURE WHICH METHOD I PREFER MORE
+		#if !(final_time < level_time[2]):
+			#if !(final_time < level_time[1]):
+				#if !(final_time < level_time[0]):
+					#pass
+				#else:
+					#level_time[2] = level_time[1]
+					#level_time[1] = level_time[0]
+					#level_time[0] = final_time
 			#else:
 				#level_time[2] = level_time[1]
-				#level_time[1] = level_time[0]
-				#level_time[0] = final_time
+				#level_time[1] = final_time
 		#else:
-			#level_time[2] = level_time[1]
-			#level_time[1] = final_time
-	#else:
-		#level_time[2] = final_time
-	
-	# ILL USE THIS ONE FOR NOW 
-	if final_time < level_time[0]:
-		level_time[2] = level_time[1]
-		level_time[1] = level_time[0]
-		level_time[0] = final_time
-	elif final_time < level_time[1]:
-		level_time[2] = level_time[1]
-		level_time[1] = final_time
-	elif final_time < level_time[2]:
-		level_time[2] = final_time
-	
-	print(level_time[0])
-	print(level_time[1])
-	print(level_time[2])
+			#level_time[2] = final_time
 
+		# ILL USE THIS ONE FOR NOW 
+		if final_time < level_time[0]:
+			level_time[2] = level_time[1]
+			level_time[1] = level_time[0]
+			level_time[0] = final_time
+		elif final_time < level_time[1]:
+			level_time[2] = level_time[1]
+			level_time[1] = final_time
+		elif final_time < level_time[2]:
+			level_time[2] = final_time
+
+		print(level_time[0])
+		print(level_time[1])
+		print(level_time[2])
+
+# Hard Leaderboard Time
+func hard_level_final_time(level_no, final_time):
+		var level_time = hard_mode_leaderboard_level_times[level_no]
+
+		# ILL USE THIS ONE FOR NOW 
+		if final_time < level_time[0]:
+			level_time[2] = level_time[1]
+			level_time[1] = level_time[0]
+			level_time[0] = final_time
+		elif final_time < level_time[1]:
+			level_time[2] = level_time[1]
+			level_time[1] = final_time
+		elif final_time < level_time[2]:
+			level_time[2] = final_time
+
+		print(level_time[0])
+		print(level_time[1])
+		print(level_time[2])
 
 func has_previous_level_completed(level_no) -> bool:
 	var check_level: String
