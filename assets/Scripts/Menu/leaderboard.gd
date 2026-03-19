@@ -57,8 +57,6 @@ func on_index_changed(index: int):
 		#p_leader_board_3.text = "3: " + (time_to_string(scores[2]) if scores[2] != 9999999 else "--")
 
 func get_score(scores: Array):
-	if scores == null:
-		return "--"
 	var time_value = scores[0]
 	var mode_value = scores[1]
 	return time_to_string(time_value) + " (" + mode_value + ")"

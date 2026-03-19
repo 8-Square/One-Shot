@@ -1,7 +1,9 @@
 class_name PlayerLevels extends BasePlayer
-# Hard Mode Player
+# Easy + Hard Mode Player
 
-
+# Coyote time
+const COYOTE_TIME: float = 0.15
+var coyote_timer: float = 0.0
 
 func _physics_process(delta: float) -> void:
 	if hard_mode == true:
@@ -99,19 +101,19 @@ func easy_mode_process(delta: float) -> void:
 		move_and_slide()
 		return
 # JUMP
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and coyote_timer > 0:
 		velocity.y = JUMP_VELOCITY
 		jumping = true
 		$JumpAudio.play()
+		coyote_timer = 0
 	elif is_on_floor():
 		jumping = false
-
+		coyote_timer = COYOTE_TIME
 	
-
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		coyote_timer -= delta
 	
-
 	
 # DIRECTIONAL MOVEMENT & ANIMATION LEFT RIGHT
 	var direction := Input.get_axis("left", "right")
