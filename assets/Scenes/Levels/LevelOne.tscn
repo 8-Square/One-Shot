@@ -1129,15 +1129,28 @@ tile_map_data = PackedByteArray("AACx/xsAAAAAAAIAAACw/xsAAAAAAAIAAACv/xsAAAAAAAI
 tile_set = SubResource("TileSet_pjjw1")
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1162556207]
-offset_left = -323.0
+offset_left = -443.0
 offset_top = 94.0
-offset_right = 422.0
+offset_right = 302.0
 offset_bottom = 332.0
 pivot_offset = Vector2(365, 122)
 theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("4_j0v2c")
 theme_override_font_sizes/normal_font_size = 42
 text = "Find The Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="." unique_id=1196798549]
+offset_left = 213.0
+offset_top = 126.0
+offset_right = 958.0
+offset_bottom = 364.0
+pivot_offset = Vector2(365, 122)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("4_j0v2c")
+theme_override_font_sizes/normal_font_size = 42
+text = "Most Levels will have 2+ Shortcuts"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1271,18 +1284,18 @@ position = Vector2(227, 217)
 [node name="EndPortal" parent="." unique_id=366596948 groups=["Exits"] instance=ExtResource("2_818du")]
 position = Vector2(9221, -288)
 
-[node name="AudioStreamPlayer2D" parent="EndPortal" index="2"]
+[node name="AudioStreamPlayer2D" parent="EndPortal" index="2" unique_id=2018057509]
 bus = &"SFX"
 
 [node name="EndPortal2" parent="." unique_id=1301799163 groups=["Exits"] instance=ExtResource("2_818du")]
 position = Vector2(-9639, -517)
 
-[node name="AnimatableBody2D" parent="EndPortal2" index="0"]
+[node name="AnimatableBody2D" parent="EndPortal2" index="0" unique_id=583752350]
 position = Vector2(0, 12.9999)
 animation = &"default"
 frame_progress = 0.0
 
-[node name="AudioStreamPlayer2D" parent="EndPortal2" index="2"]
+[node name="AudioStreamPlayer2D" parent="EndPortal2" index="2" unique_id=2018057509]
 bus = &"SFX"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1056804738]
