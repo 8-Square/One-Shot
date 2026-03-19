@@ -1,0 +1,617 @@
+[gd_scene format=3 uid="uid://bvx4t5ypgmt6i"]
+
+[ext_resource type="Script" uid="uid://d0pbbdxsd5gjs" path="res://assets/Scripts/Menu/level_select.gd" id="1_4juup"]
+[ext_resource type="Texture2D" uid="uid://pmbtuwk7aen6" path="res://assets/Sprites/WIP SPRITES/background_1.png" id="2_2thln"]
+[ext_resource type="Texture2D" uid="uid://cmyfl0cl28vst" path="res://assets/Sprites/Button/blue.png" id="2_pq36x"]
+[ext_resource type="Texture2D" uid="uid://dy5clo7x35ncu" path="res://assets/Sprites/Button/blue_pressed.png" id="3_b8dml"]
+[ext_resource type="Texture2D" uid="uid://d4j70uffu0gxu" path="res://assets/Sprites/Button/green_pressed.png" id="4_hyy3w"]
+[ext_resource type="Texture2D" uid="uid://dgv5koourig5u" path="res://assets/Sprites/Button/red.png" id="5_aly6l"]
+[ext_resource type="Texture2D" uid="uid://x1ihqgxq21f1" path="res://assets/Sprites/Button/green.png" id="5_tgpxl"]
+[ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="6_aly6l"]
+[ext_resource type="Texture2D" uid="uid://b8e7wcdksx2e5" path="res://assets/Sprites/Button/red_rectangle.png" id="7_01bmn"]
+[ext_resource type="Texture2D" uid="uid://bkaoygcemflnk" path="res://assets/Sprites/Button/red_rectangle_pressed.png" id="8_fn61j"]
+[ext_resource type="Script" uid="uid://dcnppqsh7dkwf" path="res://assets/Scripts/Menu/leaderboard.gd" id="9_12wjj"]
+[ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="9_jwpom"]
+[ext_resource type="Theme" uid="uid://oip8a1psp816" path="res://assets/Presets/Leaderboard-theme.tres" id="9_rnpe2"]
+[ext_resource type="Script" uid="uid://c00j4vgropfcl" path="res://assets/Scripts/Menu/level_preview_panel.gd" id="10_0ptye"]
+[ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="10_q0e6x"]
+[ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="11_q0e6x"]
+[ext_resource type="Texture2D" uid="uid://bdhw1e42c3vp3" path="res://assets/Sprites/Panels/PanelLevelTutorial.png" id="13_n7lj8"]
+[ext_resource type="Texture2D" uid="uid://phxg4b8yb1li" path="res://assets/Sprites/Backgrounds/final-pixelated.png" id="13_xls26"]
+[ext_resource type="Texture2D" uid="uid://cnfh3dc0ck5gi" path="res://assets/Sprites/Panels/PanelLevelThree.png" id="14_n7lj8"]
+[ext_resource type="Script" uid="uid://bqpq8wvmvaw75" path="res://assets/Scripts/Menu/carousel_container.gd" id="14_wm6wf"]
+[ext_resource type="Texture2D" uid="uid://bmge8tq7jn15h" path="res://assets/Sprites/Panels/PanelLevelTwo.png" id="14_yyov1"]
+[ext_resource type="Texture2D" uid="uid://c8qj1nsfx78og" path="res://assets/Sprites/Panels/PanelLevelFive.png" id="15_yyov1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm6wf"]
+texture = ExtResource("13_xls26")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kq84p"]
+texture = ExtResource("13_n7lj8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm6wf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8303357, 0.83033496, 0.83033514, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jka5"]
+texture = ExtResource("14_yyov1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiucm"]
+texture = ExtResource("14_n7lj8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h80m3"]
+texture = ExtResource("15_yyov1")
+
+[node name="LevelSelect" type="Control" unique_id=688171917 node_paths=PackedStringArray("LevelTabNodes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4juup")
+LevelTabNodes = [null, null, null, null, null, null]
+LeftTabPos = Vector2(453, 23)
+CenterTabPos = Vector2(441, 124)
+RightTabPos = Vector2(453, 255)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_horizontal_guides_ = [180.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1917904677]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=827527042]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2thln")
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=738687583]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.37254903, 0.5882353, 1, 1)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1198500981]
+stream = ExtResource("10_q0e6x")
+volume_db = -0.7
+autoplay = true
+bus = &"Music"
+
+[node name="UISelect" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=744318662]
+stream = ExtResource("11_q0e6x")
+bus = &"SFX"
+
+[node name="DotsTop" type="Panel" parent="CanvasLayer" unique_id=788867596]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 246.28601
+offset_top = -85.0
+offset_right = -262.081
+offset_bottom = -215.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wm6wf")
+
+[node name="DotsBottom" type="Panel" parent="CanvasLayer" unique_id=361702351]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 246.0
+offset_top = 145.0
+offset_right = -262.367
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wm6wf")
+
+[node name="BlackHalfway" type="ColorRect" parent="CanvasLayer" unique_id=656031747]
+offset_left = -5.0
+offset_top = -11.0
+offset_right = 255.0
+offset_bottom = 366.0
+color = Color(0, 0, 0, 1)
+
+[node name="EscapeButton" type="TextureButton" parent="CanvasLayer" unique_id=1779817052]
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 0.133
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.3199921
+offset_bottom = 1.1199989
+texture_normal = ExtResource("7_01bmn")
+texture_pressed = ExtResource("8_fn61j")
+texture_hover = ExtResource("8_fn61j")
+texture_focused = ExtResource("9_jwpom")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="RichTextLabel" parent="CanvasLayer/EscapeButton" unique_id=1276882269]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 117.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 27
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Leaderboard" type="Control" parent="CanvasLayer" unique_id=1139752399]
+layout_mode = 3
+anchor_bottom = 0.14166667
+offset_left = 50.0
+offset_top = 195.0
+offset_right = 226.0
+offset_bottom = 274.0
+script = ExtResource("9_12wjj")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Leaderboard" unique_id=1688183498]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.09375
+anchor_top = 0.042307694
+anchor_right = 1.09375
+anchor_bottom = 1.2038461
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=398750756]
+layout_mode = 2
+theme = ExtResource("9_rnpe2")
+text = "Personal Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PLeaderBoard1" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1322787989]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+text = "1: "
+horizontal_alignment = 1
+
+[node name="PLeaderBoard2" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1439498760]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+text = "2: "
+horizontal_alignment = 1
+
+[node name="PLeaderBoard3" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1587277367]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+text = "3: "
+horizontal_alignment = 1
+
+[node name="BlankSpace" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=879270653]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+horizontal_alignment = 1
+
+[node name="BlankSpace2" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=635447338]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=1109610766]
+visible = false
+layout_mode = 2
+theme = ExtResource("9_rnpe2")
+text = "Global Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PersonalLeaderBoardTimes2" type="RichTextLabel" parent="CanvasLayer/Leaderboard/VBoxContainer" unique_id=318987619]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_rnpe2")
+text = "1: ${Username} - 00:00:00
+2:
+3:"
+
+[node name="LevelPreview" type="Control" parent="CanvasLayer" unique_id=909651246 node_paths=PackedStringArray("panels")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 46.0
+offset_top = 75.0
+offset_right = 230.0
+offset_bottom = 187.0
+script = ExtResource("10_0ptye")
+panels = [NodePath("PanelTutorial"), NodePath("PanelLevelOne"), NodePath("PanelLevelTwo"), NodePath("PanelLevelThree"), NodePath("PanelLevelFour"), NodePath("PanelLevelFive")]
+
+[node name="PanelTutorial" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1552768493]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kq84p")
+
+[node name="PanelLevelOne" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1369193070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+
+[node name="PanelLevelTwo" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1757683030]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2jka5")
+
+[node name="PanelLevelThree" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1154213259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_aiucm")
+
+[node name="PanelLevelFour" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=517705557]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+
+[node name="PanelLevelFive" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=605665213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h80m3")
+
+[node name="PanelLevelSix" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1091683252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+
+[node name="CarouselContainer" type="Control" parent="CanvasLayer" unique_id=52605381 node_paths=PackedStringArray("position_offset_node", "level_size")]
+physics_interpolation_mode = 0
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("14_wm6wf")
+spacing = 35.0
+scale_min = 0.1
+current_index = 1
+follow_button_focus = true
+carousel_center_y = 175.0
+position_offset_node = NodePath("Control")
+level_size = [NodePath("Control/Tutorial"), NodePath("Control/LevelOne"), NodePath("Control/LevelTwo"), NodePath("Control/LevelThree"), NodePath("Control/LevelFour"), NodePath("Control/LevelFive")]
+metadata/_custom_type_script = "uid://bqpq8wvmvaw75"
+
+[node name="Control" type="Control" parent="CanvasLayer/CarouselContainer" unique_id=1573519038]
+anchors_preset = 0
+offset_left = 330.0
+offset_top = 134.99997
+offset_right = 450.0
+offset_bottom = 254.99811
+
+[node name="Tutorial" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=1367603335]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.3770001
+anchor_top = -0.31
+anchor_right = -0.66200006
+anchor_bottom = 0.55700004
+offset_left = 132.24
+offset_top = -77.80042
+offset_right = 112.44001
+offset_bottom = -101.83897
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+pivot_offset = Vector2(441, 39.999977)
+focus_neighbor_left = NodePath("../../../EscapeButton")
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/Tutorial" unique_id=546320606]
+texture_filter = 1
+layout_mode = 1
+offset_right = 132.0
+offset_bottom = 160.03331
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 22
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelOne" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=1582396663]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68856245
+anchor_top = 0.3441111
+anchor_right = 0.8385626
+anchor_bottom = 0.6111111
+offset_left = -115.627495
+offset_top = -41.292694
+offset_right = -67.62751
+offset_bottom = 6.6678696
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(441, 39.999992)
+focus_neighbor_left = NodePath("../../../EscapeButton")
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelOne" unique_id=1333442570]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.104
+anchor_right = 0.937
+anchor_bottom = 0.885
+offset_left = -4.091997
+offset_top = -8.347515
+offset_right = 70.15799
+offset_bottom = 89.14126
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+One"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelTwo" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=915854779]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 30.040932
+offset_right = -69.95249
+offset_bottom = 78.00102
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+pivot_offset = Vector2(441, 39.999847)
+focus_neighbor_left = NodePath("../../../EscapeButton")
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelTwo" unique_id=180273709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 64.000015
+offset_bottom = 77.83322
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThree" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=1171022356]
+modulate = Color(1, 1, 1, 0.29796767)
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 145.0404
+offset_right = -69.95249
+offset_bottom = 193.00044
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0036497, 1.0036497)
+pivot_offset = Vector2(441, 39.999847)
+focus_neighbor_left = NodePath("../../../EscapeButton")
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelThree" unique_id=1122395862]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 64.000015
+offset_bottom = 77.83322
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Three"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelFour" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=430603293]
+modulate = Color(1, 1, 1, 0)
+z_index = -3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.952484
+offset_top = 259.99536
+offset_right = -69.95251
+offset_bottom = 307.94055
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(441, 39.99254)
+focus_neighbor_left = NodePath("../../../EscapeButton")
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelFour" unique_id=1367135200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 66.0
+offset_bottom = 80.01904
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Four"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelFive" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=2110363257]
+modulate = Color(1, 1, 1, 0)
+z_index = -4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 374.9803
+offset_right = -69.95249
+offset_bottom = 422.92554
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(441, 39.992325)
+focus_neighbor_left = NodePath("../../../EscapeButton")
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelFive" unique_id=1467272128]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 67.20026
+offset_bottom = 79.98047
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Five"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelOne" to="." method="_on_level_one_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelTwo" to="." method="_on_level_two_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelThree" to="." method="_on_level_three_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelFour" to="." method="_on_level_four_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelFive" to="." method="_on_level_five_pressed"]

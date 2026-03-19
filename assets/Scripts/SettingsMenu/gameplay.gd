@@ -6,10 +6,10 @@ class_name GamePlaySettings extends Control
 # Nodes for Delete Save
 @onready var cancel: Button = $"../../RealDeletePanel/DeleteSavePanel/HBoxContainer/Cancel"
 @onready var delete: Button = $"../../RealDeletePanel/DeleteSavePanel/HBoxContainer/Delete"
-@onready var delete_save_button: Button = $VBoxContainer/DeleteSaveHoriz/DeleteSaveButton
 @onready var gameplay_settings_text: VBoxContainer = $GameplaySettingsText
 @onready var real_delete_panel: Panel = $"../../RealDeletePanel"
 @onready var settings_menu: SettingsMenu = $"../../.."
+@onready var delete_save_button: Button = $GameplaySettingsText/DeleteSaveHoriz/DeleteSaveButton
 
 @onready var hard_mode_toggle: CheckButton = $GameplaySettingsText/HardModeHoriz/HardModeToggle
 
