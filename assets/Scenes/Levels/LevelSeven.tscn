@@ -940,34 +940,6 @@ and ▲ / W to jump"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=816216940]
-offset_left = 509.0
-offset_top = -168.0
-offset_right = 1254.0
-offset_bottom = 70.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/normal_font = ExtResource("11_2fihf")
-theme_override_font_sizes/normal_font_size = 59
-text = "Your Character will always bounce 
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1647790741]
-offset_left = 1561.0
-offset_top = -342.0
-offset_right = 2306.0
-offset_bottom = -104.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 8
-theme_override_constants/outline_size = 15
-theme_override_fonts/normal_font = ExtResource("11_2fihf")
-theme_override_font_sizes/normal_font_size = 52
-text = "Try to avoid falling down"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="RichTextLabel5" type="RichTextLabel" parent="." unique_id=788792518]
 offset_left = 9238.0
 offset_top = 263.0
@@ -980,7 +952,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EndPortal2" parent="." unique_id=941390451 groups=["Exits"] instance=ExtResource("12_k7qvc")]
-position = Vector2(12307, -473)
+position = Vector2(18000, -473)
 
 [node name="EndPortal3" parent="." unique_id=1105758538 groups=["Exits"] instance=ExtResource("12_k7qvc")]
 position = Vector2(12207, 1371)

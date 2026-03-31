@@ -168,8 +168,6 @@ func easy_mode_process(delta: float) -> void:
 		else:
 			animated_sprite.play("fall")
 	
-	print("EASY MODE")
-	
 	if Input.is_action_just_pressed("down") and is_on_floor():
 		position.y += 1
 		
