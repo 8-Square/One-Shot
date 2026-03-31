@@ -26,9 +26,6 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm6wf"]
 texture = ExtResource("13_xls26")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kq84p"]
-texture = ExtResource("13_n7lj8")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm6wf"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 3
@@ -45,6 +42,9 @@ texture = ExtResource("14_n7lj8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h80m3"]
 texture = ExtResource("15_yyov1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kq84p"]
+texture = ExtResource("13_n7lj8")
 
 [node name="LevelSelect" type="Control" unique_id=688171917 node_paths=PackedStringArray("LevelTabNodes")]
 layout_mode = 3
@@ -236,18 +236,12 @@ offset_top = 75.0
 offset_right = 230.0
 offset_bottom = 187.0
 script = ExtResource("10_0ptye")
-panels = [NodePath("PanelTutorial"), NodePath("PanelLevelOne"), NodePath("PanelLevelTwo"), NodePath("PanelLevelThree"), NodePath("PanelLevelFour"), NodePath("PanelLevelFive")]
+panels = [NodePath("PanelTutorial"), NodePath("PanelLevelOne"), NodePath("PanelLevelTwo"), NodePath("PanelLevelThree"), NodePath("PanelLevelFour"), NodePath("PanelLevelFive"), NodePath("PanelLevelSix"), NodePath("PanelLevelSeven")]
 
-[node name="PanelTutorial" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1552768493]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -12.0
-offset_right = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_kq84p")
+[node name="PanelTutorial" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=297240209]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="PanelLevelOne" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1369193070]
 layout_mode = 1
@@ -315,6 +309,28 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
 
+[node name="PanelLevelSeven" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=1552768493]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kq84p")
+
+[node name="WhiteBorder" type="Panel" parent="CanvasLayer/LevelPreview" unique_id=920981830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wm6wf")
+
 [node name="CarouselContainer" type="Control" parent="CanvasLayer" unique_id=52605381 node_paths=PackedStringArray("position_offset_node", "level_size")]
 physics_interpolation_mode = 0
 z_index = 2
@@ -333,7 +349,7 @@ current_index = 1
 follow_button_focus = true
 carousel_center_y = 175.0
 position_offset_node = NodePath("Control")
-level_size = [NodePath("Control/Tutorial"), NodePath("Control/LevelOne"), NodePath("Control/LevelTwo"), NodePath("Control/LevelThree"), NodePath("Control/LevelFour"), NodePath("Control/LevelFive")]
+level_size = [NodePath("Control/Tutorial"), NodePath("Control/LevelOne"), NodePath("Control/LevelTwo"), NodePath("Control/LevelThree"), NodePath("Control/LevelFour"), NodePath("Control/LevelFive"), NodePath("Control/LevelSix"), NodePath("Control/LevelSeven")]
 metadata/_custom_type_script = "uid://bqpq8wvmvaw75"
 
 [node name="Control" type="Control" parent="CanvasLayer/CarouselContainer" unique_id=1573519038]
@@ -604,6 +620,98 @@ theme_override_fonts/normal_font = ExtResource("6_aly6l")
 theme_override_font_sizes/normal_font_size = 25
 text = "Level
 Five"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelSix" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=415524838]
+modulate = Color(1, 1, 1, 0)
+z_index = -4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 374.9803
+offset_right = -69.95249
+offset_bottom = 422.92554
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(441, 39.992325)
+focus_neighbor_left = NodePath("../../../EscapeButton")
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelSix" unique_id=751638940]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 67.20026
+offset_bottom = 79.98047
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Six"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelSeven" type="TextureButton" parent="CanvasLayer/CarouselContainer/Control" unique_id=1480172891]
+modulate = Color(1, 1, 1, 0)
+z_index = -4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7079375
+anchor_top = 0.70799994
+anchor_right = 0.85793746
+anchor_bottom = 0.975
+offset_left = -117.9525
+offset_top = 374.9803
+offset_right = -69.95249
+offset_bottom = 422.92554
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(441, 39.992325)
+focus_neighbor_left = NodePath("../../../EscapeButton")
+mouse_filter = 2
+texture_normal = ExtResource("2_pq36x")
+texture_pressed = ExtResource("3_b8dml")
+texture_hover = ExtResource("4_hyy3w")
+texture_disabled = ExtResource("5_aly6l")
+texture_focused = ExtResource("5_tgpxl")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/CarouselContainer/Control/LevelSeven" unique_id=1387509201]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 67.20026
+offset_bottom = 79.98047
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_aly6l")
+theme_override_font_sizes/normal_font_size = 25
+text = "Level
+Seven"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

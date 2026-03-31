@@ -42,28 +42,34 @@ const default_hard_mode: bool = false
 	"level_three": false, 
 	"level_four": false, 
 	"level_five": false, 
+	"level_six": false, 
+	"level_seven": false, 
 }
 
 # LEVEL TIMES
 @export var leaderboard_level_times: Dictionary = {
+	# 0 Being Tutorial
 	0: [9999999, 9999999, 9999999],
 	1: [9999999, 9999999, 9999999],
 	2: [9999999, 9999999, 9999999],
 	3: [9999999, 9999999, 9999999],
 	4: [9999999, 9999999, 9999999],
 	5: [9999999, 9999999, 9999999],
-	6: [9999999, 9999999, 9999999]
+	6: [9999999, 9999999, 9999999],
+	7: [9999999, 9999999, 9999999]
 }
 
 @export var hard_mode: bool = false
 @export var hard_mode_leaderboard_level_times: Dictionary = {
+	# 0 Being Tutorial
 	0: [9999999, 9999999, 9999999],
 	1: [9999999, 9999999, 9999999],
 	2: [9999999, 9999999, 9999999],
 	3: [9999999, 9999999, 9999999],
 	4: [9999999, 9999999, 9999999],
 	5: [9999999, 9999999, 9999999],
-	6: [9999999, 9999999, 9999999]
+	6: [9999999, 9999999, 9999999],
+	7: [9999999, 9999999, 9999999]
 }
 
 

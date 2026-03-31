@@ -1031,6 +1031,9 @@ position = Vector2(343, 286)
 script = ExtResource("1_5ul2i")
 level_start_pos = NodePath("../PlayerStart")
 
+[node name="Camera2D" parent="Player" index="2" unique_id=1033930520]
+zoom = Vector2(0.4, 0.4)
+
 [node name="HiddenArea" type="TileMapLayer" parent="." unique_id=845599060]
 z_index = 7
 position = Vector2(116, -343)
@@ -1309,6 +1312,7 @@ position = Vector2(3186.06, 1593.41)
 scale = Vector2(0.0728578, 0.0679004)
 texture = ExtResource("25_kjjyr")
 
+[editable path="Player"]
 [editable path="HiddenArea/FadeArea"]
 [editable path="TileMapLayer/DangerZone"]
 [editable path="EndPortal"]
