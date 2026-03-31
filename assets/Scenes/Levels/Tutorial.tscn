@@ -725,13 +725,9 @@ z_index = -2
 position = Vector2(0, -72)
 
 [node name="Player" parent="." unique_id=775813060 node_paths=PackedStringArray("level_start_pos") instance=ExtResource("2_8cnc2")]
-visible = false
 position = Vector2(223, 34)
 script = ExtResource("3_yndxw")
 level_start_pos = NodePath("../PlayerStart")
-
-[node name="Camera2D" parent="Player" index="2" unique_id=1033930520]
-zoom = Vector2(0.45, 0.45)
 
 [node name="Platforms" type="TileMapLayer" parent="." unique_id=700341480]
 z_index = 3

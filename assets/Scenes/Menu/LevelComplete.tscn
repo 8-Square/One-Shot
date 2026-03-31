@@ -313,6 +313,44 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_8fffl")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
+text = "Congrats! Level Five Complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LSixComplete" type="RichTextLabel" parent="." unique_id=480407875 groups=["complete_label"]]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "Level Six Complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LSevenComplete" type="RichTextLabel" parent="." unique_id=2101535853 groups=["complete_label"]]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_8fffl")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
 text = "Congrats You Beat the game!"
 horizontal_alignment = 1
 vertical_alignment = 1

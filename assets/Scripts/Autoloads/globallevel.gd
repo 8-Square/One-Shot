@@ -7,6 +7,8 @@ var completed_2 := false
 var completed_3 := false
 var completed_4 := false
 var completed_5 := false
+var completed_6 := false
+var completed_7 := false
 
 
 func is_completed(level_no: int): 
@@ -29,3 +31,9 @@ func is_completed(level_no: int):
 		5:
 			completed_5 = true
 			print("LEVEL 5 COMPLETD")
+		6:
+			completed_6 = true
+			print("LEVEL 6 COMPLETD")
+		7:
+			completed_7 = true
+			print("LEVEL 7 COMPLETD")

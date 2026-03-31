@@ -37,7 +37,7 @@ func _on_delete_save_cancel_pressed() -> void:
 
 func _on_delete_pressed() -> void:
 	print("Delete Button Pressed")
-	save_pref.delete_save()
+	save_pref = save_pref.delete_save()
 	settings_menu.reload()
 	real_delete_panel.hide()
 	gameplay_settings_text.show()

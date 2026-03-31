@@ -64,11 +64,25 @@ func level_complete(path, final_time: float):
 			finish_animation(true, level_number, true)
 			finish_level(level_number, final_time)
 			
-
+	
 		"res://assets/Scenes/Levels/LevelFour.tscn_dumb":
 			
 			%DumbComplete.show()
 			finish_animation(false, null, false)
+	
+# SECOND MILKYWAY EXPANSION
+		"res://assets/Scenes/Levels/LevelSix.tscn":
+			level_number = 6
+			%LSixComplete.show()
+			finish_animation(true, level_number, true)
+			finish_level(level_number, final_time)
+			
+		"res://assets/Scenes/Levels/LevelSeven.tscn":
+			level_number = 7
+			%LSevenComplete.show()
+			finish_animation(true, level_number, true)
+			finish_level(level_number, final_time)
+
 
 
 func finish_animation(progress: bool, level_no, real_audio: bool):
@@ -94,7 +108,7 @@ func finish_animation(progress: bool, level_no, real_audio: bool):
 		save_pref.completing_level(level_no)
 		
 		# Specifically for final level (dont allow a next button)
-		if level_no == 5:
+		if level_no == 7:
 			$HBoxContainer/NextLevelContainer.hide()
 			%GameComplete.show()
 		else: 
@@ -135,6 +149,14 @@ func _on_next_level_pressed() -> void:
 			%AnimationPlayer.play_backwards("finish_level")
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
 
+# SECOND MILKYWAY EXPANSION
+		"res://assets/Scenes/Levels/LevelFive.tscn":
+			%AnimationPlayer.play_backwards("finish_level")
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelsix)
+		"res://assets/Scenes/Levels/LevelSix.tscn":
+			%AnimationPlayer.play_backwards("finish_level")
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelseven)
+
 func _on_restart_pressed() -> void:
 	$UISelect.play()
 	get_tree().create_timer(0.1)
@@ -154,7 +176,11 @@ func _on_restart_pressed() -> void:
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
 		"res://assets/Scenes/Levels/LevelFive.tscn":
 			to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
-
+# SECOND MILKYWAY EXPANSION
+		"res://assets/Scenes/Levels/LevelSix.tscn":
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelsix)
+		"res://assets/Scenes/Levels/LevelSeven.tscn":
+			to_tutorial_transition.change_scene(to_tutorial_transition.levelseven)
 func _on_quit_pressed() -> void:
 	$UISelect.play()
 	%AnimationPlayer.play_backwards("finish_level")

@@ -723,3 +723,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelThree" to="." method="_on_level_three_pressed"]
 [connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelFour" to="." method="_on_level_four_pressed"]
 [connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelFive" to="." method="_on_level_five_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelSix" to="." method="_on_level_six_pressed"]
+[connection signal="pressed" from="CanvasLayer/CarouselContainer/Control/LevelSeven" to="." method="_on_level_seven_pressed"]

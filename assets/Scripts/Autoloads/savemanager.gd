@@ -19,6 +19,8 @@ const default_comp_tutorial: bool = false
 const default_hard_mode: bool = false
 
 # REGULAR ONES
+@export var save_version: int = 1
+
 # Music Settings
 @export_range(0, 1, 0.05) var master_audio_level: float = 1.0
 @export_range(0, 1, 0.05) var music_audio_level: float = 1.0
@@ -56,7 +58,8 @@ const default_hard_mode: bool = false
 	4: [9999999, 9999999, 9999999],
 	5: [9999999, 9999999, 9999999],
 	6: [9999999, 9999999, 9999999],
-	7: [9999999, 9999999, 9999999]
+	7: [9999999, 9999999, 9999999],
+	8: [9999999, 9999999, 9999999]
 }
 
 @export var hard_mode: bool = false
@@ -69,54 +72,59 @@ const default_hard_mode: bool = false
 	4: [9999999, 9999999, 9999999],
 	5: [9999999, 9999999, 9999999],
 	6: [9999999, 9999999, 9999999],
-	7: [9999999, 9999999, 9999999]
+	7: [9999999, 9999999, 9999999],
+	8: [9999999, 9999999, 9999999]
 }
 
 
 
-func save() -> void:
+func save() -> SaveManager:
 	ResourceSaver.save(self, "user://save_manager.tres")
-	
+	return self
+
 
 static func load_or_create() -> SaveManager:
 	var res: SaveManager = load("user://save_manager.tres") as SaveManager
 	if !res:
 		res = SaveManager.new()
 		res.save()
+	if res.save_version > 2:
+		res.save_version = 2
 	return res
 
 
-func delete_save() -> void: 
+func delete_save() -> SaveManager: 
 	print("DELETING SAVE")
-	# wipe level saves 
-	for levels in levels_completed:
-		levels_completed[levels] = false
-	
-	# Wipe regular leaderboard 
-	for times in leaderboard_level_times:
-		for i in range(leaderboard_level_times[times].size()):
-			leaderboard_level_times[times][i] = 9999999
-	
-	# Wipe Hard Mode leaderboard 
-	for times in hard_mode_leaderboard_level_times:
-		for i in range(hard_mode_leaderboard_level_times[times].size()):
-			hard_mode_leaderboard_level_times[times][i] = 9999999
-	
-	# Resets to default values
-	master_audio_level = default_master_audio_level
-	music_audio_level = default_music_audio_level
-	sfx_audio_level = default_sfx_audio_level
-	window_mode = default_window_mode
-	window_resolution = default_window_resolution
-	max_fps = default_max_fps
-	vsync = default_vsync
-	comp_tutorial = default_comp_tutorial
-	next_time_comp_tutorial = default_comp_tutorial
-	
-	hard_mode = default_hard_mode
-	
-	save()
-
+	var fresh_save = SaveManager.new()
+	ResourceSaver.save(fresh_save, "user://save_manager.tres")
+	return fresh_save
+	## wipe level saves 
+	#for levels in levels_completed:
+		#levels_completed[levels] = false
+	#
+	## Wipe regular leaderboard 
+	#for times in leaderboard_level_times:
+		#for i in range(leaderboard_level_times[times].size()):
+			#leaderboard_level_times[times][i] = 9999999
+	#
+	## Wipe Hard Mode leaderboard 
+	#for times in hard_mode_leaderboard_level_times:
+		#for i in range(hard_mode_leaderboard_level_times[times].size()):
+			#hard_mode_leaderboard_level_times[times][i] = 9999999
+	#
+	## Resets to default values
+	#master_audio_level = default_master_audio_level
+	#music_audio_level = default_music_audio_level
+	#sfx_audio_level = default_sfx_audio_level
+	#window_mode = default_window_mode
+	#window_resolution = default_window_resolution
+	#max_fps = default_max_fps
+	#vsync = default_vsync
+	#comp_tutorial = default_comp_tutorial
+	#next_time_comp_tutorial = default_comp_tutorial
+	#
+	#hard_mode = default_hard_mode
+	#
 #func reload():
 	
 
@@ -134,12 +142,13 @@ func completing_level(level_no):
 			levels_completed["level_four"] = true
 		5:
 			levels_completed["level_five"] = true
-		#6:
-			#levels_completed["level_five"] = true
-
+		6:
+			levels_completed["level_six"] = true
+		7:
+			levels_completed["level_seven"] = true
 # Leaderboard Time
 func level_final_time(level_no, final_time):
-		var level_time = leaderboard_level_times[level_no]
+		var level_time = leaderboard_level_times[int(level_no)]
 		# NOT TOO SURE WHICH METHOD I PREFER MORE
 		#if !(final_time < level_time[2]):
 			#if !(final_time < level_time[1]):
@@ -172,7 +181,7 @@ func level_final_time(level_no, final_time):
 
 # Hard Leaderboard Time
 func hard_level_final_time(level_no, final_time):
-		var level_time = hard_mode_leaderboard_level_times[level_no]
+		var level_time = hard_mode_leaderboard_level_times[int(level_no)]
 
 		# ILL USE THIS ONE FOR NOW 
 		if final_time < level_time[0]:
@@ -205,6 +214,10 @@ func has_previous_level_completed(level_no) -> bool:
 			check_level = "level_four"
 		5:
 			check_level = "level_five"
+		6:
+			check_level = "level_six"
+		7:
+			check_level = "level_seven"
 	
 	# Check if check_level is valid and is in the Dictionary 
 	if levels_completed.has(check_level):

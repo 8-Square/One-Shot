@@ -6,6 +6,8 @@ class_name LevelSelectMenu extends Control
 @onready var level_three: TextureButton = $CanvasLayer/CarouselContainer/Control/LevelThree
 @onready var level_four: TextureButton = $CanvasLayer/CarouselContainer/Control/LevelFour
 @onready var level_five: TextureButton = $CanvasLayer/CarouselContainer/Control/LevelFive
+@onready var level_six: TextureButton = $CanvasLayer/CarouselContainer/Control/LevelSix
+@onready var level_seven: TextureButton = $CanvasLayer/CarouselContainer/Control/LevelSeven
 
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
@@ -54,7 +56,8 @@ func _ready() -> void:
 	level_three.disabled = !save_pref.has_previous_level_completed(2)
 	level_four.disabled = !save_pref.has_previous_level_completed(3)
 	level_five.disabled = !save_pref.has_previous_level_completed(4)
-#
+	level_six.disabled = !save_pref.has_previous_level_completed(5)
+	level_seven.disabled = !save_pref.has_previous_level_completed(6)
 
 func _on_escape_button_pressed() -> void:
 	ui_select.play()
@@ -122,6 +125,7 @@ func _on_level_one_pressed() -> void:
 	ui_select.play()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelone)
+	print(save_pref.leaderboard_level_times.keys())
 
 
 func _on_level_two_pressed() -> void:
@@ -146,3 +150,14 @@ func _on_level_five_pressed() -> void:
 	ui_select.play()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
+
+
+func _on_level_six_pressed() -> void:
+	ui_select.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.levelsix)
+
+func _on_level_seven_pressed() -> void:
+	ui_select.play()
+	get_tree().create_timer(0.3)
+	to_tutorial_transition.change_scene(to_tutorial_transition.levelseven)

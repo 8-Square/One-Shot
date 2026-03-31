@@ -12,6 +12,8 @@ const leveltwo = ("res://assets/Scenes/Levels/LevelTwo.tscn")
 const levelthree = ("res://assets/Scenes/Levels/LevelThree.tscn")
 const levelfour = ("res://assets/Scenes/Levels/LevelFour.tscn")
 const levelfive = ("res://assets/Scenes/Levels/LevelFive.tscn")
+const levelsix = ("res://assets/Scenes/Levels/LevelSix.tscn")
+const levelseven = ("res://assets/Scenes/Levels/LevelSeven.tscn")
 
 func _ready() -> void:
 	%MainMenuLabel.add_to_group("labels")
@@ -26,6 +28,8 @@ func _ready() -> void:
 	%LevelThreeLabel.add_to_group("labels")
 	%LevelFourLabel.add_to_group("labels")
 	%LevelFiveLabel.add_to_group("labels")
+	%LevelSixLabel.add_to_group("labels")
+	%LevelSevenLabel.add_to_group("labels")
 
 
 func hide_all_labels():
@@ -67,6 +71,10 @@ func change_scene(scene_path):
 			change_scene_anim(levelfour, true, true, %LevelFourLabel)
 		levelfive:
 			change_scene_anim(levelfive, true, true, %LevelFiveLabel)
+		levelsix:
+			change_scene_anim(levelsix, true, true, %LevelSixLabel)
+		levelseven:
+			change_scene_anim(levelseven, true, true, %LevelSevenLabel)
 		
 		settings:
 			change_scene_anim(settings, false, false, %SettingsLabel)

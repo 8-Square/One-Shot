@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl706iulfl48t"]
+[gd_scene format=3 uid="uid://bl706iulfl48t"]
 
 [ext_resource type="Script" uid="uid://ddic66spf5113" path="res://assets/Scripts/Screens/level_transitions.gd" id="1_nt8j3"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_b43cl"]
@@ -73,10 +73,10 @@ _data = {
 &"finish_tutorial": SubResource("Animation_eefqx")
 }
 
-[node name="TutorialChangeScene" type="CanvasLayer"]
+[node name="TutorialChangeScene" type="CanvasLayer" unique_id=782555537]
 script = ExtResource("1_nt8j3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1978908685]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -85,13 +85,11 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=571528424]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_b43cl")
-}
+libraries/ = SubResource("AnimationLibrary_b43cl")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1883405379]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -102,10 +100,10 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1015906961]
 layout_mode = 2
 
-[node name="MainMenuLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="MainMenuLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=751018729]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -118,7 +116,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="SettingsLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1152835170]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -131,7 +129,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CreditsLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="CreditsLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=675974309]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -144,7 +142,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SkinLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="SkinLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=818174236]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -157,7 +155,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelOneLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="LevelOneLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1460531530]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -170,7 +168,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelTwoLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="LevelTwoLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=715582715]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -183,7 +181,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelThreeLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="LevelThreeLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1344503372]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -196,7 +194,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelFourLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="LevelFourLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=606810662]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -209,7 +207,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelFiveLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="LevelFiveLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1330002512]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -222,7 +220,33 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelSelect" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="LevelSixLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1880979150]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_b43cl")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center] Level Six [/center]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSevenLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1529264318]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_b43cl")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center] Level Seven [/center]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSelect" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=632974772]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -235,7 +259,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TutorialLable" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="TutorialLable" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=363502335]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
