@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdhw1e42c3vp3"
-path="res://.godot/imported/PanelLevelTutorial.png-73942cbf092c8138790d680ca4e6085a.ctex"
+uid="uid://cvb2ul5w6x6wm"
+path="res://.godot/imported/PanelLevelSix.png-aa37412606775ddab85138d860ba7cac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/Panels/PanelLevelTutorial.png"
-dest_files=["res://.godot/imported/PanelLevelTutorial.png-73942cbf092c8138790d680ca4e6085a.ctex"]
+source_file="res://assets/Sprites/Panels/PanelLevelSix.png"
+dest_files=["res://.godot/imported/PanelLevelSix.png-aa37412606775ddab85138d860ba7cac.ctex"]
 
 [params]
 

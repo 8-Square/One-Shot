@@ -97,34 +97,34 @@ func delete_save() -> SaveManager:
 	print("DELETING SAVE")
 	var fresh_save = SaveManager.new()
 	ResourceSaver.save(fresh_save, "user://save_manager.tres")
+	# wipe level saves 
+	for levels in levels_completed:
+		levels_completed[levels] = false
+	
+	# Wipe regular leaderboard 
+	for times in leaderboard_level_times:
+		for i in range(leaderboard_level_times[times].size()):
+			leaderboard_level_times[times][i] = 9999999
+	
+	# Wipe Hard Mode leaderboard 
+	for times in hard_mode_leaderboard_level_times:
+		for i in range(hard_mode_leaderboard_level_times[times].size()):
+			hard_mode_leaderboard_level_times[times][i] = 9999999
+	
+	# Resets to default values
+	master_audio_level = default_master_audio_level
+	music_audio_level = default_music_audio_level
+	sfx_audio_level = default_sfx_audio_level
+	window_mode = default_window_mode
+	window_resolution = default_window_resolution
+	max_fps = default_max_fps
+	vsync = default_vsync
+	comp_tutorial = default_comp_tutorial
+	next_time_comp_tutorial = default_comp_tutorial
+	
+	hard_mode = default_hard_mode
+	save()
 	return fresh_save
-	## wipe level saves 
-	#for levels in levels_completed:
-		#levels_completed[levels] = false
-	#
-	## Wipe regular leaderboard 
-	#for times in leaderboard_level_times:
-		#for i in range(leaderboard_level_times[times].size()):
-			#leaderboard_level_times[times][i] = 9999999
-	#
-	## Wipe Hard Mode leaderboard 
-	#for times in hard_mode_leaderboard_level_times:
-		#for i in range(hard_mode_leaderboard_level_times[times].size()):
-			#hard_mode_leaderboard_level_times[times][i] = 9999999
-	#
-	## Resets to default values
-	#master_audio_level = default_master_audio_level
-	#music_audio_level = default_music_audio_level
-	#sfx_audio_level = default_sfx_audio_level
-	#window_mode = default_window_mode
-	#window_resolution = default_window_resolution
-	#max_fps = default_max_fps
-	#vsync = default_vsync
-	#comp_tutorial = default_comp_tutorial
-	#next_time_comp_tutorial = default_comp_tutorial
-	#
-	#hard_mode = default_hard_mode
-	#
 #func reload():
 	
 

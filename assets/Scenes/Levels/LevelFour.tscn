@@ -168,9 +168,6 @@ size = Vector2(637, 150)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb7uh"]
 size = Vector2(969.643, 28.2857)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_btn0w"]
-size = Vector2(894.5719, 25.857113)
-
 [node name="LevelFour" type="Node2D" unique_id=1049036329]
 script = ExtResource("1_ggdr6")
 level_no = 4
@@ -178,7 +175,7 @@ level_no = 4
 [node name="ParallaxDesertBBackground" parent="." unique_id=273566670 instance=ExtResource("23_02l4a")]
 z_index = -1
 position = Vector2(-89, -317)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 
 [node name="Player" parent="." unique_id=499245279 node_paths=PackedStringArray("level_start_pos") instance=ExtResource("1_bjegn")]
 position = Vector2(-723, 141)
@@ -280,11 +277,6 @@ shape = SubResource("RectangleShape2D_jb7uh")
 position = Vector2(-3125.4287, 369.7143)
 shape = SubResource("RectangleShape2D_jb7uh")
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Level/DangerZone" unique_id=1654687347]
-position = Vector2(-3088.9993, -96.92855)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_btn0w")
-
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Level/DangerZone" unique_id=156065796]
 position = Vector2(-4047.1428, 374)
 shape = SubResource("RectangleShape2D_jb7uh")
@@ -327,6 +319,7 @@ tile_set = ExtResource("4_oguxd")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=940625378]
 
 [node name="HUD" parent="CanvasLayer" unique_id=198714019 instance=ExtResource("5_wdtl3")]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1062800208 instance=ExtResource("6_ggdr6")]
 visible = false
