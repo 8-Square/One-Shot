@@ -633,7 +633,7 @@ position = Vector2(-936.2857, 132.00002)
 scale = Vector2(23.131382, -7.6611423)
 
 [node name="CollisionShape2D" parent="HiddenArea/FadeArea" index="0"]
-position = Vector2(105.92907, 11.710305)
+position = Vector2(105.92907, 11.710306)
 shape = SubResource("RectangleShape2D_4js0r")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="HiddenArea/FadeArea" unique_id=1297505351]

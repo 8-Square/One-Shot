@@ -182,9 +182,6 @@ position = Vector2(-723, 141)
 script = ExtResource("2_3mnct")
 level_start_pos = NodePath("../PlayerStart")
 
-[node name="Camera2D" parent="Player" index="2" unique_id=1033930520]
-position = Vector2(-2, 1)
-
 [node name="HiddenArea" type="TileMapLayer" parent="." unique_id=754651699]
 z_index = 7
 scale = Vector2(3.5, 3.5)
@@ -427,7 +424,6 @@ position = Vector2(-18, 38)
 [node name="AudioStreamPlayer2D" parent="EndPortal4" index="2" unique_id=2018057509]
 position = Vector2(-16, 24)
 
-[editable path="Player"]
 [editable path="HiddenArea/FadeArea"]
 [editable path="Portal"]
 [editable path="Portal2"]

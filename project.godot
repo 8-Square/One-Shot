@@ -16,10 +16,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="One Shot"
 config/description="A fast paced rage type slime platformer"
-config/version="1.2.1"
+config/version="1.3"
 run/main_scene="uid://dx327gpo6edk"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="uid://b2d8x2d2fwa1g"
+config/icon="uid://n2xdf0vvm0nb"
 run/layer_3="Danger"
 
 [audio]

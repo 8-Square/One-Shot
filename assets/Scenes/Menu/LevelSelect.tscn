@@ -16,43 +16,43 @@
 [ext_resource type="Script" uid="uid://c00j4vgropfcl" path="res://assets/Scripts/Menu/level_preview_panel.gd" id="10_0ptye"]
 [ext_resource type="AudioStream" uid="uid://bw1bklboyogp" path="res://assets/Music/Background/544416__zhr__background-music.mp3" id="10_q0e6x"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="11_q0e6x"]
-[ext_resource type="Texture2D" uid="uid://b4ypy6jwcvmvl" path="res://assets/Sprites/Panels/PanelTutorial.png" id="13_n7lj8"]
+[ext_resource type="Texture2D" uid="uid://r7k8vsj3n1g8" path="res://assets/Sprites/New Backgrounds And other Sprites/TutorialBackground.png" id="13_h80m3"]
 [ext_resource type="Texture2D" uid="uid://phxg4b8yb1li" path="res://assets/Sprites/Backgrounds/final-pixelated.png" id="13_xls26"]
-[ext_resource type="Texture2D" uid="uid://b5h2ykp2r7nvx" path="res://assets/Sprites/Panels/PanelLevelOne.png" id="14_aiucm"]
-[ext_resource type="Texture2D" uid="uid://cnfh3dc0ck5gi" path="res://assets/Sprites/Panels/PanelLevelThree.png" id="14_n7lj8"]
+[ext_resource type="Texture2D" uid="uid://bvn3lu1nmhtg0" path="res://assets/Sprites/New Backgrounds And other Sprites/LevelOneBackground.png" id="14_nv2rh"]
 [ext_resource type="Script" uid="uid://bqpq8wvmvaw75" path="res://assets/Scripts/Menu/carousel_container.gd" id="14_wm6wf"]
-[ext_resource type="Texture2D" uid="uid://bmge8tq7jn15h" path="res://assets/Sprites/Panels/PanelLevelTwo.png" id="14_yyov1"]
-[ext_resource type="Texture2D" uid="uid://c8qj1nsfx78og" path="res://assets/Sprites/Panels/PanelLevelFive.png" id="15_yyov1"]
-[ext_resource type="Texture2D" uid="uid://8cynond1x7i5" path="res://assets/Sprites/Panels/PanelLevelFour.png" id="17_h80m3"]
-[ext_resource type="Texture2D" uid="uid://cvb2ul5w6x6wm" path="res://assets/Sprites/Panels/PanelLevelSix.png" id="19_h80m3"]
-[ext_resource type="Texture2D" uid="uid://b57t4581rwe2e" path="res://assets/Sprites/Panels/PanelLevelSeven.png" id="19_nv2rh"]
+[ext_resource type="Texture2D" uid="uid://d1j81xq4s2khw" path="res://assets/Sprites/New Backgrounds And other Sprites/LevelTwoBackground.png" id="15_1o4mr"]
+[ext_resource type="Texture2D" uid="uid://c6716dmk6ib5r" path="res://assets/Sprites/New Backgrounds And other Sprites/LevelThreeBackground.png" id="16_ywdql"]
+[ext_resource type="Texture2D" uid="uid://bh83dit8wj8vh" path="res://assets/Sprites/New Backgrounds And other Sprites/LevelFourBackground.png" id="17_kdl20"]
+[ext_resource type="Texture2D" uid="uid://c2l2vok455ms0" path="res://assets/Sprites/New Backgrounds And other Sprites/LevelFiveBackground.png" id="18_duhsn"]
+[ext_resource type="Texture2D" uid="uid://drirp0ou6w20" path="res://assets/Sprites/New Backgrounds And other Sprites/LevelSixBackground.png" id="19_vgfci"]
+[ext_resource type="Texture2D" uid="uid://dglbyqvmcqnir" path="res://assets/Sprites/New Backgrounds And other Sprites/LevelSevenBackground.png" id="20_dp83k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm6wf"]
 texture = ExtResource("13_xls26")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1o4mr"]
-texture = ExtResource("13_n7lj8")
+texture = ExtResource("13_h80m3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywdql"]
-texture = ExtResource("14_aiucm")
+texture = ExtResource("14_nv2rh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jka5"]
-texture = ExtResource("14_yyov1")
+texture = ExtResource("15_1o4mr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiucm"]
-texture = ExtResource("14_n7lj8")
+texture = ExtResource("16_ywdql")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdl20"]
-texture = ExtResource("17_h80m3")
+texture = ExtResource("17_kdl20")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h80m3"]
-texture = ExtResource("15_yyov1")
+texture = ExtResource("18_duhsn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nv2rh"]
-texture = ExtResource("19_h80m3")
+texture = ExtResource("19_vgfci")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kq84p"]
-texture = ExtResource("19_nv2rh")
+texture = ExtResource("20_dp83k")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm6wf"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

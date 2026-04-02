@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dx327gpo6edk"]
 
 [ext_resource type="Script" uid="uid://7g4i0jtcisw" path="res://assets/Scripts/Menu/MainMenu/opening_screen.gd" id="1_flw0q"]
-[ext_resource type="Texture2D" uid="uid://cry4gloh32t4l" path="res://assets/Sprites/Backgrounds/Menu Backgrounds/IceBackground.png" id="2_kihcl"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="3_npb1v"]
 [ext_resource type="AudioStream" uid="uid://bukuyfnaua0g5" path="res://assets/Music/MenuScreen.mp3" id="4_ih48t"]
 [ext_resource type="AudioStream" uid="uid://cy36krehv188t" path="res://assets/Music/Controls/ButtonClick.mp3" id="5_c4hwk"]
 [ext_resource type="PackedScene" uid="uid://bjptigt865ymr" path="res://assets/Scenes/Menu/Settings.tscn" id="5_kihcl"]
+[ext_resource type="Texture2D" uid="uid://c5hhp37putffv" path="res://assets/Sprites/New Backgrounds And other Sprites/MainMenuBackground.png" id="6_kihcl"]
 [ext_resource type="AudioStream" uid="uid://c7132p6yxjo37" path="res://assets/Music/Controls/Shutdown.wav" id="6_rgqcu"]
 [ext_resource type="Texture2D" uid="uid://cy0uvvso0pe5l" path="res://assets/Sprites/Player/green_slime.png" id="7_b3pni"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="8_0g2b4"]
@@ -13,7 +13,7 @@
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="10_ht0ji"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l720x"]
-texture = ExtResource("2_kihcl")
+texture = ExtResource("6_kihcl")
 modulate_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyhcd"]

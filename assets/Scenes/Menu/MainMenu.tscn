@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://wqpplaens4my" path="res://assets/Scripts/Menu/MainMenu/main_menu.gd" id="1_u3vdq"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="2_5q0rw"]
 [ext_resource type="PackedScene" uid="uid://dy2lqglvlk144" path="res://assets/Scenes/Other/SkinBit.tscn" id="2_cpl1f"]
+[ext_resource type="Texture2D" uid="uid://c5hhp37putffv" path="res://assets/Sprites/New Backgrounds And other Sprites/MainMenuBackground.png" id="2_pfymn"]
 [ext_resource type="Texture2D" uid="uid://cjuuuwhnhd4ag" path="res://assets/Sprites/Button/blue_rectangle.png" id="2_sndc1"]
-[ext_resource type="Texture2D" uid="uid://cry4gloh32t4l" path="res://assets/Sprites/Backgrounds/Menu Backgrounds/IceBackground.png" id="2_x1qtw"]
 [ext_resource type="Texture2D" uid="uid://dypwcc62ifion" path="res://assets/Sprites/Button/green_rectangle.png" id="3_hlo52"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="4_3k2g4"]
 [ext_resource type="AudioStream" uid="uid://bukuyfnaua0g5" path="res://assets/Music/MenuScreen.mp3" id="6_3k2g4"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bjptigt865ymr" path="res://assets/Scenes/Menu/Settings.tscn" id="19_pfymn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l720x"]
-texture = ExtResource("2_x1qtw")
+texture = ExtResource("2_pfymn")
 modulate_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyhcd"]
