@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e5g7nypajit7"]
 
 [ext_resource type="Script" uid="uid://dkyubyxjllxre" path="res://assets/Scripts/Menu/credits.gd" id="1_emerl"]
+[ext_resource type="Texture2D" uid="uid://pmbtuwk7aen6" path="res://assets/Sprites/WIP SPRITES/background_1.png" id="2_n8qub"]
 [ext_resource type="FontFile" uid="uid://byhcmycotgmko" path="res://assets/Fonts/Conthrax-SemiBold.otf" id="5_ell6q"]
 [ext_resource type="FontFile" uid="uid://dj7eumrgnhdm3" path="res://assets/Fonts/MotionControl-Bold.otf" id="6_1a0rd"]
 [ext_resource type="FontFile" uid="uid://dk82jtbi03n5p" path="res://assets/Fonts/Coven-Filled.ttf" id="6_bwdso"]
@@ -32,13 +33,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.372017, 0.587277, 0.999999, 1)
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ColorRect" unique_id=154996830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n8qub")
+
 [node name="EscapeButton" type="TextureButton" parent="CanvasLayer/ColorRect" unique_id=706629221]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.187
 anchor_bottom = 0.133
-offset_right = 0.319992
-offset_bottom = 0.119999
+offset_right = 0.31999207
+offset_bottom = 0.11999893
 focus_neighbor_right = NodePath("../VBoxContainer/ScrollContainer")
 focus_neighbor_bottom = NodePath("../VBoxContainer/ScrollContainer")
 focus_next = NodePath("../VBoxContainer/ScrollContainer")
@@ -66,6 +76,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
@@ -121,6 +133,18 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_bwdso")
 theme_override_font_sizes/normal_font_size = 19
 text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text29" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=59919265]
+clip_contents = false
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_1a0rd")
+theme_override_font_sizes/normal_font_size = 17
+text = "Ice Cave By Reuben -- Level Two and Seven Background Music"
+tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -359,19 +383,6 @@ text = "^^ Expanded by 8 Square ^^"
 tab_size = 3
 horizontal_alignment = 1
 
-[node name="Text20" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1804725050]
-clip_contents = false
-custom_minimum_size = Vector2(0, 37)
-layout_mode = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("6_1a0rd")
-theme_override_font_sizes/normal_font_size = 17
-text = "Game Tiles -- Brackey's Platformer Bundle 
-https://brackeysgames.itch.io/brackeys-platformer-bundle"
-tab_size = 3
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Text21" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=567206157]
 clip_contents = false
 custom_minimum_size = Vector2(0, 20)
@@ -397,7 +408,7 @@ tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text15" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1176754090]
+[node name="Blank" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1176754090]
 visible = false
 clip_contents = false
 custom_minimum_size = Vector2(0, 25)
@@ -410,7 +421,7 @@ text = "Backgrounds"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text16" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1410079928]
+[node name="Blank2" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1410079928]
 visible = false
 clip_contents = false
 custom_minimum_size = Vector2(0, 25)

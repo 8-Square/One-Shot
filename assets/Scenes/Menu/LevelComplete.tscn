@@ -161,9 +161,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NextLevel" type="TextureButton" parent="HBoxContainer" unique_id=1492788395 groups=["container"]]
 layout_mode = 2
-focus_neighbor_right = NodePath("../TabContainer/Music/VBoxContainer/Master")
-focus_neighbor_bottom = NodePath("../TabContainer/Music/VBoxContainer/Master")
-focus_next = NodePath("../TabContainer/Music/VBoxContainer/Master")
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_right = NodePath("../Restart")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Restart")
 texture_normal = ExtResource("2_ctsdo")
 texture_hover = ExtResource("3_do2pv")
 texture_focused = ExtResource("3_do2pv")
@@ -182,9 +183,37 @@ text = "Next Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Restart" type="TextureButton" parent="HBoxContainer" unique_id=968335405 groups=["container"]]
+layout_mode = 2
+focus_neighbor_left = NodePath("../NextLevel")
+focus_neighbor_right = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../NextLevel")
+texture_normal = ExtResource("2_ctsdo")
+texture_focused = ExtResource("3_do2pv")
+
+[node name="RestartText" type="RichTextLabel" parent="HBoxContainer/Restart" unique_id=858177602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.3333
+offset_right = 1.3333
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_ls8jk")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Quit" type="TextureButton" parent="HBoxContainer" unique_id=2062276558 groups=["container"]]
 layout_mode = 2
 focus_neighbor_left = NodePath("../Restart")
+focus_neighbor_right = NodePath("../NextLevel")
+focus_next = NodePath("../NextLevel")
 focus_previous = NodePath("../Restart")
 texture_normal = ExtResource("2_ctsdo")
 texture_focused = ExtResource("3_do2pv")
@@ -203,30 +232,6 @@ theme_override_fonts/normal_font = ExtResource("4_ls8jk")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "Quit"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Restart" type="TextureButton" parent="HBoxContainer" unique_id=968335405 groups=["container"]]
-layout_mode = 2
-focus_neighbor_right = NodePath("../Quit")
-focus_next = NodePath("../Quit")
-texture_normal = ExtResource("2_ctsdo")
-texture_focused = ExtResource("3_do2pv")
-
-[node name="RestartText" type="RichTextLabel" parent="HBoxContainer/Restart" unique_id=858177602]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.3333
-offset_right = 1.3333
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("4_ls8jk")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "Restart"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -445,5 +450,5 @@ stream = ExtResource("6_do2pv")
 bus = &"SFX"
 
 [connection signal="pressed" from="HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="HBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]
