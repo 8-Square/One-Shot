@@ -65,55 +65,6 @@ func _on_escape_button_pressed() -> void:
 	canvas_layer.hide()
 	to_tutorial_transition.change_scene(to_tutorial_transition.back)
 
-#func _on_tutorial_pressed() -> void:
-	#ui_select.play()
-	#get_tree().create_timer(0.3)
-	#to_tutorial_transition.change_scene(to_tutorial_transition.tutorial)
-#func _on_level_one_pressed() -> void:
-	#ui_select.play()
-	#get_tree().create_timer(0.3)
-	#to_tutorial_transition.change_scene(to_tutorial_transition.levelone)
-#func _on_level_two_pressed() -> void:
-	#if Globallevel.completed_1 ==  false:
-		#level_two.disabled = true
-		#print("LEVEL ONE NOT COMPLETED")
-	#if Globallevel.completed_1 == true:
-		#level_2.disabled = false
-		#ui_select.play()
-		#get_tree().create_timer(0.3)
-		#to_tutorial_transition.change_scene(to_tutorial_transition.leveltwo)
-#func _on_level_three_pressed() -> void:
-	#if Globallevel.completed_2 ==  false:
-		#print("LEVEL TWO NOT COMPLETED")
-	#if Globallevel.completed_2 == true:
-		#ui_select.play()
-		#get_tree().create_timer(0.3)
-		#to_tutorial_transition.change_scene(to_tutorial_transition.levelthree)
-#func _on_level_four_pressed() -> void:
-	#if Globallevel.completed_3 ==  false:
-		##print("LEVEL THREE NOT COMPLETED")
-	##if Globallevel.completed_3 == true:
-		##ui_select.play()
-		##get_tree().create_timer(0.3)
-		##to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
-#func _on_level_five_pressed() -> void:
-	#if Globallevel.completed_4 ==  false:
-		###print("LEVEL FOUR NOT COMPLETED")
-	###if Globallevel.completed_4 == true:
-		###ui_select.play()
-		###to_tutorial_transition.change_scene(to_tutorial_transition.levelfive)
-##
-##
-###
-###func _on_next_button_pressed() -> void:
-	###ui_select.play()
-	###page_two.show()
-	###level_four.grab_focus()
-###func _on_previous_button_pressed() -> void:
-	###ui_select.play()
-	###page_two.hide()
-	###tutorial.grab_focus()
-
 
 func _on_tutorial_pressed() -> void:
 	ui_select.play()
@@ -144,7 +95,6 @@ func _on_level_four_pressed() -> void:
 	ui_select.play()
 	get_tree().create_timer(0.3)
 	to_tutorial_transition.change_scene(to_tutorial_transition.levelfour)
-
 
 func _on_level_five_pressed() -> void:
 	ui_select.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b68rjlysndu2u"]
+[gd_scene format=3 uid="uid://b68rjlysndu2u"]
 
 [ext_resource type="Texture2D" uid="uid://bqb56v46ftaku" path="res://assets/Sprites/Backgrounds/Desert Parallax/9 Background.png" id="1_wnd5r"]
 [ext_resource type="Texture2D" uid="uid://s5kaovm4ux2b" path="res://assets/Sprites/Backgrounds/Desert Parallax/Extra 9 Background.png" id="2_1vuh2"]
@@ -12,186 +12,186 @@
 [ext_resource type="Texture2D" uid="uid://cp0ydj8rnr58g" path="res://assets/Sprites/Backgrounds/Desert Parallax/1 Layer1.png" id="9_rnan8"]
 [ext_resource type="Texture2D" uid="uid://c32isjiir8xdu" path="res://assets/Sprites/Backgrounds/Desert Parallax/Extra Layer1.png" id="10_34kmm"]
 
-[node name="ParallaxDesertBBackground" type="Node2D"]
+[node name="ParallaxDesertBBackground" type="Node2D" unique_id=1558626893]
 
-[node name="Parallax2D11" type="Parallax2D" parent="."]
+[node name="Parallax2D11" type="Parallax2D" parent="." unique_id=450760262]
 texture_repeat = 2
 scroll_scale = Vector2(0.05, 0.05)
 scroll_offset = Vector2(0, -61)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D11"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D11" unique_id=1844476722]
 position = Vector2(960, -198)
 texture = ExtResource("2_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=824858941]
 texture_repeat = 2
 scroll_scale = Vector2(0.05, 0.05)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2128975126]
 position = Vector2(960, 540)
 texture = ExtResource("1_wnd5r")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D2" type="Parallax2D" parent="."]
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=993159482]
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D2"]
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D2" unique_id=526098837]
 position = Vector2(960, 540)
 texture = ExtResource("2_34kmm")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D14" type="Parallax2D" parent="."]
+[node name="Parallax2D14" type="Parallax2D" parent="." unique_id=1000578979]
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D14"]
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D14" unique_id=1667960306]
 position = Vector2(1368, 252)
 texture = ExtResource("2_34kmm")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D12" type="Parallax2D" parent="."]
+[node name="Parallax2D12" type="Parallax2D" parent="." unique_id=1106308885]
 visible = false
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D12"]
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D12" unique_id=1002860014]
 position = Vector2(960, 161)
 texture = ExtResource("2_34kmm")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D3" type="Parallax2D" parent="."]
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=2066068795]
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D3"]
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D3" unique_id=344746415]
 position = Vector2(960, 540)
 texture = ExtResource("3_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D15" type="Parallax2D" parent="."]
+[node name="Parallax2D15" type="Parallax2D" parent="." unique_id=389810172]
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D15"]
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D15" unique_id=1924597842]
 position = Vector2(824, 100)
 texture = ExtResource("3_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D13" type="Parallax2D" parent="."]
-visible = false
+[node name="Parallax2D13" type="Parallax2D" parent="." unique_id=1397214512]
 texture_repeat = 2
 scroll_scale = Vector2(0.13, 0.13)
+scroll_offset = Vector2(0, -408)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D13"]
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D13" unique_id=80037351]
 position = Vector2(1056, 220)
 texture = ExtResource("3_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D4" type="Parallax2D" parent="."]
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1765420946]
 texture_repeat = 2
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(2600, 0)
 repeat_times = 12
 
-[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D4"]
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D4" unique_id=797336274]
 position = Vector2(960, 468)
 texture = ExtResource("5_1vuh2")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D5" type="Parallax2D" parent="."]
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=1394122490]
 texture_repeat = 2
 scroll_scale = Vector2(0.3, 0.3)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D5"]
+[node name="Sprite2D5" type="Sprite2D" parent="Parallax2D5" unique_id=724630520]
 position = Vector2(960, 540)
 texture = ExtResource("5_ed6rg")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D6" type="Parallax2D" parent="."]
+[node name="Parallax2D6" type="Parallax2D" parent="." unique_id=1623639822]
 texture_repeat = 2
 scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D6"]
+[node name="Sprite2D6" type="Sprite2D" parent="Parallax2D6" unique_id=38884940]
 position = Vector2(960, 540)
 texture = ExtResource("6_t7foc")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D7" type="Parallax2D" parent="."]
+[node name="Parallax2D7" type="Parallax2D" parent="." unique_id=1896986704]
 texture_repeat = 2
 scroll_scale = Vector2(0.55, 0.55)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D7" type="Sprite2D" parent="Parallax2D7"]
+[node name="Sprite2D7" type="Sprite2D" parent="Parallax2D7" unique_id=2089361529]
 position = Vector2(960, 540)
 texture = ExtResource("7_t1qug")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D8" type="Parallax2D" parent="."]
+[node name="Parallax2D8" type="Parallax2D" parent="." unique_id=533219854]
 texture_repeat = 2
 scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D8" type="Sprite2D" parent="Parallax2D8"]
+[node name="Sprite2D8" type="Sprite2D" parent="Parallax2D8" unique_id=1297388407]
 position = Vector2(960, 540)
 texture = ExtResource("8_n3asc")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D9" type="Parallax2D" parent="."]
+[node name="Parallax2D9" type="Parallax2D" parent="." unique_id=451598809]
 texture_repeat = 2
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D9" type="Sprite2D" parent="Parallax2D9"]
+[node name="Sprite2D9" type="Sprite2D" parent="Parallax2D9" unique_id=157350879]
 position = Vector2(960, 540)
 texture = ExtResource("9_rnan8")
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Parallax2D10" type="Parallax2D" parent="."]
+[node name="Parallax2D10" type="Parallax2D" parent="." unique_id=452884624]
 texture_repeat = 2
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(1920, 0)
 repeat_times = 16
 
-[node name="Sprite2D9" type="Sprite2D" parent="Parallax2D10"]
+[node name="Sprite2D9" type="Sprite2D" parent="Parallax2D10" unique_id=2071018430]
 position = Vector2(960, 2081.5)
 scale = Vector2(1, 1.8972222)
 texture = ExtResource("10_34kmm")

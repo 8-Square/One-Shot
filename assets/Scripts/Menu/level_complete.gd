@@ -100,7 +100,7 @@ func finish_animation(progress: bool, level_no, real_audio: bool):
 	
 	# Show Boxes
 	show_all_containers()
-	$HBoxContainer/RestartContainer/Restart.grab_focus()
+	$HBoxContainer/Restart.grab_focus()
 	
 	# progress should almost always be true and is for normal levels 
 	if progress == true:
@@ -109,14 +109,14 @@ func finish_animation(progress: bool, level_no, real_audio: bool):
 		
 		# Specifically for final level (dont allow a next button)
 		if level_no == 7:
-			$HBoxContainer/NextLevelContainer.hide()
+			$HBoxContainer/NextLevel.hide()
 			%GameComplete.show()
 		else: 
 			pass
 		
 	else:
 		# For Fake Level Four Ending
-		$HBoxContainer/NextLevelContainer.hide()
+		$HBoxContainer/NextLevel.hide()
 	save_pref.save()
 
 func finish_level(level_no, final_time: float):

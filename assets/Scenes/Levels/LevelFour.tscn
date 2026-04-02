@@ -319,7 +319,6 @@ tile_set = ExtResource("4_oguxd")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=940625378]
 
 [node name="HUD" parent="CanvasLayer" unique_id=198714019 instance=ExtResource("5_wdtl3")]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1062800208 instance=ExtResource("6_ggdr6")]
 visible = false

@@ -1030,7 +1030,7 @@ script = ExtResource("1_hv5ue")
 level_no = 1
 
 [node name="Player" parent="." unique_id=931785757 node_paths=PackedStringArray("level_start_pos") instance=ExtResource("1_jf2q3")]
-position = Vector2(343, 286)
+position = Vector2(-9441, -541)
 script = ExtResource("1_5ul2i")
 level_start_pos = NodePath("../PlayerStart")
 

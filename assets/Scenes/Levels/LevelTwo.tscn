@@ -421,6 +421,7 @@ offset_top = -290.0
 offset_right = 379.0
 offset_bottom = -52.0
 pivot_offset = Vector2(365, 122)
+mouse_filter = 1
 theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("4_d1e1y")
 theme_override_font_sizes/normal_font_size = 42
@@ -435,6 +436,7 @@ offset_top = -163.0
 offset_right = 2446.0
 offset_bottom = 75.0
 pivot_offset = Vector2(365, 122)
+mouse_filter = 1
 theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("4_d1e1y")
 theme_override_font_sizes/normal_font_size = 42
@@ -448,6 +450,7 @@ offset_top = -1012.0
 offset_right = 9912.0
 offset_bottom = -774.0
 pivot_offset = Vector2(365, 122)
+mouse_filter = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("4_d1e1y")
@@ -462,6 +465,7 @@ offset_top = -1902.0
 offset_right = 8755.0
 offset_bottom = -1664.0
 pivot_offset = Vector2(365, 122)
+mouse_filter = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("4_d1e1y")
@@ -474,10 +478,10 @@ vertical_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1519856348]
 
-[node name="HUD" parent="CanvasLayer" unique_id=1041760090 instance=ExtResource("8_6ovuf")]
-
 [node name="PauseMenu" parent="CanvasLayer" unique_id=2111365125 instance=ExtResource("10_7xg8r")]
 visible = false
+
+[node name="HUD" parent="CanvasLayer" unique_id=1041760090 instance=ExtResource("8_6ovuf")]
 
 [node name="LevelComplete" parent="CanvasLayer" unique_id=994544811 instance=ExtResource("20_vqpyt")]
 
@@ -573,30 +577,30 @@ position = Vector2(94, -64)
 [node name="EndPortal" parent="." unique_id=1039736832 instance=ExtResource("11_jrirm")]
 position = Vector2(280, -44)
 
-[node name="AnimatableBody2D" parent="EndPortal" index="0"]
+[node name="AnimatableBody2D" parent="EndPortal" index="0" unique_id=583752350]
 animation = &"default"
 frame_progress = 0.0
 
-[node name="AudioStreamPlayer2D" parent="EndPortal" index="2"]
+[node name="AudioStreamPlayer2D" parent="EndPortal" index="2" unique_id=2018057509]
 bus = &"SFX"
 
 [node name="EndPortal2" parent="." unique_id=1157432827 instance=ExtResource("11_jrirm")]
 position = Vector2(11829, -155)
 
-[node name="AnimatableBody2D" parent="EndPortal2" index="0"]
+[node name="AnimatableBody2D" parent="EndPortal2" index="0" unique_id=583752350]
 frame_progress = 0.0
 
-[node name="AudioStreamPlayer2D" parent="EndPortal2" index="2"]
+[node name="AudioStreamPlayer2D" parent="EndPortal2" index="2" unique_id=2018057509]
 bus = &"SFX"
 
 [node name="EndPortal3" parent="." unique_id=775983287 instance=ExtResource("11_jrirm")]
 position = Vector2(-10156, -783)
 
-[node name="AnimatableBody2D" parent="EndPortal3" index="0"]
+[node name="AnimatableBody2D" parent="EndPortal3" index="0" unique_id=583752350]
 animation = &"default"
 frame_progress = 0.0
 
-[node name="AudioStreamPlayer2D" parent="EndPortal3" index="2"]
+[node name="AudioStreamPlayer2D" parent="EndPortal3" index="2" unique_id=2018057509]
 bus = &"SFX"
 
 [node name="Portal" parent="." unique_id=464423087 instance=ExtResource("8_330gt")]
